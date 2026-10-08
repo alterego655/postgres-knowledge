@@ -11,6 +11,14 @@ This repository stores curated development knowledge and the canonical PostgreSQ
 - Unknown causes, versions, outcomes, or missing sources stay unknown. A previous assistant answer or a report summary alone is not independent verification.
 - Update relevant human-maintained topic links when saving a record. Distinguish a file-search result from OpenWiki retrieval.
 
+## Task-driven knowledge retrieval
+
+- When the user asks about prior work, or a task depends on historical debugging experience, design rationale, or known pitfalls, search the knowledge repository's `records/` and `topics/`. Do not preload the knowledge base at task start or make unrelated lookups.
+- Search with exact symbols, error text, patch or commit identifiers, and focused problem terms. Translate non-English questions into English technical retrieval terms. Read the relevant complete record sections, including limitations; search snippets alone are not evidence. Follow links to original mail or experiment output only when needed, and stop once the task is grounded.
+- Use OpenWiki search followed by section reading for subsystem context, with the PostgreSQL source checkout as its MCP root. For current source locations, implementation, and call paths, follow that checkout's CodeGraph-first rules. Ordinary OpenWiki search does not cover this knowledge repository's `records/`.
+- Before applying a finding, check its evidence state, delivery status, tested commit or branch, configuration, and any superseding record. For code Wiki findings, check `code-wiki/postgres/source.json` in the knowledge repository against the current source revision. Verify consequential implementation claims against current source and tests; do not assume a historical finding remains applicable.
+- Cite the records or Wiki sections actually used and distinguish recorded findings from current verification. If no relevant record is found, say so when material to the answer; if access or retrieval fails, report that limitation instead of claiming no prior knowledge exists. Keep routine retrieval read-only; capture and Wiki maintenance use their separate workflows.
+
 ## Source repository and OpenWiki
 
 - Read `knowledge.local.json` when the local source location is needed; use `knowledge.example.json` as a format example only. If no source checkout is available, finish independent record work and report which code claims remain unchecked.
