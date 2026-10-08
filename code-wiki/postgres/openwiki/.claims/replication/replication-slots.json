@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ea019d661704f770c953283a58ab8cd8283efb3057430d621aab9a3ed090cb17",
+  "claims": [
+    {
+      "id": "claim_61f11e2eecbc4746b1d4d43976aecf47",
+      "statement": "Replication slots are stored under PG_REPLSLOT_DIR (pg_replslot) and use persistency values RS_PERSISTENT, RS_EPHEMERAL, or RS_TEMPORARY.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/replication/slot.h#L21-L21",
+          "version": "repo-lines-v1:sha256:fb80d5a6ca8c4b91c2936ad3043fd3ffb8265828c57cd2db95e3c26abc3a562b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI4MGQ1YTZjYThjNGI5MWMyOTM2YWQzMDQzZmQzZmZiODI2NTgyOGM1N2NkMmRiOTVlM2MyNmFiYzNhNTYyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI4MGQ1YTZjYThjNGI5MWMyOTM2YWQzMDQzZmQzZmZiODI2NTgyOGM1N2NkMmRiOTVlM2MyNmFiYzNhNTYyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM4YjVhYWI4NzliZTJkOTZlMDlmNjZlODAyMDM2YjlhY2JiZjU0ODFkNTU5MDM1YWMxODA4NTQ2MjhjODBjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc1NTQ5YTk1MWQ2MjQ1NjNlMTMyYjQwZDU0OWMxMWI2ZTZhZDAzOGM3MGFkNzUyZTRkMjEzMDM1NDc3MjVkYyJ9"
+        },
+        {
+          "resource": "repo://src/include/replication/slot.h#L43-L48",
+          "version": "repo-lines-v1:sha256:bfd120bb7640d0604f00c4fb6ed825c4087ce803ad749d319ad1d2e65ca3cd79:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgzZGM5OTA4Y2RiNzE0M2UwMjE5MTM0NDRhYWM0NzUzNmI5OGVkZWJjMDMwOTA2YTYwZmVkYmI2MTJmYWY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk4MzkzZWE3OWIwMGYzMDFmMWY2ZGRhN2VhOTZjMjdiNTJmYWYwMDhlNjE2ZDkyYjIzMWQyNjgxMmU0ZGRhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTlhYmEyZjE4ZTQxZjdkZmExMTAxNzZjZGRlNzhjM2EzMTg4MGU3MGFmYzQxZTlmZTRjYzhiYTJhZWRlOTBjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE4YjZkMTdmYTI3NWY2ZTAzMTUyODc2YmQ0Y2U5NzhmMGQ0MzExMWNmNjg4MTQ1MDVmMzczZWMzMzhiMDZhZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fddb0d2e74f4f9685f66fc177bf1e7a",
+      "statement": "Slot durable state includes restart_lsn, catalog_xmin and confirmed_flush (logical), two_phase/two_phase_at, and a failover flag; synced marks synchronized slots.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/replication/slot.h#L122-L125",
+          "version": "repo-lines-v1:sha256:b0f2218a4a1d21af480b952f9edcac660495c0eeae8d837be6c27998a894f889:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAyYzY4MzIwY2FjZWVlMTE2ODAxNjE1ZDI2ZThlN2Q5YmFmYzcyNGI0ZDE2N2IxZGJiNDJiZjllOTE2MTljOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI1ZWE2NDEyYjgxNzdkZjJkYjAwZjE1MTJkM2Q1NDA4YTMwNTRkZTVjMjYyOTczYTA2OGZiYzk4NmE2YmY5ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmVkYmViOGIyNmIwNDM5OTExZTM0OTcxYTAwMjQ0MWY1NmFlNGJkYjgwNGIwN2NiNGMwM2FkYmZjYzVhMTE4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUwM2RhYzg3M2QwZWZlOTI3YmE5ODllYjU2NjYwZjE3MGU4ODQ5MjA1MTM5NGMyZWVhNjkzOTRlYWRlMTFiMyJ9"
+        },
+        {
+          "resource": "repo://src/include/replication/slot.h#L136-L142",
+          "version": "repo-lines-v1:sha256:9384d38122aa66b25e32a9c9e83279ef0270bec4345aade105e54fca7db0079f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU3OTEwYWY2MmJhYzkzZjg0OTE1MDhjYzBhOGU1Yzg2YWQxM2UwZTlhNDQ3ZmY1ZDkwODExMzFhYjE1YWI1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQyZDg1Y2UyYTE2YmE4YTU3ZDIwYWZiNjU3MjhmNmUzM2Y3YjEwMDc0NThkMjFlMTQ3YTBjZjY1MGVlMzRhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg1NDBjMTg0OTlkZTQyNmU0YmVhYjViOWU4ZjBiNDRlMDE0MzlmYmZkNTFhMjNjYzEwMTc4ZjhmMGViMzNiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjMzOWVhOTg2NTM3MmUwMjAyMDNkYjYzZTcwY2NkYWM4NTNhMzA0MmZlY2VhZGI2MDAwOGFlY2YyYWE0ODBiMiJ9"
+        },
+        {
+          "resource": "repo://src/include/replication/slot.h#L147-L161",
+          "version": "repo-lines-v1:sha256:42b3c0a90f1942de7e1539967b8965296a7a4724d7c727e8f2cf340d861843e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhOWVkN2JkOGE3ZjlmYzc1MDcyNzdkMzMwMDU0YjZiOWFhZGZhODljYjc1Yjk3ZDJhMzZmOWRlYWVjY2Y2NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhODUxMTEyN2VlY2M2NzBiODkzYTg3NWU2MTMzZTVkMDRmMTg4MTk0Y2MzYjE1YzM2ODUxMDg5OTM0NjRiMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZjZiNTljMzU5NzExZjEyMWFhN2VjZDU1YzdhZmQxMjkxOGM0ZWMzOGVjYjE0MDA1NTQ2Mjk3YWMxOGE0ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyYmQ2MjhlZjgwZDk2MmZmYzc2M2MyZmFhN2Y3NDBkYjc5ZDg3YThkMWM5NjgwMzE4MGM3MjYyYjhjZmNlOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50f65ea73a1145a9ac14b0a0fe23d07c",
+      "statement": "ReplicationSlotCreate creates a slot with parameters for database-specificity, persistency, two_phase, repack, failover, and synced.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L378-L378",
+          "version": "repo-lines-v1:sha256:7863fa1688a9133ed01072808841ad338759ec137cbb8e44be5fc70f99829ff4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg2M2ZhMTY4OGE5MTMzZWQwMTA3MjgwODg0MWFkMzM4NzU5ZWMxMzdjYmI4ZTQ0YmU1ZmM3MGY5OTgyOWZmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg2M2ZhMTY4OGE5MTMzZWQwMTA3MjgwODg0MWFkMzM4NzU5ZWMxMzdjYmI4ZTQ0YmU1ZmM3MGY5OTgyOWZmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlkOGQzNWFlM2U5Yzg5MWMyZGRlZTZhYWMxZDY0OGE3MjhhOGEyZDIxNGJhNmMxNzI5N2ZkNDhmMjUwNmNlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGJmOWMwNDVmM2FmMDM5YjcyNDcxZDQ2ZmMyM2IwZjA4N2U0ZWExOTFkNGE3OGMxNWJkNmM3YzI0YmNhYzIwMyJ9"
+        },
+        {
+          "resource": "repo://src/include/replication/slot.h#L332-L335",
+          "version": "repo-lines-v1:sha256:ad1decd92edf5c70dcf3a6b13686a2e7627f8c0de6844570d7e655cacb79e56b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZhY2ZkZDIyNTZkMjMyYWIwNWZiOTVjZDE2NTQxMTJjMzRlZDI5ZmZjYjcwMGRmNmJiMTg2Y2IxMDRjMWQ0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQ3YWExOGE4NzEzMWNkNDIzZGQ1MTBjMGU2N2ZiYmU4MDgzZDg1MzY1NDU2NTA5MTA1YzhhZDRiYTM1YjgzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDY5ZTZkODdjZjM5NDk4OTY5NzgzODc3NTMxNDc1ZjQ5MDg0MTgzMjI5MTQ0OTM4NDM0YzcwNzBjNTJmOGYxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjVkOWQ4YzYyMDNiY2ZjN2NhMzY2OWM4ZjE5MGY3MDczYzk1YTkxOTEzODI1Yjc1ZTAwYTMzZGMyMmMxYWUwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a649937eccb347ad98deaf2cef088eca",
+      "statement": "ReplicationSlotMarkDirty sets dirty flags in memory, while ReplicationSlotSave writes acquired slot state through SaveSlotToPath.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1163-L1192",
+          "version": "repo-lines-v1:sha256:4f08fa3abd22b7295ea58045adc8800bc4538c900ae6b3a348c4668f517692a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlODIxYTA3YjhiYjJhNjhmZDRhYmZkM2JmZjg5YWM1Mjk3MmExYjUzNTBhNWMwMTU1MTAyNDg5NTljNjZmNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1NTE0ZGZhMjgzNzAyNDAxNjgzYmQ4Nzk5NTE2MTZiMGQwNDFhZDdmNGZiMzQ0YjY5NDZiMmQ1ZjUxOTgxNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNzgyZjgxN2Y1ODk1M2I1OTZhZDljNzA3NTkyM2YxZGZiNGQ2MmVhZDkzYzc4NTc0ODc0NmVjYzhjNTExODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3559489a48a42e280c308dee8bede53",
+      "statement": "ReplicationSlotRelease intentionally drops an RS_EPHEMERAL slot through ReplicationSlotDropAcquired.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L778-L792",
+          "version": "repo-lines-v1:sha256:6de6c9e54c050c467cb524f486c60b39c6d8c0d1419a064692b8d70b403b5a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYjRmYmYzMjUxMTQxMmE0Y2FjZWQyYjJiODA4MDExYjAyNjdlODI1Y2U4MmU0NGQzY2Q3OTQxZTg4ZTRhYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhYjk1Y2MxODkyNjhkMGQwZGM4MDUxZTNhMTk5MTYzNTBjZGViZTEyYzU4YWM0YzMxZmMwYThhMWU0NTkyZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3ODYxYmQ5NmQ2MjNkZTkyYzY1YWJmZGEyZDNiMTUwOGE2NjIyMWQwNDg0NDU4ZjFjODNiMzhjYTkxNzk1MDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ab954ad47b2469ea00ccda21fd95666",
+      "statement": "Global retention is computed from slots by ReplicationSlotsComputeRequiredXmin (oldest required xmin), ReplicationSlotsComputeRequiredLSN (oldest restart LSN), and ReplicationSlotsComputeLogicalRestartLSN.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1224-L1224",
+          "version": "repo-lines-v1:sha256:f44f929b49bd02be363083fc4799dec4869c2e167dab87c85d3c57c98ab04dc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ0ZjkyOWI0OWJkMDJiZTM2MzA4M2ZjNDc5OWRlYzQ4NjljMmUxNjdkYWI4N2M4NWQzYzU3Yzk4YWIwNGRjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ0ZjkyOWI0OWJkMDJiZTM2MzA4M2ZjNDc5OWRlYzQ4NjljMmUxNjdkYWI4N2M4NWQzYzU3Yzk4YWIwNGRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ1YzNlZGM4ZjIwODYxNTQ4MzVhNTEwZWY5MTVhYjIzNjc0ODNiYjIyZTU5YjhiYzE1MDVhN2Q2Y2QwNzhlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjdiYjk5MWFiNzRkOTMzYzc5OTU1OGMyN2ViNDU5YmVjM2ZlYTVhM2E2ZmYzY2Q5MGM0NTUzZmIxYzRjMTU4NSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1306-L1306",
+          "version": "repo-lines-v1:sha256:a5459a197ff293662de2fc66a72949a239b9781b436cd0460dee5f87c411d5e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU0NTlhMTk3ZmYyOTM2NjJkZTJmYzY2YTcyOTQ5YTIzOWI5NzgxYjQzNmNkMDQ2MGRlZTVmODdjNDExZDVlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU0NTlhMTk3ZmYyOTM2NjJkZTJmYzY2YTcyOTQ5YTIzOWI5NzgxYjQzNmNkMDQ2MGRlZTVmODdjNDExZDVlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBjZTgzZTY5YjNkZDJmOTliNzIxODhlMDM3MTI1NjNmN2RmZWYwNDRkMDA0YzQ0OGE3NWE0ZTVmODBmMWZkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzM4MmE4Nzk5NzJhNjA1YTdiZDRmZDgwNDIzZTViOWM4YTkzYTkwOTdhY2ViODc3ZDljZWM0OWMyYTI4Yzc3ZSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1376-L1376",
+          "version": "repo-lines-v1:sha256:0fb5293aff131ba005717dd126795d2441b4fba7b2efe0e1e4995377f17f1fbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiNTI5M2FmZjEzMWJhMDA1NzE3ZGQxMjY3OTVkMjQ0MWI0ZmJhN2IyZWZlMGUxZTQ5OTUzNzdmMTdmMWZiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiNTI5M2FmZjEzMWJhMDA1NzE3ZGQxMjY3OTVkMjQ0MWI0ZmJhN2IyZWZlMGUxZTQ5OTUzNzdmMTdmMWZiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjllMzFiZmQ4YjZlNzA0YTcwYmM4ZDhkODA5ODQ2OTkxZTc1MDM2MGUwNmI5NGNjOWJlYTA1ZWNkOWQ1ZDUwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNmNGZkY2Y3NTJhZDRkMmYxNjQ0NmY0MDU0NDI0N2IwMTBiOGY0OTUxMzRmZmQxZDcwMzg2M2U3NzhkNTVhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_14703bb43d3a49eead4c6fa6ef6f3957",
+      "statement": "Invalidation causes are RS_INVAL_WAL_REMOVED, RS_INVAL_HORIZON, RS_INVAL_WAL_LEVEL, and RS_INVAL_IDLE_TIMEOUT, recorded by ReportSlotInvalidation/DetermineSlotInvalidationCause and applied by InvalidatePossiblyObsoleteSlot/InvalidateObsoleteReplicationSlots.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1788-L1788",
+          "version": "repo-lines-v1:sha256:ecb3e14d3b7c45e188011621edb926b40765fc7bc19da60ff943ea55d4e24bd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNiM2UxNGQzYjdjNDVlMTg4MDExNjIxZWRiOTI2YjQwNzY1ZmM3YmMxOWRhNjBmZjk0M2VhNTVkNGUyNGJkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNiM2UxNGQzYjdjNDVlMTg4MDExNjIxZWRiOTI2YjQwNzY1ZmM3YmMxOWRhNjBmZjk0M2VhNTVkNGUyNGJkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjViMmMwMzc3OGI1ZWVjMDQ3NjZlYmYzMDM1ZWQxOWJmMjBlZDQxZTNkNGI2ZjQ1YTJlYmY3NGUyZGJhYjliZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA1ZDBmODU3NmM1YmQ5NmQ2Y2I4NDZhZmJmNDJmZDkzYjFkMGYzODM4Y2I5ZDliNzI1ZDViYzNhOWY2OGVjMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1886-L1886",
+          "version": "repo-lines-v1:sha256:add6b2e1b8a14b0ba1f2b29efac04bb441ace88dcd57281c4507c77289726651:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRkNmIyZTFiOGExNGIwYmExZjJiMjllZmFjMDRiYjQ0MWFjZTg4ZGNkNTcyODFjNDUwN2M3NzI4OTcyNjY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRkNmIyZTFiOGExNGIwYmExZjJiMjllZmFjMDRiYjQ0MWFjZTg4ZGNkNTcyODFjNDUwN2M3NzI4OTcyNjY1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNWQ3ODM4MjRjMDAyMTEyNTJiY2IxYTFiZDBjZjVjOGM4ZWE1MTFmZDcyMDk0ZjcxMmI4NzBiYmZjNjdkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWJjYTI2OTE4NDY2NjczNjBhYzJiNjc3ZWM3ZmNhYjVmNTE4ZjZlZTMwNTUyNjFjYmQ4NTkwMTNkMGJkNDY3MiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1978-L1978",
+          "version": "repo-lines-v1:sha256:4c46110b64aeb46a808d6f39dc2fa902de3bc68367415709e84f4ab9ccf99de8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM0NjExMGI2NGFlYjQ2YTgwOGQ2ZjM5ZGMyZmE5MDJkZTNiYzY4MzY3NDE1NzA5ZTg0ZjRhYjljY2Y5OWRlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM0NjExMGI2NGFlYjQ2YTgwOGQ2ZjM5ZGMyZmE5MDJkZTNiYzY4MzY3NDE1NzA5ZTg0ZjRhYjljY2Y5OWRlOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYxNDgxYjBiMWMxNjFlODYzZTRmZWU4YzJhMjFmYzMwYzRiNTkzYmE2MDhhYjdhYmY5NmM0MjAwMTQyNjc4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA3ZjUwZmI1YTYxY2I3NTNiZGFkZTdhYTAyOWFlZjEyMTcwZDZmOTAyNzUwYzg4ZTdhOWI1MjJhY2Q5ZjJjOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L2218-L2218",
+          "version": "repo-lines-v1:sha256:d367b705baf4c645c34d7a5ee5df17ee9a99c67b9498cb007379067f6cd569fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM2N2I3MDViYWY0YzY0NWMzNGQ3YTVlZTVkZjE3ZWU5YTk5YzY3Yjk0OThjYjAwNzM3OTA2N2Y2Y2Q1NjlmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM2N2I3MDViYWY0YzY0NWMzNGQ3YTVlZTVkZjE3ZWU5YTk5YzY3Yjk0OThjYjAwNzM3OTA2N2Y2Y2Q1NjlmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM3NTg1MzM1MDNhYzI0MzBjZDI0N2Y4MmViNTg5Y2FlNDg2YjI3MzM0YTBkNjU3Mzg1ZTY4NGIzMzZiYTM4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRhOWRhMGMwZWNmMWI3MDVkZGJjNzMyNjkwMDI5OGE2MjA3Y2NjNWNjMzVkNTBlMTk5MmM0ZmIzMDM5NTIyYSJ9"
+        },
+        {
+          "resource": "repo://src/include/replication/slot.h#L60-L72",
+          "version": "repo-lines-v1:sha256:1297cbb8edbd6fbdf9eece9128f319902fa83fa0df379451094e7554bfd12d5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZTAxYzI0OTMxYjJkYjliZGYwOWE4MmIzNjE2MWRkMmIzZWY3MTFlMDE3M2M1MTE5MGEyZmIyMzNhOWVmNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3ZmFiNmMwMGIyNmIwN2QyMjM2YTJkNmJiZTI3NzI1YjVjNTc3MTc5YzgzNmRkMjdlZmI0MmFlNjA2ZWUwMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyYWVjMDAyYWNmMmYwOWJiYzlhMThhYTQ5OGFjOGYxY2VhNDk4MmEwMGNlYzk1YTQ5NGQ1MDAyMzhmNjE1YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNWEyN2E3ODc1OThkM2M5NDc3MjFjNmQxZDU3MmM2MmY2YWVmN2I4MmUzOTJlYjM2Y2E0ZjQ3ZGJiZDA1OGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bdc91ab69844d4c9026197a6258585d",
+      "statement": "ReplicationSlotReserveWal pins a restart point when a new slot is created.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slot.c#L1709-L1709",
+          "version": "repo-lines-v1:sha256:77143b70852e247aaea48c67145213f0da0e652bef4440abca70f6461089ab5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcxNDNiNzA4NTJlMjQ3YWFlYTQ4YzY3MTQ1MjEzZjBkYTBlNjUyYmVmNDQ0MGFiY2E3MGY2NDYxMDg5YWI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcxNDNiNzA4NTJlMjQ3YWFlYTQ4YzY3MTQ1MjEzZjBkYTBlNjUyYmVmNDQ0MGFiY2E3MGY2NDYxMDg5YWI1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU1ZjM3YmUyOTE2Y2YyZmU5YzM3NzZiNDFiM2VkMWYwOWU0Nzk1ZGU2YzU5NWU4MDljN2E4MGQ2ZmU2YmQwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzMyMjNjZWQzZDUwNzZkMzYxNjMzODE5OGFkMTA0ODAwMDJjNjg1Y2M3OTg0ZjE4Mzk5MzA1NDc0NzgwNTg2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f55d21fd80f4e5e80f0c7518a06024c",
+      "statement": "synchronized_standby_slots gates logical failover decoding on physical standby WAL receipt and flush, including relevant SQL decoding/advance functions; missing or invalid listed slots prevent progress.",
+      "evidence": [
+        {
+          "resource": "repo://doc/src/sgml/config.sgml#L5272-L5299",
+          "version": "repo-lines-v1:sha256:708069ef3c6a225e3b1257abc0936f606be6099b0ddad03dc171cdc26a4cc7b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NjY1MTcwNWU4Y2ViZjU3MDcyNDBhYzRhMjc0Y2RlNzcxMTQ2ODY5NzljNTY3YjViYzBjYzY5YjU4ODJkZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMTRjMzA1ZWQ5NmI4OWNlN2Y3YTQ1NDA3OTZiMWFmZTZlZGRkNDYwOTJjY2M4OGU3MjBkNWY5MDU5ODE5MDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzMGYyOGRiZjExYjZlMzA1MDAyMDY4OWZjMTM2NTExYzgxMmQ0ZWI3ZjY0NzQ2MDE1MGI3MThiZTgzOWNhYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxY2ZkNmJiMzRjMDJhMTQxMDViMjJhNGU2NDUzYjIzNzY5MWM2Y2ZhODQ2OWJmNzBhMTdkOTZiMmUyNjg5YTgifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/slot.c#L3252-L3295",
+          "version": "repo-lines-v1:sha256:0cbac3adb3eafc573e9c2fe223f6ce3395c70f37c359a093519c5156d1cbde7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MzEyZmMxMTJhOThkYjNjZGMzNGNkNTE2ZjU5NDYwZTBkNDA5MjJkNzNmZTE3OTVjNmFkMzIyNDdhODE5N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9b8483078974f98b133eae439d95317",
+      "statement": "Slot synchronization is implemented by ReplSlotSyncWorkerMain with ValidateSlotSyncParams/slotsync_reread_config, and mirrors remote slots via fetch_remote_slots, synchronize_slots, synchronize_one_slot, update_and_persist_local_synced_slot, and drop_local_obsolete_slots.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L1092-L1092",
+          "version": "repo-lines-v1:sha256:289ad0f740193bcd7aac239ea101c243360c8f81f4e7f7038ed3f2b7557dd152:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjg5YWQwZjc0MDE5M2JjZDdhYWMyMzllYTEwMWMyNDMzNjBjOGY4MWY0ZTdmNzAzOGVkM2YyYjc1NTdkZDE1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjg5YWQwZjc0MDE5M2JjZDdhYWMyMzllYTEwMWMyNDMzNjBjOGY4MWY0ZTdmNzAzOGVkM2YyYjc1NTdkZDE1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzA5NWY5NDEwNTg3ODkyYTgwOTk1NWNmNzIzNTBiYzMyM2RlYjkyYTM2YjU5NjhjZmYyNTY1NGZlMzk0MjdhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGIxYzcwYTYyN2FmOGM0NzI2ZGIyZDAwOWZkZjgwNjgyNmZlNmZlNTBiNTkwOGUwOWQ5NTdhN2Y4MTNmYTA4YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L1233-L1233",
+          "version": "repo-lines-v1:sha256:7675b5c4d131cf222709a56a688c4678a66b0aa4ad71b79a297ddc37f4775cc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY3NWI1YzRkMTMxY2YyMjI3MDlhNTZhNjg4YzQ2NzhhNjZiMGFhNGFkNzFiNzlhMjk3ZGRjMzdmNDc3NWNjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY3NWI1YzRkMTMxY2YyMjI3MDlhNTZhNjg4YzQ2NzhhNjZiMGFhNGFkNzFiNzlhMjk3ZGRjMzdmNDc3NWNjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWU0OWY4MTNkMTc3OTBkMzcwYjBmMmI3NDY4MDZlZWFiZTNiZjNjNWNjMWE1MGJlOWRiZmRhNDZhZjQ3YjRkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTBlMDA3NTcyMjYxNzJmZDJlZDdkMDExY2NiNDQ1M2Q5ZTY4ZjRmYzg3YjQ4NzVkOTY2MWQ3NjgzYTNhNmI5NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L1302-L1302",
+          "version": "repo-lines-v1:sha256:2e439e68cbfed2768ca5ada9c1d18bcc4a0a3601a575d5e846b52648209cc595:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0MzllNjhjYmZlZDI3NjhjYTVhZGE5YzFkMThiY2M0YTBhMzYwMWE1NzVkNWU4NDZiNTI2NDgyMDljYzU5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0MzllNjhjYmZlZDI3NjhjYTVhZGE5YzFkMThiY2M0YTBhMzYwMWE1NzVkNWU4NDZiNTI2NDgyMDljYzU5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ2MzgyMDE3OTMyYzViZjJjZDNhNDkyMDljNDYzNWNhZjBkY2UyODM4YmY2OWVlNjA5N2Y0Nzk1MTU0ZmM0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNkNWVmYjhjYWNjMWM0ODE4ZDYyZGZmZmUzZWJiNTg3ZDFmMjBmNjVkYzI3MWNiNTYxNzVhOTIzN2M4ZWY3OSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L1607-L1607",
+          "version": "repo-lines-v1:sha256:705d5088b7e75d45dfac622233c0d2eb765daadd7da83da58afecaee6f2de67a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA1ZDUwODhiN2U3NWQ0NWRmYWM2MjIyMzNjMGQyZWI3NjVkYWFkZDdkYTgzZGE1OGFmZWNhZWU2ZjJkZTY3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA1ZDUwODhiN2U3NWQ0NWRmYWM2MjIyMzNjMGQyZWI3NjVkYWFkZDdkYTgzZGE1OGFmZWNhZWU2ZjJkZTY3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODM5YWY1YTk5NWVmYmVjNjliNTkwNmJlMGIzNzNkMWZiMGEzZDA5NjAxMDc3Y2Y2Mjc0YzY5YTY3ZGY3YmNiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzM3OWIyNzI4YzFiYTljNGQ3YmQxZmQyZGE3ZjJhNTlkYzBmYWFiYjAyMWMzYzJjYmQ0NDRhZDhlMzM0YTA0NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L536-L536",
+          "version": "repo-lines-v1:sha256:a6d9c095408a1032eedc0a08c9cc03f337a2bdb3448b1e91b3e644de79d524e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZkOWMwOTU0MDhhMTAzMmVlZGMwYTA4YzljYzAzZjMzN2EyYmRiMzQ0OGIxZTkxYjNlNjQ0ZGU3OWQ1MjRlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZkOWMwOTU0MDhhMTAzMmVlZGMwYTA4YzljYzAzZjMzN2EyYmRiMzQ0OGIxZTkxYjNlNjQ0ZGU3OWQ1MjRlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjOGNiMmQxNDI2NWE0ZTA2MTU3NDlmOGM3NGNhZjQ2YTIwMjhlOTc5MmViNzFhYmE3Njk0MGYzMDZmNWVkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY4ZjI1YWZlYWRiYThiNTljMmMwZWUwNDNlZDc5Y2FhOWE3NjY1Nzc4YjBjODNkNDhiZmRiMTg5MjI0YWE2YSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L686-L686",
+          "version": "repo-lines-v1:sha256:05743bec9c2e34d3b8fbe4104df87b3f89f2e8909cba0a5886eb12f728f0f48e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU3NDNiZWM5YzJlMzRkM2I4ZmJlNDEwNGRmODdiM2Y4OWYyZTg5MDljYmEwYTU4ODZlYjEyZjcyOGYwZjQ4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU3NDNiZWM5YzJlMzRkM2I4ZmJlNDEwNGRmODdiM2Y4OWYyZTg5MDljYmEwYTU4ODZlYjEyZjcyOGYwZjQ4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzhmYjBlZjU5MjI4ZTBjMTczZTdmNGUyMWU5MWQ0OTcxN2ZlNTdmZDYyZjEwOTA2YjczZWFhYjhmZGI3YzJlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNkNDI2YWM2NjAwOTBhNzNhMWVjNzQ5YjI5OTliZDcyMTczYjI0MThiN2FhNjIwMzdkZTdkZWE3ODdiZTU0OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L782-L782",
+          "version": "repo-lines-v1:sha256:aa7c91b4a6d29ebfed3e73f49ac28c6f26750513890469d6e9dfbc9720992484:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE3YzkxYjRhNmQyOWViZmVkM2U3M2Y0OWFjMjhjNmYyNjc1MDUxMzg5MDQ2OWQ2ZTlkZmJjOTcyMDk5MjQ4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE3YzkxYjRhNmQyOWViZmVkM2U3M2Y0OWFjMjhjNmYyNjc1MDUxMzg5MDQ2OWQ2ZTlkZmJjOTcyMDk5MjQ4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmM4MWY4NDY1NzFmMDM2MmU0N2EyMmE0ZmQwZmM3YjllOGZkY2RmMzA5YTI2YTBlODA0NmUwYjFjYmQwZDQ1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWE0YjJmMjg1YjM2OGQxYzE2YjA2ZWRjNzA4ZDlhZjhhYzFiMGZiNzJmZDFhZGEyZWEwNDA1NTM1NzA1MmZkNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/slotsync.c#L949-L949",
+          "version": "repo-lines-v1:sha256:b415d8b02a703168340b54e83f0f8ce51b1c7925c7b6cedfd3229434f2f08084:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQxNWQ4YjAyYTcwMzE2ODM0MGI1NGU4M2YwZjhjZTUxYjFjNzkyNWM3YjZjZWRmZDMyMjk0MzRmMmYwODA4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQxNWQ4YjAyYTcwMzE2ODM0MGI1NGU4M2YwZjhjZTUxYjFjNzkyNWM3YjZjZWRmZDMyMjk0MzRmMmYwODA4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA5ZTVmMzgxNGUwZDA0YmQ3NTdlYzRiMDQ0OTEyNDJhZTEyYTM3MWE0Y2Y0NDY2OTA4YzAxMWE3YzQxNjQ2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM0M2I1NjUwMDVmMzFkOTNkMTQxNmMwMGZiYjg4N2NlOThhMTlhN2E4Y2UwOGJiN2Q5NTQwMjYyZDkyNWJjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d398e2a23af4af7847a088bf58918ab",
+      "statement": "Failover-enabled slots can be synchronized to a standby, and slot creation functions expose a failover argument.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/slotfuncs.c#L131-L149",
+          "version": "repo-lines-v1:sha256:02f9e0c89ad688299e4f8aa5d63800ea590f03827a4496920b620dd78fe80435:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYjBiNDI4MjFjOWI4ZjQ2NjcyZWI3Yzc2NjU0YjE5MTBjZTQ5MWQzNmM1NDI1MWU2ZTc1Yjk5NGYyN2YxMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNGI4NjA5ZDgwNzc5ZjYzZWYwYWQxMjU1OWE2NzFmODhlMWRiNDY5YWMzNDc3Y2JhYzk4NjY1ZmFkYjdiMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlODFlMDkxMWY3ZWZkODBkNTFiZDk1M2FjMDlkZDdjY2RkOWY0OGMwYzk4OWIzMDg1YzgzNzY2NjgzNjcyOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExODc1NGRmNWVkYThiNmFiOGI0YmMyM2ZkYmMxNmE1ZDAyOTU1MjkxY2M4YjA4MTg2YjgxYmM2ZWUxMWE1ZWIifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/slotfuncs.c#L925-L925",
+          "version": "repo-lines-v1:sha256:9215cb149517771d60cdcb27442589e262e52736a647fb3db7d85f80b2a2480d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTIxNWNiMTQ5NTE3NzcxZDYwY2RjYjI3NDQyNTg5ZTI2MmU1MjczNmE2NDdmYjNkYjdkODVmODBiMmEyNDgwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTIxNWNiMTQ5NTE3NzcxZDYwY2RjYjI3NDQyNTg5ZTI2MmU1MjczNmE2NDdmYjNkYjdkODVmODBiMmEyNDgwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDkzMWM3NTg4NzYxYTE3OWIzNjc4Nzc2ZmQxMjgwZWFjNjQ4Zjc0NTQ4ZjdmZGNiMDRlZjcyYmYwNDliOWMzNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

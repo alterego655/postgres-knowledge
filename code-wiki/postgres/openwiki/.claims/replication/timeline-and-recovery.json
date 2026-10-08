@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4bdde3e137f052feb611fb7ce0b1aaf302d9737b5fe74b515fa92369041fdc10",
+  "claims": [
+    {
+      "id": "claim_a2d4c0f91b5b47c48fb1306bbd0a794e",
+      "statement": "Timeline history is read and written by readTimeLineHistory and writeTimeLineHistory/writeTimeLineHistoryFile, restored by restoreTimeLineHistoryFiles, and discovered with existsTimeLineHistory and findNewestTimeLine.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L223-L223",
+          "version": "repo-lines-v1:sha256:fb92cbec2ee98c70c926bcae98a7b9109cae0db28aa57deeccb9f49d9e0b9f75:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI5MmNiZWMyZWU5OGM3MGM5MjZiY2FlOThhN2I5MTA5Y2FlMGRiMjhhYTU3ZGVlY2NiOWY0OWQ5ZTBiOWY3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI5MmNiZWMyZWU5OGM3MGM5MjZiY2FlOThhN2I5MTA5Y2FlMGRiMjhhYTU3ZGVlY2NiOWY0OWQ5ZTBiOWY3NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzExZTk0OTdiNGY2NzdlYjM2OTczYzM5NTI5ZjgzMDNlY2U1OGNhZWRlN2MzNDAzMjE4MzY0MGIyYmI2MjllMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzZhMWQ4ODY2MDQ1ODg1NDFiMzg2MTM1ZDQ5MTFmMjMzNDc4MzE3NmMzNzgzNmZlOWZjOTY1YjhhNmRmYTdlOSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L265-L265",
+          "version": "repo-lines-v1:sha256:0d23547f2d22b653e309765505b967cdccf68ac5b89067a9c37bfe13f12a90ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQyMzU0N2YyZDIyYjY1M2UzMDk3NjU1MDViOTY3Y2RjY2Y2OGFjNWI4OTA2N2E5YzM3YmZlMTNmMTJhOTBhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQyMzU0N2YyZDIyYjY1M2UzMDk3NjU1MDViOTY3Y2RjY2Y2OGFjNWI4OTA2N2E5YzM3YmZlMTNmMTJhOTBhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjFlNzVkMmE0MzVhYTk5MGFmZTRjZDI5ODczNjFiNDdjNDZmYjJmN2Y2YjBlZjI2ZTVlNThlMWUzMjdiNzYyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U0ZDVkNDAzYzQ3Yzc4NTA0ZmY3ZmEwZTFlMzMyMmIzMmVmNjJkZGZkOWFkMmVhNjQzYThhODUyMzU1ZjI1NSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L305-L305",
+          "version": "repo-lines-v1:sha256:baf09424b101ceee5b084e8674dd40988ecbe318d514f43000204958056cec6a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFmMDk0MjRiMTAxY2VlZTViMDg0ZTg2NzRkZDQwOTg4ZWNiZTMxOGQ1MTRmNDMwMDAyMDQ5NTgwNTZjZWM2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFmMDk0MjRiMTAxY2VlZTViMDg0ZTg2NzRkZDQwOTg4ZWNiZTMxOGQ1MTRmNDMwMDAyMDQ5NTgwNTZjZWM2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjY1NzE5ZmI1Nzg3Njk1ODYyOGM1NGIxNjk4YjRiZmMyYjRjYjBkMjQ2NjkyMzYzYjZjZjRiNDdkOGE0ZjVhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2I4MTZmNDZlNDUyMmJhZTc2NjczYmUyMjFiOTM2NjgxNTVmYTM5ZmRkNjNjZmE5ZmZmZDEyNGUzMTg5M2U3YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L464-L464",
+          "version": "repo-lines-v1:sha256:e3910082df9cceb801a9346908b48c9ff045c824dd287d9e722d41860259f292:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM5MTAwODJkZjljY2ViODAxYTkzNDY5MDhiNDhjOWZmMDQ1YzgyNGRkMjg3ZDllNzIyZDQxODYwMjU5ZjI5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM5MTAwODJkZjljY2ViODAxYTkzNDY5MDhiNDhjOWZmMDQ1YzgyNGRkMjg3ZDllNzIyZDQxODYwMjU5ZjI5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE2YWFlMjEwYzliZDg5NDQ1Mzc2ZDY4NGE5NzA3NmJkNTcyNDAyN2UzODE3YzM3ZDAyYmIxODg3MDczZWEzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJkYzNhNWY3NmE2YjIzNzMzN2NkZDg1MzBhMTE1ZTkxMTlkNGQ0ZGQ3YWE1NjZiZjU5ODcxOGNkYTZiMzllMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L51-L51",
+          "version": "repo-lines-v1:sha256:e874944f9ca3c7322b7a38e52f915692efa562af140247dfde999da65fba672f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg3NDk0NGY5Y2EzYzczMjJiN2EzOGU1MmY5MTU2OTJlZmE1NjJhZjE0MDI0N2RmZGU5OTlkYTY1ZmJhNjcyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg3NDk0NGY5Y2EzYzczMjJiN2EzOGU1MmY5MTU2OTJlZmE1NjJhZjE0MDI0N2RmZGU5OTlkYTY1ZmJhNjcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDY1NzRkYmQzM2Y0MGQ1NjY1ZWVlZjA2OTI2OGQyZGJlZjEwNDgxYTY1MmQ0YTg4MWU3YmVlZGRiYWI1MzFhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzZhMWQ4ODY2MDQ1ODg1NDFiMzg2MTM1ZDQ5MTFmMjMzNDc4MzE3NmMzNzgzNmZlOWZjOTY1YjhhNmRmYTdlOSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L77-L77",
+          "version": "repo-lines-v1:sha256:8cd769947c2558b763a427afca97e756663826b7f4ba4dc7ff0c48dbd8b09436:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNkNzY5OTQ3YzI1NThiNzYzYTQyN2FmY2E5N2U3NTY2NjM4MjZiN2Y0YmE0ZGM3ZmYwYzQ4ZGJkOGIwOTQzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNkNzY5OTQ3YzI1NThiNzYzYTQyN2FmY2E5N2U3NTY2NjM4MjZiN2Y0YmE0ZGM3ZmYwYzQ4ZGJkOGIwOTQzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzhlMGVlNmNhMDMyOGViZTQyNWI0OTNiNzk5NmIzMDM5YzA4MzQ4YzZkNGEwOTFlZjNhYWUxZGVkZjE3NjUxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFkY2ZlZDI2M2EwZGRkOGM5OGVkMTBmOTY5ZDc0ZmUyMTE0ZWM2OGQyZDk1YzczYTJiNzE2MTg0ZDg2YzA4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_880b05d28af24b8cb40d1dd321c0dc97",
+      "statement": "tliInHistory, tliOfPointInHistory, and tliSwitchPoint resolve which timeline owns a WAL point and where a timeline switch occurred.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L527-L527",
+          "version": "repo-lines-v1:sha256:6e549fbc9b34c8fe6828a24c628b5b84c55925b734c32f7bea206cc43f18f37a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmU1NDlmYmM5YjM0YzhmZTY4MjhhMjRjNjI4YjViODRjNTU5MjViNzM0YzMyZjdiZWEyMDZjYzQzZjE4ZjM3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmU1NDlmYmM5YjM0YzhmZTY4MjhhMjRjNjI4YjViODRjNTU5MjViNzM0YzMyZjdiZWEyMDZjYzQzZjE4ZjM3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFkNjIwODM0ZDA0NzNiZWI3MGJkZDc0ZmZiZjRhNDBlY2YxNzUwMjQ4NWJmZjAyMjFkMjViMGJmZDcwNDgyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzZmUyNjNhODUzZjVlNjA0OTcyMzk0OTNhZTg4ZjgwOTJhYWU0OTgwODExZjUyYjEyNjg2Y2FiOGUwYWZlZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L545-L545",
+          "version": "repo-lines-v1:sha256:18bd6eae36a114359865911519cd5cb5fd00fbc8cc856aa130218e19f6dabe37:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMThiZDZlYWUzNmExMTQzNTk4NjU5MTE1MTljZDVjYjVmZDAwZmJjOGNjODU2YWExMzAyMThlMTlmNmRhYmUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMThiZDZlYWUzNmExMTQzNTk4NjU5MTE1MTljZDVjYjVmZDAwZmJjOGNjODU2YWExMzAyMThlMTlmNmRhYmUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjViYzUwZDEwYmQ1NDEwMzJlMmI3MGY0M2IwOTI0YjEyNTQ3YWNkODlkMjhmOWVmNTQ2NDg5ZWY0NjAwMjdmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzZmUyNjNhODUzZjVlNjA0OTcyMzk0OTNhZTg4ZjgwOTJhYWU0OTgwODExZjUyYjEyNjg2Y2FiOGUwYWZlZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/timeline.c#L573-L573",
+          "version": "repo-lines-v1:sha256:292a9e1ce49a83b253770510896ac451316557221567b88967917939c6ef1a7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkyYTllMWNlNDlhODNiMjUzNzcwNTEwODk2YWM0NTEzMTY1NTcyMjE1NjdiODg5Njc5MTc5MzljNmVmMWE3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkyYTllMWNlNDlhODNiMjUzNzcwNTEwODk2YWM0NTEzMTY1NTcyMjE1NjdiODg5Njc5MTc5MzljNmVmMWE3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDhiNjA0OGM1OTZhMzUxYTNiMWZiZDE1ZGJlZmI5OGIwYjQwMTdiNDc4NzA1ZDA3MzcxYjE3ZTA4MWJhYzdiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzZmUyNjNhODUzZjVlNjA0OTcyMzk0OTNhZTg4ZjgwOTJhYWU0OTgwODExZjUyYjEyNjg2Y2FiOGUwYWZlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_14174eb729d5466490dcae7986d81f29",
+      "statement": "ApplyWalRecord checks timeline changes and dispatches WAL replay through the resource manager rm_redo callback; xlogrecovery_redo separately handles recovery-related XLOG records.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L1913-L1980",
+          "version": "repo-lines-v1:sha256:c4e63eb6e83abb88a681657baa8baf044f2c6022d61625b758f0ba1d2aefc745:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiYWZjMjA0OTVjZjNjZTdlMTZkNDQyNjQ4ZWE4YmJiNmVjMTQzN2NjOGRkOTU3ZTJiNTE5MDAwYWJlMDlmNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyZTE1NmZiYTBlZDY2MDY5NTA3MDBkOWVmNWE0ZWU5ZTk1ODk3NzcwM2UyMThhMWVkZTQ1YWU1ZWVlMGZhYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNjhkZGNmMjEwMjNiZTYyMGZjYjQxNGMzYWI2YWY4YjkxMzM5MjFhMzRmNDE3Nzg2N2M2OWI1ZDIxOWJiYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a37b455513e44b18d29e9398fd4b6b7",
+      "statement": "WaitForWALToBecomeAvailable chooses between archive and streaming, XLogFileRead/XLogFileReadAnyTLI read segments possibly from any timeline, and CheckRecoveryConsistency marks when read-only queries become possible.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2165-L2165",
+          "version": "repo-lines-v1:sha256:4d8b22b72f61b4eafaece26f0587c5f5df5e2e61c10ca174ff4bbe9f5819c66d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ4YjIyYjcyZjYxYjRlYWZhZWNlMjZmMDU4N2M1ZjVkZjVlMmU2MWMxMGNhMTc0ZmY0YmJlOWY1ODE5YzY2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ4YjIyYjcyZjYxYjRlYWZhZWNlMjZmMDU4N2M1ZjVkZjVlMmU2MWMxMGNhMTc0ZmY0YmJlOWY1ODE5YzY2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQxMzk3NjJlYTU5NTEzZDc2MmFhMzc4ZDEyZTU4ZjBiYmYyMzE2ODUzYzBlMWVhNDM4ODQ3NGEyNmYxMjgzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyMDg5ZWY0ZDE4ZTBlZGJkNmQ3ZWYyZWVkODAyNGQ2OGJiZTAxMjUzMzdlMDljMjJmMjJlOWMxNmIzYTY1NSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L3550-L3550",
+          "version": "repo-lines-v1:sha256:3a8f581bb57c7af86bc8e133bbac4d751872a7ac3c9f20061e8555a94f280b25:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2E4ZjU4MWJiNTdjN2FmODZiYzhlMTMzYmJhYzRkNzUxODcyYTdhYzNjOWYyMDA2MWU4NTU1YTk0ZjI4MGIyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2E4ZjU4MWJiNTdjN2FmODZiYzhlMTMzYmJhYzRkNzUxODcyYTdhYzNjOWYyMDA2MWU4NTU1YTk0ZjI4MGIyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDljZTUwZGJkZjc0MjQzZmVkZDk5MDUyYjkxMzI5NjNiYTAxYzkyNzNkMzgxZjY0OTkxYjc1MGU5N2MxYmZjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY5OTE3ZDhiZmJhNmZkYzlkZGQ5ZWE5ZDcyZDg0MmNiYmJhNTI1M2M0ZmE0ODQzNWY5NDIzYzJlNmIwZGNiMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4218-L4218",
+          "version": "repo-lines-v1:sha256:ee270074e135ee1be1fb5c975ed985a69a9b183375e2c679a96c91015dc648ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyNzAwNzRlMTM1ZWUxYmUxZmI1Yzk3NWVkOTg1YTY5YTliMTgzMzc1ZTJjNjc5YTk2YzkxMDE1ZGM2NDhhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyNzAwNzRlMTM1ZWUxYmUxZmI1Yzk3NWVkOTg1YTY5YTliMTgzMzc1ZTJjNjc5YTk2YzkxMDE1ZGM2NDhhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTA3N2NjYmFhNmI5ODMwOTQyMDUxZDU2MWI4NDljNjhmM2Y5MGRiZGRlMzkzYTczMjBlYjJjYTA0YzE1MzZjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmI3YzVlMTE2YzUyYzRlMmFmN2YwZDUzNzdhZGRmNGVmYjI2OTFlMGU5MzBiOWQzMDAwNTE2ZjQ0ZjgwY2FlMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4300-L4300",
+          "version": "repo-lines-v1:sha256:86ddcdfd215c00da4dfd59ff1cfbfb4af6b9bd918cb9f0e17b4c64b14f69ffd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZkZGNkZmQyMTVjMDBkYTRkZmQ1OWZmMWNmYmZiNGFmNmI5YmQ5MThjYjlmMGUxN2I0YzY0YjE0ZjY5ZmZkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODZkZGNkZmQyMTVjMDBkYTRkZmQ1OWZmMWNmYmZiNGFmNmI5YmQ5MThjYjlmMGUxN2I0YzY0YjE0ZjY5ZmZkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzllMDA2NGJmOTU2Y2FmNTM0MjUxNjk5NDFmZDU1ODAwOGM1M2NlZmE4Nzc2NDUxMjI1NTM0NzhmZjYyZjljZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU4MDY3OGRmNWUxNDNhODA2ZGNlOTNkMjM1NjljNDcxNWQ0MWQzMGU3N2I1OTcxOGFkOWYwZTBhZTZhMTMxOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99823cd932a34b9494186b090647f5b7",
+      "statement": "The WAL reader selects the timeline with XLogReadDetermineTimeline, and rescanLatestTimeLine notices a newer timeline during cascading recovery.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4131-L4131",
+          "version": "repo-lines-v1:sha256:d5037ae2d220cbe83b939ec1974f9d411da34c9234a81ff1eff815cec0874991:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUwMzdhZTJkMjIwY2JlODNiOTM5ZWMxOTc0ZjlkNDExZGEzNGM5MjM0YTgxZmYxZWZmODE1Y2VjMDg3NDk5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUwMzdhZTJkMjIwY2JlODNiOTM5ZWMxOTc0ZjlkNDExZGEzNGM5MjM0YTgxZmYxZWZmODE1Y2VjMDg3NDk5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzFiMjJlMWU3ZTU0Yzk4NzgyODA5MjMwNDBlYWFkNzI5MmQ1MmUyOGNhM2FmZTBkOWE4YTZmYWMwM2ZjNjIxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTc4ZmE0ZmM2MWNmNGZhYjE3YmU2NjE3M2YyYmIwNjE1MGM2YjhjODE4MDQyM2M5ODk1ZDM4ZmRiZmYyY2QyZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogutils.c#L731-L731",
+          "version": "repo-lines-v1:sha256:3f8aca4c6afdb4696e7eaf11ee46f8a9ea19eba29833a6520d6d1338ae4cc04f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y4YWNhNGM2YWZkYjQ2OTZlN2VhZjExZWU0NmY4YTllYTE5ZWJhMjk4MzNhNjUyMGQ2ZDEzMzhhZTRjYzA0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y4YWNhNGM2YWZkYjQ2OTZlN2VhZjExZWU0NmY4YTllYTE5ZWJhMjk4MzNhNjUyMGQ2ZDEzMzhhZTRjYzA0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNjZjc4ZmZkOTQyNjQzZjNlOWNkMDBlMjIwZTFkMDZiN2VjZGMxNTM4NzNiODNmYmMwNjJhY2U4ODVkNjgzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzgxNjU4NTFhMmU1Y2E4YjE0MzI1YmQ3MDRlZTViMTFiZmMyYWFjNmE0NWM5MzlkNTgzNWQzMzJkOTEzZmNmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd9fab97a49a48a2b87132a2ae418597",
+      "statement": "Local WAL page reads are served by read_local_xlog_page and read_local_xlog_page_guts in xlogutils.c.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogutils.c#L869-L869",
+          "version": "repo-lines-v1:sha256:a1599905b1f9e722fffc36cf9180201dbe4b43564d64ca5ece03fb24e6345e5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE1OTk5MDViMWY5ZTcyMmZmZmMzNmNmOTE4MDIwMWRiZTRiNDM1NjRkNjRjYTVlY2UwM2ZiMjRlNjM0NWU1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE1OTk5MDViMWY5ZTcyMmZmZmMzNmNmOTE4MDIwMWRiZTRiNDM1NjRkNjRjYTVlY2UwM2ZiMjRlNjM0NWU1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI5ZGJiODA3YTZiMWE2OWQwOGE4NWY4ZjMzNzQ4OTgwOTY2ZGIzZjk1OTFiMjVlN2Y4NGMwZGI3NjQ5ZjcwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTg4OTJkYWMyNDdhZThhNDlmYjA0Y2FlMWUwY2RjN2FlMmM5ZjdlNDhjZjE1MDQ4YTU5N2YzOTM4YzMyZWI3ZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogutils.c#L893-L893",
+          "version": "repo-lines-v1:sha256:b510cc0fd4e3511a8ba95d6eb5c6a18a5c6cfa90fc9ad3c2bc1900925c4144ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUxMGNjMGZkNGUzNTExYThiYTk1ZDZlYjVjNmExOGE1YzZjZmE5MGZjOWFkM2MyYmMxOTAwOTI1YzQxNDRlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUxMGNjMGZkNGUzNTExYThiYTk1ZDZlYjVjNmExOGE1YzZjZmE5MGZjOWFkM2MyYmMxOTAwOTI1YzQxNDRlZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRhMGRjZTc5ZGI3ZGUzNzkwOWNjZWI3YTVlYWVlYWM5MDM3MzNhMGUzN2VmMWUzOTQwM2ZjYjBmYjAzYjc3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTlhNzI5NjRiNWE0YTNiYzIzZjI1MGYxZmFlN2FlNTIxODUxYTU3NGZhMzI0ZGYzNjk4OGE0ZDgwNmY5ZWMyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a220bad5a9a2499290ab6f7732573b7b",
+      "statement": "Recovery targets are evaluated by recoveryStopsBefore/recoveryStopsAfter, with getRecoveryStopReason reporting why recovery stopped.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2564-L2564",
+          "version": "repo-lines-v1:sha256:d105d18ea0a201ff1b7476e5ed52f576ede390e001ccbf4f770dcf459f2b3147:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDEwNWQxOGVhMGEyMDFmZjFiNzQ3NmU1ZWQ1MmY1NzZlZGUzOTBlMDAxY2NiZjRmNzcwZGNmNDU5ZjJiMzE0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDEwNWQxOGVhMGEyMDFmZjFiNzQ3NmU1ZWQ1MmY1NzZlZGUzOTBlMDAxY2NiZjRmNzcwZGNmNDU5ZjJiMzE0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM0N2M5M2NlMjVkNTg4ZTA1ZjAxOGQzNzYzNDAyN2NhNDc4N2I2M2Q2ZWJjNTQ0MzQyNTM2ZDFhYjk0NTI5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU3NGMyM2Q0ODgwN2U3MGRjZjg1ZDAzMjM0YzFhYzdkM2Y1ZDhhODE5YWMyYmYxZDA2ODE5ZWJjNGI2ZGI1MiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2717-L2717",
+          "version": "repo-lines-v1:sha256:68499744d78f576a4fd9332574891b525121a2965c2ff7b81bb30e9cf9ee4d2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg0OTk3NDRkNzhmNTc2YTRmZDkzMzI1NzQ4OTFiNTI1MTIxYTI5NjVjMmZmN2I4MWJiMzBlOWNmOWVlNGQyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg0OTk3NDRkNzhmNTc2YTRmZDkzMzI1NzQ4OTFiNTI1MTIxYTI5NjVjMmZmN2I4MWJiMzBlOWNmOWVlNGQyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDYzYmQ1YWMxNzc5YTgxMDg2MjExZTFmYmJlYTYyMDkyNjQ5NDZjMWE3ODBhMjgxZTE1NDc5YTEyZWNmNjRmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTEwM2Y2MjYyMWY1OTg3NmU2NGJmNzlhOTE2NmU0YWZlYTMyNTFiYzU3OWQ4MmQ0ZWVjNjU3ZmNjM2ExYzc1YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2877-L2877",
+          "version": "repo-lines-v1:sha256:59acddd2685d6833f0706489d45822c8b0a8d61f1ffc461b7ad9d615258eb2f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlhY2RkZDI2ODVkNjgzM2YwNzA2NDg5ZDQ1ODIyYzhiMGE4ZDYxZjFmZmM0NjFiN2FkOWQ2MTUyNThlYjJmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlhY2RkZDI2ODVkNjgzM2YwNzA2NDg5ZDQ1ODIyYzhiMGE4ZDYxZjFmZmM0NjFiN2FkOWQ2MTUyNThlYjJmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzBjMmU4ZmI2NzE3NWI2MjBlNDY2YTA0NmJjZGM4YmY1NGNmNzU1M2Q4NDgxMmJjOWYzZTY4MjFiYzc4ZDFkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJkMzU2OTk2OThiNDIxZjg5Nzk0NzM3NWUyNzBiZjViOGUxMzU0OGRkYmRmZDYyYzFhYmU4ZTJjYzQ2M2QyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_69bfbe9b93574309b4d7418a82e59ca6",
+      "statement": "Recovery can pause via recoveryPausesHere/SetRecoveryPause (reported by GetRecoveryPauseState) and can lag via recoveryApplyDelay honoring recovery_min_apply_delay.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2916-L2916",
+          "version": "repo-lines-v1:sha256:1d69a1a6c68495293505cfbb31dfb547cdf3c76c8d4e4864a508a1b0cba4a565:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ2OWExYTZjNjg0OTUyOTM1MDVjZmJiMzFkZmI1NDdjZGYzYzc2YzhkNGU0ODY0YTUwOGExYjBjYmE0YTU2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ2OWExYTZjNjg0OTUyOTM1MDVjZmJiMzFkZmI1NDdjZGYzYzc2YzhkNGU0ODY0YTUwOGExYjBjYmE0YTU2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzQ0YmJiYWUxZjU5NjQwODY4MWMwNTcyOTA5NDE2NjkxZDI1ODM5YzdkOTdlZmQxZmU2MzBjZDUyNzc5MTI2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTA5ZDYxOTg1MTE4NDhlMTE0ZjFiMjk2YjQ2ZGE0ZGRkZmNkZTI0MDFkZTQ3NTU3ZGU5OGMwOTYyMWI4OWEzMSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L2973-L2973",
+          "version": "repo-lines-v1:sha256:b313b9d034242301babbdf72647647ac1b2bce4b6b89b07e291cbab41b2d64cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMxM2I5ZDAzNDI0MjMwMWJhYmJkZjcyNjQ3NjQ3YWMxYjJiY2U0YjZiODliMDdlMjkxY2JhYjQxYjJkNjRjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMxM2I5ZDAzNDI0MjMwMWJhYmJkZjcyNjQ3NjQ3YWMxYjJiY2U0YjZiODliMDdlMjkxY2JhYjQxYjJkNjRjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQwOWVhYjFhMTAwMDQ0ODExZDgxZjNlOTI4ZDIwMDQzNjQ5YjA0Y2FiZGIyZTkzNzhjNjgzMDg5NzdkNjIyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQyNjNiNzk2ZjYyYTY5NzEyMDJhZWE2MTc3ZTlmNTA3OWQ3OWQ5MDZmOGZmYTQ4ZDA5MDA0ZmEwMTI4NTNiYyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L3061-L3061",
+          "version": "repo-lines-v1:sha256:beb765946681bb52182315a7d54a23b0e87c31dc62cda1eb131468cead98ecf2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmViNzY1OTQ2NjgxYmI1MjE4MjMxNWE3ZDU0YTIzYjBlODdjMzFkYzYyY2RhMWViMTMxNDY4Y2VhZDk4ZWNmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmViNzY1OTQ2NjgxYmI1MjE4MjMxNWE3ZDU0YTIzYjBlODdjMzFkYzYyY2RhMWViMTMxNDY4Y2VhZDk4ZWNmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2IxOWZlMzgxMzc5M2FmYTRjZjkzYmVjZDdkNTkwZTNjYjJjYjllZDRiNTIzZDRjOGYwYWY1YWE1NzNlNzc3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmE1NDE0ZTgxNWJhZWI2N2U2OTI3YjExOTE5OTJkZjhjMTc0ODI1YWU1ZTk1ZGFmYTY0NGU2MmYyNmI4M2E2YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L3081-L3081",
+          "version": "repo-lines-v1:sha256:888b50d689f5e92de93e104ebdecca801181f8744575ae69f380abc44de25069:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODg4YjUwZDY4OWY1ZTkyZGU5M2UxMDRlYmRlY2NhODAxMTgxZjg3NDQ1NzVhZTY5ZjM4MGFiYzQ0ZGUyNTA2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODg4YjUwZDY4OWY1ZTkyZGU5M2UxMDRlYmRlY2NhODAxMTgxZjg3NDQ1NzVhZTY5ZjM4MGFiYzQ0ZGUyNTA2OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2UxMWI1NDUyNzhiMzU0OTc3NGE5NjBiODRkZThlOWUyMDkxNDExYzNjYmViZTZhOGNkYTFlZTM0OGM0MjZiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRhMzk0MjE2Y2Q4NjczMWI2MDA0M2MyOTRmMWQ2ZTMxOGNhYzBjOGUwYTdiMGFmMjY5NTgyNzVlMzhiZDU0NCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L98-L98",
+          "version": "repo-lines-v1:sha256:0f768f11f82fa3679d918aff3abed779c19e2be303fc840712a08bec002dbdf2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY3NjhmMTFmODJmYTM2NzlkOTE4YWZmM2FiZWQ3NzljMTllMmJlMzAzZmM4NDA3MTJhMDhiZWMwMDJkYmRmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY3NjhmMTFmODJmYTM2NzlkOTE4YWZmM2FiZWQ3NzljMTllMmJlMzAzZmM4NDA3MTJhMDhiZWMwMDJkYmRmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzYzODZmNjBmNWFkM2M2ZDZkMDBiZDMxNzdhNDkwNDU1OGIxOTUxNjkzOTRiOTk0NjYzZDMxOWY5YzNlMGNiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA2OGFkZGMxMzE4YjZhOTY5MDMwM2RiZmJhMjFkNDE2ZTEyZjExNGRiMzEzNDRlMjNiMGFiZjE4MDJmZTFiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a79202a0dca14886867fbee6c3661927",
+      "statement": "A standby bounds recovery work with restartpoints: RecoveryRestartPoint records the last restartable checkpoint and CreateRestartPoint flushes via CheckPointGuts and logs with LogCheckpointStart.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L7450-L7450",
+          "version": "repo-lines-v1:sha256:f5663e20b6e2124478d789a2a047d4a8ddfd0dc30c9bdaa4c3d89524baac0191:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjU2NjNlMjBiNmUyMTI0NDc4ZDc4OWEyYTA0N2Q0YThkZGZkMGRjMzBjOWJkYWE0YzNkODk1MjRiYWFjMDE5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjU2NjNlMjBiNmUyMTI0NDc4ZDc4OWEyYTA0N2Q0YThkZGZkMGRjMzBjOWJkYWE0YzNkODk1MjRiYWFjMDE5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjdjODQ1MDQ1YmZhZmMzZDc0ZGJlNGNiZjJkZjk4MDA4Yjc4MzU0MDVjMzkyYTUxMDA1ZDQzYzY0NTU4MWMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2NhZWQzNmNmOThjNzFiOTE5ZGIxMDY3MTE5NzRmYzNjZDZmYjI0MGI0ODg5N2Y1ZDc2ZDFkMzE3NjZlNDZlMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8387-L8387",
+          "version": "repo-lines-v1:sha256:9d5a9645445df72ea2f49aae37fabfe0932a4056e7a57937904bf0ba0fad052d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ1YTk2NDU0NDVkZjcyZWEyZjQ5YWFlMzdmYWJmZTA5MzJhNDA1NmU3YTU3OTM3OTA0YmYwYmEwZmFkMDUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ1YTk2NDU0NDVkZjcyZWEyZjQ5YWFlMzdmYWJmZTA5MzJhNDA1NmU3YTU3OTM3OTA0YmYwYmEwZmFkMDUyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODI1NWFiY2UzMTc4YjM1YTNjYTM1MDI5YTBjNjZjMjEyNjJhNGZhZjg5ZWE2MzFmNDg3NDkwN2FkODNkZDFkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzcwZDNlNDI1MzQzNmI3YTdiYzBiNmI0MTJmYWZiYmQ2ZmRlOTA3YWI0Mjc5YTk4ODFjYzU3MjcwM2YxODk1OSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8434-L8434",
+          "version": "repo-lines-v1:sha256:96d61df042ea542e01f3d1563d08d7f70950a8827c9918b90acfdeb689f62b8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkNjFkZjA0MmVhNTQyZTAxZjNkMTU2M2QwOGQ3ZjcwOTUwYTg4MjdjOTkxOGI5MGFjZmRlYjY4OWY2MmI4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkNjFkZjA0MmVhNTQyZTAxZjNkMTU2M2QwOGQ3ZjcwOTUwYTg4MjdjOTkxOGI5MGFjZmRlYjY4OWY2MmI4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJjMzFiNGQ4NjQ5Mjk5MGNlYTljYTVhNjNhZWU1ODQ0ZTM2ZjU3M2NmYzRjOTQzODZiNzc2MGM3Y2YxYzQ0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZiOGNiYjY3MzE2ODA1ZjY5YjIzNmMzNWYzZTBmMzgyZmEzN2JhMTNiN2E2YTc1MTM0MzZmYmZjNzAzNjgxYiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8474-L8474",
+          "version": "repo-lines-v1:sha256:5538ecfc5b15a55f4707261e64de3b9f4ebc36b13cd5cf1d3668520633b51b3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUzOGVjZmM1YjE1YTU1ZjQ3MDcyNjFlNjRkZTNiOWY0ZWJjMzZiMTNjZDVjZjFkMzY2ODUyMDYzM2I1MWIzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUzOGVjZmM1YjE1YTU1ZjQ3MDcyNjFlNjRkZTNiOWY0ZWJjMzZiMTNjZDVjZjFkMzY2ODUyMDYzM2I1MWIzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjI4MDIzOWZmMzVkOTk5ZWFiMjczZGFkY2MyOWJjMzA5MmI5NDQ0MmI2NTU3YTZiNmI0YjUzZTBkN2I3OTZjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDFmYjdiMzQyMzUyYzJkNjRmM2IzODYzOWJjMTU2ZDY2NTRjZGYzMDg0MzcxNDg3YmIzNWM0ODcxNTczN2EyNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_059af43acf8f433e94efa794e09f34a8",
+      "statement": "CheckForStandbyTrigger recognizes a promotion signal/request and calls SetPromoteIsTriggered; readRecoverySignalFile instead reads standby/recovery signal files during initialization.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4457-L4473",
+          "version": "repo-lines-v1:sha256:2dedeb2c1c67245b3cd0b0dc0d46850cb9adacc9ca72f68481c8716f8db76b17:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExOTE2YmQ4NmQ4NzI2NzAyMDRkYzUxMGY5NjU1MmExMDI5ZDFiMzdkYTdjYzdiNmYxYjk2OWZhYTc0MTYzNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjYWY4ZTQxM2RjNWEyNmNhZGJiZTBjNTBhYWJmOTE2ZDk0MTNhN2Y0NTQ3YzhlMGJmYjNmYzYzM2EyYTVhMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhNGNkYzRiMWM1YjlkZTI1MDAwOWY1NWQ1MTVlYTljZjk2NThlOWYxNzlmZjlkMzM4NTVmMTA5OTgyMDVhMmMifQ"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L994-L1066",
+          "version": "repo-lines-v1:sha256:824e50cafba2388abd8369b5ec30f379446251bfd14e97a1d8fadfa49e23e831:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNGI0MWQ4YTVhZDA0ZmE3Y2QxN2VmMzUxNjU1MWY0ZGNiYjViYmVhMWFmNjcwZmU0NTliYjI3OWZhYjkxNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjMyOTRmMjgxMDUxN2E1ZTQwMjJjNjg0MWM4ZDM0YTI5OTdkYTI1M2M3ODRjMTMxZDhkYjE1OGFjNzM5NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YjJhODlmZGUwMTk5MzNlYmNjNjVmMmM2ZDM3MzBiN2FiODA4NGZjNzA4ZGE2NmJiNDYzYmExOWZkM2JkMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3N2YyMWEyYzQ2NDVmOGY1OTc1NTMyMTI5Mjc1MDZmODBhM2VlOWIzY2M0ZjE2OTFkZTljMDFkYTYyOWNhYTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

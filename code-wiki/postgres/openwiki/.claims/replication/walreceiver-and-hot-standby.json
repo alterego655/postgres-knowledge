@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:eba3cccfd0a3f6141600d4367758c223d81b3119124de260abaab252ca71a795",
+  "claims": [
+    {
+      "id": "claim_ad7ddb67b98947ac82051bf94517f492",
+      "statement": "The startup process requests streaming with RequestXLogStreaming, and the WAL receiver runs WalReceiverMain, waiting for a start position with WalRcvWaitForStartPosition and fetching timeline history with WalRcvFetchTimeLineHistoryFiles.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L155-L155",
+          "version": "repo-lines-v1:sha256:7165a6bf2405885dc01a825a27700fb7055bc3dbdec07408f57cc81a72d87b44:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE2NWE2YmYyNDA1ODg1ZGMwMWE4MjVhMjc3MDBmYjcwNTViYzNkYmRlYzA3NDA4ZjU3Y2M4MWE3MmQ4N2I0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE2NWE2YmYyNDA1ODg1ZGMwMWE4MjVhMjc3MDBmYjcwNTViYzNkYmRlYzA3NDA4ZjU3Y2M4MWE3MmQ4N2I0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDkyZmRhNDFiODI4NzRkYjU5Mzc3ZmE3ZDFmZDQxOWYyODQ5NDY2Y2NjNTMyNzBhNDljYjIzZjk5NGMwZTAzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU2ZDlkZTA2YTI2MGEwYWE4ZGZlMzc1ZWZhODdmZWM3Y2Q2NWI4MzFhZjBjNWE4YTRlMzA1ZjAzOTI2YzY2OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L746-L746",
+          "version": "repo-lines-v1:sha256:f0e13dd640a75f26e314f88ebe621bf1ca1d49e39e37b15a97c9f93de0c41335:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBlMTNkZDY0MGE3NWYyNmUzMTRmODhlYmU2MjFiZjFjYTFkNDllMzllMzdiMTVhOTdjOWY5M2RlMGM0MTMzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBlMTNkZDY0MGE3NWYyNmUzMTRmODhlYmU2MjFiZjFjYTFkNDllMzllMzdiMTVhOTdjOWY5M2RlMGM0MTMzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JjZWYwZmRjZDIzMjAxNWQ4YmRlOGYyZDEzMDcyYTI0NDU2OGE3NTU4ZmNmZmU2Y2IyZmM1NjI4YWYzNzczYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzI3NDExMTdhMDZmOTU5ZjRhMzJkZjRiZGUyYjNjMmQ3YmI4YWEzNjkwOTE5ZThkYzVlYTliOWVhYTY4MDJkNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L826-L826",
+          "version": "repo-lines-v1:sha256:c10b1ecf54faf1be655a174d6f910ced590ac7ce0b91057524f4cec04df27823:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzEwYjFlY2Y1NGZhZjFiZTY1NWExNzRkNmY5MTBjZWQ1OTBhYzdjZTBiOTEwNTc1MjRmNGNlYzA0ZGYyNzgyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzEwYjFlY2Y1NGZhZjFiZTY1NWExNzRkNmY5MTBjZWQ1OTBhYzdjZTBiOTEwNTc1MjRmNGNlYzA0ZGYyNzgyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzEwZmFlMDRkOTljNDZkYTgwZjM2ODQ1YTY4YzdiMWQ0MjAxYWI3MDMyZmY4YTZkNjViMDBlNDQ3ZTE0NTc1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIwZDI3YTRlOTRmOTM1NmEyNGJlMTRiZmUwZWQ5MTFkNWQ0MjFjNWViNDdmMjI0MGFmYzgzNzI2ZDczYTRlMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L261-L261",
+          "version": "repo-lines-v1:sha256:df2e2d858abd2344828de260b687eafc5a04f3b19c54a56b7f8d0f9038ae0b48:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyZTJkODU4YWJkMjM0NDgyOGRlMjYwYjY4N2VhZmM1YTA0ZjNiMTljNTRhNTZiN2Y4ZDBmOTAzOGFlMGI0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyZTJkODU4YWJkMjM0NDgyOGRlMjYwYjY4N2VhZmM1YTA0ZjNiMTljNTRhNTZiN2Y4ZDBmOTAzOGFlMGI0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWUyYmE5YTdjODBmMDkxNmM2YjZlMjhmN2UxOWEwMjVkMjEzYWY2Mjc0Y2MyMWM0NmIxYmIxNzViZjM4YmMwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTU0OWQ1ZjcwMjA2NWQwM2NmZmU5MmMxYTE0YjczNWI3NDdjYzE3NWJjZTRiZTFjOTY1Y2Q0OTRmYjZlNWIwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08175162b93f49449b8c94b561d4bfea",
+      "statement": "The receiver decodes messages with XLogWalRcvProcessMsg and writes, flushes, and closes WAL with XLogWalRcvWrite, XLogWalRcvFlush, and XLogWalRcvClose; ShutdownWalRcv and WalRcvDie handle shutdown.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1093-L1093",
+          "version": "repo-lines-v1:sha256:313e1de7b6f43a1a30ed5c3313188f43739d78fc60df0d4ebaf06660b84c0d0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEzZTFkZTdiNmY0M2ExYTMwZWQ1YzMzMTMxODhmNDM3MzlkNzhmYzYwZGYwZDRlYmFmMDY2NjBiODRjMGQwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEzZTFkZTdiNmY0M2ExYTMwZWQ1YzMzMTMxODhmNDM3MzlkNzhmYzYwZGYwZDRlYmFmMDY2NjBiODRjMGQwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmVkMmI1M2MyMWYwNDExYzViZjJhOWQ3M2VhMDFhZTYwOGQyYzIwNDNlODdiYmY0MTc5MjU1MmI0MmE4MWZmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTk1NDQ5NDlkZjE5ZTJjNTRiOTJmYmUwMmQ3ZjEzMjMwNDU3YmZjNWMxNDFjZTZjYTM2NjY1OTQ2NGQ3MTAwNiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1154-L1154",
+          "version": "repo-lines-v1:sha256:c15e6cff060d593db5734582b94a2241858bdbacf4ae11ed67b81d9e7ece7938:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE1ZTZjZmYwNjBkNTkzZGI1NzM0NTgyYjk0YTIyNDE4NThiZGJhY2Y0YWUxMWVkNjdiODFkOWU3ZWNlNzkzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE1ZTZjZmYwNjBkNTkzZGI1NzM0NTgyYjk0YTIyNDE4NThiZGJhY2Y0YWUxMWVkNjdiODFkOWU3ZWNlNzkzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTE2NGZmY2RjOGJmZWE5ZmJkMmFjMTEwYzZhOTg1MzliM2RiMWQ0Y2IxOGM2YmRlZWEzZGQ2N2E3ZDRlYzZhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGI0NzdhODZkYmQ4NmJkMzZiMGQ5YjkzNTBlOWM0Njg2ZDBjZDg1MjNlZGE3MzE4OWMwNmYzNjNmOTBiYWQ3NCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L882-L882",
+          "version": "repo-lines-v1:sha256:02d42317b177e2b375ab4090a685ed1823ebe507894b03c33400bdcd6637e93a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDJkNDIzMTdiMTc3ZTJiMzc1YWI0MDkwYTY4NWVkMTgyM2ViZTUwNzg5NGIwM2MzMzQwMGJkY2Q2NjM3ZTkzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDJkNDIzMTdiMTc3ZTJiMzc1YWI0MDkwYTY4NWVkMTgyM2ViZTUwNzg5NGIwM2MzMzQwMGJkY2Q2NjM3ZTkzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTcxYWQ0MWJjMDhhYTA4MTllMGRjODY5YTViMDAzYTE4ZmNiYWM3OTRlYmYyMDMyOTc4OGQ3NTVhNTUyZGJmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWVmMjAwYzFjZTMxMmMyZjc4MGM1YzA4ODk1YWJjZGQ4N2FiMmNiODI5MjljOTlkZDA4MWViYzU0MGUwMzM3OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L921-L921",
+          "version": "repo-lines-v1:sha256:fdaf80f56de0d902881d22e86cdff0174e600644cc2f58453511deb71a6adda3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRhZjgwZjU2ZGUwZDkwMjg4MWQyMmU4NmNkZmYwMTc0ZTYwMDY0NGNjMmY1ODQ1MzUxMWRlYjcxYTZhZGRhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRhZjgwZjU2ZGUwZDkwMjg4MWQyMmU4NmNkZmYwMTc0ZTYwMDY0NGNjMmY1ODQ1MzUxMWRlYjcxYTZhZGRhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzdlNTBjNWU2ZTlkMTcwNGUyOTczMTQ0YjZkOTE5MzA2ZThmYWZiNTYyNDMxYWUyMjFiMmQyYjBiOTQ0NGFkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDA4ZDQ4Y2U3ZmY5MzU0ZDc3NWI1ZTJmMmQ4ZDlhNTFkYmVkNzZiZmRmYzJlZTM1MGQyNTFmMjYxMTVkZTI3YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L992-L992",
+          "version": "repo-lines-v1:sha256:f739dda217ead64495b42f1301fe5d305e8f748f55d4ac0611823fdae6d569f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjczOWRkYTIxN2VhZDY0NDk1YjQyZjEzMDFmZTVkMzA1ZThmNzQ4ZjU1ZDRhYzA2MTE4MjNmZGFlNmQ1NjlmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjczOWRkYTIxN2VhZDY0NDk1YjQyZjEzMDFmZTVkMzA1ZThmNzQ4ZjU1ZDRhYzA2MTE4MjNmZGFlNmQ1NjlmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmEwODg5Y2NlMDZkZGZiZWZjODNjZDI3YjA1MjdmZDA1MDMwYjQyOWY3NWQzM2M1ZmIyNDAxNmNjZTA1NjMwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhhMzU3MWRjY2Y2MzI4ZWU0OGEzNzczYTBkZGY5MTk3MzZmNjg4ZjczMDMzMmU1Y2E1YzQ3OWYzNzg1ODlmNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L193-L193",
+          "version": "repo-lines-v1:sha256:d2ae679028d0dbe3f37b16aef7c7a184f7e1108d3dd5958ef77defb114619ba8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhZTY3OTAyOGQwZGJlM2YzN2IxNmFlZjdjN2ExODRmN2UxMTA4ZDNkZDU5NThlZjc3ZGVmYjExNDYxOWJhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhZTY3OTAyOGQwZGJlM2YzN2IxNmFlZjdjN2ExODRmN2UxMTA4ZDNkZDU5NThlZjc3ZGVmYjExNDYxOWJhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkxNmRmZjQ0MGYwMDA4ZWFiMWMzNjQ1NjkxMjFkOGRhMzVlOTg5YzVmNDBkNmFmYjIzOWQxYWRmNGFhYWM0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzVkZWU2Y2ExNjNiMmI4MWNjNjJhMzQ2N2Q4MDk1ZDFiMWYxZDBmNDVkNzllNGYzMGQ1ZGViNzhhYWIyY2VkMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_939283c36ee244be82aefd203139f3e6",
+      "statement": "Distinct positions are tracked: received/written via GetWalRcvWriteRecPtr, flushed via GetWalRcvFlushRecPtr, and applied via GetXLogReplayRecPtr, with GetXLogReceiptTime reporting the receive time.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4590-L4590",
+          "version": "repo-lines-v1:sha256:1902d7f0126209967c040520d68b5a7ba863010b3a2ee0343dd93431163a608f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwMmQ3ZjAxMjYyMDk5NjdjMDQwNTIwZDY4YjVhN2JhODYzMDEwYjNhMmVlMDM0M2RkOTM0MzExNjNhNjA4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwMmQ3ZjAxMjYyMDk5NjdjMDQwNTIwZDY4YjVhN2JhODYzMDEwYjNhMmVlMDM0M2RkOTM0MzExNjNhNjA4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODkxMDI3YmVjMjQwYzJmMTI0N2E0MjIyNjIxZWY3MTFkNTJmMGNlNmJhYTMwMzJiNTA0OWQxOTk1YzU3ZjFlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MjcxZWYwOTc1ZTdjYWZkMGUwMjFkYmY0ZDU0ZjhmYjE4YjUzM2I1MDcwMTMxYzUxNjc4OTZhYzBjNWRhOSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L4693-L4693",
+          "version": "repo-lines-v1:sha256:8b81a8eb4f52e67395bb44102a354574f0700f089689ebfbfbedb941a8c2cc5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGI4MWE4ZWI0ZjUyZTY3Mzk1YmI0NDEwMmEzNTQ1NzRmMDcwMGYwODk2ODllYmZiZmJlZGI5NDFhOGMyY2M1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGI4MWE4ZWI0ZjUyZTY3Mzk1YmI0NDEwMmEzNTQ1NzRmMDcwMGYwODk2ODllYmZiZmJlZGI5NDFhOGMyY2M1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEzMWJmMTZiMzhlZjM2ZTAyMGM1MzBlNmMwMzEzMTk0MTZiNDA3MzlhMDg1YWZlYTAwYzU5YmQyYzc3YjhjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBhMGM1ZTk5ZjViMGM4NzY2MzY2YzRmYTFjYzAxMDgyNTgxODQ0NThmZGY4ODY3ODA2YmUyY2ZjOTg1MzYwZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L357-L357",
+          "version": "repo-lines-v1:sha256:800b00410cf8994f867af8e7a4a64b7276b3a4711f3006037f7aa5acbb35fc2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODAwYjAwNDEwY2Y4OTk0Zjg2N2FmOGU3YTRhNjRiNzI3NmIzYTQ3MTFmMzAwNjAzN2Y3YWE1YWNiYjM1ZmMyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODAwYjAwNDEwY2Y4OTk0Zjg2N2FmOGU3YTRhNjRiNzI3NmIzYTQ3MTFmMzAwNjAzN2Y3YWE1YWNiYjM1ZmMyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRkYTNhNDE2NjM5NThiYmI5ODA4OWM0YmJjZDQ5ZjNjMTYwNmM5NmJjNzc4NDkyMTRjZTI1NWU2NWE1NTM3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWYzNTg0ZjA4MjdhZDdjZDM5ZjI2MDAwYTBjYjg1ODE2NTQ4MGZiOGY4YjcxZDYzOTEzZmExZGQ0M2E1ODA2ZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L381-L381",
+          "version": "repo-lines-v1:sha256:c68bddfc7c30b721909dbdc9fae16885df1c61302afd5db273d3d79cd5fd0afa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY4YmRkZmM3YzMwYjcyMTkwOWRiZGM5ZmFlMTY4ODVkZjFjNjEzMDJhZmQ1ZGIyNzNkM2Q3OWNkNWZkMGFmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY4YmRkZmM3YzMwYjcyMTkwOWRiZGM5ZmFlMTY4ODVkZjFjNjEzMDJhZmQ1ZGIyNzNkM2Q3OWNkNWZkMGFmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMxMGUyNTI5OTAzNzBmMWRhYTFhOTNhYWQxZjhjYmExODA0MjUxZjkyYjJiNzg5MzRlYjZhYzBmMjIxN2ExNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU3ZGQ4NTdlMmZjMTZmMmZmN2M3MGUyZjExYWM3MWMzMTdmYjc5NWFmNWUwZjAxMTUwOTI4Y2NhODgwZTI1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1803139d5504432a8d1c89697096a681",
+      "statement": "GetReplicationApplyDelay and GetReplicationTransferLatency derive apply lag and transfer latency from those positions.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L393-L393",
+          "version": "repo-lines-v1:sha256:a60b5ed4d7551e28b07231a1a34f9e1779896b2e4d9f6783081cf9fb24c2c34f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwYjVlZDRkNzU1MWUyOGIwNzIzMWExYTM0ZjllMTc3OTg5NmIyZTRkOWY2NzgzMDgxY2Y5ZmIyNGMyYzM0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwYjVlZDRkNzU1MWUyOGIwNzIzMWExYTM0ZjllMTc3OTg5NmIyZTRkOWY2NzgzMDgxY2Y5ZmIyNGMyYzM0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRkMTU3ODYwMmZiZjhlMDdlNjNiZmJkOTE3NDVlMTgyNTY4Y2Y2MDU3NDhkOGM0MGRkZWQwNzFkNWQ4YTEyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzZlM2UxOGI4MGY3ZDQwNGRiNDM0OGU1ZWM4NGYxYzY3ODZmNTgzNTM4NTEzNGRiZTQ4ZTFhODI4YmI1YWU1ZSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiverfuncs.c#L423-L423",
+          "version": "repo-lines-v1:sha256:6d8e3316e538952996f9340968514514b98e760a375f349ab88dfcf178e0f4fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ4ZTMzMTZlNTM4OTUyOTk2ZjkzNDA5Njg1MTQ1MTRiOThlNzYwYTM3NWYzNDlhYjg4ZGZjZjE3OGUwZjRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ4ZTMzMTZlNTM4OTUyOTk2ZjkzNDA5Njg1MTQ1MTRiOThlNzYwYTM3NWYzNDlhYjg4ZGZjZjE3OGUwZjRmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDg4NTg2YjhhMTU2ZjkwMTk5MTZlMzFiMWE2NTFmZTZiOGFmZWJiZGU2OTJkMDVmY2U0OTczODI5MzQ3NjAzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDdhOWE0ZjhhOWRkYjcyNDY2ZjQ0ODNlMjYzMTgwMThkYmM3N2RlYTg2ZGM0OWUxYzA0NjcwZjE0NDczYzhiOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_91cdcdf1cc97477088c1202127c0d6da",
+      "statement": "The receiver sends progress with XLogWalRcvSendReply and hot-standby feedback with XLogWalRcvSendHSFeedback, while ProcessWalSndrMessage handles the primary's reply and WalRcvComputeNextWakeup/WalRcvRequestApplyReply schedule replies.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1216-L1216",
+          "version": "repo-lines-v1:sha256:86d98547d90ba5919d85cee68b87e7f997a122a498e1b1289456f5e647f95eec:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZkOTg1NDdkOTBiYTU5MTlkODVjZWU2OGI4N2U3Zjk5N2ExMjJhNDk4ZTFiMTI4OTQ1NmY1ZTY0N2Y5NWVlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODZkOTg1NDdkOTBiYTU5MTlkODVjZWU2OGI4N2U3Zjk5N2ExMjJhNDk4ZTFiMTI4OTQ1NmY1ZTY0N2Y5NWVlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2IyZmJjNDE2ZDI1NDI1Mjc0M2VhMDRlY2Y1OTNlMDMyMjhlZGIzN2JiYjQ2ODA5OTA5MzllNWNiYWYxZGFjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdiN2QzNzY0NDA3MzQ1YTlhNGVhYmUzNjY2NDhlOTI2ZDA0NmY0ZmQ1ZGViYWU4NjlmODVkMmM3NmIzNmU2NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1289-L1289",
+          "version": "repo-lines-v1:sha256:efb272b1dbfa6b868b7511b29c0ad470ad2e2879bcc11bdae712f2927f2baf41:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWZiMjcyYjFkYmZhNmI4NjhiNzUxMWIyOWMwYWQ0NzBhZDJlMjg3OWJjYzExYmRhZTcxMmYyOTI3ZjJiYWY0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWZiMjcyYjFkYmZhNmI4NjhiNzUxMWIyOWMwYWQ0NzBhZDJlMjg3OWJjYzExYmRhZTcxMmYyOTI3ZjJiYWY0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg2Y2JjNjEyOTFmNDE1NzNjZmQ2MDAzODg0OTFjNjkyMzQxMTcxZDk5NzZhODBhZTVjZGMyZWU0MDdjM2QyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2NhNGZmOWIwZTg0OTU5ZDBjMDIxNzk4ZGNiZGI0YzgxMGU1YmNiYjcwYjE5ZjJiMmQ0NjVmYWFlZjJlNjQ4MSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1385-L1385",
+          "version": "repo-lines-v1:sha256:81d6192a094b5081b02b9adc9357967bf79d4772f7c7092fe3edd97317b02b27:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkNjE5MmEwOTRiNTA4MWIwMmI5YWRjOTM1Nzk2N2JmNzlkNDc3MmY3YzcwOTJmZTNlZGQ5NzMxN2IwMmIyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkNjE5MmEwOTRiNTA4MWIwMmI5YWRjOTM1Nzk2N2JmNzlkNDc3MmY3YzcwOTJmZTNlZGQ5NzMxN2IwMmIyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWViNDJiZTAwZjRjNGRjMzY0YjEzOTBjNTdkZDAzZDMzMGUyOTczNzQxYWQ4NWMzYzEzYzg4YzUyNDMzY2VhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjM4MTk4ZmZmYzY2YzRkNzUxMzI5ZjBhMGUyZmZlYWUxNjFhMGRiODNmM2NlZTRlY2I2ZDRhNjYxNGY3MzE0YyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1437-L1437",
+          "version": "repo-lines-v1:sha256:8a658c0e9690ded097e381bcf67d19085fcad91b06ef15caaecaa110b259bd97:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2NThjMGU5NjkwZGVkMDk3ZTM4MWJjZjY3ZDE5MDg1ZmNhZDkxYjA2ZWYxNWNhYWVjYWExMTBiMjU5YmQ5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2NThjMGU5NjkwZGVkMDk3ZTM4MWJjZjY3ZDE5MDg1ZmNhZDkxYjA2ZWYxNWNhYWVjYWExMTBiMjU5YmQ5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzI1Y2Y4Y2Q2ODI4ODc3YTQ3YjM5MWY3MWI0NGJhOTA4NjZkYWIzZjQ3N2RmMzRkMTUwYjM2ZmIyMjNmN2E5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWUyOThkNjFkODMxY2E3YWE3MjdlNDk2YzJhZWZkODViZTRiYzlkMjcxNzI1ZjBiOWI0YmQ5N2E3YmE4YzgwZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walreceiver.c#L1478-L1478",
+          "version": "repo-lines-v1:sha256:2fb0724e24786207b4ee400d0eb16ff42a6dbc74943fb5b534ecdf1758fae285:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZiMDcyNGUyNDc4NjIwN2I0ZWU0MDBkMGViMTZmZjQyYTZkYmM3NDk0M2ZiNWI1MzRlY2RmMTc1OGZhZTI4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZiMDcyNGUyNDc4NjIwN2I0ZWU0MDBkMGViMTZmZjQyYTZkYmM3NDk0M2ZiNWI1MzRlY2RmMTc1OGZhZTI4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWExYWQzZjNlZDE3M2U3MjdjYjVmNGYxZjQwNDhlMzFiODhlMTIwMThlYTJlZDllYjg3NTFmOGU4ZmE5YjJiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjJkMGJiNTk4Yjc1MTE4MDYwYjJhZDkwNmE0OTExYmFiMDNiMzYxY2EyODkzM2I0ZDg4MTMyZDcyMzgwOTlkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3d08cc2c1ff4e60a21284c8d539f6da",
+      "statement": "Recovery conflict reasons are RECOVERY_CONFLICT_LOCK, SNAPSHOT, LOGICALSLOT, BUFFERPIN, STARTUP_DEADLOCK, and BUFFERPIN_DEADLOCK.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/storage/standby.h#L40-L65",
+          "version": "repo-lines-v1:sha256:4e104a87c9238049e33d78404affd1157b0b233d83873c08500793ad8ace17f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYzE0NGM0ZTMwOGI4ODZiYWY3MTg3NTIyN2M1M2JjMDc4ZjlkYzYzMTVkNmI0ODg5ZjBmZGRjYjFhNzc5MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNGU5NzZmM2IxNDRhODczN2YxMjU4YzNjNmIwZjI4MjE3ZDhmOTZiZjI0ZmFmODU1NTFmYzkwYWQyYjExODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMzljNTFmZmMzNGQxMzNjNjMxZDRhMjliMTgyZWE4M2YzODc0NTUxMjliZGQyY2I5MjRlOTBhYzA1YTRlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZDRmMTZkMTM3Y2JhOGExMjNmNTA1MTNhYzI2MjIyMzg5ZjA4MjE4NWExYzI3ZjFjNzBjZWYxOGZkNmU4YjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1415e7dc7834423a0cc9cd02909afff",
+      "statement": "Recovery conflicts are resolved by ResolveRecoveryConflictWithSnapshot/SnapshotFullXid, WithVirtualXIDs, WithTablespace, WithDatabase, WithLock, and WithBufferPin (with SendRecoveryConflictWithBufferPin for the buffer-pin case).",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L361-L361",
+          "version": "repo-lines-v1:sha256:b1d3f94a2b805cb138f3dc5ad6da2b5820eb94df516f9dce00216037ebba0136:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkM2Y5NGEyYjgwNWNiMTM4ZjNkYzVhZDZkYTJiNTgyMGViOTRkZjUxNmY5ZGNlMDAyMTYwMzdlYmJhMDEzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkM2Y5NGEyYjgwNWNiMTM4ZjNkYzVhZDZkYTJiNTgyMGViOTRkZjUxNmY5ZGNlMDAyMTYwMzdlYmJhMDEzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI3OGM4MzM1MmI1NzZlYWUzYzQxYTQ1NDI1MjFmOWEyMzk3NWUyOGRhZGI4NjkxMzQ1NzI2NTBlZWI0MzBlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRkOTFjZTc4Y2E0NjEyYjUwNmNkODlhZTVkNGIwMWFmMmE3MDEzZDk1ZTE5YTEwZDE4ZjllMDM2MGJiZjc0OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L470-L470",
+          "version": "repo-lines-v1:sha256:45b0328c122d3b40b82314c2ab65f105970c1ca6c0e39321cd2e7cbe65e1f8ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViMDMyOGMxMjJkM2I0MGI4MjMxNGMyYWI2NWYxMDU5NzBjMWNhNmMwZTM5MzIxY2QyZTdjYmU2NWUxZjhjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViMDMyOGMxMjJkM2I0MGI4MjMxNGMyYWI2NWYxMDU5NzBjMWNhNmMwZTM5MzIxY2QyZTdjYmU2NWUxZjhjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTkxYTM3NWFlZjMwMDI5MDEzM2Q1NmU1YTY4NWEyMGNmNTkyOWRhYzFkODI3MjE2NzI0NWNlMmI0M2E0MDgzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWU1NmE0NDAyZWRmNTBmNTNmN2VlMzgwODY5YzllOWM2MWQ4ZDhhNmVhZTRiY2E1ZGExYjMzZDNiYTE3YTUzYyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L515-L515",
+          "version": "repo-lines-v1:sha256:920a1c8d3cc9020314aaa1dc7d0dd3b18086c355f2ded2f6c67647fdb489bebe:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTIwYTFjOGQzY2M5MDIwMzE0YWFhMWRjN2QwZGQzYjE4MDg2YzM1NWYyZGVkMmY2YzY3NjQ3ZmRiNDg5YmViZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTIwYTFjOGQzY2M5MDIwMzE0YWFhMWRjN2QwZGQzYjE4MDg2YzM1NWYyZGVkMmY2YzY3NjQ3ZmRiNDg5YmViZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU0ZmYyMTMzYzI3MTUxYzYyOGIyMTgwZjY2MjQ4ZWViMjYyZWU2OGZkYjk3MTdkNzA1MWUxZWQ3ODcyZjUzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGFiZjViZmY1NTIwMmQwZGVhZjgzMTZkMGM4MDdlODUyOWY0YTAzZjg4YjM4YjY2MzUzYmEwMjg4MGMyYjYwNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L542-L542",
+          "version": "repo-lines-v1:sha256:fb7905e8e3006b19185610ebd639dfbe3c0e977079f3f8dc455ba37358ff1119:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI3OTA1ZThlMzAwNmIxOTE4NTYxMGViZDYzOWRmYmUzYzBlOTc3MDc5ZjNmOGRjNDU1YmEzNzM1OGZmMTExOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI3OTA1ZThlMzAwNmIxOTE4NTYxMGViZDYzOWRmYmUzYzBlOTc3MDc5ZjNmOGRjNDU1YmEzNzM1OGZmMTExOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2ZDM3OTIyMmI1YTVjZWEzNTBiOTg0ODJjNmVlNjllY2E3NTYxMjEzYWM1ZDZmOWMzZTVjYzVkY2M5NzI1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTE0ZWI2ZDMxMWY0MGQyNmYwN2NhYTk3YzY0OTM0M2JmZWJkZWNlNjU2YjlmMTA2NjBmZGQ3Y2U5MzRlZGI3NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L572-L572",
+          "version": "repo-lines-v1:sha256:8d371929b2dc8f020c3036be9ed4599cf933a7ada07ec42be13b06e298cb9727:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQzNzE5MjliMmRjOGYwMjBjMzAzNmJlOWVkNDU5OWNmOTMzYTdhZGEwN2VjNDJiZTEzYjA2ZTI5OGNiOTcyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQzNzE5MjliMmRjOGYwMjBjMzAzNmJlOWVkNDU5OWNmOTMzYTdhZGEwN2VjNDJiZTEzYjA2ZTI5OGNiOTcyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2ZDM3OTIyMmI1YTVjZWEzNTBiOTg0ODJjNmVlNjllY2E3NTYxMjEzYWM1ZDZmOWMzZTVjYzVkY2M5NzI1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk5MTYwZTExYWY1ZWI1MmY4MzdkYzNmNmYyZWJkYjU0ZGM1ZDIzZGQyZjE1NGRjZjg1ZDNmOWZlZTE1OWE5NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L626-L626",
+          "version": "repo-lines-v1:sha256:996a0a3f954af448778c91f99ea0611800325c34a2c01b4d71d9cc0210f9c3a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk2YTBhM2Y5NTRhZjQ0ODc3OGM5MWY5OWVhMDYxMTgwMDMyNWMzNGEyYzAxYjRkNzFkOWNjMDIxMGY5YzNhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk2YTBhM2Y5NTRhZjQ0ODc3OGM5MWY5OWVhMDYxMTgwMDMyNWMzNGEyYzAxYjRkNzFkOWNjMDIxMGY5YzNhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQ0NTI3ZjYzZTUwMzI3YzJkZDU4MDQ0N2NkZGZiZWZjZGZmY2E5NjhiNzRmYjkzNDVmZDc0NmU2YjAzMWY0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTcwOGUxY2RlY2YyOWZlNjZlMWQxZmI0YTBmZTBlMmZhNzI0ZmNmZDAxYWUxZWZiZWNhZTFkMjAxOThjOGIzYyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L819-L819",
+          "version": "repo-lines-v1:sha256:b5bfd613d7e3aff3b1e5c99faf4fc788f1c2e298c79b99456d181483cd0356c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjViZmQ2MTNkN2UzYWZmM2IxZTVjOTlmYWY0ZmM3ODhmMWMyZTI5OGM3OWI5OTQ1NmQxODE0ODNjZDAzNTZjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjViZmQ2MTNkN2UzYWZmM2IxZTVjOTlmYWY0ZmM3ODhmMWMyZTI5OGM3OWI5OTQ1NmQxODE0ODNjZDAzNTZjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBiYzU5ZWU2OWU0NmNmMmE4ODE3NWEwZmRlYzZjMDNmMmY2Njc4Y2ZhNjY5Mzc1NjI2M2MyZTQ5ZDJiMWYxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzJkMDUxMWUzYWRjY2RiNTU0NWJhNjlmM2QzNmVlZjczNDZhZGRjMjgwMWZlODdmZjQ0OTE2ODI4ODgyMTg0ZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L923-L923",
+          "version": "repo-lines-v1:sha256:2cb6b58e4f3dbe16448fc7ac47ebebbbca917bfd436c3b590dc8c9fd10d44fab:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNiNmI1OGU0ZjNkYmUxNjQ0OGZjN2FjNDdlYmViYmJjYTkxN2JmZDQzNmMzYjU5MGRjOGM5ZmQxMGQ0NGZhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNiNmI1OGU0ZjNkYmUxNjQ0OGZjN2FjNDdlYmViYmJjYTkxN2JmZDQzNmMzYjU5MGRjOGM5ZmQxMGQ0NGZhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmMxZDQwOTczMTUyOTY3ZjdhNDE3YzBjZTI4MzUyYTIwYmJkOTI2OTkyMTY2ZDBkMWEwZjZlZmE4MjlkYjgxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNlZjY4NmI1M2EyZTdlNzE3MDlhYjYzNTRkOTAyNzk5MGE1M2UxOGJiNzMyZThmZjNiMzRkNjcxOTc1OGI0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b2bf6ae88bc4e5c877a42065ed2664c",
+      "statement": "Conflict deadlines are enforced by WaitExceedsMaxStandbyDelay using GetStandbyLimitTime, and conflicts are recorded by LogRecoveryConflict; deadlock/timeout handlers include CheckRecoveryConflictDeadlock, StandbyDeadLockHandler, StandbyTimeoutHandler, and StandbyLockTimeoutHandler.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L1000-L1000",
+          "version": "repo-lines-v1:sha256:e68f4c31ef99c6c860e5be11f0f77b854c52cf60464adff9c66f6b2c43e8d896:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY4ZjRjMzFlZjk5YzZjODYwZTViZTExZjBmNzdiODU0YzUyY2Y2MDQ2NGFkZmY5YzY2ZjZiMmM0M2U4ZDg5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY4ZjRjMzFlZjk5YzZjODYwZTViZTExZjBmNzdiODU0YzUyY2Y2MDQ2NGFkZmY5YzY2ZjZiMmM0M2U4ZDg5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFlNTY3OTA2Y2M3M2EyNzJiOGEzNTJiNzZkYzBiZjhiNmY5ZWViNWM5M2UyMDM5NzEwNzEzNjI1ZGYwZjc3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIxY2Q5ZWQzZjc5YjZiYjkwYzE5YTY0M2M4YTg0NWE3MWM5ZTQ5ZjFkMzBjZWIxNDQzMGQ1YjcxNmI1NWRmNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L202-L202",
+          "version": "repo-lines-v1:sha256:31856d4f8dc4229d56965ed5d0ff4e21994f026cee9522dc8e8cae646606eef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE4NTZkNGY4ZGM0MjI5ZDU2OTY1ZWQ1ZDBmZjRlMjE5OTRmMDI2Y2VlOTUyMmRjOGU4Y2FlNjQ2NjA2ZWVmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE4NTZkNGY4ZGM0MjI5ZDU2OTY1ZWQ1ZDBmZjRlMjE5OTRmMDI2Y2VlOTUyMmRjOGU4Y2FlNjQ2NjA2ZWVmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg5OWZiZTdjOTcyODUxNjc4OGIxZmNlNjdlYmZkYWEyODI3N2RjNmIxY2I4MjRkMjM1YTI5MzM3MGY0YzkxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg4OTAzNWEwYjdiZjU1NGFiN2ZhMWE2NTlkMDA5YjZlMjQ4NmRkM2E4MWRiNzk2YWQ1YWFhNDgxNzBkNWNlNCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L235-L235",
+          "version": "repo-lines-v1:sha256:20bcad1c1b78761fbdf059721cb0cba74985345898a3804b1eed14c647302a9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBiY2FkMWMxYjc4NzYxZmJkZjA1OTcyMWNiMGNiYTc0OTg1MzQ1ODk4YTM4MDRiMWVlZDE0YzY0NzMwMmE5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBiY2FkMWMxYjc4NzYxZmJkZjA1OTcyMWNiMGNiYTc0OTg1MzQ1ODk4YTM4MDRiMWVlZDE0YzY0NzMwMmE5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjU2ZTdjMGFjMjhiNWVlZTEyZmE0ZWE5MDBjYWEwYTZmODBiM2U1YzRkOTZjZjJhNjEyZmU2YTkyYzdmMzg2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM1YTM2OTk3MTc4NWM5ZmIyNzk2ODAzMDM1MTgzMGI1ZWU1NjgxMTU3ZmNmMTRmNjg2YTJmZjRjZjZmY2E1MiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L275-L275",
+          "version": "repo-lines-v1:sha256:d7271a1473f32034001c9ddfead0061e46317eb8f18e948384137201086554fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDcyNzFhMTQ3M2YzMjAzNDAwMWM5ZGRmZWFkMDA2MWU0NjMxN2ViOGYxOGU5NDgzODQxMzcyMDEwODY1NTRmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDcyNzFhMTQ3M2YzMjAzNDAwMWM5ZGRmZWFkMDA2MWU0NjMxN2ViOGYxOGU5NDgzODQxMzcyMDEwODY1NTRmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNhNzFjY2ExMzJjNWExYWNjMTMyZGFlZmNhYjhiOGZiMjM5NmY3NmFjNzY0NWQzOTllNGE3ODhiOWY5OTUwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjVmNGViOWZkYmNiYWNhNjhlMTAwNDhkYmMwNjVlYjgzZmJkMmI0YzZiMDM2MDcxZDFlYTY3NGQ0MzQyYzFkZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L951-L951",
+          "version": "repo-lines-v1:sha256:a498da2cb92e67eba55f3d44369d40591414b132f3d24be73bd7ddd9c7e06293:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ5OGRhMmNiOTJlNjdlYmE1NWYzZDQ0MzY5ZDQwNTkxNDE0YjEzMmYzZDI0YmU3M2JkN2RkZDljN2UwNjI5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ5OGRhMmNiOTJlNjdlYmE1NWYzZDQ0MzY5ZDQwNTkxNDE0YjEzMmYzZDI0YmU3M2JkN2RkZDljN2UwNjI5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDE4NzFlMDAzYTljYWNmZDRlNWNlZDRkZTlmODM2ZjdmNDM1YTlkNGQyZWVhMmExZTRkMTRjM2Q0ZjBlNzAwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjRhYjY1ZmU4NjkxOTVkZDI4OWM2MGI1OTY3Y2VmMTE4YzIyY2UwZDY3NWQ1OGUxYTI2ZjUzZWRlMWM4ZmI3NCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L982-L982",
+          "version": "repo-lines-v1:sha256:e6d54f4e8aaf5e782a17847a5b05999cc92f426f9585dae87a448bcf5927b93a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZkNTRmNGU4YWFmNWU3ODJhMTc4NDdhNWIwNTk5OWNjOTJmNDI2Zjk1ODVkYWU4N2E0NDhiY2Y1OTI3YjkzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZkNTRmNGU4YWFmNWU3ODJhMTc4NDdhNWIwNTk5OWNjOTJmNDI2Zjk1ODVkYWU4N2E0NDhiY2Y1OTI3YjkzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzE1ODY3MWI5YWRkYmIzODQ3ZTNmYWJkN2ZlMjZhNGNkZGE5MmQwZTY5NDc0NDMzMGRjZTI1ZDQ2M2E5ZGYyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE2ZDNiMTNlYjUzYjljOTYwMDUzODM3MjBmOWVhMGJmNjIyYWMwN2NhOWY3NGE0ZjFlOTdkZGMyYjQ1OTJjZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/standby.c#L991-L991",
+          "version": "repo-lines-v1:sha256:d007d757c5b0c5803abeb53ce8d11977e6424beb13863ac08e04d486c47819ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDAwN2Q3NTdjNWIwYzU4MDNhYmViNTNjZThkMTE5NzdlNjQyNGJlYjEzODYzYWMwOGUwNGQ0ODZjNDc4MTlhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDAwN2Q3NTdjNWIwYzU4MDNhYmViNTNjZThkMTE5NzdlNjQyNGJlYjEzODYzYWMwOGUwNGQ0ODZjNDc4MTlhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM2M2Y2MjBjN2U3ZWQ5ZjFmMzY0YjcxMTUyOGQ3M2RlYzNkY2MzZTRiNDE4MDViZjA0MGNiNzcxYWE0MjAwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzNhYWE3MGVlOWEyYTkyMTdjMzViZGNmZGRjMWY2ODIxYTUwMjBhYzY4N2VmY2ZiOGI4ZTRhY2FjYTc3NmEyOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a7a45a2c98444ab82b9e09dd08d94b9",
+      "statement": "FinishWalRecovery stops the WAL receiver via XLogShutdownWalRcv before new local WAL records are written, preventing receiver writes from overwriting them.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlogrecovery.c#L1438-L1444",
+          "version": "repo-lines-v1:sha256:20ee5563dfe142be6b28b6ea010639d44af57c041b28f6d978625096ccc2f026:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ4ZTU4ZGI0MTE4NzhmNTYzODdlOWJmZWE1MzAxNjE4ODhjYTA5N2IxMDA4YmQ3MjgwNmE4Y2ZjYzc0ODE5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDA5ZGRhNTA1ODdhNTBkYmE4YzhiNzFiZjAxZDg0ZDdhNGUxY2FmOGQ5N2E1NTc2NTljNDMwOWJiYjA3ZDkxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjI3YTczNzE5YzdjZTZlMTM0OGQxOTVkYjJhMzAxMjVkNDc4N2M1NzRlODE5MTcxNjY3Mzk5OTVjM2IwNjE4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJiZmE3MGM4OTA2YzFlODkwOGYxZWY0NzJkNmY3ZjFjZDQzZDE2NDc1ZWI2OWJmNWY0NGNmMTUzM2I5MTk1YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

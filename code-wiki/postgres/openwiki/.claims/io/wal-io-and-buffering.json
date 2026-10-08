@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:47b4e91a78db92f27a71d0ec12510e7ba74f2b4e31ba08cc8703691e5539466d",
+  "claims": [
+    {
+      "id": "claim_cf971a51b1a145f192881e7c0cd0052e",
+      "statement": "XLogInsertRecord emits WAL records, reserving space in the shared WAL buffers with ReserveXLogInsertLocation.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L1206-L1206",
+          "version": "repo-lines-v1:sha256:5c434dd0e996092ae17cac4a6b052a737f9a5ec4e4bf70e1212333bfebbaaead:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM0MzRkZDBlOTk2MDkyYWUxN2NhYzRhNmIwNTJhNzM3ZjlhNWVjNGU0YmY3MGUxMjEyMzMzYmZlYmJhYWVhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM0MzRkZDBlOTk2MDkyYWUxN2NhYzRhNmIwNTJhNzM3ZjlhNWVjNGU0YmY3MGUxMjEyMzMzYmZlYmJhYWVhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTk5YmJkNTFhMjM5MmY0OWY3NTZjZWYzNzQzZTU1MWExMGIyYzYxMjYxNjNiYjEzMTQzMDM1NGQzMGI1ZGU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTJhYTA4NGU5OTIyMDRmYzBhZjczNTIzODE0NTEzYjkwZmM1YmRhZmYxOWUwNmU2OWU5NGVlZjE3ZDk3MGY3OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L838-L838",
+          "version": "repo-lines-v1:sha256:683d5a610241086a8375c373565bd08af7f239c0327e8bc7c9af5ddf7154a6e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgzZDVhNjEwMjQxMDg2YTgzNzVjMzczNTY1YmQwOGFmN2YyMzljMDMyN2U4YmM3YzlhZjVkZGY3MTU0YTZlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgzZDVhNjEwMjQxMDg2YTgzNzVjMzczNTY1YmQwOGFmN2YyMzljMDMyN2U4YmM3YzlhZjVkZGY3MTU0YTZlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZmNDY0MmYxZDkwYWM5NzM0Yjc4YzllM2Y3MGI4ZDlmZDhmYjdkMjg1ODVhMzExOGVhOGQ3ZTQ4ZDZhYjZjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMxZWQzNTFjNzEyY2Q4OTViY2QzNzNjNWFlYWRmZTk4OWQzMTZiNWJiMzQ0YmNlNWI1OTIzZmQwOGQyNGY5MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_15454bd04d564fd08cab099042ca6cfb",
+      "statement": "Concurrent WAL inserters coordinate through WAL insertion locks: WALInsertLockAcquire, WALInsertLockAcquireExclusive, WALInsertLockRelease, and WALInsertLockUpdateInsertingAt.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L1469-L1469",
+          "version": "repo-lines-v1:sha256:ca87dfdac7ba206e8f1184e0371c919b9445fafc901edb9ab9b06a1eec8741dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4N2RmZGFjN2JhMjA2ZThmMTE4NGUwMzcxYzkxOWI5NDQ1ZmFmYzkwMWVkYjlhYjliMDZhMWVlYzg3NDFkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4N2RmZGFjN2JhMjA2ZThmMTE4NGUwMzcxYzkxOWI5NDQ1ZmFmYzkwMWVkYjlhYjliMDZhMWVlYzg3NDFkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmVmYmZlOGFiNzNjZDJhM2I1M2JhN2U5MDg1NWY5OTY0NDE1MzcxOWJlZDU5MmNmODg3MDI3NjUzN2RjY2EzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ4OWZmY2M1MWNiMzhmNjkzNWM0YjZiZTIwYmNlYzJjYjYwNzNjZDlmOWRkN2M4MGUwYmJiYzg4MTBkYjg0YyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L1514-L1514",
+          "version": "repo-lines-v1:sha256:9d031590ebfaf3a0df45a9c728d9bede6d511400d1d4121b728cfddd4ad5eff9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQwMzE1OTBlYmZhZjNhMGRmNDVhOWM3MjhkOWJlZGU2ZDUxMTQwMGQxZDQxMjFiNzI4Y2ZkZGQ0YWQ1ZWZmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQwMzE1OTBlYmZhZjNhMGRmNDVhOWM3MjhkOWJlZGU2ZDUxMTQwMGQxZDQxMjFiNzI4Y2ZkZGQ0YWQ1ZWZmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwN2MyZTI1ODY0OGM4ZGJjNzZlMzE0Nzk4ZjRjMjYwOGU3ZjMxYzg3NDNhYmMxNzc3ZjBlNjU2YTRkOTNhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmU3YmQ3ZDYyZTgxZjg0YTQ4OTRjNjdhMWEwNmRiZGY0OTg5YjdhMDJhYzZjYjFjYjJjNDY2OWI2ODI2YjFmMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L1543-L1543",
+          "version": "repo-lines-v1:sha256:aed83bd3031d8987a18e9a2af934699ae53918fd1ff3aeaa7dc2046d75b79beb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVkODNiZDMwMzFkODk4N2ExOGU5YTJhZjkzNDY5OWFlNTM5MThmZDFmZjNhZWFhN2RjMjA0NmQ3NWI3OWJlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVkODNiZDMwMzFkODk4N2ExOGU5YTJhZjkzNDY5OWFlNTM5MThmZDFmZjNhZWFhN2RjMjA0NmQ3NWI3OWJlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk2NGMyZTQ3NjkxYWY5YjVjZDFiYjMzMTkxYjBmMGZhYjBhOTM2YjEwM2FmODRiYjFiY2Y1Y2M3NzRiYTdjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE4NzViMmYxZTMwNGRiMzAwNmQ1OWJkYjk5NDFjZTA5NmVhOWFiZjJjYzRmYTQyN2ExNDMzNmQyZDdlNGYzYyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L1569-L1569",
+          "version": "repo-lines-v1:sha256:636dd2c12d59b6004e4c3cfebfbd7f8352abe6d42edacb1cd4262fbc8f820a6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM2ZGQyYzEyZDU5YjYwMDRlNGMzY2ZlYmZiZDdmODM1MmFiZTZkNDJlZGFjYjFjZDQyNjJmYmM4ZjgyMGE2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM2ZGQyYzEyZDU5YjYwMDRlNGMzY2ZlYmZiZDdmODM1MmFiZTZkNDJlZGFjYjFjZDQyNjJmYmM4ZjgyMGE2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZhMmRiYTk5MjU2Y2VkMTA5ZDc1ZjNlOGY5YWQ1ZjIxMTIzOTNhMjdlZGU0ZDQ0Zjg4NmRmOWU0MjhjZTJkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE4NzViMmYxZTMwNGRiMzAwNmQ1OWJkYjk5NDFjZTA5NmVhOWFiZjJjYzRmYTQyN2ExNDMzNmQyZDdlNGYzYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ad77a480db2499aa19bc2819b389b16",
+      "statement": "AdvanceXLInsertBuffer makes the next WAL buffer page available when the current page is exhausted.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L2083-L2083",
+          "version": "repo-lines-v1:sha256:2bfc8dc783903e65fa726abd42e2e4767702d124753b2a83e97eaf216e9c0a4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJmYzhkYzc4MzkwM2U2NWZhNzI2YWJkNDJlMmU0NzY3NzAyZDEyNDc1M2IyYTgzZTk3ZWFmMjE2ZTljMGE0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJmYzhkYzc4MzkwM2U2NWZhNzI2YWJkNDJlMmU0NzY3NzAyZDEyNDc1M2IyYTgzZTk3ZWFmMjE2ZTljMGE0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGU3ZGJiNzE0MWZiYjA1MjcyYmZjZmI2ZWFmM2MzYWU3M2M0YmMwMzI4YjIxOWIzMmQzNzQxZTI0ZmYzMjI0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY0N2M1NGE5NGZlY2FmMmJlN2UxM2M1ODc4MTljY2FmZjVjZjQxMGE3ZTUxMWJkNWMwMDA2YTczNGZhYmFmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_323cb5d9124d410dad582223482e9dd4",
+      "statement": "XLogWrite writes buffered WAL to segment files, XLogFlush makes a record durable, and XLogBackgroundFlush lets the WAL writer flush proactively.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L2382-L2382",
+          "version": "repo-lines-v1:sha256:0fe5a95de9a0cf555c9447f61bb9b51f3e266e9cad6a9e05fdd1041bcf496bde:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlNWE5NWRlOWEwY2Y1NTVjOTQ0N2Y2MWJiOWI1MWYzZTI2NmU5Y2FkNmE5ZTA1ZmRkMTA0MWJjZjQ5NmJkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlNWE5NWRlOWEwY2Y1NTVjOTQ0N2Y2MWJiOWI1MWYzZTI2NmU5Y2FkNmE5ZTA1ZmRkMTA0MWJjZjQ5NmJkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJiYjNjYTQ1ODk4MWY4ZmY5YWFiNTM1MjFlMGZkZDcwNmQyYTlkYjZjNmMwYTFiZWM1NWEwNmUwNTU3OGU5MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM4ZGM3M2VjN2I4ODMxYTU5ZWI0Njg2ZGE4ZTEzN2I0YmRmNjBhYmNjNTBiM2U3YjQxZjU2YTNlMTViYzY4NSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L2861-L2861",
+          "version": "repo-lines-v1:sha256:83c3da7a6642873013e92fef3f49900b654d52c6c1d6b3c3c32c22de5c9dacad:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODNjM2RhN2E2NjQyODczMDEzZTkyZmVmM2Y0OTkwMGI2NTRkNTJjNmMxZDZiM2MzYzMyYzIyZGU1YzlkYWNhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNjM2RhN2E2NjQyODczMDEzZTkyZmVmM2Y0OTkwMGI2NTRkNTJjNmMxZDZiM2MzYzMyYzIyZGU1YzlkYWNhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ1YjBlMGI1NzE0M2FiZjY3NzdkMGIxMTE0YzVmOTE5M2ZkZGY3ZWQ3NDVhYjg3OTJlZDQ3OTg0ZDIyMmM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGFkNmZiMzEwNTQwYmM4ZjJjYWY4ZjgxNjg3NmNjMTcwYWRhZWRkZjg5OWMwZDI2ZjJjODg4MDBhYmU3ZjMzMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L3065-L3065",
+          "version": "repo-lines-v1:sha256:1b2a0bc110e387783eb40915cac3192ca122dfb9bf307f707263fc20858e5043:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIyYTBiYzExMGUzODc3ODNlYjQwOTE1Y2FjMzE5MmNhMTIyZGZiOWJmMzA3ZjcwNzI2M2ZjMjA4NThlNTA0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIyYTBiYzExMGUzODc3ODNlYjQwOTE1Y2FjMzE5MmNhMTIyZGZiOWJmMzA3ZjcwNzI2M2ZjMjA4NThlNTA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQxOTQwYjkxMzdjMTQ1ZmFlOWMzMTZkOTc2NzAyY2VhYTE3OWY1NTljZjY5YzRhNzFlYTJjNTY2ZmE0Y2E4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThkNDMzZDMyODdlZWExNGQ4MjkyYzI1ZGNkN2I3MmM2ZGZlNTkzOTBlY2JlZjY4MDBkYWZkZWRkM2FmNTM1MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfbd7797e43a4b11a47651ef804cfc1c",
+      "statement": "WAL segment open, creation, installation, and removal are handled by XLogFileOpen, XLogFileInit, InstallXLogFileSegment, and RemoveOldXlogFiles.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L3492-L3492",
+          "version": "repo-lines-v1:sha256:2001bfb8f1c16e4f73e693e7bf306dc60f407af318c1e0c09756c72d457c5c74:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjAwMWJmYjhmMWMxNmU0ZjczZTY5M2U3YmYzMDZkYzYwZjQwN2FmMzE4YzFlMGMwOTc1NmM3MmQ0NTdjNWM3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjAwMWJmYjhmMWMxNmU0ZjczZTY5M2U3YmYzMDZkYzYwZjQwN2FmMzE4YzFlMGMwOTc1NmM3MmQ0NTdjNWM3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjA0NWFmMmY4YjNjOTZmN2UzYjY5ZmFkYjZhZTU3YzJlNzM1Y2M4YzMxZGRhMGRjZmZiZDhjOTdhNjRlYzVhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTFlYWQxMmZmODVjYjA3N2ZhM2FiOWI4YzU0MTQyZjQ2MWI0ODk3YjFlYTgzYjkzMTViYTcxMTY3NTliYzM0YyJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L3675-L3675",
+          "version": "repo-lines-v1:sha256:bb91c834d6dce558445c2e78a7c67656cc7f5f1109bcebae99c2cf31d8c34142:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI5MWM4MzRkNmRjZTU1ODQ0NWMyZTc4YTdjNjc2NTZjYzdmNWYxMTA5YmNlYmFlOTljMmNmMzFkOGMzNDE0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI5MWM4MzRkNmRjZTU1ODQ0NWMyZTc4YTdjNjc2NTZjYzdmNWYxMTA5YmNlYmFlOTljMmNmMzFkOGMzNDE0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMwYzExN2I4N2RlNGE1ZDA5NDBhZTgxNThhM2RiZTM3ZTgwYjI0MjQ2NDcxNjkwMTZmMjVjNGY1MTg3NDlhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVmNmMzYTBlMzUyYmRiY2Y5ZWZkM2VjMGRkODRlNjkzZjNhYjQ4MGQyOTI0ZTdhNjIwMDk4MDY0NDEyODY5MiJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L3730-L3730",
+          "version": "repo-lines-v1:sha256:5cf13c31352a4d418a4e2fd6c1342ff03b3df32d9b27b09421adffc6d2e6a3aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNmMTNjMzEzNTJhNGQ0MThhNGUyZmQ2YzEzNDJmZjAzYjNkZjMyZDliMjdiMDk0MjFhZGZmYzZkMmU2YTNhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNmMTNjMzEzNTJhNGQ0MThhNGUyZmQ2YzEzNDJmZjAzYjNkZjMyZDliMjdiMDk0MjFhZGZmYzZkMmU2YTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk2YzdkZTg2MDNkNGY2NGViMGE4NTExMTNlNDM0OThjZDU0YjZmMGJiYmM1MDllNWE5MjcxNmU4NTAwMDA0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzhiYmY0OTBhM2Q4NmQxOTM2Nzc0ODlmZjEyODMwZDcwMWI2NDE4ZTU5NzlhZmQzNTIxOWE5ODA5MDc1YTFjYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L3977-L3977",
+          "version": "repo-lines-v1:sha256:7641c9e32fd4aadbce1be65fd1d31dadc833aedfe204b75a6e29ad7742e87d0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY0MWM5ZTMyZmQ0YWFkYmNlMWJlNjVmZDFkMzFkYWRjODMzYWVkZmUyMDRiNzVhNmUyOWFkNzc0MmU4N2QwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY0MWM5ZTMyZmQ0YWFkYmNlMWJlNjVmZDFkMzFkYWRjODMzYWVkZmUyMDRiNzVhNmUyOWFkNzc0MmU4N2QwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU5ZmE0YmExMWI5OGU4NmMzMjQ4MjMyNzAxNzAzMGNkYWQzM2RiNmRlYTllOTA5NWQzNjEwMjJkMmE4NWRhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDc0YWIwNTE4OGZmNDk2NWYxOTk4NWFkN2Y2N2ViYjY3NDM2NmVlMmNjMmQwNjcwNzZjYTM1YjAzNTMwNWRiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d792b40113394a9e87271078127803f6",
+      "statement": "WAL file names are built by XLogFileName and XLogFilePath with XLOG_FNAME_LEN equal to 24, and wal_segment_size is restricted to the 1 MB to 1 GB range.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/access/xlog_internal.h#L158-L158",
+          "version": "repo-lines-v1:sha256:49b27975ee5ed6ce7d16e05f79bd51ad660d1481c972cf02d08302722b884356:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDliMjc5NzVlZTVlZDZjZTdkMTZlMDVmNzliZDUxYWQ2NjBkMTQ4MWM5NzJjZjAyZDA4MzAyNzIyYjg4NDM1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDliMjc5NzVlZTVlZDZjZTdkMTZlMDVmNzliZDUxYWQ2NjBkMTQ4MWM5NzJjZjAyZDA4MzAyNzIyYjg4NDM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQwZDZhZjQ3YjMxZmQwZTBmMzA1NTM5Zjk0MzVjYjNmMTQ2ZDY0MTBjYmUyOTNiZGM5NTU5Y2U0YzVkZjA1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE4ZTczZGVhMmRjNDIxODlmYTc1MDUwNmEwYzM5MWMwMDkxNGI1OTJkODQ2ZTA4ZmEyOWUxZjc1NzkxODBiMiJ9"
+        },
+        {
+          "resource": "repo://src/include/access/xlog_internal.h#L165-L165",
+          "version": "repo-lines-v1:sha256:68ecee4319fd857626ec7188471150ac8f923d4bb49483dcd862f7b69928c9ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhlY2VlNDMxOWZkODU3NjI2ZWM3MTg4NDcxMTUwYWM4ZjkyM2Q0YmI0OTQ4M2RjZDg2MmY3YjY5OTI4YzliYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhlY2VlNDMxOWZkODU3NjI2ZWM3MTg4NDcxMTUwYWM4ZjkyM2Q0YmI0OTQ4M2RjZDg2MmY3YjY5OTI4YzliYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmVmMDM0N2VhM2VmZGQ5Yjc5OWI1N2Q0NzFhYThlNDBkZGU0OTM3MjljZjI3OTQ2MjRmNmNkYzQ4OTUwMDU3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk3ZmEzMDU0ZGI2OTYxNzMyNGIzNTMzZWQ1Y2Q1Mzg1ZWFlMDZmMDQyZWE0Y2E5YTM0MjE3MjBlYTNlZWMyMyJ9"
+        },
+        {
+          "resource": "repo://src/include/access/xlog_internal.h#L209-L209",
+          "version": "repo-lines-v1:sha256:343038ff6378276f42119684ca2922e4acdaa419905ef9db0a296417bd1261cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQzMDM4ZmY2Mzc4Mjc2ZjQyMTE5Njg0Y2EyOTIyZTRhY2RhYTQxOTkwNWVmOWRiMGEyOTY0MTdiZDEyNjFjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQzMDM4ZmY2Mzc4Mjc2ZjQyMTE5Njg0Y2EyOTIyZTRhY2RhYTQxOTkwNWVmOWRiMGEyOTY0MTdiZDEyNjFjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQ2ZWYzODhkZDZjYmE4ZGM3ZmVhN2EzYzMzOTNiNzhiMjg1ZTNhYjM4MzY1NjE3MmVlZDliZDlhZDllOGQzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEzNDY5OWY4NGNmMDIxYmRlMDM0ZTM0Zjk3N2MwNGQzOTUyNmQ2MTVhOWIwY2M5ZDA4ZDkyODYyMjZkYTY0NiJ9"
+        },
+        {
+          "resource": "repo://src/include/access/xlog_internal.h#L86-L86",
+          "version": "repo-lines-v1:sha256:b562af3524819219a780f9f1ff4a1eeb8988a7685211a37d5c00dbd181c78204:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU2MmFmMzUyNDgxOTIxOWE3ODBmOWYxZmY0YTFlZWI4OTg4YTc2ODUyMTFhMzdkNWMwMGRiZDE4MWM3ODIwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU2MmFmMzUyNDgxOTIxOWE3ODBmOWYxZmY0YTFlZWI4OTg4YTc2ODUyMTFhMzdkNWMwMGRiZDE4MWM3ODIwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I5MjQ0ZjlmZGEwODQ2MmY1OTM5OThhZWM3ZWE0ZjA1ZDBiOWU2NzFhZGQxMTZhZjgwYmM3NDA3Yjc2MzU3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM0OTgzNmMxYmZmYzZkYTIyM2YxMzYxZTYzZjJhMjFiMDlmMzE2MmZlN2M5NDczZjNlZTJjYzY0ZTA1MDcwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfe33c496319450a98720f8dcca4da03",
+      "statement": "CreateCheckPoint establishes the redo point before CheckPointGuts writes checkpoint data and performs queued fsyncs; afterward it inserts and flushes the final checkpoint record and updates the control file.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L7852-L7908",
+          "version": "repo-lines-v1:sha256:14ed326ba002677d38ee5230554a416e917f03a19c885e30277ec5d86fe0f6e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMDBlNTJiZDY5NWQ0M2U4ZWQ4OGVmNGY4YzMxM2Y0NzQxZDFhYTA5ODlmYjNmYjhmOGEyY2NhNWFmZWEyNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YTUxNDY5N2E2YjQ4NTgzMDYwNmZlZjc4Yjk3MGZkMmZlNDljOWMxNDI5ZTYxZWUxOTM5YjYwM2Q0ZmY4OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYWE2OTdjMjkwMzI5OGY3YTgwNDQ0YmZkOTVkMTZjZGE4NWI0NWRkMjFmZjRhZjE0NDNjOGIxM2IxMTdhMGMifQ"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8016-L8055",
+          "version": "repo-lines-v1:sha256:df21be8e28390aa29bdc445c4d81b2b8d20daaada1c216ff8a93232daf693d30:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmYWFhNmVkOTM5NDlkMzBjZGYzMTI5MzQzYzhhODJiYmIwYmNiYzVjOTJkOGZlMDU2OWUwZDEwMDM5Y2FjOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0NTkzYTJkMGM5M2RhNjg2NTJjNDc4ODIxMDljNWU4ODBjOWFmMDg1NWQ3Yzg5M2MwZGNmYTg2ZmE3NmQxNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZmI2ZTNkODgzNWQ1NjNhOTVlMDIyNDA1MDk1YjNjMWNkOTE4MGYwNTEzNzZkYmNiNmI1NDFlMzRjMmUyODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliYmU3ODY4NjBiZTg3ZDUwOWNjMGI1NzY0YjE2MThjN2QxYmRjNzI4YTNlMmE1YmE3MGRhODE2YWYxOTgxMmQifQ"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8086-L8141",
+          "version": "repo-lines-v1:sha256:d4768e482d6d97bc33392180c775ff5ac71599a30693657bf2f8efd483663c89:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiM2IyZGNhMTkzZWRiOTI5OTRjNWVhNWEzMWQ0MjdlMTRlYjkxMzFlM2ZiYmMzMWRmNWE5YzA5ZmI0MzE4MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjYTIyYjNjN2IwNjk2NWRlZGZhZjZlNGQ2YjU1MjFiNzBlMGYxYzQwNWM5NzdkZWE5MzUzMGRlMTc4ZDk3NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzOThhMTFiNzg3ZDhhM2RhNjgzMjQ5ZTk4YWU3MmEyNDE4MzkxMDVjOGJlN2IyZDEzOTgzNDNjYzQwZjY2MDkifQ"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L8383-L8421",
+          "version": "repo-lines-v1:sha256:0bfd340db66e235fc70e71e30e33e074369eeea044794027f64499a852479809:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiYTBmNGJiNmJlNjVkMWFkNzUwZDllYTg0NDI4MjYyNmYxYWY5NjY5MzcyNmYwZDcwYmNhMWQ5Yjk0ZWYzM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4M2E3YzYyMjBlMzM1OTQ2NTIwMGQwNmExYWQ3OGU5NWM4ZmNiM2NhM2NhMDA4ZTM5ZGI5ODVhZmNmNGRiYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzMzYzMzk0NzkzMTYyMDk2NWNlMmEyZWM1NDQwZWRiNjNlMTgzNzEwMTk5ZTMzODI1N2RhOGVkMDRlOWVmYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1eb981dd1de4578a120a7f872561f16",
+      "statement": "GetRedoRecPtr and GetFullPageWriteInfo expose the redo pointer and whether full-page writes are required.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L7216-L7216",
+          "version": "repo-lines-v1:sha256:f18a4bcde4368b3d90731d2448889ba4fe344926d2e544e1750669bbe520066d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4YTRiY2RlNDM2OGIzZDkwNzMxZDI0NDg4ODliYTRmZTM0NDkyNmQyZTU0NGUxNzUwNjY5YmJlNTIwMDY2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4YTRiY2RlNDM2OGIzZDkwNzMxZDI0NDg4ODliYTRmZTM0NDkyNmQyZTU0NGUxNzUwNjY5YmJlNTIwMDY2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGM2NmE2MDEwYWE2MTc1MTBmY2NjMmFmNGM3MzliMjA5ZmY4OGYyNjBlMjM1OTYwOGViMjVhNzY0NWFmOTg3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJiZDI3NTE5YTc4MjI0NjNhZDk5MTVmNzIzMWUwMDMxYzNmZTcyMzNlZGY1OTA5NDQ2ZWYwZGM4YjIyNzkwOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L7246-L7246",
+          "version": "repo-lines-v1:sha256:c6860cec463adacc75df052adba1fb5b3b75bac029e80163b2c779b728e82c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY4NjBjZWM0NjNhZGFjYzc1ZGYwNTJhZGJhMWZiNWIzYjc1YmFjMDI5ZTgwMTYzYjJjNzc5YjcyOGU4MmMzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY4NjBjZWM0NjNhZGFjYzc1ZGYwNTJhZGJhMWZiNWIzYjc1YmFjMDI5ZTgwMTYzYjJjNzc5YjcyOGU4MmMzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMwYzFkNWQxZGY5ZjY3NWQyOTMzNjdiMGM0YjJjY2U1NmUyYWI1Zjc1MDhlNmY3MDg0MWYxNTQ2NDYzN2VjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ3ZThhNjRlMzBlYTJlZTUxOTM4Y2U0NGE3NzFlYTQ3NmIwM2JiNzY0NTc5MjIzMDVmYzdjM2NmNzdhYTNhNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fafe4471c3941c0ada129c4965def4b",
+      "statement": "Checkpoint flushing walks buffers with BufferSync and SyncOneBuffer, the background writer pre-flushes with BgBufferSync, and CheckpointWriteDelay paces the checkpointer.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/buffer/bufmgr.c#L3621-L3621",
+          "version": "repo-lines-v1:sha256:7cb10372614a8870c4cad6f6deadbb75bf821e2ccdf6a86c0560d0518aa86a3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NiMTAzNzI2MTRhODg3MGM0Y2FkNmY2ZGVhZGJiNzViZjgyMWUyY2NkZjZhODZjMDU2MGQwNTE4YWE4NmEzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NiMTAzNzI2MTRhODg3MGM0Y2FkNmY2ZGVhZGJiNzViZjgyMWUyY2NkZjZhODZjMDU2MGQwNTE4YWE4NmEzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNmODc1OTljZjU1MGI0YjU5NDA0MzRmMTAzYmM3MmUxZjI0ZTMxZTYyY2RmNGI4ZTkyZDA4Mzc4NWYwNDhiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGI3ZjE5YTQ5MDYxZDIyYTFjNThhY2JmYTZhYjg1OGNjMjFkOGU3ZWZlNGY3MzVjZDRkNGM3YTdkODhkYTI4NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/buffer/bufmgr.c#L3866-L3866",
+          "version": "repo-lines-v1:sha256:84596fb7ce2266491b7965626c707ec92cca214533b79c1b16b69f5a685e321a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODQ1OTZmYjdjZTIyNjY0OTFiNzk2NTYyNmM3MDdlYzkyY2NhMjE0NTMzYjc5YzFiMTZiNjlmNWE2ODVlMzIxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQ1OTZmYjdjZTIyNjY0OTFiNzk2NTYyNmM3MDdlYzkyY2NhMjE0NTMzYjc5YzFiMTZiNjlmNWE2ODVlMzIxYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODEzNWQwOTlhNDE2Nzk5MzE5MDk0MmM4NjkxNTZiYmQxNWE5OTkxN2ZmN2RmMjQ2Y2E2ZGIwNmJjYzEyNTE4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTVhMzhkYjk4ZjllZGRmNDU4OGE3N2EwZTA0NmI2NzM5ZWYxM2IzMmVlZmQ3Mzg5YjdmODI5NTBhMGI0ODRiMSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/buffer/bufmgr.c#L3900-L3900",
+          "version": "repo-lines-v1:sha256:8518ef49a9bd392e4b62619a37a239c8b183a8f2dfd9c107287ddb35665f21c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxOGVmNDlhOWJkMzkyZTRiNjI2MTlhMzdhMjM5YzhiMTgzYThmMmRmZDljMTA3Mjg3ZGRiMzU2NjVmMjFjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxOGVmNDlhOWJkMzkyZTRiNjI2MTlhMzdhMjM5YzhiMTgzYThmMmRmZDljMTA3Mjg3ZGRiMzU2NjVmMjFjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWNkMWIzZWMwYWRiZGZjOWQ1M2YyOWJkZDZmYmRkYzlkNzk1MDdkMmVjNDY0YzY3YTY5NWUzN2I3YTMwZjZjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWM5MGQxMGE2YWZlMTk3ODkyOGQ0MDhhMWIzNjUyNjc4Zjg1M2JlNDJhZDEwNTRmNTQzODM3YmZjZjVkYTBhOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/buffer/bufmgr.c#L4198-L4198",
+          "version": "repo-lines-v1:sha256:63ef838f819dea7e8bb530bf212545208c289f541ab4000dc523d9581c6b6f56:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlZjgzOGY4MTlkZWE3ZThiYjUzMGJmMjEyNTQ1MjA4YzI4OWY1NDFhYjQwMDBkYzUyM2Q5NTgxYzZiNmY1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlZjgzOGY4MTlkZWE3ZThiYjUzMGJmMjEyNTQ1MjA4YzI4OWY1NDFhYjQwMDBkYzUyM2Q5NTgxYzZiNmY1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJhMTMxYTEzODczOWZhNjQ4NzEyNWZlYTMwOWNhYTEyNGNlMzFmNmYyOTY0ZjVhOWNiOWQwOTFmOWVkMjI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVmYTI0ZTY1ZmE3YjQ2MzlmNzc1YTNjZjM1MjYzNDIxYmFlNThkNGE4ZDM2YmFmNzYwYmU2Y2U4YjkyNzE2MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7754422e2fd3443cb979e20ef88a0d7c",
+      "statement": "The md storage manager names relation segment files via _mdfd_segpath, opens and creates them with mdopenfork and mdcreate, extends them with mdextend, and selects open flags (including direct I/O) in _mdfd_open_flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/smgr/md.c#L157-L157",
+          "version": "repo-lines-v1:sha256:4cbb8ca52217aa9605e5e423a69254415edd820b3ff4d1374ccfa23558545986:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNiYjhjYTUyMjE3YWE5NjA1ZTVlNDIzYTY5MjU0NDE1ZWRkODIwYjNmZjRkMTM3NGNjZmEyMzU1ODU0NTk4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNiYjhjYTUyMjE3YWE5NjA1ZTVlNDIzYTY5MjU0NDE1ZWRkODIwYjNmZjRkMTM3NGNjZmEyMzU1ODU0NTk4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQyMDYxZTM5MGM1MGEzZGZlYWRiZjhjNTIzM2NkZDUyMDk4MjEwY2M3NWQ1ZmNmODVkMDEzYjQ3MDZiZDNjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzllMWU4ZThiM2QyZmYzNGUxYmM0NDU4Mjg0NDhiZjY5ZWI2NjE0ZGUwMWM2NzRmMjlkNmY2MGFlMzA2YWM5MiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/smgr/md.c#L176-L176",
+          "version": "repo-lines-v1:sha256:3f1b04e96e37d1ed6ca7bf6873797613c0f791f11e811e1de852f58c791e8106:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YxYjA0ZTk2ZTM3ZDFlZDZjYTdiZjY4NzM3OTc2MTNjMGY3OTFmMTFlODExZTFkZTg1MmY1OGM3OTFlODEwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YxYjA0ZTk2ZTM3ZDFlZDZjYTdiZjY4NzM3OTc2MTNjMGY3OTFmMTFlODExZTFkZTg1MmY1OGM3OTFlODEwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Y0MjQ0OWVmNjI5YTRlZjc5ZmJhYTc2NWU4ODMwMDFlZDE2Nzc4ZjhiZTBkMDY1OGI1MzMzMmZlYWFjOWNjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTRiNjZjZmMwYTAwMDEwOGVkZTgyZjM4ZWFjNjM5ZDRkMzVmYmRhMTg5MTk0MjgyNjcyMTM4ZTZjYWMwNTQ4MSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/smgr/md.c#L222-L222",
+          "version": "repo-lines-v1:sha256:603ce81416306f8949aefcfe2f680c59565985b64b26ade6534f34e6402285d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAzY2U4MTQxNjMwNmY4OTQ5YWVmY2ZlMmY2ODBjNTk1NjU5ODViNjRiMjZhZGU2NTM0ZjM0ZTY0MDIyODVkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAzY2U4MTQxNjMwNmY4OTQ5YWVmY2ZlMmY2ODBjNTk1NjU5ODViNjRiMjZhZGU2NTM0ZjM0ZTY0MDIyODVkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTdjNDk3ZWI4MTBkZmFhN2Q4OTk1MzFiZGJlODdmMWJjMzNjYTdiNDg4MzVlMzVlM2Y1NTNkODZlZGNhMDAwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdlMDk1OTdiMTkzYjFlZWNlYjA4YjEzYmIyNGZjMWU3ODdkMDE2YTJkYTVjNmIxM2YyYjcyMWVkNTAyZjA5ZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/smgr/md.c#L487-L487",
+          "version": "repo-lines-v1:sha256:fd39afed43a41495290be9212dcba46558897e1c9e66dc0268b94fbb37562394:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQzOWFmZWQ0M2E0MTQ5NTI5MGJlOTIxMmRjYmE0NjU1ODg5N2UxYzllNjZkYzAyNjhiOTRmYmIzNzU2MjM5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQzOWFmZWQ0M2E0MTQ5NTI5MGJlOTIxMmRjYmE0NjU1ODg5N2UxYzllNjZkYzAyNjhiOTRmYmIzNzU2MjM5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDdkYjdjODUxNTZmZDFhOTUxNGIwNTBjMTJjZGJkMTM2ZWZmYzU0NzRlZjg1YjM5ODJlNzA1NWJhZjczMzk2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGFiZGU2ZjRlY2IzNmFiYTNhY2Y2ZTdhMzZmMmQzZjRlN2EwZjMxNGQxZjU4YzQyYzM5NmZmYTViOGQ1ZmFhNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/smgr/md.c#L675-L675",
+          "version": "repo-lines-v1:sha256:1a9cf3080f20354a8c2e2fb4ce8663a828800b29d972271439a2ae5a2ca57b98:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWE5Y2YzMDgwZjIwMzU0YThjMmUyZmI0Y2U4NjYzYTgyODgwMGIyOWQ5NzIyNzE0MzlhMmFlNWEyY2E1N2I5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWE5Y2YzMDgwZjIwMzU0YThjMmUyZmI0Y2U4NjYzYTgyODgwMGIyOWQ5NzIyNzE0MzlhMmFlNWEyY2E1N2I5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGZiNzA3NTA4OTQ0ODAxZmY5MzE3Yzg4Y2MwYzkzMzYwMDZmMTUyMWE2ODBmYWM0YjZiZTNmMDM4NTljMDQ0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdlMDk1OTdiMTkzYjFlZWNlYjA4YjEzYmIyNGZjMWU3ODdkMDE2YTJkYTVjNmIxM2YyYjcyMWVkNTAyZjA5ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c74d8f5654474abda760f781d8c6fa7e",
+      "statement": "smgr_bulk_flush bypasses shared buffers, sorts pending pages, extends the relation with smgrextend when necessary and uses smgrwrite for existing blocks.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/smgr/bulk_write.c#L238-L318",
+          "version": "repo-lines-v1:sha256:481b1e6b60027997ee6b2b856cedf112905d6a3158c16f681fb3a151954e5d62:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2NiNGMxM2Q2Nzc1OWQ1NGY3NjcxZDQ0MDM0OTcyZDA5MDNhMzlkMDhhZmFlNzNiYjk4MWViOWFiMGRjZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZjFjMGIyYTE1NTA0MDE3NTIxNzNjNzBjNTQwYmUzNzdhMTZjMjZkZGU2MTI4NjA2NGYwOTI2MjE4ZmU2NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkMmE0YWJiMTExMjQ5YjM3YmM0ZmMyNTM1OGY4MWYyZmVkMTE0ZDM4ODAxMjc3MmZmYzA2ZjJiNDc3NTM4ZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c03cf45e950f484f9231b0ee517efa7d",
+      "statement": "bulk write batches several pages into one WAL record and must register the relation for fsyncing at the next checkpoint because it bypasses the buffer manager.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/smgr/bulk_write.c#L1-L28",
+          "version": "repo-lines-v1:sha256:f659047080e23edd6e547acc2e64dcbc5839be25c094fc34b03c65c76e78f0d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMDhhMmM2MjI4MmUxNTg2MDJiNGIyYjg1Mzc3ZjdiMzA1MWMyOTI4MzFjYjc5YmVkN2VlZTkwMjMyY2UwZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmODE4OWIwYzAwMjAxMmQ5NmZiNGQzZjUxMjhjOTYwY2Q5Yjk3OWRmODA5MDM1NDBlNDVkYzBlNDE0MTUxMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwZjE2ZmZkODhmYTNiMTQ0Y2I2NDBkMWExYTAwY2UyOWZhZmZjZTJmNTZjM2UwMGMzM2M4YWQxMmIxMDVmMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c5aaa5a848d4ef78c10034a6a906546",
+      "statement": "FlushBuffer calls XLogFlush through the page LSN before smgrwrite for a permanent buffer, enforcing WAL-before-data ordering.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/buffer/bufmgr.c#L4614-L4650",
+          "version": "repo-lines-v1:sha256:ee8bf98b415d66957160e029e1bc94eddb585bdcbb53e4ef9fb79c7a8fc26acd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmOTg0NjhmZjBiYWE3ZDg0NzgzYTkzYmUwZDA5YjMyNDg0OTY4NjFhZGJlMGYzOTI1YTFhODQxOTgxZjAxYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3N2YyNTNhOGE4MGEyNTUyM2U2OGY4OGY1NjAxNTk4NDVhNjljOGFmNGFkOTA5NjFhOTM1NTc2NGFmNDUxYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwNmNkMWU4OGI4YTVlMjMyZmYzMjY5ZTA1MWZmMDJiYWNhOGNiNDMwZWU3YWQ4MmJhZjNhYzZiOTVjZDEzYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5NWY0OGVkNWNkNjg2MmRkZmRmZjExNjNmYWNiNTRlMTg0OTU4NzNlZjY1YzdmMTA1Y2IyZjBhMGQzMGU1NTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_edcfa1998dfd4523a23006b317550f05",
+      "statement": "RecordTransactionCommit distinguishes synchronous local WAL flush from asynchronous commit registration via XLogSetAsyncXactLSN.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xact.c#L1519-L1584",
+          "version": "repo-lines-v1:sha256:d0bac94a6a7abe268c1d17fe3047225533303570e882f5610ad25ebc0820498f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0MjI4Zjc2ZmUzN2UzOTI5YmQ5MzE4ZDMzMTc5Yzk1NzA1ZGJlYTI4Y2RmMWNiYWY1ZGY4Nzc4NWNkMjBiNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhODZkNzA4MTMwNTc0MDVhNTc4NzYyMjg5Y2UxZjc1ZjlkZTgyZWYyOGY1NGE5ODc1OTZmNDI0YzdiMWY2N2YifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

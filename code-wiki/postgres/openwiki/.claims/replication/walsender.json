@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:120f0ee06ca0bed11af3e0e978cbe281d4c18b7e6e6dd2a4135ee75875a7d82d",
+  "claims": [
+    {
+      "id": "claim_c20197819aa7432bab26b61cb948aed3",
+      "statement": "Replication commands are dispatched by exec_replication_command; physical streaming starts in StartReplication and logical streaming in StartLogicalReplication.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1532-L1532",
+          "version": "repo-lines-v1:sha256:854215dfd436582f1e31c7cddf7fd261c91b00efe3969e6613a997cc9db7d777:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODU0MjE1ZGZkNDM2NTgyZjFlMzFjN2NkZGY3ZmQyNjFjOTFiMDBlZmUzOTY5ZTY2MTNhOTk3Y2M5ZGI3ZDc3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU0MjE1ZGZkNDM2NTgyZjFlMzFjN2NkZGY3ZmQyNjFjOTFiMDBlZmUzOTY5ZTY2MTNhOTk3Y2M5ZGI3ZDc3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODY2Zjg1MWUzNzQ1NmVkMjMwZGVlZjYwM2IzMDdmNTZlYzU0NjQ2MDQ2YmM5YWU0YTM3N2VjOTM2ZjVkZjlkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWU5YzU3MjljMmU1ZjFlODNjNTQ2NWJiZGQzNmViNWFmY2Q4YmI1YjZiY2ViZDU5YjBmZmEzMzBjZjVkOTk0MyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2105-L2105",
+          "version": "repo-lines-v1:sha256:7cbd0a0cb56d850a2eaef0443d249408f50cb713b58da6e239bdbcb730b7b309:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NiZDBhMGNiNTZkODUwYTJlYWVmMDQ0M2QyNDk0MDhmNTBjYjcxM2I1OGRhNmUyMzliZGJjYjczMGI3YjMwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NiZDBhMGNiNTZkODUwYTJlYWVmMDQ0M2QyNDk0MDhmNTBjYjcxM2I1OGRhNmUyMzliZGJjYjczMGI3YjMwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTlkZWUxYmUxMmQxM2U2YzRiMTMzZjAzMjgzNGM3NmRjZjM2YTk3ZDcwOTlkNjhlZjc1Y2UyZTNiNTZjYTIxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E0OGFhOGZiOTIzYjRmOWM1NGZmNjg4MTJkZmQ3YWE5MWYyZTI3ZDZhOTZlMTBiMDFjZWU1MjMyMzE1OTJjZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L860-L860",
+          "version": "repo-lines-v1:sha256:2b4e16bbd460251c039aa270664cd4e93a13e14298c59b76b801e687628c8b1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI0ZTE2YmJkNDYwMjUxYzAzOWFhMjcwNjY0Y2Q0ZTkzYTEzZTE0Mjk4YzU5Yjc2YjgwMWU2ODc2MjhjOGIxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI0ZTE2YmJkNDYwMjUxYzAzOWFhMjcwNjY0Y2Q0ZTkzYTEzZTE0Mjk4YzU5Yjc2YjgwMWU2ODc2MjhjOGIxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNhYWRiOWEyMzgxYzY5ZmQ0MDNkMjIxN2U4ODg0NGY0NTM2YWNhM2RlZmRmM2QwMjUzZDdiYjU0NTMwZWVmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZjNmI1ZmFiMGJmMjFlMGRlMzY4OTM4NDgyY2UxZWI0NjhjZGNjYjZiMTA5MmRlNGJjZGVjZjM5YTZhY2JiYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_61dbc04b6e46453890b9c8d8e7788e50",
+      "statement": "Slot management over the replication protocol is handled by ReadReplicationSlot, CreateReplicationSlot, DropReplicationSlot, and AlterReplicationSlot, and IdentifySystem/SendTimeLineHistory serve identity and timeline history.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1265-L1265",
+          "version": "repo-lines-v1:sha256:db355e1b3b7dcec1ecd27256074f278dbf19b8f5fa5959e15b25661547e9de21:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNTVlMWIzYjdkY2VjMWVjZDI3MjU2MDc0ZjI3OGRiZjE5YjhmNWZhNTk1OWUxNWIyNTY2MTU0N2U5ZGUyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNTVlMWIzYjdkY2VjMWVjZDI3MjU2MDc0ZjI3OGRiZjE5YjhmNWZhNTk1OWUxNWIyNTY2MTU0N2U5ZGUyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTk0ZmZmZTIwODY4OGM1ODc1YjFhZmMwZGI4ZTg0MmYzYmU2OGRkYjgyZmVjODU2OGE3NDU0OTJkYmYyYzgwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODExNTJmZjBhNWNlOWY0YmE0ODhmNGJlNDhiZDlhOTM4MTQzZWEyYThmYWZjOGUzNjUzZWNlODdkMDIyZDUwYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1481-L1481",
+          "version": "repo-lines-v1:sha256:f038800e50f64a13662d78e213bc9e056e3962f6eec65306d2baf2415456ceb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAzODgwMGU1MGY2NGExMzY2MmQ3OGUyMTNiYzllMDU2ZTM5NjJmNmVlYzY1MzA2ZDJiYWYyNDE1NDU2Y2ViNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAzODgwMGU1MGY2NGExMzY2MmQ3OGUyMTNiYzllMDU2ZTM5NjJmNmVlYzY1MzA2ZDJiYWYyNDE1NDU2Y2ViNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWI3NDY1OWJjNmZjNDk2MjJkNWRjYjNiODUwMTZkZWUxMWEyNGJiMjZlZmIyNmI1Nzk1MTRkMWUxOGU0YWMxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE5MzU1MjYxZjc4MTdmZTUzMjBlMzc5NjUzN2YzNmM0NDBkOTNhOTc2YzI1MTVhNGQzYjViYmUyMTViN2JlOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1490-L1490",
+          "version": "repo-lines-v1:sha256:91e5f3e6929b956517c8b23842886bcb32f7521e1467c6eb2acdb66075a3b6ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFlNWYzZTY5MjliOTU2NTE3YzhiMjM4NDI4ODZiY2IzMmY3NTIxZTE0NjdjNmViMmFjZGI2NjA3NWEzYjZmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFlNWYzZTY5MjliOTU2NTE3YzhiMjM4NDI4ODZiY2IzMmY3NTIxZTE0NjdjNmViMmFjZGI2NjA3NWEzYjZmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M0OGVlMmExODY1ZmNhMzVlZDQ3ZDkxYWI1NDRkOWEzOTRiZGFkNGZhZDI2MTU3YzAwMWUyNDc5MTBlNTY5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM4MDFjMmY4MWE3NDhjMjE0YmM1ZTE2MjA2OGJmMmU2OTQwZDQ3MTdmOGQ0ZGFkNjg5M2IxYzIwNmRlYzdlMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L429-L429",
+          "version": "repo-lines-v1:sha256:607863bddaa693abfaeb92d9b30d42ece7cd11027ae12c7e2de0fd15f9b8cca3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3ODYzYmRkYWE2OTNhYmZhZWI5MmQ5YjMwZDQyZWNlN2NkMTEwMjdhZTEyYzdlMmRlMGZkMTVmOWI4Y2NhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3ODYzYmRkYWE2OTNhYmZhZWI5MmQ5YjMwZDQyZWNlN2NkMTEwMjdhZTEyYzdlMmRlMGZkMTVmOWI4Y2NhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGIwOTgzZTAyZjViMTE1Y2FmOWZiODU3YTIzZDQ3ODUxMmJjZDMxZjRhMmY5NTE5MjBiNDg4OGVmYjkxZThkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzBhYTk4YTQ0ZTExOTMxNWU4ODQzY2JhYmUzOTRmYzFjODlmMDY1MzljOWMxMzVkNWI4YjAwZDRkYjc5MGI3MyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L511-L511",
+          "version": "repo-lines-v1:sha256:3aeac9ebae7397842e16ff4e42948b8aeb1dada795fecfaf8052d1a2d66173a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FlYWM5ZWJhZTczOTc4NDJlMTZmZjRlNDI5NDhiOGFlYjFkYWRhNzk1ZmVjZmFmODA1MmQxYTJkNjYxNzNhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FlYWM5ZWJhZTczOTc4NDJlMTZmZjRlNDI5NDhiOGFlYjFkYWRhNzk1ZmVjZmFmODA1MmQxYTJkNjYxNzNhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgwNDhjNTcwMDA3YThlYWI3OTcxN2YzYjFjMDRkYWY5NTg3OWQ4MzAwMzM0YzBhNGUxYjdmYmNiZDdjMDhjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdlYWExN2VjNmRhZDdjOGRjZWNkYTZhMTVkODkzZjVlYzA3ZjdhYmJkYjVlNTA1M2NjYTc2ODQwOTU0NmVkNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L611-L611",
+          "version": "repo-lines-v1:sha256:38c96bfd264ba0a85cadbff4e2570d4ad68c48ad1ae9498c18cb7a0e4f2de572:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhjOTZiZmQyNjRiYTBhODVjYWRiZmY0ZTI1NzBkNGFkNjhjNDhhZDFhZTk0OThjMThjYjdhMGU0ZjJkZTU3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhjOTZiZmQyNjRiYTBhODVjYWRiZmY0ZTI1NzBkNGFkNjhjNDhhZDFhZTk0OThjMThjYjdhMGU0ZjJkZTU3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTVjYWM0ODE2ZTgyMWQ0Mjk1YjdkNTNkNGY0Yjk1MzM2YTQzM2UwYzlmNGRlY2Q3NWIwZTBmODg4OGMzOWY4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFkY2RjMzA4OGI3NGJiZmM0Mjc1NTUyOGYxOTE5OGY2OTcxYzcxYTQ3MjY4ZThjOTk0ZTc2ZWU2MzY0NjkzZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_12d40c8124ba451bae3152d4e7246f8f",
+      "statement": "XLogSendPhysical bounds WAL by the primary flush position, standby flush position for cascading replication, or historical timeline switch point; WalSndWaitForWal handles logical WAL-reader waits.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1933-L1946",
+          "version": "repo-lines-v1:sha256:9d6c92f5c3920127d5b4a62d3429d8bab5d63b90b18e38d0afaedd55f669d633:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NTYwNjE2ZDA3NDYxOTI0NGJmYzcwY2NjZjgyNDllNWQ5YjJjMTFhMGM2MTM4YmJlNzkyMmMzY2Y3NzAwYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NGEyODhlZmUwZDM3MDg0NWRkMDY2MTAyMmZiMDc3OWVjOTRjZTEzNzcwNmMwMWVjNTg2NjA3OWFjZmM2YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYmYwMWFmZWU4N2JmMmRmZjZlZWM1YjJmMjYzZjQxNDlmY2Q4ZjIyOTJkNmUxZjlmODJhMzhlZDFkZWIwNTAifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2009-L2027",
+          "version": "repo-lines-v1:sha256:32c56c0edd1b43774a19cb80896984db500f07c9e55a3aaec3a12c9d93a2f176:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNDRhYTU2NzA1NWU0ODFkY2I2ZDBkZWM2MzQyMDI4ZWM3MmE4NjY4OGQ4NzJlNzNhZTkzZGY3OTBkOWIzNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NTU4YzFmNWU2ZThhMTcwODEyZmE0NTQ4YmQ0NTI3OGMyYzhlMzk3ZWUwZTkwNjY5YTViMDUyOTQzZTQ1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyNGU0MTAyOWE4NjQ3NzRkMzRkMDM1ZGNiMmYxNzM2ZWUwZjU2MzdkYzQzNDczMmJkZWNmZTMxZTU0ZTI2Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmYWNmMzA4ZDE4NDdjZjlmNjhmNGQ0ODVhOTA5ZTJkNDk5OGJmODIxZWFiODBhOWQyNjdmMGJmM2UwOWZkOTgifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3405-L3438",
+          "version": "repo-lines-v1:sha256:90be05a0ba25bd74374a9236aea7cd02b1a980ff25ebb045c78c796dce37e4d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmY2U1MTFhNDFiZjE2MDdhODZhMTllZjFlNDg3NmY1NjZmMmE0OTI2OTczYjQ5NDZjMmY5NTZjZmVlNTk3YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOWU1MDU1YTcyM2MwMmNmZjJmZmRiN2E1NTU0NTZiZDJiM2QxMjExNzM0NjNkZjFiMTM5M2ZlNjNlMmVhMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExOTU5NjcxNGQzYTYxZjVjZGNmNzMzYjQ5OTQ3NGY2YTU0NDY0ZjU5MDU4YmUwYTAyNDUwZTg3NzMzZGI4ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5YjkzMTFhMDc1YmM4YjU3MGFiNTBhYzg3NTMxMWY2NjE2M2NlZGNhYjQ1M2VhOTZlN2E1MWZkNTc0OTM1ZTkifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3477-L3489",
+          "version": "repo-lines-v1:sha256:f924e0e0c984793693fac9c19c7c9893710b61c5befe1aedb0c0793230ef7993:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYTkzNzhkYmQ2ZTJlOTQ0ZjYyNmRhZGZkZjViODVkMzI4MTkxM2EyNmI4NDI2NTk2ZjVjMzQzOTg1OTAyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwNjA4NmUyODI4MTc1OTJlZDIyZmMyODQyNDBjMGQ1MDNjZmNhNjkxMzliOWJjOGEwMWQ4MDZjZDU0YjkxNDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjk4ZWQ1ZjU1MWQ1MjQxZjI3ZDA5MDIxMmIzZGVmZjZkMThiNjEyNTFlYzg1NjJlNTlhM2IyZjkxMDYxNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1YTM4ZGI5OGY5ZWRkZjQ1ODhhNzdhMGUwNDZiNjczOWVmMTNiMzJlZWZkNzM4OWI3ZjgyOTUwYTBiNDg0YjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc079e45d2d24d4b9efcd14371d5d5de",
+      "statement": "Sender pacing and timeouts are handled by WalSndComputeSleeptime, WalSndCheckTimeOut, and WalSndCheckShutdownTimeout.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2948-L2948",
+          "version": "repo-lines-v1:sha256:5fcf3da99e702315c412fcb411f78576de11502f7f635a9f9fb56e524d1f21fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZjZjNkYTk5ZTcwMjMxNWM0MTJmY2I0MTFmNzg1NzZkZTExNTAyZjdmNjM1YTlmOWZiNTZlNTI0ZDFmMjFmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZjZjNkYTk5ZTcwMjMxNWM0MTJmY2I0MTFmNzg1NzZkZTExNTAyZjdmNjM1YTlmOWZiNTZlNTI0ZDFmMjFmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY0YjkzY2M0MDEyMzgxNGEzNzczOTRjYWIyNWNmODk2MmIxODA3ZmU3ZTFlYzgxMmFiZTBiODg5MmUxODE2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWJlZWY4NzBlNTdjNzcxNTA2ZDkxYjQyYjIyODk3NmMyOGY5NGIzZTg1NjViYjk4MDhjOGI4MTAwYTAxYzljZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3005-L3005",
+          "version": "repo-lines-v1:sha256:e4bee0cac9c3a338611ab343007c25844b692358f36cf6c01bf9d94de776101d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRiZWUwY2FjOWMzYTMzODYxMWFiMzQzMDA3YzI1ODQ0YjY5MjM1OGYzNmNmNmMwMWJmOWQ5NGRlNzc2MTAxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRiZWUwY2FjOWMzYTMzODYxMWFiMzQzMDA3YzI1ODQ0YjY5MjM1OGYzNmNmNmMwMWJmOWQ5NGRlNzc2MTAxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjlmNzM0OWQwN2UyNGIzZDczZmMyYjFhY2I0MGFhZjA0NTI1ZDk5N2Q2ZTZjMDU3ODFiZDViNTM0Y2FiZGFlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTA0NjZiYTRjZjQ3ZGQ1M2I2OWVmZjMwYWVmYjk1NDQ3ZGY2NmQ5NWE4NWY1Yzg3NTNmZmJlN2E1YmEwMDA2NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3035-L3035",
+          "version": "repo-lines-v1:sha256:daa78ae788fae03ec1aa8c1df5e32d08b5af11bda16f171bdacf63e13af31492:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFhNzhhZTc4OGZhZTAzZWMxYWE4YzFkZjVlMzJkMDhiNWFmMTFiZGExNmYxNzFiZGFjZjYzZTEzYWYzMTQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFhNzhhZTc4OGZhZTAzZWMxYWE4YzFkZjVlMzJkMDhiNWFmMTFiZGExNmYxNzFiZGFjZjYzZTEzYWYzMTQ5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmUyODgxZWFiYzI3Y2M0MGVmZmExYjdkN2I2MzM4MTBiMmNhZWJhODFmNWMzN2YzOWY0N2M2NTY2YzAyZjJmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA0MWFlYzhlMmM1MmZhMjQ3NGQ4ODUyY2YzM2ZiM2YyZWZjZDVmODQyZGZjN2QxY2Y5NWMwYTNkNjE5Njk1ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd9ff0b84b984a80a4e66d1d9339040d",
+      "statement": "Standby messages are read by ProcessRepliesIfAny/ProcessStandbyMessage and handled by ProcessStandbyReplyMessage, ProcessStandbyHSFeedbackMessage, and ProcessStandbyPSRequestMessage.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2361-L2361",
+          "version": "repo-lines-v1:sha256:2405b56c361720e57430d5dd1e053c681b40d135b51af0fb65e240783e4a2604:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQwNWI1NmMzNjE3MjBlNTc0MzBkNWRkMWUwNTNjNjgxYjQwZDEzNWI1MWFmMGZiNjVlMjQwNzgzZTRhMjYwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQwNWI1NmMzNjE3MjBlNTc0MzBkNWRkMWUwNTNjNjgxYjQwZDEzNWI1MWFmMGZiNjVlMjQwNzgzZTRhMjYwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU1NGI0YmU3Zjc3MTQ2NWRlMjBkYzNiNGI2ZWMzZWVlMzg4NmU0NGY5ODRjYWJhNTA4N2Y5MTA4M2FkMWNkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQxY2Q4NDdiZmExOGQ4OGE4OTFmNmYzMDU1OWM1N2IxY2I2ZWM2ZDFkOTViOTNlZDk4Njc2NTg4YjNiYWU3NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2477-L2477",
+          "version": "repo-lines-v1:sha256:ee90bdc8c383fead6a29075623c1409e8a97da81aac325e3660e4d0d2086d61b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU5MGJkYzhjMzgzZmVhZDZhMjkwNzU2MjNjMTQwOWU4YTk3ZGE4MWFhYzMyNWUzNjYwZTRkMGQyMDg2ZDYxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU5MGJkYzhjMzgzZmVhZDZhMjkwNzU2MjNjMTQwOWU4YTk3ZGE4MWFhYzMyNWUzNjYwZTRkMGQyMDg2ZDYxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODM3OGUwZmM4OTMxNzM1ZjJhNDJhNmM5OGY2M2Q5MGY4YjNlZDFlZjQzYjA0YTVjYTM0ZGQ5MmQ3ZDc3NTM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmMyMjUwMzg2ODMxMTQ0N2Q1YTc4MDY3N2I3YjAwZTk1ZmEzNWEyNDFiNGU5NzdjZDJhMjUxZWVlNTkyOGRkMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2545-L2545",
+          "version": "repo-lines-v1:sha256:44f3be7dc6121e06d246f1b7e33d26863933bef19f25feb5a0990b29f4d978b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRmM2JlN2RjNjEyMWUwNmQyNDZmMWI3ZTMzZDI2ODYzOTMzYmVmMTlmMjVmZWI1YTA5OTBiMjlmNGQ5NzhiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRmM2JlN2RjNjEyMWUwNmQyNDZmMWI3ZTMzZDI2ODYzOTMzYmVmMTlmMjVmZWI1YTA5OTBiMjlmNGQ5NzhiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA4NTZjMTZlY2U5YTEwYTY5YTA5OGI0NTg4MzJhNzM5YTlhNGE0Mzk3ZjRhZjhiYWNjYWY0YzNiYzdmZDE1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUwMTBiNzhmMWQ5ZWI2ODViMGViZDA0MWQwMWQ2OGUzZWJiODVmYjU5Zjc0ZmZlMDc5MGVlYzhkNmZmNWQ2NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2733-L2733",
+          "version": "repo-lines-v1:sha256:4ce88983e2248f3f918f263e0ed375ed914eafe83036c1c263fba74868f7be2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNlODg5ODNlMjI0OGYzZjkxOGYyNjNlMGVkMzc1ZWQ5MTRlYWZlODMwMzZjMWMyNjNmYmE3NDg2OGY3YmUyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNlODg5ODNlMjI0OGYzZjkxOGYyNjNlMGVkMzc1ZWQ5MTRlYWZlODMwMzZjMWMyNjNmYmE3NDg2OGY3YmUyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDhiMzViMzdiOGFiNGNkMTM4ZGUzYTcwOGE5ZDdlNTMxMjVkYTc0M2VkNDI1M2EzMzMzMmMyMmI2NWMwZmQzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTg0NDI4NzAxN2UzNzFmZTVkNjUxMWE0YmE4Zjg1OGE1M2U4OTg3NTZjZmVlNTBiN2U0ZjAzMjA0Y2U1YjFhMCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2853-L2853",
+          "version": "repo-lines-v1:sha256:87791415eccc8e221d6db01527d7933cd16fd9a2666f77615a9bc9a9f5f55e5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODc3OTE0MTVlY2NjOGUyMjFkNmRiMDE1MjdkNzkzM2NkMTZmZDlhMjY2NmY3NzYxNWE5YmM5YTlmNWY1NWU1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODc3OTE0MTVlY2NjOGUyMjFkNmRiMDE1MjdkNzkzM2NkMTZmZDlhMjY2NmY3NzYxNWE5YmM5YTlmNWY1NWU1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjkyZTZlYTdjMDBhODdhZjFhZjdiMTEwYTY1MmQ3MDZjY2UyZmQyNjFiZTQxZDYzNWU4ZDc2ZmQwMjQ3NjI5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVjYjFiMTI3MWQ1OWM1MWJjN2RjMjE3NWFmMDg1MDUwNzAxNjdjNWVjYmYyYjliM2ZkOWUzNDNiNzhkYjdmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f33b25c1f73c482c90a667dbbac057e7",
+      "statement": "Feedback is applied with PhysicalConfirmReceivedLocation (and a logical equivalent), physical slots use PhysicalReplicationSlotNewXmin, and TransactionIdInRecentPast guards a stale feedback xmin.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2512-L2512",
+          "version": "repo-lines-v1:sha256:003d762bcc0949abb9e256b2a94a17dd7de734a13e6b66c7a82054208121f8c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAzZDc2MmJjYzA5NDlhYmI5ZTI1NmIyYTk0YTE3ZGQ3ZGU3MzRhMTNlNmI2NmM3YTgyMDU0MjA4MTIxZjhjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAzZDc2MmJjYzA5NDlhYmI5ZTI1NmIyYTk0YTE3ZGQ3ZGU3MzRhMTNlNmI2NmM3YTgyMDU0MjA4MTIxZjhjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjI5ZWM4NTc3ODRmZDg2ZjVmNTE1OTliODRhMzk2MWU1M2FiZDQ2OTIyMzlhMWUzZmUxOTk2YWYzMjNlNzUxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ4OTM5ZGViMTBhMzYxMGFkM2RhODY4NWE0NTU2YTk1NTgwMjIxM2NiMGIxYmM2NTM4Nzc3ZTc5MGZmYzhhZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2653-L2653",
+          "version": "repo-lines-v1:sha256:0e033b228127557b0beea6bb2602422f3feaeaa703f682a347198c63af7b7f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUwMzNiMjI4MTI3NTU3YjBiZWVhNmJiMjYwMjQyMmYzZmVhZWFhNzAzZjY4MmEzNDcxOThjNjNhZjdiN2YwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUwMzNiMjI4MTI3NTU3YjBiZWVhNmJiMjYwMjQyMmYzZmVhZWFhNzAzZjY4MmEzNDcxOThjNjNhZjdiN2YwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM1ODU2MTE1ZDM0NDFkM2I2NTI1Mzg2ODA5YTdiMDU1NDg3NzE1YjYxMmFjNTcyMWY1NWYwY2E1OTk2OTZmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ4OTM5ZGViMTBhMzYxMGFkM2RhODY4NWE0NTU2YTk1NTgwMjIxM2NiMGIxYmM2NTM4Nzc3ZTc5MGZmYzhhZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2702-L2702",
+          "version": "repo-lines-v1:sha256:872694ca944394bdf24dd8e208ef54d57e39725a8047023ba62bf308c9debe31:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyNjk0Y2E5NDQzOTRiZGYyNGRkOGUyMDhlZjU0ZDU3ZTM5NzI1YTgwNDcwMjNiYTYyYmYzMDhjOWRlYmUzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyNjk0Y2E5NDQzOTRiZGYyNGRkOGUyMDhlZjU0ZDU3ZTM5NzI1YTgwNDcwMjNiYTYyYmYzMDhjOWRlYmUzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjkzMzMzNmFmZTIxOGI2ZGM5MTE2N2QzMmJmNTk0YTIxNjExN2YyOTcxYjQ3NmY4MzY5MGViZWQyYmNkNGY2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI3ZDJkZDM3OGUwY2Y4NjczMzU2MjA3ZjNhZTRiYjgwZTU1ZmFkZDIwZGU1ZGM0YTNjMWU1MDgyMmM3NTBlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a2e9ff2b2a94d658ba89caab8d86278",
+      "statement": "WAL flush wakes waiting senders via WalSndWakeup and PhysicalWakeupLogicalWalSnd; keepalives are sent by WalSndKeepalive/WalSndKeepaliveIfNecessary.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L1841-L1841",
+          "version": "repo-lines-v1:sha256:2ffab9ee6c87850417074cbb2e4321cb161f2a2e2566e67525658c2733b9b644:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZmYWI5ZWU2Yzg3ODUwNDE3MDc0Y2JiMmU0MzIxY2IxNjFmMmEyZTI1NjZlNjc1MjU2NThjMjczM2I5YjY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZmYWI5ZWU2Yzg3ODUwNDE3MDc0Y2JiMmU0MzIxY2IxNjFmMmEyZTI1NjZlNjc1MjU2NThjMjczM2I5YjY0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBkMjUxZTRkYmU1MzFmOGVlYzc5MDgzNDJkNWQyYjI0OGNiYTJiMmYxZGFmMTM2NzM5MThhNDY5ZjIyNWIzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTFjYjIyMTkxMDBiNzQ4N2VkNWY0Yjk1M2NlYzVkN2Y0ZWUyMDJmZDI1OTM0MzhjNjMyYWYwNWQ1OTNmYzIzMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L309-L310",
+          "version": "repo-lines-v1:sha256:a0cb58f030db92e43e08fe006a1f0045f808a7777ae9f6764f75456110e7fb11:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk4MDBhOTQ5YWJkYWMxZmZkNGU2MGRiOWQ4ZTk1MDIxNTAzNzA3MmEwYjQzMDM2YzlkOGE1ZDkyZDQyODQxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlMjQ2N2JkYmIzNTM0MmY4YTcwMTI5ZDVhMTNjMGE3Y2JjZTNkNmJjY2FjOWQ2ZmY4NjNhYWFlZGNkMDA1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFlMDliNTI2NWU1NTE2MTczZjQ1MTliZTY5ZjA2ZDE4NDFjOWUzMGNhYTk3MTNiNmE1Yjc0Yzk3MjI1MjY1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Q5ZDRkNDAwZjNjMzRkOGE3OGJkMzJjNzNhNTMxYzBlMTBjZGY1YmVmZTA5YTUxOTY4ZWI3YThiMmZlYTczYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L4075-L4075",
+          "version": "repo-lines-v1:sha256:a3d58239d9aa7bbc5966c38e72957d10a5b8d31a3d9ea5850d80bad49d7c2c37:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkNTgyMzlkOWFhN2JiYzU5NjZjMzhlNzI5NTdkMTBhNWI4ZDMxYTNkOWVhNTg1MGQ4MGJhZDQ5ZDdjMmMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkNTgyMzlkOWFhN2JiYzU5NjZjMzhlNzI5NTdkMTBhNWI4ZDMxYTNkOWVhNTg1MGQ4MGJhZDQ5ZDdjMmMzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDU0MjA1MjFkYzdjMWMyMTQ4ZmMyNjA0MmNlMzc5ZmI1YjBiODIwOTVkZGE1MjgxOGE3OTcxOTYzOTZjMDBlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmJiY2M5OGU4NWIwZmQ5NTUxZjljZjE5MGM4NTA0OTM3MDEwYWNkZmYyNWViZGRkYjMyMTc3ZDFhMDg1ZmM4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1bb8c13465e243bcb6a8ee513065a85c",
+      "statement": "Synchronous replication makes a committer wait in SyncRepWaitForLSN until the required acknowledgement mode (write/flush/apply) reaches its LSN, and SyncRepReleaseWaiters/SyncRepWakeQueue release waiters when feedback advances.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L149-L149",
+          "version": "repo-lines-v1:sha256:3c54a025de6f04857dce8c4cd454fbf6012583ff01a163185daf3b2bfe0d7607:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2M1NGEwMjVkZTZmMDQ4NTdkY2U4YzRjZDQ1NGZiZjYwMTI1ODNmZjAxYTE2MzE4NWRhZjNiMmJmZTBkNzYwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2M1NGEwMjVkZTZmMDQ4NTdkY2U4YzRjZDQ1NGZiZjYwMTI1ODNmZjAxYTE2MzE4NWRhZjNiMmJmZTBkNzYwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjA0NTcwYjI2YWRhMDM5YjAxNGE4MGEwNWIwNGM5MWYzYjZlYmMzMGU5NWE0MGVlMzRmZjkxN2UyNThkMzcxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzljNWUyY2VhMTVhZWExMWUwYmRmYjNhOTdlMDI4YmUzZWQwNGY5NzI3ODY4ZDM3MmE2NzI0MGQyZGExZmE0OCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L484-L484",
+          "version": "repo-lines-v1:sha256:30a0a64cf294e3a91094de7f5c8eb481069632ac07e7408027738d66aa1922b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBhMGE2NGNmMjk0ZTNhOTEwOTRkZTdmNWM4ZWI0ODEwNjk2MzJhYzA3ZTc0MDgwMjc3MzhkNjZhYTE5MjJiNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBhMGE2NGNmMjk0ZTNhOTEwOTRkZTdmNWM4ZWI0ODEwNjk2MzJhYzA3ZTc0MDgwMjc3MzhkNjZhYTE5MjJiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQ2ZWY5NDNlMWE3YmQ5OTMyNjQzZTBjYWMxOGNjYmY4MmYzOTI4YzY1YjI3ZjcyNTAyZjE4NTNkNzY1ZTExMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTZkYjI4Mjk1YjA3NjBmNTRjMDJiNGYxNmFjYTY5NDNiMDljMzhmNWI1MTYyOTQyNmVlYmVlMDIyNGY0NGUxOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L914-L914",
+          "version": "repo-lines-v1:sha256:8efb853da2cb455c74a6689776e454b5304b14e60023b6c69c300b9315f97a36:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVmYjg1M2RhMmNiNDU1Yzc0YTY2ODk3NzZlNDU0YjUzMDRiMTRlNjAwMjNiNmM2OWMzMDBiOTMxNWY5N2EzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVmYjg1M2RhMmNiNDU1Yzc0YTY2ODk3NzZlNDU0YjUzMDRiMTRlNjAwMjNiNmM2OWMzMDBiOTMxNWY5N2EzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTcwOGQ1YjBkNzNiODRiN2Q4MDM3YzFmZDFhZDQxOGFjMjk0Y2IzNGY1NmU4OTI5ZTgxZTZkYjY1MjViNWRjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg0MGZjY2MwNTJhZDA2ZTZiZDYyNzA3NWYxZDRlNzIyMWIzOGEzZGVlZjIyZmUzOGY2NmI1ODY5MmU4ZThiMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9740dcd81c1d417aa752c58f887d4471",
+      "statement": "The synchronous acknowledgement position is computed by SyncRepGetSyncRecPtr, SyncRepGetOldestSyncRecPtr, and SyncRepGetNthLatestSyncRecPtr for FIRST/ANY/quorum configurations, and standbys are ranked by SyncRepGetCandidateStandbys/SyncRepGetStandbyPriority.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L595-L595",
+          "version": "repo-lines-v1:sha256:d7e70879f1e636b54f497f62ed64ab4e31ad9aa787694a5f7248bd6e08001513:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlNzA4NzlmMWU2MzZiNTRmNDk3ZjYyZWQ2NGFiNGUzMWFkOWFhNzg3Njk0YTVmNzI0OGJkNmUwODAwMTUxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlNzA4NzlmMWU2MzZiNTRmNDk3ZjYyZWQ2NGFiNGUzMWFkOWFhNzg3Njk0YTVmNzI0OGJkNmUwODAwMTUxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGEzMDY5MTQzNzI2ODE2ZGExMjNmZGFlODFkZTkyMGJhNTQxZjljMGVmMTVlNzgyODg2Mzk1ZWE0OTFhNDg0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmYyM2VlY2M2MThiMDU2ZGZhYzI4OWYwNjg5MjZjMjZiZWFlMTZlYTVlMGRhZjQ2ZGVmY2Y5OGI5YzE2ODdjNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L669-L669",
+          "version": "repo-lines-v1:sha256:c41c866a3e84747e1f420ed38c76e14d2d018b1ecdb700e944fead392a5ce12b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxYzg2NmEzZTg0NzQ3ZTFmNDIwZWQzOGM3NmUxNGQyZDAxOGIxZWNkYjcwMGU5NDRmZWFkMzkyYTVjZTEyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxYzg2NmEzZTg0NzQ3ZTFmNDIwZWQzOGM3NmUxNGQyZDAxOGIxZWNkYjcwMGU5NDRmZWFkMzkyYTVjZTEyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEzMjgwMjNkYjBmZjM2N2IwYjMxMjNhYjhmNDA3NDkyOGE2OTExYzlmOGUzMjM3NTYxYjc3ZWQzMGY4MjI0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVmM2ZhMTVkNjE5NGU2NzkxZmQ4MjlhMDMxNzdiZWI4YTY1YzRhZDEzYTY3NDFiM2NmNzYwN2ZhMzJkMjM1YiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L702-L702",
+          "version": "repo-lines-v1:sha256:fcabfb32b7bdda9e54102fa3fcf9a3690841bd61ca276dca15dbe3a79af1d9b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNhYmZiMzJiN2JkZGE5ZTU0MTAyZmEzZmNmOWEzNjkwODQxYmQ2MWNhMjc2ZGNhMTVkYmUzYTc5YWYxZDliNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNhYmZiMzJiN2JkZGE5ZTU0MTAyZmEzZmNmOWEzNjkwODQxYmQ2MWNhMjc2ZGNhMTVkYmUzYTc5YWYxZDliNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWUxYzM0YjcyNGUwOTEwYWJkMjhmNzYxYzNhNDdmNDQwOWQ3OTM3ZTQ2NzIwOTBhMWQ2MTA3Yzc5YWIyM2Y4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjFlNjcwNDY4ZDY0ZmRlOTI0YmM4ODkyMzkxYmE0NzRlZjcyNDViM2NiZjQ0MTMxMzQ0ZTI0YTQ1ZTBlZWNmZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L763-L763",
+          "version": "repo-lines-v1:sha256:ff5811d9382c7b54cdbd434351f5fcc3aa0a8b148d9434b232862760eb465c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1ODExZDkzODJjN2I1NGNkYmQ0MzQzNTFmNWZjYzNhYTBhOGIxNDhkOTQzNGIyMzI4NjI3NjBlYjQ2NWM0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1ODExZDkzODJjN2I1NGNkYmQ0MzQzNTFmNWZjYzNhYTBhOGIxNDhkOTQzNGIyMzI4NjI3NjBlYjQ2NWM0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBiNGExMzgxMmE1NDJkOGJmYzIxODg5MDNkMjNhY2RhNWMzOWI1M2M4YmE0YmFmN2Y5MTE2YmFmZDc0N2JiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMxNjRlZmRmM2Y4YWQ2ZDhiNGJhMGI4YjI5MGUwZDYwNmY0OTQwZDNjOWI3YmJjOTk4ODNkZmIyMDEyNDVkMCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L867-L867",
+          "version": "repo-lines-v1:sha256:208585baf9d993f65805444963e2eeb25d37fa9fc94ad079da662a5d9a3b2c7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA4NTg1YmFmOWQ5OTNmNjU4MDU0NDQ5NjNlMmVlYjI1ZDM3ZmE5ZmM5NGFkMDc5ZGE2NjJhNWQ5YTNiMmM3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA4NTg1YmFmOWQ5OTNmNjU4MDU0NDQ5NjNlMmVlYjI1ZDM3ZmE5ZmM5NGFkMDc5ZGE2NjJhNWQ5YTNiMmM3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDcxMTllMjgwNjBhMGM1Yzk2MDhkMjA1YjllMDRlMzgzYTgxOTk4N2I3MTA3ZWYwYWRmNDdjZTMxYjUyY2Y4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQ3MjRiZjkwMDk3YjgxODliMDM4NTgwZDhhM2JjMjFlYjRiZDM3MjRmMzZmODJjZTQzMGZiODhmMjRmOGJhYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_758244c1e6604ee4a638d78c2dccc28c",
+      "statement": "WalSndSegmentOpen opens WAL segments as the sender advances, and a sender terminates through WalSndKill, WalSndShutdown, and WalSndDone/WalSndDoneImmediate.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L292-L293",
+          "version": "repo-lines-v1:sha256:2fa975b4bca669c4170faef68978e6965f5767e75fadf0083e4155d3ca2f6928:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA0ZTNjZWZjOTY2OWY5NWIyZjFhMmJjOTQzNGMzNWM5MjZkZjg3MDc3MzhiNTZlODQwNDVjM2JhNjhiZGMwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQwMmNmMjRlMjBmMGViNjQxY2MwMGIyM2I2YWEwMjgzM2VmMzc0Mjc2OTkwZmU4MmMxMzllMzA3NDdiNmJmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWU2OWYyMzYwM2Y4YjI4ZjM5OTIyNzhmNjJhZjI4ZTZhZmNkMWY5NzM0ZTFmZTg1ZDQyMjE5NWE2MWM1NzU4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWExM2RiZDcxOGZhYzBkNDQ3OWJkZGE2M2U5MWFlNzRiNDQ2OWZjN2NkY2VlZWIzZjdlYmI0YzYwZmU2MTFmMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3291-L3291",
+          "version": "repo-lines-v1:sha256:9d6ab5f1e46005e44bf5fa0bf24e5d42677e04177c7885cfb8c1d35dbd3a4381:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ2YWI1ZjFlNDYwMDVlNDRiZjVmYTBiZjI0ZTVkNDI2NzdlMDQxNzdjNzg4NWNmYjhjMWQzNWRiZDNhNDM4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ2YWI1ZjFlNDYwMDVlNDRiZjVmYTBiZjI0ZTVkNDI2NzdlMDQxNzdjNzg4NWNmYjhjMWQzNWRiZDNhNDM4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjdkMGJhNWI0YzYyMTMyZmRlODJhYjQ0NWE4M2I5MTAyMWVlMjY0NWFiYTZiMGJlNTNlNTVkMzE1YzRjOTIwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzYwNzE5Y2E2OThkZjE2N2MyNWQyMThiY2EwOWE4NDcwMDNiMmEzMjE4Yzc5MTQ3YmYwMmIwOTJiMGE2ZWZjZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L3307-L3307",
+          "version": "repo-lines-v1:sha256:53a999b8e2101c7d85daaddee260d26c819c54069f2d641ed971b1cd4a75c57c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNhOTk5YjhlMjEwMWM3ZDg1ZGFhZGRlZTI2MGQyNmM4MTljNTQwNjlmMmQ2NDFlZDk3MWIxY2Q0YTc1YzU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNhOTk5YjhlMjEwMWM3ZDg1ZGFhZGRlZTI2MGQyNmM4MTljNTQwNjlmMmQ2NDFlZDk3MWIxY2Q0YTc1YzU3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmUzZDgyZTQ4N2E5ODJiZmQ3OTg4NmU1NTRjMjIxZjYyNTI2MmRkYzhhMWU1NGU2MTVhZTJjM2RkNzk4N2M3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUyY2Q3YTI4YTBlZmFkZjIwNzEyY2RjODNlOGE3YzY3ZWIwMzkzMGU4MTg0NDgxNWQ2YWQ0ZGE0OWE5N2VkOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L413-L413",
+          "version": "repo-lines-v1:sha256:0fe8be88e827b4a8633fbec1cabb2a774db00582e859b8fd7f159973c2a05ed2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlOGJlODhlODI3YjRhODYzM2ZiZWMxY2FiYjJhNzc0ZGIwMDU4MmU4NTliOGZkN2YxNTk5NzNjMmEwNWVkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlOGJlODhlODI3YjRhODYzM2ZiZWMxY2FiYjJhNzc0ZGIwMDU4MmU4NTliOGZkN2YxNTk5NzNjMmEwNWVkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTI5OTQ1MmE2NWYzM2YyOGE1MzRiYTNjY2MxOGUxNzBiZTc2YmJjNGEyNDdiOGEwNDM4Yzk2ZjE4M2ViNzljOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFlYjFkMGZlMWEwNTg0OTE1ZmU2YTBmNDBkMzE2MThjOTE1ZjQ4Y2E4YTdmZTczY2RkYjZhNTI4MDIzN2U2ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d983b8571947438993e6e5b978d841cc",
+      "statement": "assign_synchronous_commit chooses distinct remote write, flush, and apply wait modes, with no remote wait for other settings.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/syncrep.c#L1129-L1147",
+          "version": "repo-lines-v1:sha256:7ac91704d3396312c6de5cef61c9c057fbb706d303b222ca8fb38ac74e303317:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlODIxYTA3YjhiYjJhNjhmZDRhYmZkM2JmZjg5YWM1Mjk3MmExYjUzNTBhNWMwMTU1MTAyNDg5NTljNjZmNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0ZTQ1NjJiNWZiNTk2YjE2ZDA2MTU0MjA2ODk4NjZmYzdiZjIxMGM0ODJhMTM1ZDI1MWNlN2Q0ZmNkMWNjZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

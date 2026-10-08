@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cac3f2b2a8430aee43241ae116629aa6e7a2d644733ac4bec3920f568b03bd6c",
+  "claims": [
+    {
+      "id": "claim_8ffaea72bc604ca9b050833124186e95",
+      "statement": "The replication subsystem keeps its own design notes in src/backend/replication/README.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/README",
+          "version": "repo-file-v1:sha256:7cf099a88baeaff2dd8a082e23335e4334ed061893ffb365c648ac5a86d939ad"
+        }
+      ]
+    },
+    {
+      "id": "claim_078fd1704c7f4711953fc793dcb10754",
+      "statement": "The asynchronous I/O subsystem keeps its own design notes in src/backend/storage/aio/README.md.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/README.md",
+          "version": "repo-file-v1:sha256:c7f26ed976ed6609ba92e2fe1a057c9c409e7f155a305cccf89003c7eb370139"
+        }
+      ]
+    },
+    {
+      "id": "claim_1203948e010f4a28a3d2b13bed8b4c7f",
+      "statement": "The buffer manager keeps its own design notes in src/backend/storage/buffer/README.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/buffer/README",
+          "version": "repo-file-v1:sha256:f0058977fadd7b8e8b9b180e56d41c467d5233645899f2679a03e67ae0a551d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdcd442212694fa1847b97243186ffa6",
+      "statement": "The storage manager keeps its own design notes in src/backend/storage/smgr/README.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/smgr/README",
+          "version": "repo-file-v1:sha256:536b4d637004ff2421f9ea575aa2a726a2ce42a1d00566d33f7bb761840409bc"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

@@ -8,3 +8,8 @@ knowledge.local.json
 .cache/
 tmp/
 evidence/private/
+.wiki-bridge/
+**/.wiki-backup-*/
+**/.wiki-stage-*/
+__pycache__/
+*.pyc

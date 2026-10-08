@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b4064682ad063443573f10ca566d9b1dc165f31733eca00b600657f1937828f8",
+  "claims": [
+    {
+      "id": "claim_5c0806038d904674b91c87e835eef2eb",
+      "statement": "LWLock acquisition attempts an atomic fast path in LWLockAttemptLock and joins the wait list under LWLockWaitListLock, with LWLockAcquire/LWLockRelease/LWLockAcquireOrWait as the public entry points.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L1150-L1150",
+          "version": "repo-lines-v1:sha256:ed73f48198d03a2968af76f5de7498f37865ec8a29cb813d51d0b099d79c2a9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3M2Y0ODE5OGQwM2EyOTY4YWY3NmY1ZGU3NDk4ZjM3ODY1ZWM4YTI5Y2I4MTNkNTFkMGIwOTlkNzljMmE5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3M2Y0ODE5OGQwM2EyOTY4YWY3NmY1ZGU3NDk4ZjM3ODY1ZWM4YTI5Y2I4MTNkNTFkMGIwOTlkNzljMmE5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWY3YmRmZWQ2NDE5MmNhN2FmMjcwZWIzNTg1MmI1NzZiOWY5NWIwNGJlODJkMDljMzA3NGQxMGY3NDkxMDA5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY1ZjkxMzQ2M2RkMzNmMTE5NzU5NGE4NWU3NTNlZjRlOWFiZmIwM2Q4ZmVhZTAyZGEyNDJiZTg2ZjI0NThjNCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L1378-L1378",
+          "version": "repo-lines-v1:sha256:ab223153a70006889f0741636fe1a5643b77cca5138a4c79a8231128b2e2ef6a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIyMjMxNTNhNzAwMDY4ODlmMDc0MTYzNmZlMWE1NjQzYjc3Y2NhNTEzOGE0Yzc5YTgyMzExMjhiMmUyZWY2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIyMjMxNTNhNzAwMDY4ODlmMDc0MTYzNmZlMWE1NjQzYjc3Y2NhNTEzOGE0Yzc5YTgyMzExMjhiMmUyZWY2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc1ZTBiZTJhOWFiZTczNmNjZjJiZjMxNDhhZWNlMTVmYjI3MTk1NWFhNGFhODljZDM3YmQ0NGUzOTAzYjcwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkxOTI2MTVjZjkxMjM4NGEzMGEwMzIzNmJlNjNiODdkZmNjNTdmMzE4NDRkZWFlYzkwODdhYTIzMmJlNjRkNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L1767-L1767",
+          "version": "repo-lines-v1:sha256:ffa32f9c7a8f9d6e76d16bcf1db5e90923a591887fc4d59c532520ea0dd0e759:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZhMzJmOWM3YThmOWQ2ZTc2ZDE2YmNmMWRiNWU5MDkyM2E1OTE4ODdmYzRkNTljNTMyNTIwZWEwZGQwZTc1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZhMzJmOWM3YThmOWQ2ZTc2ZDE2YmNmMWRiNWU5MDkyM2E1OTE4ODdmYzRkNTljNTMyNTIwZWEwZGQwZTc1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQ5Mzc4ZGRlYjE1YzY4ODMyMWY3ODU0MjYzZTYwNTNlZWY3M2IyMzM3NjhkODIzMGYwOTBlZGQ1NGUzZDhjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2RlOTE1ZmFjY2UxOGFhYmJmZmM0MDVjMDdlYTk5MWJkNzM4YmVkNGMyNjE2ZTgzNWRhZDEyNDZkMzgyYzFmMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L764-L764",
+          "version": "repo-lines-v1:sha256:2aaece5ffc0182867d6b35edee0a153cd9fea223773d96e9a8e2f5f744be9f95:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFhZWNlNWZmYzAxODI4NjdkNmIzNWVkZWUwYTE1M2NkOWZlYTIyMzc3M2Q5NmU5YThlMmY1Zjc0NGJlOWY5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFhZWNlNWZmYzAxODI4NjdkNmIzNWVkZWUwYTE1M2NkOWZlYTIyMzc3M2Q5NmU5YThlMmY1Zjc0NGJlOWY5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDA3MmU0MjY2NmQwNDE3Y2FkMjgyNTBmOTdkYTQwZGJkZGQ5ZjlmZDVkOTkzY2E3YWVmN2FjZTY0MDI5ZTFkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDU2YTgxYjUwYzhhNDUzNzIzMzA1ZDdkMDczNGQ0YTA4MjEwNTk5ZjUyYTAxMzIzYzMyOWIzNTk4ODFhODkwOSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L835-L835",
+          "version": "repo-lines-v1:sha256:dda84532e3f14f8f0367ec97c1f4962a8b7aec177a4983266331c8f8f3571424:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRhODQ1MzJlM2YxNGY4ZjAzNjdlYzk3YzFmNDk2MmE4YjdhZWMxNzdhNDk4MzI2NjMzMWM4ZjhmMzU3MTQyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRhODQ1MzJlM2YxNGY4ZjAzNjdlYzk3YzFmNDk2MmE4YjdhZWMxNzdhNDk4MzI2NjMzMWM4ZjhmMzU3MTQyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDg1YTRmZjU2YmY0MWY5YmE4ODE4ZjA1MTcyZWVjYjNlMWUwOGI3ZTU5OWE0ODI3OGRhYzk0MDdmM2Y1MjU1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE4MzdmZmEyOThhMWE3MjVmZGYxYjI2YTE4ZWY2MzkyYWMxZjkxYWMwZWQ5Njg2ZTVlZjg2Y2E0OWRmN2M5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c65d287d2a514d478834f7989a8ff628",
+      "statement": "Individual LWLocks are followed by named tranches: BUFFER_MAPPING_LWLOCK_OFFSET equals NUM_INDIVIDUAL_LWLOCKS, subsystems obtain tranches with GetNamedLWLockTranche, and dynamic ids come from LWLockNewTrancheId.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L522-L522",
+          "version": "repo-lines-v1:sha256:c0cf044837b351456fab12e5b53474fdcc748fd5463f449da12a2ab01cca99ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjZjA0NDgzN2IzNTE0NTZmYWIxMmU1YjUzNDc0ZmRjYzc0OGZkNTQ2M2Y0NDlkYTEyYTJhYjAxY2NhOTllYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjZjA0NDgzN2IzNTE0NTZmYWIxMmU1YjUzNDc0ZmRjYzc0OGZkNTQ2M2Y0NDlkYTEyYTJhYjAxY2NhOTllYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2IwNTcyNzcxMzJjOTcyMmUyZDdlYTk3NTI1ZjU0ZWRlYTljZjkzNjRhODhkODQyMDdjNWE3NzYzZTA4NDNjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjdkOTI4ZTM1NTYyZDlmNzdjNzZmZGYzY2E1ZDEzYmQyM2ZmM2Q4NDY0YjYyNjc5Mjc0ODU5NTJjNTNlY2Q1MyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L562-L562",
+          "version": "repo-lines-v1:sha256:c0c98e0dc3a54ed7c16b52742a5db5bb314d357cfce68171b967f42e57f7f239:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjOThlMGRjM2E1NGVkN2MxNmI1Mjc0MmE1ZGI1YmIzMTRkMzU3Y2ZjZTY4MTcxYjk2N2Y0MmU1N2Y3ZjIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjOThlMGRjM2E1NGVkN2MxNmI1Mjc0MmE1ZGI1YmIzMTRkMzU3Y2ZjZTY4MTcxYjk2N2Y0MmU1N2Y3ZjIzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFlODI4NzU4NWVkNmViMTFmMDY4M2U0ZjgyYWQyZTllZGFlNzAyMDBlZGYxYzIzNGYwNmJlMmI3NjQ2ZWM4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDljYmJlYWRkZWFlZGM3ZGM0MWVlYzhkMWUxZjQxYjE5NTRjOTg1ODQyZWQ0N2NjM2M4NzEyYmYzYjVlNGIyNyJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/lwlock.h#L140-L140",
+          "version": "repo-lines-v1:sha256:e44dcd8b1e65a9b064cba6f2841084915cc80d419f2b04b0e93e6b156779eada:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ0ZGNkOGIxZTY1YTliMDY0Y2JhNmYyODQxMDg0OTE1Y2M4MGQ0MTlmMmIwNGIwZTkzZTZiMTU2Nzc5ZWFkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ0ZGNkOGIxZTY1YTliMDY0Y2JhNmYyODQxMDg0OTE1Y2M4MGQ0MTlmMmIwNGIwZTkzZTZiMTU2Nzc5ZWFkYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI0NDdmMDgzNzAwMjQxYTFlNTRlM2FiZGMyMDdkNTQ3YjYwMDRlMWMxZjc1YTQ5OTIwMjFjODg5NzYwMWIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzBjYTQxM2RjZmJmNWVjODRhNDdmNGU0NWRkODljZWM3NzNkMzUxZmY4YWMyMjU0YWVhNzgwNTQ4MDAzZjcxYSJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/lwlock.h#L94-L94",
+          "version": "repo-lines-v1:sha256:9c8005d9c30d457fa86b9a157a285dc45ac80924d1528f74368f0875fbc19d7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4MDA1ZDljMzBkNDU3ZmE4NmI5YTE1N2EyODVkYzQ1YWM4MDkyNGQxNTI4Zjc0MzY4ZjA4NzVmYmMxOWQ3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4MDA1ZDljMzBkNDU3ZmE4NmI5YTE1N2EyODVkYzQ1YWM4MDkyNGQxNTI4Zjc0MzY4ZjA4NzVmYmMxOWQ3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU2ZjZkNTIwYTA1ZGQwYzAwOWYwNzQ0ZTdjZTExYmQwMGQwMDIwMTZmOWZhOWZhNTk3YzFmZjhlZDcwZDM1MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzBjYWFjMTBlNGQ2MzE4NTRiZDc4NjM0NzBhZjhkNGEwODlhYjkwZTM3ZDZmYTk4MDg1OGFkYzNkNTRhYmZiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b542ad936a844da2967bccdfff098d2c",
+      "statement": "ProcArrayAdd and ProcArrayRemove register backend membership, ProcArrayEndTransaction clears a transaction id, and ProcArrayGroupClearXid batches clears when the ProcArray lock is contended.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L381-L381",
+          "version": "repo-lines-v1:sha256:a9bceded5d8c97eec599ec8b306b45947a2d39a2f41c200211fe970cb006f622:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTliY2VkZWQ1ZDhjOTdlZWM1OTllYzhiMzA2YjQ1OTQ3YTJkMzlhMmY0MWMyMDAyMTFmZTk3MGNiMDA2ZjYyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTliY2VkZWQ1ZDhjOTdlZWM1OTllYzhiMzA2YjQ1OTQ3YTJkMzlhMmY0MWMyMDAyMTFmZTk3MGNiMDA2ZjYyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdlOTljN2M2ZjZiOWIxOWI4YjE5ZGRhMDlkM2IyMzI1NzAxNzI4YTNlN2JiZTUwMzE0NTA1NGJhNGNhOWVmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjUwOGVjZGY4MDZjODMwOTU0MjBkMmI1NDJhNGZlYTg3NzMzMGVlZWJkNDQwMGRlM2ZhY2Y1OTRkNzE1ZDVlZSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L464-L464",
+          "version": "repo-lines-v1:sha256:ca487f4172a1c0fc5e8f7ecb325cb88fa546cb71c6463fc9cce7ef88163448b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E0ODdmNDE3MmExYzBmYzVlOGY3ZWNiMzI1Y2I4OGZhNTQ2Y2I3MWM2NDYzZmM5Y2NlN2VmODgxNjM0NDhiNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E0ODdmNDE3MmExYzBmYzVlOGY3ZWNiMzI1Y2I4OGZhNTQ2Y2I3MWM2NDYzZmM5Y2NlN2VmODgxNjM0NDhiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2UzZjhjNWFmZmU2ODFjZmRlYjZkZDViZDg1ODU1ZjRlNzg5M2E4ZjYwN2UyYTc2MWM3YmJmZGFhZGY5OGEwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmU3NmI1MjhlMzYwMWVlODgxZGFmNjYzYmYyOTVkMjI3ODg3ZDc2YWRlNjVkNDgxNjk5MmU2NTllY2YzMDljOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L561-L561",
+          "version": "repo-lines-v1:sha256:659e795a2f32377f436217609a461e75461e9ba5fa8c4854f9264a5e8d8fa930:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5ZTc5NWEyZjMyMzc3ZjQzNjIxNzYwOWE0NjFlNzU0NjFlOWJhNWZhOGM0ODU0ZjkyNjRhNWU4ZDhmYTkzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5ZTc5NWEyZjMyMzc3ZjQzNjIxNzYwOWE0NjFlNzU0NjFlOWJhNWZhOGM0ODU0ZjkyNjRhNWU4ZDhmYTkzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNlMTFhNzYzOTNiN2RlNDc3MjY0MThkNzVlNDU5NWQ2OTc5OTFmYmMxN2VhZjI2MWRmMDhlNGMzODJiMmJjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIwYjdkZWVkOTY4NDEwYWE4ZmQwYjM4YzU0NGExNTVmMTY1NzAxNWE0MDMzNzhmMDE5YjNiM2I1ZjA1YjU4MCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L663-L663",
+          "version": "repo-lines-v1:sha256:e287e939725c27ab2bb747b0e4249eb799d4886e341edcc4783cac6e9e8ff0a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI4N2U5Mzk3MjVjMjdhYjJiYjc0N2IwZTQyNDllYjc5OWQ0ODg2ZTM0MWVkY2M0NzgzY2FjNmU5ZThmZjBhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI4N2U5Mzk3MjVjMjdhYjJiYjc0N2IwZTQyNDllYjc5OWQ0ODg2ZTM0MWVkY2M0NzgzY2FjNmU5ZThmZjBhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDY3NzE2NTM5ZDlhNjFhYTdkNDkwMjM4MzlhODE1YTdhY2FmZGJjMzhkYzViOTljMzE4NGE5M2RhMGQ1YjMwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjRhNDZmM2RmNThiMTNlMTA3ZDdjN2M4NDg1MjRlMjFlZmNjMGU2ZGNhYTllYmE4YzU5NjRjMmJkMTNjNTUwMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_daaf3bb370ef4932bf0b7c732e4ecf88",
+      "statement": "GetSnapshotData computes snapshots, TransactionIdIsInProgress checks whether an xid is running, and GetOldestNonRemovableTransactionId derives the oldest xid that must be preserved.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L1393-L1393",
+          "version": "repo-lines-v1:sha256:50643b71eb19510d9f6dc34a97a6ce37905f983bb7f5ded6f7f8899470323158:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA2NDNiNzFlYjE5NTEwZDlmNmRjMzRhOTdhNmNlMzc5MDVmOTgzYmI3ZjVkZWQ2ZjdmODg5OTQ3MDMyMzE1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA2NDNiNzFlYjE5NTEwZDlmNmRjMzRhOTdhNmNlMzc5MDVmOTgzYmI3ZjVkZWQ2ZjdmODg5OTQ3MDMyMzE1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY3ZGE1OTUxNjk4NDg5YjY0ZDU5YmRjNGFlMjcyYmY4OGFlMTE2OGI1YzM2NDM5ZWJjM2ViNzE3ZWVhYjk1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTlkYmUwNTI0ZjU2ZGY1ZWMxNzZhYmZkZTg2M2U4ZGUzYjA5ODdmOWIwNjZmYzRjYmEzYWQ1NDQ5ZTEyMDFkYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L1944-L1944",
+          "version": "repo-lines-v1:sha256:93d7552bd538e13869239d3a41eabcdf592a52276feeb86a9afb152766e6705d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkNzU1MmJkNTM4ZTEzODY5MjM5ZDNhNDFlYWJjZGY1OTJhNTIyNzZmZWViODZhOWFmYjE1Mjc2NmU2NzA1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkNzU1MmJkNTM4ZTEzODY5MjM5ZDNhNDFlYWJjZGY1OTJhNTIyNzZmZWViODZhOWFmYjE1Mjc2NmU2NzA1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTZlYmU3MzQwNjE1OWJiMDM3YmU0NzczYWU2NzUxZWFmYWNhNmFkNDQ1YjY0NTA2ZDYxNDlkMTA5ZWI4NTY4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZiNGE5MzhmYzExZmFiZmU3YmQ1NWJlZGY0OTQyZjkxNGZiZTlhZDNlMWZkYjI2MDIzYjdhMmNkY2FjMGEzYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/ipc/procarray.c#L2114-L2114",
+          "version": "repo-lines-v1:sha256:000ada596e1bf1ea801ecafeff2b3de1434555b1fb93650bcc07c443240a5d55:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAwYWRhNTk2ZTFiZjFlYTgwMWVjYWZlZmYyYjNkZTE0MzQ1NTViMWZiOTM2NTBiY2MwN2M0NDMyNDBhNWQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAwYWRhNTk2ZTFiZjFlYTgwMWVjYWZlZmYyYjNkZTE0MzQ1NTViMWZiOTM2NTBiY2MwN2M0NDMyNDBhNWQ1NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGI2Mjk3YjQ3ZGE5MmVlNDYzY2U4NmVjODU2NWViZjMwZWY3N2EyYTk0OTQ1NTBkZDE5MjE4MzU2ODBlZTU0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzgwNWM0NWEzYjJhM2JiNDE5ZGU3ZTgzYzQxMDk1NjVkYTFkODRjZWMxNzQ5Zjk2NDI0YWQ1NTFjNWJlMjJmYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2353cdd6d67141fe8c157d86b99086b9",
+      "statement": "XLogFlush permits group commit by rechecking another backend's flush progress; commit_delay sleeps only when positive, fsync is enabled, and MinimumActiveBackends satisfies CommitSiblings.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L2895-L2967",
+          "version": "repo-lines-v1:sha256:ff77fb9ba84ca2e93a8708cbe28eb1f9a357241e7eb7e3b2ee37090d022cfee0:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGQ0OTVlMDE2YWQ3OWI3ZThkMWY0NGFmYjc4NGU4NTRmNGUxY2M3Njg5MjNhZjg4NDdhN2I0M2I2MzM1MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMzA5Nzg2ZTgwOTcxYzA0NDFhYjQ2ODJiOTVlNDc3ZGQwZTM3N2Y5NDI1Y2FjMTM3MmJhNzQzYzMwMWQwMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYmJhN2E1ZGE1ZGJlYWY5MWUzMTkzYzk3ODFiOTk1YTkwOTllYmRmMmNjNzM2MGM2NjYzMjQzNWJkNDM4NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5MDM2NTgyZDNkMmU0NWJlZmVmMWJiYzc1NWNjNWU3N2NkZjM5MThhOThhZDUzYTAyMGY5MmU0OTI5NmMwYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7d39f529dd44b12a4d3e1d282c6bfa3",
+      "statement": "Wait events are reported with pgstat_report_wait_start/pgstat_report_wait_end and resolved to names by category in wait_event.c.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/utils/activity/wait_event.c#L32-L37",
+          "version": "repo-lines-v1:sha256:40b8981f0fdb2a53691cf21c0c988f987e209289280fc7fac47f007d803e9e16:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY2ZDU5MTIwZmNhYTRjMWY3ZjMwYTVjZWYwN2QxNzVhMTYzNTZiZmE0MjljN2VmODZhNDQ4NmM5NWUwMGM3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkNDFlOTI0NzcyYWFmNjQwMzgwZmVlODU1MzE0YzcxZjQ0M2U1MDE3OTg1ZjM1YWU1NTc0NWYzNWFhNzI0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmVkNDc5NDExOThiNWRhMWFhNThjOTZiODJhYWQ1OWNhYTI4ZmVmNjM3NjllODU2ODliZTIwODkzYzUyOTMxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmUzNDYwMmZhYjcyNzk4NjI2MGQ3MDQzOGJjMjlkNGE0Y2Y2ODkyZDcwNmM4NGQyOTM4OTQ3NWYxZDIzNTdlYyJ9"
+        },
+        {
+          "resource": "repo://src/include/utils/wait_event.h#L67-L67",
+          "version": "repo-lines-v1:sha256:c7ea5f81b137bf2f313954d699daf8cd3287b30c4c62577e6bd4a9723b648dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdlYTVmODFiMTM3YmYyZjMxMzk1NGQ2OTlkYWY4Y2QzMjg3YjMwYzRjNjI1NzdlNmJkNGE5NzIzYjY0OGRhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdlYTVmODFiMTM3YmYyZjMxMzk1NGQ2OTlkYWY4Y2QzMjg3YjMwYzRjNjI1NzdlNmJkNGE5NzIzYjY0OGRhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc0MTJhZWM2ZjJlZjg0YzcwMzQzNDE3MTNmYTQzZjgwOGRjNGYwNTc5NTllOTA1MWM1OGNlODQ1Y2VlZTA2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGIyN2RjM2M0ZjcxOWE5ZWE1NmExNzdmNTkxYjU5NGQ3Y2E3NWRiNWI5MmUzYmJkMTJjYWY4NDJjYjYxMGQ5YSJ9"
+        },
+        {
+          "resource": "repo://src/include/utils/wait_event.h#L83-L83",
+          "version": "repo-lines-v1:sha256:4f75f5f9972f12aff24397d0df1b4f364b8ac8d5d2055e60ea3b692e3f43e830:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY3NWY1Zjk5NzJmMTJhZmYyNDM5N2QwZGYxYjRmMzY0YjhhYzhkNWQyMDU1ZTYwZWEzYjY5MmUzZjQzZTgzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY3NWY1Zjk5NzJmMTJhZmYyNDM5N2QwZGYxYjRmMzY0YjhhYzhkNWQyMDU1ZTYwZWEzYjY5MmUzZjQzZTgzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc0MTJhZWM2ZjJlZjg0YzcwMzQzNDE3MTNmYTQzZjgwOGRjNGYwNTc5NTllOTA1MWM1OGNlODQ1Y2VlZTA2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWNmZmI4ZTNlNjE4MGJjMjBmMDAwNjc5N2Q0MGE1Zjg2YjdhYzQyZWVmZGM0MWZmYTkzNjRmMzUxOWU5OGM1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7db7fefe2adc4ffab56802a50e3d92ce",
+      "statement": "pgstat_count_io_op accumulates the I/O operation counts and timings that back pg_stat_io.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/utils/activity/pgstat_io.c#L60-L60",
+          "version": "repo-lines-v1:sha256:0e115b7784885d5f2695fb2e903da25fc90e5fafa88836667aaa9a2c4db9b365:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUxMTViNzc4NDg4NWQ1ZjI2OTVmYjJlOTAzZGEyNWZjOTBlNWZhZmE4ODgzNjY2N2FhYTlhMmM0ZGI5YjM2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUxMTViNzc4NDg4NWQ1ZjI2OTVmYjJlOTAzZGEyNWZjOTBlNWZhZmE4ODgzNjY2N2FhYTlhMmM0ZGI5YjM2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2ZDM3OTIyMmI1YTVjZWEzNTBiOTg0ODJjNmVlNjllY2E3NTYxMjEzYWM1ZDZmOWMzZTVjYzVkY2M5NzI1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ3YzNkMDUzZDUzMzJhZTBkM2YxOGYxZjVlYTgwZDk4NDI4OTI5MTcxNTc1MmNhMGZiNzFkNTFkOTYxYmFkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d591615e394c4e4fbdec0f8a70773426",
+      "statement": "BufMappingPartitionLock selects a buffer mapping lock using the buffer-tag hash code modulo NUM_BUFFER_PARTITIONS, not a buffer ID.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/storage/buf_internals.h#L247-L258",
+          "version": "repo-lines-v1:sha256:df2d759d098bac9b823507e6d968a29dd9e5d8cef33f8c5f0e9e3227e8a5c21e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjYWMwZmMxOTJlN2YzNTkxODA5YjA1ZGNjZWFjY2QzYmE0YWMwZWNmOGQ5OGU5YmQ3ZGY3MGM4OTY0ODdlMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYmYwODljY2Q5ZTc3ODBkN2IzMzNjNjQ4OTcwYmNkZmM4N2NhZTE5NGNlZjZiYTFkYTM2M2VlMWE1ZDVkYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZDk2YTZhZWMxMWE4ZTQyMDY2N2JiOTdjYjZkNTI5YjU1MGZmNDdmYTY4MTg4ZTc1YmI4ZjZhZTcwNmEyNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_333fb9aeac1d4754af1c8102a4f5a6c7",
+      "statement": "LWLockAcquireOrWait returns true after acquisition or waits for the lock to become free and returns false without ownership, allowing WAL callers to recheck completed flush work.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/access/transam/xlog.c#L2905-L2945",
+          "version": "repo-lines-v1:sha256:3fd509c7f2bd6fe9f6ec4273f872456d0792f5900431d3fd3735449b00ea3923:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzZGEzY2IxMjQ2ZGU2NTQxOTM5ZDI2NWRlYjBhNjdkOTM1ZTJkZTI2N2ZlNmQ4MTg0ZDM1ZGNjYjE0NWE3NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZTkwODhhZjRiZWU4ZTUzYTM4MzJmY2UwOWQ2OWUyYWRjNjRjYTVmYjFhZmZlM2ExNDU0YWJiNWZlODhlNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NWFkOGJkYjQ1YmE3Y2RmYWEyYjBkZjA4YWUyMWE4ZGIxOWIzNTIxYjE3ZmU1YTMxN2U4YTY5NGU3NGUzMmMifQ"
+        },
+        {
+          "resource": "repo://src/backend/storage/lmgr/lwlock.c#L1367-L1493",
+          "version": "repo-lines-v1:sha256:9665dcc302c38015c2c4f6d4f558be9818a3a5bf90c0dd286d595c6a6115c33d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwZTIxMzFkMjZmYjk3YWQzZDgxNTJmMjA2ZDQxMGVkYWYxM2I3ZjAzODk0N2YzNjM3MmYxOTEyZGYwYWJhYmRmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1MDg2YmJmNjQ3MjA2N2ZiOTZkNzRmNDhlODE0OTYwYmIwZDcxZDhmODRkZWFhYjBiZTQyOGMwN2RlZGI0NzEwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhYjE0MDdkODhlNTRjYWI2YTdhYzc1ZWVlYWY0NzNjNGU1Nzg0MTE4ZWVmZTRhZjEwOWZmZDJlYTRjYTNkM2VmIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

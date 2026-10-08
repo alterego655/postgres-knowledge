@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9264078363b2702acff42095357d1fb070ea59e670ffdceb3a8c07fcff16131c",
+  "claims": [
+    {
+      "id": "claim_75ba4f088bf844b4b668ba9d29f06506",
+      "statement": "The io_method GUC selects sync, worker, or (when compiled in) io_uring, defaulting to DEFAULT_IO_METHOD, and pgaio_method_ops is set to the matching IoMethodOps table entry.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L64-L74",
+          "version": "repo-lines-v1:sha256:abfa0d8e3d21d52bff5f47a4e4fcc6d81cfd0d6f88bd017ff4a1345e1e24030a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYzlhMjFjNGZiNDQ3MzVlZWI0Mzk3ODcxNDM5ZmVlNzEyZjc1NDZmYjE4NTRkMWQyNjg5NjRkODNmYmE5MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NTgxMGE0MDYwZGIxZjMxZjZiNzc3ZGFmOWE1YzRjZTI1MWE3MDI4NDk3YjMwYjkyYjk0N2NjMjMzMWEyOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhZmFlZGM5NzcxMWJhN2QzNThkNGRjZjgzOTg3ZWEyMzQxN2JlNWQ2OTYxZDkwNTFmYmVlMDE0ZmIxMDM0NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMDkzZDYwYjM1OWE0MTA5MmYxYjVhNWY3NGU2ZjQ1NThjZjZhMDEyYTI4NGZlMzI2ZmE0NmNmZmI2MzMxM2IifQ"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L84-L96",
+          "version": "repo-lines-v1:sha256:cce1d9763794b0d7868282b15b04651cfca1fb4939d500df040b8d6deeea25b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYjZlZmVlYmZmZDQyMjhhZjg4NjBiMzI0MzVjMmRkYWM2ZWJmYWM0MWI2YTgzMjFhMzA4OTViYjg1NmM3NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NWQ4MDk2NGM4OWU4NTM4NjIzMDU3NjRhMjg5YmE4ZjliOTFjZGJlMGIyNDhjN2ZiNzUwNTFhMmMzZWY3N2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlODNkOGRjYjZkN2Q1MmFiNDU0Y2VlNWQ1ZTViM2ZkZTE4NTU5MWUxNmRlNTQ0NjliNTBhYTNjZjU4YWJlMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNDM3M2NkYTdiMTBjZjI4MGViYmY2ZDFhOGYyZTdlOWJlZjNiYmFlMTk4NGVmZGU1MjBkYTgxOTU3MzQ0Y2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3930d2ed2ed942d3ac3a0723f1bbfc86",
+      "statement": "io_max_concurrency bounds the number of outstanding asynchronous I/O operations.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L75-L75",
+          "version": "repo-lines-v1:sha256:9161b637cccd4d1c8c387bb7a57cf667ed999de0673aaca51401f5da0d57b66a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE2MWI2MzdjY2NkNGQxYzhjMzg3YmI3YTU3Y2Y2NjdlZDk5OWRlMDY3M2FhY2E1MTQwMWY1ZGEwZDU3YjY2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE2MWI2MzdjY2NkNGQxYzhjMzg3YmI3YTU3Y2Y2NjdlZDk5OWRlMDY3M2FhY2E1MTQwMWY1ZGEwZDU3YjY2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTY5ZjZiZmM1Njc3Yzc5ODc0NjQ3ZDdjZGY1MmU0MDk4OGZjZDZjMzgwMTkxZDUzMGE5MmQ1MWUzZDFmOGI0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjY5ZmRiNTE2OTlkNTQzMjk1MDIyYTFiNWZiYWI5MWZjNWE2NTdjZTY1ZjA1NDQzOWU5MGY5YzhkNzExNzA0OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e1b2ded28be46c5ad907676f4c7ccf0",
+      "statement": "pgaio_io_release reclaims an unused handed-out AIO handle and rejects unexpected handle states; it is not a release API for arbitrary submitted operations.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L234-L260",
+          "version": "repo-lines-v1:sha256:5175d4048b9a223446fe8b0e9b202c4af8f2b4a0695731f77a98efd05eb508c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxMmUxZjMwYjY3NWI3YmRmNTEyYjZhYWU3ZmVkNTUyMmZmZjdiZmZhZDE1M2YxYzI3YzhiNDY2NzIyYWI1YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxZDcyODU3M2U2OTVkNTFmZDcxZTMxMjNiMzBiMDAxMjMwYWY0YzEyZmViNjVhYmExNzJkNzkyMmIxNTQxNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aeb2995d27a947a8bc16302d0b005e9e",
+      "statement": "pgaio_io_get_wref establishes a wait reference that lets any process wait for an in-flight AIO operation to complete.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L366-L366",
+          "version": "repo-lines-v1:sha256:4919d3bf0289b2a561cc2fd56ee4d411eaca56dc345946e44ade46dcc4fe5a42:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxOWQzYmYwMjg5YjJhNTYxY2MyZmQ1NmVlNGQ0MTFlYWNhNTZkYzM0NTk0NmU0NGFkZTQ2ZGNjNGZlNWE0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxOWQzYmYwMjg5YjJhNTYxY2MyZmQ1NmVlNGQ0MTFlYWNhNTZkYzM0NTk0NmU0NGFkZTQ2ZGNjNGZlNWE0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJhMDA2NjE5MzU3ZTAzOTg3NGQwZmZhYTFkNjRmMDQ1ZWJlMmY2YTBkMjEzZTc2YzE3ODA5ODllNTNmY2RkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwNTI4NTgyN2I0NGJmMzYyYTg2MDlmZDIyNGE4ZWYyODE1ZTAwM2M4Mjc0ZjVlMGUyYjE2NThlOTU2Nzg0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_04da1cc8fc594e91a6e46406985ffc12",
+      "statement": "pgaio_io_process_completion runs the callbacks registered on an AIO handle when the operation completes.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio.c#L528-L528",
+          "version": "repo-lines-v1:sha256:47188ec696f40d4f8624c56f09fe4df35f3adcc5dfd6184a4f4e7bdf3489d7cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDcxODhlYzY5NmY0MGQ0Zjg2MjRjNTZmMDlmZTRkZjM1ZjNhZGNjNWRmZDYxODRhNGY0ZTdiZGYzNDg5ZDdjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDcxODhlYzY5NmY0MGQ0Zjg2MjRjNTZmMDlmZTRkZjM1ZjNhZGNjNWRmZDYxODRhNGY0ZTdiZGYzNDg5ZDdjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk4NWQzNjIwN2UzOWE5MmE4YWQ1ZGE2NTEwM2Q1OTZiYTU1OTdjY2YwNTRjNmUyYzE1OTlkZTZiZjkzNDU1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTNmMDUwM2FlYzdhN2JhNDE4MzZjZmIzN2I3YWE4YjM3ODViYmMzNGVkMWU5YTUxN2U4NmZjM2NlN2U3YTc4MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b74c2e92844d4fcfae6887e66471bfed",
+      "statement": "AIO operations are started with typed helpers pgaio_io_start_readv and pgaio_io_start_writev, or executed synchronously with pgaio_io_perform_synchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/aio_io.c#L116-L116",
+          "version": "repo-lines-v1:sha256:91ab1aaf1d47de2e7c922ee26aa7a477908864289ad08f390ae3f1128d110935:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFhYjFhYWYxZDQ3ZGUyZTdjOTIyZWUyNmFhN2E0Nzc5MDg4NjQyODlhZDA4ZjM5MGFlM2YxMTI4ZDExMDkzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFhYjFhYWYxZDQ3ZGUyZTdjOTIyZWUyNmFhN2E0Nzc5MDg4NjQyODlhZDA4ZjM5MGFlM2YxMTI4ZDExMDkzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIxNTM3YTEwM2IwZDg2Y2YwYWJhOTM3NzMzNDVjMjNlNTdjYzI1YWIzOGZmYzk2YTVmNDg0N2VhNmNmYmYxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAyNTRkMzk5NmEwMGM0NjcwYWQzM2E3OWU5MWFkNDY1ZjBlYmY4ZTgyNDM4ODQ4ZGNjZGViMTVlZjY0OGFhZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/aio_io.c#L78-L78",
+          "version": "repo-lines-v1:sha256:6e28bbd66b5d05909f53431cabd6cc93dc4165826e889dab57dd22164565f1de:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUyOGJiZDY2YjVkMDU5MDlmNTM0MzFjYWJkNmNjOTNkYzQxNjU4MjZlODg5ZGFiNTdkZDIyMTY0NTY1ZjFkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUyOGJiZDY2YjVkMDU5MDlmNTM0MzFjYWJkNmNjOTNkYzQxNjU4MjZlODg5ZGFiNTdkZDIyMTY0NTY1ZjFkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmU4OTg5NGM4ODFiYjIxNTY5OTMxMGJmYTA2OTBjYWVjYmZhOTM5YWM4Zjk2MjIwYTQ5YmFjNzE0NGYxYzZlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQ0MjZiY2VmYTk5OWU0MDU1NWQ4NDA5MzAxZjI3Nzg2ZWExOTRiODMzMGUzZGM2YTFhNTQyMzUxMDE0NTY1NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/aio_io.c#L91-L91",
+          "version": "repo-lines-v1:sha256:3dfaa2d6429e0dad95ed28d334e1231577219224c9b86196589b268988b808dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RmYWEyZDY0MjllMGRhZDk1ZWQyOGQzMzRlMTIzMTU3NzIxOTIyNGM5Yjg2MTk2NTg5YjI2ODk4OGI4MDhkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RmYWEyZDY0MjllMGRhZDk1ZWQyOGQzMzRlMTIzMTU3NzIxOTIyNGM5Yjg2MTk2NTg5YjI2ODk4OGI4MDhkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2ZDM3OTIyMmI1YTVjZWEzNTBiOTg0ODJjNmVlNjllY2E3NTYxMjEzYWM1ZDZmOWMzZTVjYzVkY2M5NzI1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzJmNzRhMjc3OWJjYTUyNjVhNTMzZTgzNGNjM2U4N2JhMGU1NGQ3MDkyYjY5Y2U1NGFkYmI4NjUzNjlkN2Y1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cc5ecf5ba424147b3d13e88d44f32f4",
+      "statement": "The worker I/O method consumes operations from a shared-memory submission queue using a dynamically sized pool of I/O worker processes.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/method_worker.c#L103-L110",
+          "version": "repo-lines-v1:sha256:04e64c841e8a3eac0e44127f32e2e0525063e4f1653a0c050760d269a7f5ef59:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QyYTNiODVkY2M5YWY2YjZmNWNhYTAwNDlhZTRiY2YyZTQ3YjRmNzQ1MjhhNzI5MzczMGQzMzQ2ZjAwYjhlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmMzOWUxZWVhYWExODA1NWRkMTRmZWI1ZjJiZTM1ZjllMTczNDQ4MjM3MmVhMjg4NDI5YTNiZThjMWFjYjJmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmExYWNiZGQwZmFkNjJiZWM4MWJjMDQwNjZlZDU0M2Y2NWQ3NDQ1NDRhNjcxNTBmMWIxMTBmNTRlODhhYmFjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI3MjI3Zjk2MmYzZjZmNmEyNDA3Zjk5MjI5ZWNkNTA5YTJiYzdkN2IwOGVlMDJhMmI1MWZjNDQyMGNhOTc3ZSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/method_worker.c#L6-L14",
+          "version": "repo-lines-v1:sha256:2b5c62e31449aa84223a528adf49bf01bcd82b80886cc4c14b74096a011e5344:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjYxYjQzNGZiN2Y0NmJkOWU4YmM1NDQwMDY1ODc3ZTRmZjMwYWE5NGEwOGU0MDBlOGNkYmU5ODI1NWNmYTBmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRjMzQ2YTI1NDI1NWQzYWU5OWE0MjE1N2M0MDU4OTE0ODhkYjk0OTk4Y2YyOTg4YmQyOTcwYTQ4ZGIxNDViNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTZjMDdkMTlhY2JkMjA5YTAyZmRjMzNiZjU0YTE5MGFkNWZiMGRhMmEwNDNkOTk1MDllODZiZTBiZWNkOGU5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM4Yjk0OGE0MjQ3NjZjYzYwNDk1NWU5MTBjMzM2NTMwMjdjMTg3NThmMTZhMjFmYzRmMzY3MzhjMDRiZjlkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_974b0b1897144518b1ed0570ad791348",
+      "statement": "The worker method requires synchronous execution outside the postmaster, for backend-local references, or when the I/O target cannot be reopened.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/method_worker.c#L472-L479",
+          "version": "repo-lines-v1:sha256:13dc034e2679515ea135fbcae1cb6c0d581e639fe359405cf15b19c8c190bfbf:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE5MTZiZDg2ZDg3MjY3MDIwNGRjNTEwZjk2NTUyYTEwMjlkMWIzN2RhN2NjN2I2ZjFiOTY5ZmFhNzQxNjM3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMyZmQxZTk4Njg5NDI2NDE2M2M4MDU4NmI0ZTkzZjk1OGU1OWJkZTA1YjIwOWZmZWE4Y2MxMTdmNWZiZjdlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWUxZmQzZGU1MTc4MWRhNDMwNTE2ZjZkNTdkMDAyMzU3ODU4NjY0MzBmYWUyYzRlNDA4OGI1MDYxODFmZGMwOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_45478b5daf564ad08dcca397bd0f79a9",
+      "statement": "The io_uring method uses one io_uring instance per backend (a PgAioUringContext containing struct io_uring), because a single global ring would require additional locking.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/method_io_uring.c#L6-L13",
+          "version": "repo-lines-v1:sha256:00fcb38a778cd5a9eb9d6efa76b177921d91190076903042731fd16af9e94ee8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZkMDA5ZDRmZTcxYzIzZWNhY2ZkNTE4ZGM5Y2ExM2VjOWZmNzY5OGMzNzhmODRlNWY4NzkwMjM2NmUxNDg4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjg3MmViY2IwYThiNDM4NjM3MTBjZWVmY2I0MDY1ZWU5YzQ3MzQ4Y2ZiZjg0NWE2NjEwYzE3ODk2YWEwZWM1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZmZDViOWE1ZTBmNzFkZmY0ZWE3NGNmNTg1ZGEwNTRjM2Y2MmE5OGYxOGZmMTZhMjcxMWE4YjZiZjYwMmQzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQyOWI5NDFkNmM1MTNhZTkyODQwZWZjYjdmZjViYTgxM2JiMDlkMTY0MWYwNzI2MTgzOWY1ODY3ZmMwMmI2NCJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/method_io_uring.c#L83-L101",
+          "version": "repo-lines-v1:sha256:a0ca1c2d8b6e5f919f27fa2e20bd59a1fafe1c33eaac9de4bb347b8032efc017:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZGU0MzhmM2I4OTJmMjY1Y2ZlZmU2YjM4MTA4MzQ4MzU3NTExYTNhZjg0NmZlNzI2MjJhYjQ1OTU3MzZlZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ODE3MTZmZjg5MDIyOWZiODA4MGI0NjlhOTZjYTQ0ZTE0MmM1NWM2ZDYzM2I2MTQ1MjlmMWRjNDA1MDc2NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMjYyYjRkZWEzYTA3Njk2Y2Q0OTRjZGM2NThhNWExODI0YzdjZDQ5YmVlMTNkMWVlMzhjODQ0YWJkMmE1NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliYzRiZmIxMmRmZmI4ZGQ5NGFhNDkwYjNlYmY1NjcwM2UyZGI5MGNkNjQxYWU2MzE2ZTAzNDBhOGIxOTA4NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dead0eeeeab0454c950f90183129e6c7",
+      "statement": "ReadStream is created with read_stream_begin_relation or read_stream_begin_smgr_relation, consumed with read_stream_next_buffer or read_stream_next_block, reinitialized with read_stream_reset, and freed with read_stream_end.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L1438-L1438",
+          "version": "repo-lines-v1:sha256:7d62362988f21bd00edde293e42acc8a7c24d5091688f183d00a3c2eac8bf829:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q2MjM2Mjk4OGYyMWJkMDBlZGRlMjkzZTQyYWNjOGE3YzI0ZDUwOTE2ODhmMTgzZDAwYTNjMmVhYzhiZjgyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q2MjM2Mjk4OGYyMWJkMDBlZGRlMjkzZTQyYWNjOGE3YzI0ZDUwOTE2ODhmMTgzZDAwYTNjMmVhYzhiZjgyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGQ4NzlmZWY3OWJmNzIyYjVjNjc2ZWRkZjQyMDJhNmRlMWYyOTY2NTQ1ZTIwMzdiNDgyOWQwYWMyMTViYmRkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWFkYWNiOWU4OWUwOTkzZTUzNWUxODZlYjQwYTY4YjlkMzk5ZGQ0YWM5MWQ3MzM0Njg3ZmU4NWUxYjgxNjQxYiJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L1490-L1494",
+          "version": "repo-lines-v1:sha256:9cbabb211360bf56ff29d8cd50c24876f7603b3b4d7b66a9ec0f0b3a712acff8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU4MjFhMDdiOGJiMmE2OGZkNGFiZmQzYmZmODlhYzUyOTcyYTFiNTM1MGE1YzAxNTUxMDI0ODk1OWM2NmY1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjVjNTNlMmQzMGNjOWI3YzMyYTU0ZWExMWFmNTRiYTEyMjI4MTQ2M2MwN2MyMTE0MDBkNzZjOWY3Mjk5YzlkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIxOGIxNTc0MTU4MTYxNWRjMzdlYjJmZTA2OTg0MWExM2UwY2FhOGY0ZGYzMTNhMWI0NGVjZjk3ZWU4ZjVhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/read_stream.h#L85-L107",
+          "version": "repo-lines-v1:sha256:56f10b9fc63e31663aaa45365d26b7e5fe2efc948873626ab6a910341f248025:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTU0ODMwMWZjOWYxNmRlNzk3YjAzM2E3OThjYjM3Yzc5OTExM2E5NjY4NzgxYTQ5ODU1YjIxNGU5OGMyOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMzYzMDU2ZGNiODY3YjY5OWU2ZTFiZjFlNDUwMzBiOTFlYTViMWMyZTg2ZmExNGQwMmZhZGM3NGVlMWU0ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNWUzNDViZTVjOTM5YzEwOTdkNTRhN2FmNTVkMWI2OTI5YmFmYzI4ZGQyMmFiZGExMTllODA1ZDkzNTc2NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2NzEzOTc2MDE5NGQ2NWZhZWVjNjUzMGE1MmE2ZGU5ZWZkZDkzMjhjNTk0Zjk3ZTJmNTcwMmY0Y2ZmYzczYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_86e5b11eb9c7493b8161d558ed631c61",
+      "statement": "READ_STREAM_MAINTENANCE makes a stream use maintenance_io_concurrency, READ_STREAM_SEQUENTIAL suppresses automatic prefetch advice, READ_STREAM_FULL disables read ramp-up, and READ_STREAM_USE_BATCHING opts into AIO batching.",
+      "evidence": [
+        {
+          "resource": "repo://src/include/storage/read_stream.h#L28-L28",
+          "version": "repo-lines-v1:sha256:afe486774988a91fe0c8941754d6e12c572cd192851e3ff20bd7e557ba885e72:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZlNDg2Nzc0OTg4YTkxZmUwYzg5NDE3NTRkNmUxMmM1NzJjZDE5Mjg1MWUzZmYyMGJkN2U1NTdiYTg4NWU3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZlNDg2Nzc0OTg4YTkxZmUwYzg5NDE3NTRkNmUxMmM1NzJjZDE5Mjg1MWUzZmYyMGJkN2U1NTdiYTg4NWU3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2UxYzkzMmY5YTZlYTY3ZDE1ZDQzNzk5NTIwNDIxZDM1NjU5MGE2MGY4ZmI4ZDNkMWI1Mjg3YzllMzVjYWUwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjAwZGMxZGNhNGIxYTQ3Y2IzNmZjZjc3ZTk5OTBhMDBhMjdhYmM0M2UxMjJjNjFjNTMwMjViM2Y0NGU3Yjk0NiJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/read_stream.h#L36-L36",
+          "version": "repo-lines-v1:sha256:04aad3a1d868a9730155892448781c8c318b66416e5c25dde2afd6b79ac0d9ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRhYWQzYTFkODY4YTk3MzAxNTU4OTI0NDg3ODFjOGMzMThiNjY0MTZlNWMyNWRkZTJhZmQ2Yjc5YWMwZDllYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRhYWQzYTFkODY4YTk3MzAxNTU4OTI0NDg3ODFjOGMzMThiNjY0MTZlNWMyNWRkZTJhZmQ2Yjc5YWMwZDllYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmIyODk3ODYwMTg0NWQ0YTMxMDk0YzFjY2E4NmFiZTdjOTFhZWZiM2ExYjljYzkyZmI3Y2I4NDEyYzFjNTQ4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjU3Y2Y0M2M1ZDViODRlZjkzM2RmYjRjYTJhZjRlMDQyMmJjNzc5Yzc4NmExYjcyMDA5YTEyMTQ0N2IyNmExOSJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/read_stream.h#L43-L43",
+          "version": "repo-lines-v1:sha256:30cfef9f26023a0a4fc354ab40d8b229e05528357aec22823a8fbe4811af0b2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjZmVmOWYyNjAyM2EwYTRmYzM1NGFiNDBkOGIyMjllMDU1MjgzNTdhZWMyMjgyM2E4ZmJlNDgxMWFmMGIyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjZmVmOWYyNjAyM2EwYTRmYzM1NGFiNDBkOGIyMjllMDU1MjgzNTdhZWMyMjgyM2E4ZmJlNDgxMWFmMGIyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkyYTg1MjQwZjkzZGRmOWMwNDU4Yzk4ODAzNzk4M2NiZGZhZTg2ZjJlMTdlOTIwNjkyYWM3MDAxMjkzYzE3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTVmOWEzZjYxMzM2MDZhMDRhNWFmZWE4YzY4MjM3MTdmZjA1NzIzNWRjN2RiY2ViNGJlNTI1MzVjNjkwMDBlNyJ9"
+        },
+        {
+          "resource": "repo://src/include/storage/read_stream.h#L64-L64",
+          "version": "repo-lines-v1:sha256:5ab0c146afbba30955a6c0c72689e34bdf618ac8a413318aa20c8b708be875bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFiMGMxNDZhZmJiYTMwOTU1YTZjMGM3MjY4OWUzNGJkZjYxOGFjOGE0MTMzMThhYTIwYzhiNzA4YmU4NzViZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFiMGMxNDZhZmJiYTMwOTU1YTZjMGM3MjY4OWUzNGJkZjYxOGFjOGE0MTMzMThhYTIwYzhiNzA4YmU4NzViZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDBjMThmMTY0NTg4N2M5ODQwYWMwMmM5YWM5ZmU1YmFkNTI5MzViNDRkNmQ5YTc0MTYyOTYwNWJjYWUxYmI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWE3ZGM2MDU5YjUzYmYxMjYwYjMwOTlkMGE3Y2M1ZGY1MTQ0MWFlZTdjMmU1ODgwMjBmYjljNjk1NTcwZWVkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_44172556b0dc4b7a828ae1669630a7e2",
+      "statement": "ReadStream look-ahead is controlled by read_stream_should_look_ahead, read_stream_should_issue_now, and read_stream_look_ahead, and read_stream_reset unpins unconsumed buffers and forgets pending reads.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L1438-L1485",
+          "version": "repo-lines-v1:sha256:936a06a6c1b27ac71aeb106a477733c01e0f1e207dff76a7965b69524fe01644:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNjIzNjI5ODhmMjFiZDAwZWRkZTI5M2U0MmFjYzhhN2MyNGQ1MDkxNjg4ZjE4M2QwMGEzYzJlYWM4YmY4MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkODc5ZmVmNzliZjcyMmI1YzY3NmVkZGY0MjAyYTZkZTFmMjk2NjU0NWUyMDM3YjQ4MjlkMGFjMjE1YmJkZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiODQxMzJlNjA1MjZmYjNlNWQzZmQzN2QxZjY0ZmUxY2QzMmU0MjIyZmQyNDVlOGEyNTM5NDE2ZjM0OTNiN2IifQ"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L554-L554",
+          "version": "repo-lines-v1:sha256:346c70d6fce2112008f5b2dfda398999eada5dcad13619209188568c6e49c9af:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ2YzcwZDZmY2UyMTEyMDA4ZjViMmRmZGEzOTg5OTllYWRhNWRjYWQxMzYxOTIwOTE4ODU2OGM2ZTQ5YzlhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ2YzcwZDZmY2UyMTEyMDA4ZjViMmRmZGEzOTg5OTllYWRhNWRjYWQxMzYxOTIwOTE4ODU2OGM2ZTQ5YzlhZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE0OGI4MWEzOGE1YmRlYThjOGE1NjEwOTI3ZmY4NjQ2Y2E5NWQ0NjUzZWNlMzg0NDkzNTVlMmRiNTMwYWIzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjEwM2VhNmQ0ZTFlNGY3N2ZlZjBmYjNkNDlhZTU1N2U5NmI3NjBkNzM0MzhhNDg5MzFiZmUzNGI4MzgxYjVhYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L619-L619",
+          "version": "repo-lines-v1:sha256:df4bf59a438f16ddb3a78b9504e99a9818056afcdf2325230305b0a36f6b4d80:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY0YmY1OWE0MzhmMTZkZGIzYTc4Yjk1MDRlOTlhOTgxODA1NmFmY2RmMjMyNTIzMDMwNWIwYTM2ZjZiNGQ4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY0YmY1OWE0MzhmMTZkZGIzYTc4Yjk1MDRlOTlhOTgxODA1NmFmY2RmMjMyNTIzMDMwNWIwYTM2ZjZiNGQ4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjdhZTVkYTgyMWNjOTU2OGJhZTlmMjMxZmVkY2RkNzY5YzNkNTA3NzEzMDIwOTQ5Y2U3NTM0Mzg0NTQxYTA1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmEyMWFiMmRmNmNiODRlNGY3YWQ4MTQxMTI5N2Q2MTUzYmJiNmVhMDFjYWQ0ZGJkMGMyNWE2OGJkMTBiZjEzYSJ9"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L658-L658",
+          "version": "repo-lines-v1:sha256:0eab676b74a66e4c56a531c71a35df900669bbaf8a612212c3d59b80e2f031d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVhYjY3NmI3NGE2NmU0YzU2YTUzMWM3MWEzNWRmOTAwNjY5YmJhZjhhNjEyMjEyYzNkNTliODBlMmYwMzFkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVhYjY3NmI3NGE2NmU0YzU2YTUzMWM3MWEzNWRmOTAwNjY5YmJhZjhhNjEyMjEyYzNkNTliODBlMmYwMzFkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmMxZDQwOTczMTUyOTY3ZjdhNDE3YzBjZTI4MzUyYTIwYmJkOTI2OTkyMTY2ZDBkMWEwZjZlZmE4MjlkYjgxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdjZWUwNTBlYjRjOWQ2YWQwNzAzY2E2NjJiNTJkMzgxZGVkMDJhYWEzNTY1M2ViMThlYjkyYjdkOGNlNTQ4MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_596f484ba6504e1a8b7466309fa91034",
+      "statement": "read_stream_next_block consumes a block number and reports the buffer access strategy for a caller that will perform the read itself.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L1367-L1381",
+          "version": "repo-lines-v1:sha256:1b334122ef26f3b42bf365e1df777c1ebe2f0ce782c553dca6fda69439ec67d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1OTY5YmI5YWZkNTgwM2EzNDU5NDg0ZjJkMTExNDFiNDlkOWRhMGZmYjY5ZjhjNmQ1MTI5NzU3OTQ2YTE1NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5YmRiODdhYWI2MTE1OWMwNzllMTZlNTFhNWI3YmM0ZWI1OTgyNTIwZWQ0NDI2MTI1NDIzNjg0ZmM5M2ZlOTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88dc570adf2b45408b56fc114422e330",
+      "statement": "Logical decoding reads WAL with XLogReadRecord on its decoding reader, whereas ReadStream supplies relation buffers through read_stream_next_buffer.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L709-L742",
+          "version": "repo-lines-v1:sha256:9efe536e4230691ff36339520aec4fd43edd79c0dab47a34d0ea667ec240ade0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4NzkzYTEwZmMwODhiNGRhNmIyNDg3NDg4Y2IyM2U2ZGZlNTkyNmQyMDMyYzVlYzNkYTZhZjFmZjc0MWY5MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZTcwZTViNjYwMmI4NTI4YWUyNzA2YjQxZDE2Yjk4ODVjMzgxZTI5ZTNmOTUzMzA0N2Q0MWNjZWVjYTg5YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZDRmNTE5YjU1YjMwNzUwYzFhZDY2ZTEwY2JkOTA4ODgwM2Q5NTI0NGI4MWZhNWM5OGJhMjVlMTkwZDNmMWUifQ"
+        },
+        {
+          "resource": "repo://src/backend/storage/aio/read_stream.c#L1026-L1065",
+          "version": "repo-lines-v1:sha256:4d15d664963745591bf5af558f4cd9b156f5d4b9279cc1d2cbebbc8ea8e47a4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MTIxZjI3ZGYxYjY5YzFhNmNjM2IwYzk5NGY5ODIyZTE2ZTg2ZGQxM2JhYzYzNzkxMzBlYzkwYmNiOWNjOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZDM2NmU4ZjhhNWRlZWZhNDBjZTIzNDQ5YTFkYTQ1NmJkMGNkYTQxYmUxYWE5NWRjNzVjMGJkMmZmOTQyNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3YmY3M2Q4ZGNlYTg4NjZkNDM4OTEwNjJhZWE5MjQxMDc1MmFlNzBlYTMyMjBlMmUzZTAxODgyMjIzODI1YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZjQyODUxYmU1MWY5NTk1YTM2M2E2OWMxMjQwZjFkNDY2M2YyYzE3YTA4YmJlODMyMWI5MTNlM2I2NmJkNDgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}

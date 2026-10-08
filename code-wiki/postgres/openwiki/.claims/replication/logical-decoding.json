@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:39ec3abb2f3cbfc1b91d98be75b851f03207bb0e8986b02545822537806c0605",
+  "claims": [
+    {
+      "id": "claim_d97c6819cb7e497a89b6e179d9f7040b",
+      "statement": "CheckLogicalDecodingRequirements validates decoding readiness, CreateInitDecodingContext creates a slot's decoding state (setting catalog_xmin and a restart_lsn when none is given), and CreateDecodingContext resumes a slot from its restart_lsn.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L117-L117",
+          "version": "repo-lines-v1:sha256:19d43a12a35641e821dac97f157c46f9ba8d6079d6ef05f2ce1ba1bd7f315dc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTlkNDNhMTJhMzU2NDFlODIxZGFjOTdmMTU3YzQ2ZjliYThkNjA3OWQ2ZWYwNWYyY2UxYmExYmQ3ZjMxNWRjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTlkNDNhMTJhMzU2NDFlODIxZGFjOTdmMTU3YzQ2ZjliYThkNjA3OWQ2ZWYwNWYyY2UxYmExYmQ3ZjMxNWRjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQ5ODVmNTYwNDA4M2FlYzg5NWE0ZjZiM2Y3YWJjYmNiYTgzNjg1MWNkMGEwYWNiNDNmOWMwZWY4NmU0NWFkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQzMzE2MmRjMWQ0NTI4ZWY0YTlkNDQ3OTBkZTBjNTkyNzA5OTM5OTdkNThiNWZhMjkyZTA2OWMzM2IzZGNhZCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L408-L408",
+          "version": "repo-lines-v1:sha256:8839f5aa40f5ef021f2e08a7ae3524238978f0cd3e6384bfc9f21909bf87c767:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzOWY1YWE0MGY1ZWYwMjFmMmUwOGE3YWUzNTI0MjM4OTc4ZjBjZDNlNjM4NGJmYzlmMjE5MDliZjg3Yzc2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzOWY1YWE0MGY1ZWYwMjFmMmUwOGE3YWUzNTI0MjM4OTc4ZjBjZDNlNjM4NGJmYzlmMjE5MDliZjg3Yzc2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzZiMzJlMmRlNTgyNGNhMmFjZGVkNmMyZDgzZmEyY2Q2MTYyNmY0MjE2ZmY1ZmYxZGNkOTg5NGM1NjgwMGZmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc0MjhhYTgzNTgwNjU4MGZiMTQ0NGY3YzU0OWY1ZTU0NTYwYWRlYmE2MzA1Nzc0YTAwOGVjZmEzMzA2NTg2NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L468-L473",
+          "version": "repo-lines-v1:sha256:72bf4e7b96c976772e105a55ebac8fdef4442c40099d430de75953a6692719f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMyNzRmN2Y1NjdmZGQ5Y2FjODgxMTgyNTdkNTcyMGQyYmZiNzdmNmU3NTMwN2JmNmY5MWJlMWM0ZGRjYWNiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZhNGY2NzRiZTc5NWVmZWZkZDNkNjdlZDljYzRiZTZlZDc5MjY0MGU4ZDZkOTE3NzBlMzg0MDdmYmRiZDAzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNlYzBjNjRhNjc2ZTlkZWY4ZTI0ZmQxOGZjNzg4OTJjMTQxNmRlMDJhZTkxZTdkZDZlYzJmYTkzY2M2YWQ2NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjMxOTAxNmY1YmQxYmRkZmM0Y2NhYjk4YzRjYzFmYTJiMWJmODgyMTZmMjA2NDc2MmQzNmVkODk2ODUzOTAyNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L577-L577",
+          "version": "repo-lines-v1:sha256:9299bdd920146b89146cba78d8f6c63f923b61138702ba38604caa4a43591194:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWJkZDkyMDE0NmI4OTE0NmNiYTc4ZDhmNmM2M2Y5MjNiNjExMzg3MDJiYTM4NjA0Y2FhNGE0MzU5MTE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWJkZDkyMDE0NmI4OTE0NmNiYTc4ZDhmNmM2M2Y5MjNiNjExMzg3MDJiYTM4NjA0Y2FhNGE0MzU5MTE5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzZiMzJlMmRlNTgyNGNhMmFjZGVkNmMyZDgzZmEyY2Q2MTYyNmY0MjE2ZmY1ZmYxZGNkOTg5NGM1NjgwMGZmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODljOWFhM2RmN2RlODdhZTNkZmU3NTMxNDZhNTRlNDFhOTIwMzcxODg4ZmM0YjcxMTdlYzY2NjE3ZThiMTFmMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7512042976fd42c48936295b35110322",
+      "statement": "DecodingContextFindStartpoint begins the WAL reader at slot->data.restart_lsn to find a consistent starting point.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L713-L718",
+          "version": "repo-lines-v1:sha256:73e1fecde06ed245923f95625d7d0afef5cf15bd42dfa36e58f437fd5657f494:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkN2I1YTlhZWNlMDhkYTc2ODgxNDY1NjhmYzhjYjVlMTRlNDYxMDU4ZmZkNjE5YjE1NzA5YTgwOGMwMTE5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0ZWU0OWM1MTY1MGJjOGI0NWFiYmYwZDc3YzVlZmRkNWEzMWQyNzM1NTI0Y2MxYWIwMDI3ZThlNDI0MjE5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQ5NTI3OTM5ZTBmYzAwNDQxZmQ3NmYxYWIyNzI4NjY0ZGQ4ZTIwZTYyODVjZTMxYjhjOWUyYjU3MmZjNGI0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE5YzA3MjQyMjU3MTUyMTEyM2QzNTJhYTdiNDM4YWRjNjdiYjUzNDQwMmVkYzU2Y2RmY2YyODBmNjEyZjRlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b012db32e4d340a0b8f7c738b9360b24",
+      "statement": "LogicalDecodingProcessRecord dispatches WAL records by resource manager to DecodeXLogOp, DecodeXactOp, DecodeStandbyOp, DecodeHeapOp/DecodeHeap2Op, and DecodeLogicalMsgOp.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L127-L127",
+          "version": "repo-lines-v1:sha256:801f2b4ade768259ef0882703e09b4f3a9eb3a0f22464d3a78afaf391aa67299:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODAxZjJiNGFkZTc2ODI1OWVmMDg4MjcwM2UwOWI0ZjNhOWViM2EwZjIyNDY0ZDNhNzhhZmFmMzkxYWE2NzI5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODAxZjJiNGFkZTc2ODI1OWVmMDg4MjcwM2UwOWI0ZjNhOWViM2EwZjIyNDY0ZDNhNzhhZmFmMzkxYWE2NzI5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTEyZGQ1YjhiODZlYjMzY2QzYmI1YTM5Y2ZiZWNhOTU5ODYwYzZmYmEzZDc1NmM0MTY0ODJjOGQxOGYxNDQ0NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L210-L210",
+          "version": "repo-lines-v1:sha256:31a8d57de170c81bbc0ad2d19eea24c37c2bad7b47d07e98612bb4987b90e521:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFhOGQ1N2RlMTcwYzgxYmJjMGFkMmQxOWVlYTI0YzM3YzJiYWQ3YjQ3ZDA3ZTk4NjEyYmI0OTg3YjkwZTUyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFhOGQ1N2RlMTcwYzgxYmJjMGFkMmQxOWVlYTI0YzM3YzJiYWQ3YjQ3ZDA3ZTk4NjEyYmI0OTg3YjkwZTUyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VmNTliZWVmYmVhZjdmYTNhNTEzMTc0MzRiNTA5NDAwZWM5YzliZmMzNjNiNDk0MDNmNjRkNGYzMDIxMDMwOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L368-L368",
+          "version": "repo-lines-v1:sha256:8acb18ee43e3d87c8a0baa38f2ca31e319eb8bd7419872ffa9b589eafb416a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGFjYjE4ZWU0M2UzZDg3YzhhMGJhYTM4ZjJjYTMxZTMxOWViOGJkNzQxOTg3MmZmYTliNTg5ZWFmYjQxNmE2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGFjYjE4ZWU0M2UzZDg3YzhhMGJhYTM4ZjJjYTMxZTMxOWViOGJkNzQxOTg3MmZmYTliNTg5ZWFmYjQxNmE2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNjODI5NzFmNTViNWZlMDRmYWM0NTJiMTRiMjY0NzIzNzQ5NjNiZmQ3M2EzNDE0ZDU1NTg1Mjc3NzgxMjBlMSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L419-L419",
+          "version": "repo-lines-v1:sha256:5af00deeefc7ee5ebb9520e9527bfbddae866558ab7de1a16424c4df94ced75c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFmMDBkZWVlZmM3ZWU1ZWJiOTUyMGU5NTI3YmZiZGRhZTg2NjU1OGFiN2RlMWExNjQyNGM0ZGY5NGNlZDc1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFmMDBkZWVlZmM3ZWU1ZWJiOTUyMGU5NTI3YmZiZGRhZTg2NjU1OGFiN2RlMWExNjQyNGM0ZGY5NGNlZDc1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg3YmE4OWFiMzNjYmMxYTE0ODY2MWI3ZDJjZGU5OTAxMDMyNWRjNWUxM2ZkOGYwMWM0MTZlOWFmZWZiYTA3NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L482-L482",
+          "version": "repo-lines-v1:sha256:a033d7b52a178716e59cd0b7f57428e646557a22b2618969a4eb435469d95503:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTAzM2Q3YjUyYTE3ODcxNmU1OWNkMGI3ZjU3NDI4ZTY0NjU1N2EyMmIyNjE4OTY5YTRlYjQzNTQ2OWQ5NTUwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTAzM2Q3YjUyYTE3ODcxNmU1OWNkMGI3ZjU3NDI4ZTY0NjU1N2EyMmIyNjE4OTY5YTRlYjQzNTQ2OWQ5NTUwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTk3ZTA3ZWVlMjliYWYzYTdhYTQzZjgxMGQzYTQ1N2Q3Y2IyMmU4OWNlOWM5YmQ3OTIwZDE0ZDRhYTVlY2Q3OSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L604-L604",
+          "version": "repo-lines-v1:sha256:f00b4b74205ae24624f5e7aab19d89d11e61406b70a078b004b538e42164f5a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAwYjRiNzQyMDVhZTI0NjI0ZjVlN2FhYjE5ZDg5ZDExZTYxNDA2YjcwYTA3OGIwMDRiNTM4ZTQyMTY0ZjVhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAwYjRiNzQyMDVhZTI0NjI0ZjVlN2FhYjE5ZDg5ZDExZTYxNDA2YjcwYTA3OGIwMDRiNTM4ZTQyMTY0ZjVhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MzlhZmE1ZTg1NTUzZWY4MjQyN2YyOTk0MGQ2YjJhN2ZlYTc2ZjZlYzc1YmY1NmM1OGVkZDk0NmJlYjBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEwMDRmN2E1ZmE3MjNiYjQ2NzVmOTJjZjM0MTU0MWIzZGQ3NjYzYTYwNWU1Y2Q4ZGYwOWMwYzFhZTMzNjE3MCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/decode.c#L89-L89",
+          "version": "repo-lines-v1:sha256:f2a5714bd25ddd4585f3bbe19fa81c381b2c776e7e9b2dafe16109e47018f7a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjJhNTcxNGJkMjVkZGQ0NTg1ZjNiYmUxOWZhODFjMzgxYjJjNzc2ZTdlOWIyZGFmZTE2MTA5ZTQ3MDE4ZjdhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjJhNTcxNGJkMjVkZGQ0NTg1ZjNiYmUxOWZhODFjMzgxYjJjNzc2ZTdlOWIyZGFmZTE2MTA5ZTQ3MDE4ZjdhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzAzYTk5NjI5MDU5M2JjYTM0ZWYyY2U4YzE1OGVlMzRmYzRmYmViNDQxMjc2ZTU0MWVlZWRmNWVmNmYxNzk3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWMwMTIyMDQyZmJhNDFiZDQ1MzJiNzhhYzAwZDExOTA3MGVhOTI3MTFkMmE3NmUyODgxYzEwZDliYzE3MjgwNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4bbca3c8652c48568f68ff26ba1d2e7a",
+      "statement": "The ReorderBuffer reassembles changes per transaction: ReorderBufferAllocate creates it, ReorderBufferQueueChange appends a change, and ReorderBufferProcessTXN/ReorderBufferCommit flush a committed transaction to the plugin.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L2214-L2214",
+          "version": "repo-lines-v1:sha256:6ab4ba8cdd6f7e8bad4cd34099ade39b9f7135c895af744688684e5299747670:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFiNGJhOGNkZDZmN2U4YmFkNGNkMzQwOTlhZGUzOWI5ZjcxMzVjODk1YWY3NDQ2ODg2ODRlNTI5OTc0NzY3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFiNGJhOGNkZDZmN2U4YmFkNGNkMzQwOTlhZGUzOWI5ZjcxMzVjODk1YWY3NDQ2ODg2ODRlNTI5OTc0NzY3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjY5ODJmYjNmMjFiYTY3MmVkMzE4NzY5ZjdlYjJlOTlhZjAwZWUxNzFjMjQ5NGYxMmU3ZWNjNTkxMTg2NTkzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2E3NmM3NjFlYWY2YWM4MzY4OTU5MTYzNzM5OWQxYTY2ZjZjMjVhYWUxMDk3MTdiYmIxN2UxNTQ1MTY1ZTA2NyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L2893-L2893",
+          "version": "repo-lines-v1:sha256:8037da5f72b54a88d21ef73e2f7aa2f71e11c9289161d997ba27b9948434ac1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODAzN2RhNWY3MmI1NGE4OGQyMWVmNzNlMmY3YWEyZjcxZTExYzkyODkxNjFkOTk3YmEyN2I5OTQ4NDM0YWMxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODAzN2RhNWY3MmI1NGE4OGQyMWVmNzNlMmY3YWEyZjcxZTExYzkyODkxNjFkOTk3YmEyN2I5OTQ4NDM0YWMxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdhMTFhZmZlOWQwNzc4NTliODQ0ODhjOTg4ZGI5ZWMwYzliOGJmNDE4MDEyZWU3NWUzMjQwZGRhMmUxOGYzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRhYzY4MmRlZDg5ZTVmMzUzY2JiZDc0ZWJhNjgyYTNlNDRhY2RkMjU3MjYxZGNhZDhlNjBlYzVlZDMwOGU5MSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L325-L325",
+          "version": "repo-lines-v1:sha256:ad6dd540921990a9a693d5bf67afc347bd665bb88a46cc6e1b87acc27df26ca9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ2ZGQ1NDA5MjE5OTBhOWE2OTNkNWJmNjdhZmMzNDdiZDY2NWJiODhhNDZjYzZlMWI4N2FjYzI3ZGYyNmNhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ2ZGQ1NDA5MjE5OTBhOWE2OTNkNWJmNjdhZmMzNDdiZDY2NWJiODhhNDZjYzZlMWI4N2FjYzI3ZGYyNmNhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM4ZjBhY2I0MzM2Njk3YTc1NTA4YjYwNGRhZWYyYzRmYTllNTJlMzI0ZjUyNzA0ZDllZmEwOTJjZTI1OThjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTYxYmE5OTlhZWVlOTg1NzliMTU5MWMwYTEwOWJlZDAyYWM3M2ViMDlmOTYzNWFkZTczNmMyZmU2YTVmMThhZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L811-L811",
+          "version": "repo-lines-v1:sha256:b2d314936053bcab49846d67e4b3ff0e06e8b59991ccd5cdd454bfe592bd57bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJkMzE0OTM2MDUzYmNhYjQ5ODQ2ZDY3ZTRiM2ZmMGUwNmU4YjU5OTkxY2NkNWNkZDQ1NGJmZTU5MmJkNTdiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJkMzE0OTM2MDUzYmNhYjQ5ODQ2ZDY3ZTRiM2ZmMGUwNmU4YjU5OTkxY2NkNWNkZDQ1NGJmZTU5MmJkNTdiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjA0OGJjNDRkODJiMjdkMmMwYmQwYzY0ZGZiZjFlZGJjYjk5ZmY1YWJjMmUxNzMyMWVmNTQ4NDZmYWQwODJlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE1MWMwODU1NjJmN2ZiOWE0YjM3ODJjNjQzNDBmMDRiMjhjNDM4YTA3MmM5YWRmZjVlZmJjMjA2YzAzN2M4YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1eb1bf43a2dc4ab3bbf0169701946342",
+      "statement": "ReorderBufferSetRestartPoint records the restart point, ReorderBufferXidHasCatalogChanges reports catalog changes, and ReorderBufferCanStream/ReorderBufferStreamTXN support streaming in-progress transactions.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L1088-L1088",
+          "version": "repo-lines-v1:sha256:5fbc4b68475c6aa269c8f709263795a4a38d2b5c3eb6113e2da9c240ee52200e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiYzRiNjg0NzVjNmFhMjY5YzhmNzA5MjYzNzk1YTRhMzhkMmI1YzNlYjYxMTNlMmRhOWMyNDBlZTUyMjAwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiYzRiNjg0NzVjNmFhMjY5YzhmNzA5MjYzNzk1YTRhMzhkMmI1YzNlYjYxMTNlMmRhOWMyNDBlZTUyMjAwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2ZDM3OTIyMmI1YTVjZWEzNTBiOTg0ODJjNmVlNjllY2E3NTYxMjEzYWM1ZDZmOWMzZTVjYzVkY2M5NzI1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmNkNzczNmVjNDczZGI2YjlhMTQ2NjI1NWU1NmEyYTNlOTgyMWQ1ZTZhMmNjNGY4YjJmMTg0Zjg1NGExYzkwMyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L3757-L3757",
+          "version": "repo-lines-v1:sha256:db7c65527ae0bed5e9d3880574772567a69bd9e33b84a6f6a633849ba3bd5151:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGI3YzY1NTI3YWUwYmVkNWU5ZDM4ODA1NzQ3NzI1NjdhNjliZDllMzNiODRhNmY2YTYzMzg0OWJhM2JkNTE1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGI3YzY1NTI3YWUwYmVkNWU5ZDM4ODA1NzQ3NzI1NjdhNjliZDllMzNiODRhNmY2YTYzMzg0OWJhM2JkNTE1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMwMjZmNTI2MDZkYWIzOWY1ODBiMTY4Yjg0YmQ2Yzc0ZDhkMzY1YzQwZjdiYzJjZGE0NWEzZjUxYzYwMGNiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjUxZDlmNjFkMDM2ZTVhNzlkODgzM2JiODc0ODViNThlYWEwZTBlZGMxOTVkZGU2YzNhODhiZGU5OTMwZWFmOCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L4339-L4339",
+          "version": "repo-lines-v1:sha256:85a49ee24ed6fee3ee79cacfc0556f0625e548c6796bd7acdc35592366d39ddc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODVhNDllZTI0ZWQ2ZmVlM2VlNzljYWNmYzA1NTZmMDYyNWU1NDhjNjc5NmJkN2FjZGMzNTU5MjM2NmQzOWRkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODVhNDllZTI0ZWQ2ZmVlM2VlNzljYWNmYzA1NTZmMDYyNWU1NDhjNjc5NmJkN2FjZGMzNTU5MjM2NmQzOWRkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM5MGVlNzg5YTc4YzNjOGExNGUwMTMzZjE4NzFiYjBjMmQxYWFhNmY0OWJjN2M4NmExMmM5NzFjZWY2ZGQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDNkMGY2ZDIzOGZiMWQ3Njc5OWJjMDFmMzgwY2QxZDMwYzdjNmIyMWM0MjMxYmZmODU2NmZkYjc0MzA5YWMzMiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L4374-L4374",
+          "version": "repo-lines-v1:sha256:05dcbc4b83bb85e5c1d5cab8c208479d726978e79c8caa81499bfbaf0752fc7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVkY2JjNGI4M2JiODVlNWMxZDVjYWI4YzIwODQ3OWQ3MjY5NzhlNzljOGNhYTgxNDk5YmZiYWYwNzUyZmM3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVkY2JjNGI4M2JiODVlNWMxZDVjYWI4YzIwODQ3OWQ3MjY5NzhlNzljOGNhYTgxNDk5YmZiYWYwNzUyZmM3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMxODhkOGY4NGYzOWMzZWJkNjViZjUwMDUxNjg3MzYwZTQyNWRhNGViZjY3YmU2NjAyMGU2ZmUxYmFhY2Q0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzU2ZjM4ZTgzYWU0ZDZiMzJlMTlkNTU3ODU0ZDBjZDU4ZTYwYzE1YWRjZDljNWE2NzdjZjNiZjY3ZjJlYTJjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_147ac36e9fd64f94905ef8e098774641",
+      "statement": "Under memory pressure the reorder buffer serializes changes to disk via ReorderBufferCheckMemoryLimit and ReorderBufferSerializeTXN.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/reorderbuffer.c#L266-L268",
+          "version": "repo-lines-v1:sha256:de11a2bbb127f3a5c4a95a65949b9ee6633ef9c79adc8e251fb4ed5aca36018b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWUwMmMwODljMzBmNTQ4NDRjZDU3ZThlOTM1NDVmMjE1NGQwZTYwZThlMWI4YjVlNmI3ZmZkYzE5NTYzZWE2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ZiNWQ5YTliMmExYzMzNjk2YWM3ODdhMDg2NGMwNTMyM2YxY2E5YmNmOGVjMmI0ODY0MjE0ODcyZGYwZjgzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM4Y2U1Y2ZjZmVkOTQ2ZjBkODQwYWMxMDM4ZTY4MGM5MmFlMGVhMTRiYzgzNDljZTlmYzczOWZmYTliNWIyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTY1Nzc0ZDU1NjAwNDE3MjQwM2RhMTQwYzk4NjkxMzNlZTUxNTI2NjMzOTljMDVjYWQyODllZjZjYmQzM2E3ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_10f483e33d6e41968e48bcec9c6a6e15",
+      "statement": "SnapBuild maintains a historic snapshot for decoding: AllocateSnapshotBuilder creates it, SnapBuildProcessChange tracks changes, and SnapBuildFindSnapshot/SnapBuildBuildSnapshot/SnapBuildGetOrBuildSnapshot build and serve the snapshot used to interpret catalog lookups.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L173-L173",
+          "version": "repo-lines-v1:sha256:d9366bfb0bbf4cf7f6b8eb2e66c2903e0b589e68ee54f3471dea2712a0b5ad18:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkzNjZiZmIwYmJmNGNmN2Y2YjhlYjJlNjZjMjkwM2UwYjU4OWU2OGVlNTRmMzQ3MWRlYTI3MTJhMGI1YWQxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkzNjZiZmIwYmJmNGNmN2Y2YjhlYjJlNjZjMjkwM2UwYjU4OWU2OGVlNTRmMzQ3MWRlYTI3MTJhMGI1YWQxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM2YWUyODAxMDQ4NDdjZjdhMDQ4ZDMyYjA4ODFjYjQ3NTMyNjgzZTA3NzJjZjI1OThkYzMzMzA5ODQ5ODZlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWFkNWIzNzdlYWZmNGRkOWM2NjUxNTgwZDQzZDhlMzZmNGQ0NzU4ODJlNzE5YmE3Y2JlYTU0YThhZTg3Zjc4YyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L189-L189",
+          "version": "repo-lines-v1:sha256:e79129222d8376755d4de1c0f3d96123f32f9cebd2f62fda9819502504f723f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc5MTI5MjIyZDgzNzY3NTVkNGRlMWMwZjNkOTYxMjNmMzJmOWNlYmQyZjYyZmRhOTgxOTUwMjUwNGY3MjNmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc5MTI5MjIyZDgzNzY3NTVkNGRlMWMwZjNkOTYxMjNmMzJmOWNlYmQyZjYyZmRhOTgxOTUwMjUwNGY3MjNmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkwM2M2NzlhMDBiMmQwY2JkZWJlOTI3MDU4Njg1ODcwOTMxMmFhY2M4MWE5ZjVlYzc1Nzc5MjU0ZDJkZDRhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGEwZjI2MDc5MmY1MzFkMTY2MmY1ZDJiYzJhM2YxZmU3NDNiNzNjYWM4NzcyYzllODMyYzdiMzE4NjBkMmRkZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L370-L370",
+          "version": "repo-lines-v1:sha256:fd6f4ba1a45bb983ad418d8c3f10a466d7d8a729e94230b885508eb48f5ec893:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ2ZjRiYTFhNDViYjk4M2FkNDE4ZDhjM2YxMGE0NjZkN2Q4YTcyOWU5NDIzMGI4ODU1MDhlYjQ4ZjVlYzg5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ2ZjRiYTFhNDViYjk4M2FkNDE4ZDhjM2YxMGE0NjZkN2Q4YTcyOWU5NDIzMGI4ODU1MDhlYjQ4ZjVlYzg5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTU2NWJkOGUxOWI1YmZkOTI3ZmQ4MTc5NTUwNjQxNGRiMzgxYmVjMDQ5ZjFkZGM0NzkwYzQ2ZWY5ZjM3MGQxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMwNjE2ZWMwNzg4Zjk1M2EyMWY3ZjA0YzgxMDFlZjgwMGQ5NzQ1NzFhOTRlMGYyM2Q5NjkwYTczNjRiM2M3ZSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L622-L622",
+          "version": "repo-lines-v1:sha256:3846d2e7359faa0279f6f28f650568cabf2cb9e12764c9360028a18aaadf0735:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg0NmQyZTczNTlmYWEwMjc5ZjZmMjhmNjUwNTY4Y2FiZjJjYjllMTI3NjRjOTM2MDAyOGExOGFhYWRmMDczNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg0NmQyZTczNTlmYWEwMjc5ZjZmMjhmNjUwNTY4Y2FiZjJjYjllMTI3NjRjOTM2MDAyOGExOGFhYWRmMDczNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk5MzJlYTRkNWMxNmRmNGQyYjE3NjY3NDE5MDQ3NDU2ZWQyYTQzNWE5ZjBmNDY1MzdlNDA2ZGNjY2IyMDE3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDI1ZmFiMWVjNTM3MWVjNzBmMzlkYTIyNmU4MzJhYzI2NjRjNGMyZDg5ZmZmODgyZjIyOTYyMmVmNTVlMjZhMSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L682-L682",
+          "version": "repo-lines-v1:sha256:79e6055d0663d084159336fcc974396e1c8da8b9c35e4be9d229f3656fec69a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzllNjA1NWQwNjYzZDA4NDE1OTMzNmZjYzk3NDM5NmUxYzhkYThiOWMzNWU0YmU5ZDIyOWYzNjU2ZmVjNjlhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzllNjA1NWQwNjYzZDA4NDE1OTMzNmZjYzk3NDM5NmUxYzhkYThiOWMzNWU0YmU5ZDIyOWYzNjU2ZmVjNjlhNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlmZTRjNzhhODc2OTljNzIzYzUxNzljNmIxNjc2NDllZjdkNjg2YzU4NmQwZTZkNDFkZjc1NjM2NGM1ZTkyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Q1YTBjMmYzMTNmZjkwZjRiMGM2YzlhYmU0OTI0MWQ3MWFmYjVmMWViZDdmYzUzYjIyMDRlM2RmYzc3YWE0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_829eeb767c034df8b36d15a15c731222",
+      "statement": "SnapBuildExportSnapshot exports the initial snapshot for a consistent subscriber copy, SnapBuildXactNeedsSkip decides whether a transaction precedes the snapshot, and SnapBuildGetTwoPhaseAt/SnapBuildSetTwoPhaseAt bound two-phase decoding.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L290-L290",
+          "version": "repo-lines-v1:sha256:41d4b2e5e1b2591d213a7fdcab532dbcced524a324c7f161352c0b347fc81a2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFkNGIyZTVlMWIyNTkxZDIxM2E3ZmRjYWI1MzJkYmNjZWQ1MjRhMzI0YzdmMTYxMzUyYzBiMzQ3ZmM4MWEyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFkNGIyZTVlMWIyNTkxZDIxM2E3ZmRjYWI1MzJkYmNjZWQ1MjRhMzI0YzdmMTYxMzUyYzBiMzQ3ZmM4MWEyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM3ZGRlMjllNWNlMDE0MmU4YWQ1NTRlZGIxMzYyNjE5YWY5NzhjY2U0ZTYzMjgzMzRiZDY0Y2Q3YzEzMTJmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTgwMDBjYWNiZjg1Yzk2NTE3MTM4MmRlODdiMDI1ODM2Y2NlN2IxOWRjODFlYzg5ODFiMjFlMGEyOWMxYTgxMCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L299-L299",
+          "version": "repo-lines-v1:sha256:e8d6a648ac18a58578a9d73128994e5e6b8d7ba0e2e3a207d2459a4487def12d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZThkNmE2NDhhYzE4YTU4NTc4YTlkNzMxMjg5OTRlNWU2YjhkN2JhMGUyZTNhMjA3ZDI0NTlhNDQ4N2RlZjEyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZThkNmE2NDhhYzE4YTU4NTc4YTlkNzMxMjg5OTRlNWU2YjhkN2JhMGUyZTNhMjA3ZDI0NTlhNDQ4N2RlZjEyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjdhY2E0YTRmNTZiMDlhODM3NTZmNDYzOGE5ZTI4MzRlYjFjYTBmY2E2NTUwMzcxNjU5M2IzY2JhMjY3YzZlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI3ZmRhNTM3ZGQ1ZGZlN2Q4MGI5ODEyNjkzOTdiNWRkMmE1NWM5ZWIzNGZmYzI2MTQ2NTAyNWMzZDE5ZDY1NCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L308-L308",
+          "version": "repo-lines-v1:sha256:b967f1b8b42246942df4c64a9d71411eeba4ad39ee292bde75676c8e8fd12fec:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk2N2YxYjhiNDIyNDY5NDJkZjRjNjRhOWQ3MTQxMWVlYmE0YWQzOWVlMjkyYmRlNzU2NzZjOGU4ZmQxMmZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk2N2YxYjhiNDIyNDY5NDJkZjRjNjRhOWQ3MTQxMWVlYmE0YWQzOWVlMjkyYmRlNzU2NzZjOGU4ZmQxMmZlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg1M2RhM2MwYzMwNjk5YzI4NTM1MzU0NmEwMmQyZGUwZjA5MTk3NTk3YzBiYTRiODg0MmYzMWEwZWUwNGQzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM5ZTk0MGE4MmQ2MzAwY2JiZDY0YjkxMzA3YmUzZWUzYTkyMmEwZDA1YmExMzNmMWZhYTA4Nzc4ZjA1YjFiNSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/snapbuild.c#L582-L582",
+          "version": "repo-lines-v1:sha256:215fd2a36e42f734a85665cd83defa7a3baa067a899ed5d901fc5703fceb2f30:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE1ZmQyYTM2ZTQyZjczNGE4NTY2NWNkODNkZWZhN2EzYmFhMDY3YTg5OWVkNWQ5MDFmYzU3MDNmY2ViMmYzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE1ZmQyYTM2ZTQyZjczNGE4NTY2NWNkODNkZWZhN2EzYmFhMDY3YTg5OWVkNWQ5MDFmYzU3MDNmY2ViMmYzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWU2MDk2YTNlOWIyOTI5MWFjZTlmNWFkNDY4NDZjNDkxYTlhYjBmNzY5NTI3YjYyMzY4YmVlMDJmNWE4MjFiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ3ZTFkZjg0ZGY4NGMwNTJlNWQyNzM2Njg3ZmMyOTk1YWNkZDE0YTBlMTdlNGZiNTFmYWNmM2I0Zjc5NWE5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3460c1fcd33497e8caeb83d59e45b70",
+      "statement": "Replication origins track per-node progress: replorigin_create/replorigin_drop_by_name manage origins, replorigin_advance and replorigin_session_advance advance them, replorigin_get_progress reads progress, and replorigin_session_setup binds a session to an origin.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L1057-L1057",
+          "version": "repo-lines-v1:sha256:8653b84a9100b1ba74954e1572611b3696875675a237ebb6bfb92d288058c808:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY1M2I4NGE5MTAwYjFiYTc0OTU0ZTE1NzI2MTFiMzY5Njg3NTY3NWEyMzdlYmI2YmZiOTJkMjg4MDU4YzgwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY1M2I4NGE5MTAwYjFiYTc0OTU0ZTE1NzI2MTFiMzY5Njg3NTY3NWEyMzdlYmI2YmZiOTJkMjg4MDU4YzgwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTkzYTZiMGZjYmU0OWVmYjA3NDExMDNjMjNkNmQ3MzZlYWUwNGMxNjM2N2MxMDM2Y2JlN2E3YTRlMTQ3ZDkwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGMwMWQ0NTBhM2RmZWExOGRlNDdlYTUwMDNhMzY5ZTE1ZjgwOWI1MWZmMDY2NTNmZDFkNTgxOTkyOWUwOGEzNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L1156-L1156",
+          "version": "repo-lines-v1:sha256:9183f2902fd78f3d93efa35fab68c499b7a9e0bcdbda67b57c87a48056f7853f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE4M2YyOTAyZmQ3OGYzZDkzZWZhMzVmYWI2OGM0OTliN2E5ZTBiY2RiZGE2N2I1N2M4N2E0ODA1NmY3ODUzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE4M2YyOTAyZmQ3OGYzZDkzZWZhMzVmYWI2OGM0OTliN2E5ZTBiY2RiZGE2N2I1N2M4N2E0ODA1NmY3ODUzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWNhNTEwOTIzODUzN2ZiMThhN2UzMjYzZDkyNDUwYjdkMjg5ZjdjMzA1MDA0NTA3ZWE1YTFjZjU4NDc0NTViOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzVjYWUxYTdlMDliMDJiMThiYWNjZjY4YjFiNjE2YWZmNzA1NzQzM2FlM2IwNjJjMzdmNzUxMTY1NzVhMGI1MyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L1335-L1335",
+          "version": "repo-lines-v1:sha256:62899125535d0d66083729f07fa731e9a3f828157f81fc6b94f3edfad28bd8fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI4OTkxMjU1MzVkMGQ2NjA4MzcyOWYwN2ZhNzMxZTlhM2Y4MjgxNTdmODFmYzZiOTRmM2VkZmFkMjhiZDhmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI4OTkxMjU1MzVkMGQ2NjA4MzcyOWYwN2ZhNzMxZTlhM2Y4MjgxNTdmODFmYzZiOTRmM2VkZmFkMjhiZDhmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA0OTQ5MjA0YWVmZjRmOTNmMDZkN2UzNDIxMzkwMjAwMDg4ZDNlZDM1MDRjNWZkMDYzMTk5NDA5MzVlOGZmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQ4M2RlNjBiYzlkYjU4ZjllM2I5YzEyMzNjZGY1N2Y1MGUzM2I4MGFlOWM3Y2UxMzA4MWRjMzY3NjI2YjIwNyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L274-L274",
+          "version": "repo-lines-v1:sha256:edb2c316178dbbc1a34c559ceecd30e10cd4479eae99b36498520e3d5e64eb70:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRiMmMzMTYxNzhkYmJjMWEzNGM1NTljZWVjZDMwZTEwY2Q0NDc5ZWFlOTliMzY0OTg1MjBlM2Q1ZTY0ZWI3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRiMmMzMTYxNzhkYmJjMWEzNGM1NTljZWVjZDMwZTEwY2Q0NDc5ZWFlOTliMzY0OTg1MjBlM2Q1ZTY0ZWI3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTYzZjhjMzBhMzhkZTFjOWJjODk5M2Y3MGQwMjZmZGY0ODRlNTY1OThmOTYwYzMzYTlmN2VlOWNlZDA3MzBmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGMyZjQ3ZjYwNTFhYmMzNTNiMmI3NzQ0YTA0MzU4OTE1ZWM1MGUxNDlkOTJhMTY2OThiNzFjMGRlYTY1YjI5NiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L459-L459",
+          "version": "repo-lines-v1:sha256:cd7588d1e13a16fb2e78fdb16cf8df363cd56fad05d8994ac999f114da913e13:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q3NTg4ZDFlMTNhMTZmYjJlNzhmZGIxNmNmOGRmMzYzY2Q1NmZhZDA1ZDg5OTRhYzk5OWYxMTRkYTkxM2UxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q3NTg4ZDFlMTNhMTZmYjJlNzhmZGIxNmNmOGRmMzYzY2Q1NmZhZDA1ZDg5OTRhYzk5OWYxMTRkYTkxM2UxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTJjNjFmNzZjMDE1ZDdiYTM4YmYzYTljYmU1MDVkYjFmZmFmZDRmYWViOGM2ZGFjNWIwOWZjOTAwNWI4MTA4YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDA1MjcyNGRiNTQ0MDVhMDA3MDBlOGNmMmRhNzFjYzk2NDg0YjllOWUzODY0ZjUwOTQ1MzRkODdjMmQwYWNjNiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/origin.c#L928-L928",
+          "version": "repo-lines-v1:sha256:0b18bf7cb15a39ab9b08bbf8cec71ac5830721a72258969f2a85725efbe61c02:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIxOGJmN2NiMTVhMzlhYjliMDhiYmY4Y2VjNzFhYzU4MzA3MjFhNzIyNTg5NjlmMmE4NTcyNWVmYmU2MWMwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIxOGJmN2NiMTVhMzlhYjliMDhiYmY4Y2VjNzFhYzU4MzA3MjFhNzIyNTg5NjlmMmE4NTcyNWVmYmU2MWMwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgzMDU4MDQxMzMwZTY1NmQ3NTdjYmE0Y2IxNzljYzY3NmMwYzhmNWRmY2VmMDUxODIzNWI1YWU4YjYwOGNmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRkY2Q5YjEwNmQ3NjI3N2ZmOTgxYTJmNTQ1MTdmNWNjYzIwOWMzMWVjODFmODFhZTdmZGY0MjNkMGQyNWEyYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_36cdbe6edb3d44749d4eef54372116a8",
+      "statement": "Decoding progress callbacks do not by themselves acknowledge receipt of the current transaction; streaming consumer flush feedback reaches LogicalConfirmReceivedLocation through ProcessStandbyReplyMessage and monotonically advances confirmed_flush.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L1710-L1747",
+          "version": "repo-lines-v1:sha256:573fb0eb8233b2d6a279ec58a99ffdc3a14a27c07d131587b0b4cb6f32c8c34e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNGI0MWQ4YTVhZDA0ZmE3Y2QxN2VmMzUxNjU1MWY0ZGNiYjViYmVhMWFmNjcwZmU0NTliYjI3OWZhYjkxNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkZDRkMTVkMTZlNTQ0NzA5NDc1YzhiMmI1NjY1NGJjODcwNDc3NjY2MGQ3NDZjMzFlNjMzNTI1ZmMxYzE3ODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZDlmZDI5ZTAzZDUzNTk4YjM2OGEyNDAyNmMzMGI0ZWU4YWVkYjE1OTBjZjY2ZDZiNTUxZmM4MzA1MTBjNDIifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L1919-L1931",
+          "version": "repo-lines-v1:sha256:2102dabfe985b221586f28fb5f9ba2e81da2c7e5e4c733369acacdbab8aea710:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNDRhYTU2NzA1NWU0ODFkY2I2ZDBkZWM2MzQyMDI4ZWM3MmE4NjY4OGQ4NzJlNzNhZTkzZGY3OTBkOWIzNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MWJmMWJiM2Q3MWRkNDQ1YTNkZWY3YWMzNzQzOTEzMjc0MGY1ZDViZTY1Y2MzMjJlODg3M2RhODlhMTQ5ZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5NjMzYzkzY2NiMmFiMDJjNGI0YjlmOTRhODJkYWVhZDc3YzQ0MGNiN2Q1MjgxYTViODgxZWVlMmZlNzRkN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZTFjN2Q4MWYyZDU0MjgyYzgxODM0OWRiNDRkYjMyZjRjMGE5ZDY0ZWFiZmFmOTA3ZGE1MGM1NGNmNDA0ZGUifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/logical.c#L2011-L2023",
+          "version": "repo-lines-v1:sha256:04ae79e51b03519092c2aa3faca4eb30ef1f932c3c7534169fe2b1416f7e1bb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYTkzNzhkYmQ2ZTJlOTQ0ZjYyNmRhZGZkZjViODVkMzI4MTkxM2EyNmI4NDI2NTk2ZjVjMzQzOTg1OTAyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNWI0MmJiMTMwYzk3MGVkZDQ1MWFiZjJkYjJiODg3OWIyZTM1MzMxODhiNDBhMDJkMjJmZGRmZDM1YmE4NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkODM5YWZhNWU4NTU1M2VmODI0MjdmMjk5NDBkNmIyYTdmZWE3NmY2ZWM3NWJmNTZjNThlZGQ5NDZiZWIwYzgifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/walsender.c#L2639-L2648",
+          "version": "repo-lines-v1:sha256:c911137d3d8be5d4e2439855ee62a828f4ca0182a398018b366c91310487008b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkOGU1OGRiNDExODc4ZjU2Mzg3ZTliZmVhNTMwMTYxODg4Y2EwOTdiMTAwOGJkNzI4MDZhOGNmY2M3NDgxOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhMzJhYzAyZGZjNDUzYjlkOWYwMmFmOGRkM2Q1YTdhODViYzZhM2JlZmM1NDVkZmM5MDVkZGYyNjBmODYyZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZDk0ZTM2OTE1MWQyNWViNDdiOGQwZDA2Y2EwNjNjYjg1NGVmZGI2MzYwNTllZjE1ZTAzYzkxYjBmZWE2ZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe8b458ac3d04fcaaa10d37f522de158",
+      "statement": "Output plugins register startup/begin/change/truncate/commit and stream_* callbacks; pgoutput provides pgoutput_startup, pgoutput_change, pgoutput_commit_txn, and pgoutput_truncate.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/pgoutput/pgoutput.c#L263-L284",
+          "version": "repo-lines-v1:sha256:c5ba9813c4e555cd374fee4727d54d663ab138ea17be5641c3e345b88f36efa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYjU3NzQ0NDRmODE5MmM5ZDQxOTcwZmY4YmQ4OWIwNmE5ZjFlOTVmNzVhZjVjYzNjMzNlY2Y0ZmQ2N2RhNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2N2I3NWYxYmM3YjM0MzMzZTdmNjRiN2Y4NjMyOTZlZjM5ZTQzZDgzZDdiMjRjYWJkYjAxNzY3NjY4NmRiMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiMDY4YjQ3MDgzY2U5NGNkZmQwMWQwN2ZjOTFmNDJlZTA1ZWU2OTM0ZjIyODIwMGI3YmIzYWQxMWIxYTFhNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMTZhOWIzOTZmZWI1Y2E0MjBlM2U1MzgyMTEyM2ZjZjRmNWU4ZWU1Y2ViZTIxNzMwOGY1MDg3N2U5MjI3MDYifQ"
+        },
+        {
+          "resource": "repo://src/backend/replication/pgoutput/pgoutput.c#L452-L452",
+          "version": "repo-lines-v1:sha256:820ad31c6fcd4e97de727ee80adb65383b34de4d660f31ebae5d67fb1fc22b7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwYWQzMWM2ZmNkNGU5N2RlNzI3ZWU4MGFkYjY1MzgzYjM0ZGU0ZDY2MGYzMWViYWU1ZDY3ZmIxZmMyMmI3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwYWQzMWM2ZmNkNGU5N2RlNzI3ZWU4MGFkYjY1MzgzYjM0ZGU0ZDY2MGYzMWViYWU1ZDY3ZmIxZmMyMmI3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFmYjRlMWU1NTAxMzQ0MTUxOTA0ZTNkM2Y2OGY2MWVkYjVkOWIxOGI0MTAwZDdlYmM3YjBlZGFmNzg4NDYxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg0ZDU1NmI1YWQyNzFiZjFlOWU4OTY2OWEwMmYyMzNiMjNmZDljZTgzZmEyODI5ODU5MTU1ZDIwMjI5OTU1YyJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/pgoutput/pgoutput.c#L633-L633",
+          "version": "repo-lines-v1:sha256:06da9aad903cd27fe220dcacf1d0ca9db7fccfa49205922bc18681162f23162a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZkYTlhYWQ5MDNjZDI3ZmUyMjBkY2FjZjFkMGNhOWRiN2ZjY2ZhNDkyMDU5MjJiYzE4NjgxMTYyZjIzMTYyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZkYTlhYWQ5MDNjZDI3ZmUyMjBkY2FjZjFkMGNhOWRiN2ZjY2ZhNDkyMDU5MjJiYzE4NjgxMTYyZjIzMTYyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGVjN2VlMDk0NTJjODlmMGRjZjVlMzRlYThkYjg0MjkyNDg2NGY3NTkyMWJkNTVhMWVkNGZjY2VlNTgyY2RlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlZjkxYTNiYTgyZjMzYmQ0ZTRhMjIxZWZlZWMwNDkwYjA2ZDliYzZhOTIxMDJlMDliNmNkMDliYjAwNmRiMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c5e9b85b06349cfab45e27cd4c8ba5a",
+      "statement": "On a subscriber, logicalrep_worker_launch/logicalrep_worker_find manage apply workers and ApplyWorkerMain runs the apply worker, with a parallel apply worker path.",
+      "evidence": [
+        {
+          "resource": "repo://src/backend/replication/logical/launcher.c#L270-L270",
+          "version": "repo-lines-v1:sha256:5ecb613fe2783e5053869b2acff12b7d134df8eb740fe11f76341fdbe3957312:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVjYjYxM2ZlMjc4M2U1MDUzODY5YjJhY2ZmMTJiN2QxMzRkZjhlYjc0MGZlMTFmNzYzNDFmZGJlMzk1NzMxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVjYjYxM2ZlMjc4M2U1MDUzODY5YjJhY2ZmMTJiN2QxMzRkZjhlYjc0MGZlMTFmNzYzNDFmZGJlMzk1NzMxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQwNTZiNzdjMjI2ZTFjMDUyOTI5YzE5NzUyYmUxNTEzYTgzOGIxM2VhNGJjYzk1ZDkwOWI3ZGM1YzYzNTFkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjU0MjM4NDQ1ODg2MTFlZDU2ZjZhNTYwZDYxMTA3MmNjNDY3MTdmODU1ZDk3MDM0NTJiNzcxNzI2MjVmYTFhNCJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/launcher.c#L336-L336",
+          "version": "repo-lines-v1:sha256:859a0731886d3ca6b3ba5aa44d5bf312e07e05d497c00581d854615f112b8486:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODU5YTA3MzE4ODZkM2NhNmIzYmE1YWE0NGQ1YmYzMTJlMDdlMDVkNDk3YzAwNTgxZDg1NDYxNWYxMTJiODQ4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU5YTA3MzE4ODZkM2NhNmIzYmE1YWE0NGQ1YmYzMTJlMDdlMDVkNDk3YzAwNTgxZDg1NDYxNWYxMTJiODQ4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQxYzRkMGI2NThhMmFjNmFkMzQwNDVkMzlkMmFhMDEwZmEwYWI1NmNhNmZiZWJjMjI0ZmM3OTE5NjAyOTRjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjkzZWVhMmYwOTU5YTUwNmVmNjFlZGUzYjg4ZjQ3MWZkODIwNDE0MmVkZTJjYzNmY2IyODJkNTQ0ZWVmNjIwOSJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/launcher.c#L522-L522",
+          "version": "repo-lines-v1:sha256:4a795702e193d66eb7068b56c1cd27acd3505066a174f9cd3612b49dcf1114b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3OTU3MDJlMTkzZDY2ZWI3MDY4YjU2YzFjZDI3YWNkMzUwNTA2NmExNzRmOWNkMzYxMmI0OWRjZjExMTRiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3OTU3MDJlMTkzZDY2ZWI3MDY4YjU2YzFjZDI3YWNkMzUwNTA2NmExNzRmOWNkMzYxMmI0OWRjZjExMTRiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjUyYmIzYzc4ZTAyYmMzYzc0Y2IxZGRkZWYyOTI4OWE3ZjJjM2Q2NmFhMjEyMmY0N2I5ODdjODAyMzUzMDFmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM3ODljYWEyNWRlN2MzZmFlZWQ3NzU4ZDEyMThlZTM1NDAwYWExMDRhN2FjNzVlODdmZTU2YmRkMTM2NmMzZiJ9"
+        },
+        {
+          "resource": "repo://src/backend/replication/logical/worker.c#L6099-L6099",
+          "version": "repo-lines-v1:sha256:06d15a6948e7f9d79c3ab03c298a7dd73f755b65ccd34b60dc6e9888d448185c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZkMTVhNjk0OGU3ZjlkNzljM2FiMDNjMjk4YTdkZDczZjc1NWI2NWNjZDM0YjYwZGM2ZTk4ODhkNDQ4MTg1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZkMTVhNjk0OGU3ZjlkNzljM2FiMDNjMjk4YTdkZDczZjc1NWI2NWNjZDM0YjYwZGM2ZTk4ODhkNDQ4MTg1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2JhOTY4MjNmMjJiMzMyNzlhY2YwN2RiNzYwZDg3ZjA3ZWVhODFmMGRkNGUxOTQ1MGI0MDdkYTI3MDA4NzcxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE5NmJiMWI2MzZlMTMyODdmNzc3ODk5MDgyYzk4ZTU4Yjg4NmQ3YjZkMjZhOTg1OGM0Njg2YzM0MzUwNTc4NyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T07:53:28.576Z"
+  }
+}
