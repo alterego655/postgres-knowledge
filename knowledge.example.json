@@ -2,5 +2,5 @@
   "schema_version": 1,
   "source_repository": "/absolute/path/to/postgres",
   "source_wiki_relative_path": "openwiki",
-  "record_language": "zh-CN"
+  "record_language": "en"
 }

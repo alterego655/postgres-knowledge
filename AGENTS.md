@@ -7,7 +7,7 @@ This repository stores curated development knowledge and the canonical PostgreSQ
 - When the user requests capture or reconciliation, use `pg-knowledge-capture` if available. This repository root is the durable destination; do not ask for a destination again.
 - Follow [docs/record-format.md](docs/record-format.md) and search `records/` and `topics/` before creating a record. Use exact English symbols and error text alongside the user's terms.
 - Preserve stable IDs and useful evidence. Do not generate one article per message, conversation, or trivial fix.
-- Write prose in the user's requested language; default to Chinese here. Keep metadata keys, symbols, error strings, and source identifiers in their original form.
+- Write all maintained Wiki pages, records, guides, templates, and navigation in English, regardless of the conversation language. Keep original evidence, quotations, error strings, and identifiers unchanged; provide English explanations when needed. Conversation replies may follow the user's language.
 - Unknown causes, versions, outcomes, or missing sources stay unknown. A previous assistant answer or a report summary alone is not independent verification.
 - Update relevant human-maintained topic links when saving a record. Distinguish a file-search result from OpenWiki retrieval.
 

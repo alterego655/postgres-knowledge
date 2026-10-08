@@ -1,48 +1,50 @@
-# PostgreSQL 开发知识库
+# PostgreSQL Development Knowledge Base
 
-这个仓库保存 PostgreSQL 开发过程中可复用的经验：bug 的触发条件与根因、实验结果、设计决策，以及邮件讨论中的论据和结论。每条记录应说明适用版本、证据来源和仍未确认的部分，帮助下一次调查少走弯路。
+This repository preserves reusable PostgreSQL development knowledge: bug triggers and root causes, experiment results, design decisions, and the arguments and conclusions from mailing-list discussions. Each record identifies its applicable versions, evidence, and remaining uncertainties to help future investigations.
 
-本仓库同时保存代码 Wiki 的规范副本、调查记录和主题导航。OpenWiki 在 PostgreSQL checkout 中维护工作副本，完成更新后通过桥接脚本发布回本仓库；源码、引用和 Claims 仍按原有语义解析。
+The repository stores the canonical code Wiki snapshot, investigation records, and topic navigation. OpenWiki maintains a working copy in a PostgreSQL checkout. After a completed update, the bridge publishes the snapshot back here while preserving source references and Claims semantics.
 
-## 从哪里开始
+## Start here
 
-- [PostgreSQL 代码 Wiki](code-wiki/postgres/openwiki/quickstart.md)：复制、WAL、I/O 和性能机制。
-- [代码 Wiki 源码版本](code-wiki/postgres/source.json)：对应源码 commit、生成工具及文件校验和。
-- [主题导航](topics/README.md)：按复制、WAL 与恢复、I/O、性能查找经验。
-- [经验记录](records/)：一个可复用的问题、根因或决策对应一条记录。
-- [记录规范](docs/record-format.md)：何时新增、何时更新，以及如何记录验证状态。
-- [记录模板](templates/record.md)：创建记录的起点，模板本身不是已验证案例。
-- [OpenWiki 接入说明](docs/openwiki-integration.md)：源码 Wiki 与经验库的分工及检索边界。
-- [证据目录](evidence/)：保存必要的复现脚本、补丁、原文摘录和实验输出。
+- [PostgreSQL code Wiki](code-wiki/postgres/openwiki/quickstart.md): replication, WAL, I/O, and performance mechanisms.
+- [Code Wiki source revision](code-wiki/postgres/source.json): source commit, verification tools, and file checksums.
+- [Topic navigation](topics/README.md): investigations grouped by replication, WAL and recovery, I/O, and performance.
+- [Experience records](records/): one record per reusable problem, root cause, or decision.
+- [Record conventions](docs/record-format.md): when to create or update a record and how to describe its verification status.
+- [Record template](templates/record.md): a starting point, not a verified case.
+- [OpenWiki integration](docs/openwiki-integration.md): canonical storage, working copies, and retrieval boundaries.
+- [Evidence](evidence/): necessary reproduction scripts, patches, source excerpts, and experiment output.
 
-仓库初始化时尚未导入历史对话、邮件或 bug 案例，也未启用定时任务。
+Historical conversations, mail, and bug cases have not been imported. No scheduled tasks are enabled.
 
-## 如何保存经验
+## Capture knowledge
 
-在开发对话中明确请求，例如：
+Request capture explicitly in a development conversation, for example:
 
-> 使用 pg-knowledge-capture，把这次排查保存到知识库，保留复现条件、失败尝试、验证结果和适用版本。
+> Use pg-knowledge-capture to preserve this investigation, including reproduction conditions, failed approaches, verification results, and applicable versions.
 
-助手应先检索旧记录，再决定新增、补充或替代；保存后更新主题入口，并用一个真实问题尝试找回记录。普通代码问答不自动写入知识库。
+The assistant should search existing records before deciding whether to create, extend, or supersede one. After saving, update the relevant topic entry and try retrieving the record with a realistic question. Ordinary code questions do not automatically create records.
 
-从仓库根目录可以直接检索，例如：
+All maintained documentation and records are written in English, regardless of the conversation language. Preserve original evidence verbatim when needed and provide an English explanation rather than altering quotations or logs.
+
+Search from the repository root, for example:
 
 ```sh
-rg -n -i 'ReplicationSlotRelease|ephemeral|复制槽' records topics
+rg -n -i 'ReplicationSlotRelease|ephemeral|replication slot' records topics
 ```
 
-没有匹配项只表示尚未记录或检索词未命中，不代表 PostgreSQL 不存在相关问题。
+No matches may mean the knowledge has not been recorded or the query missed it; it does not prove that PostgreSQL has no related issue.
 
-## 如何管理修改
+## Manage changes
 
-Markdown 保存当前知识，Git 保存其演变。完成一组记录修改后，检查差异，仅暂存本次相关文件，再提交。普通保存请求不会自动提交或推送；需要用户明确要求或既定工作流程授权。
+Markdown holds the current knowledge; Git preserves its evolution. Review each group of changes, stage only the relevant files, and commit when requested or authorized by an established workflow. An ordinary save request does not automatically authorize a commit or push.
 
-新增证据推翻旧结论时，更新当前结论并保留简短的变化理由。提交历史不能替代正文中的适用范围和失效说明。
+When new evidence overturns a conclusion, update the current conclusion and retain a concise explanation of the change. Commit history does not replace applicability and invalidation notes in the record itself.
 
-多人使用时，通过分支和 PR 审核结论与证据；发现其他人的未提交修改时不要覆盖。GitHub 私有仓库提供远程副本，后续邀请成员或修改可见性应单独决定。
+For collaboration, use branches and pull requests to review conclusions and evidence. Preserve other contributors' uncommitted changes. The private GitHub repository provides a remote copy; inviting collaborators or changing visibility is a separate decision.
 
-## 本地关联配置
+## Local configuration
 
-复制 [knowledge.example.json](knowledge.example.json) 为 `knowledge.local.json`，填入本机 PostgreSQL 仓库的绝对路径。这个文件被 Git 忽略，不会把个人目录结构提交给其他成员。
+Copy [knowledge.example.json](knowledge.example.json) to `knowledge.local.json` and enter the absolute path to your PostgreSQL checkout. Git ignores this file so machine-specific paths are not shared with other contributors.
 
-桥接脚本读取该配置来定位对应 checkout。运行 `python3 scripts/wiki_bridge.py status` 查看规范副本和工作副本是否一致；完整的恢复、维护与发布步骤见 [OpenWiki 接入说明](docs/openwiki-integration.md)。该流程没有启用后台同步、定时任务或统一索引。
+The bridge reads this configuration to locate the checkout. Run `python3 scripts/wiki_bridge.py status` to compare the canonical and working copies. See [OpenWiki integration](docs/openwiki-integration.md) for restore, maintenance, and publication instructions. Background synchronization, scheduled tasks, and a unified index are not enabled.

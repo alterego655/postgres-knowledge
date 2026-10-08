@@ -1,48 +1,50 @@
-# 经验记录规范
+# Experience Record Conventions
 
-## 记录单位
+## Record boundaries
 
-以一个可复用的问题、根因或决策为单位。同一调查的多次对话、实验和补丁版本更新同一条记录；相似症状但根因不同的案例分别记录并关联。补丁已完整解释的简单修正通常无需额外文档，除非用户明确要求保存。
+Organize each record around a reusable problem, root cause, or decision. Multiple conversations, experiments, and patch revisions about the same investigation update one record. Similar symptoms with different causes belong in separate, cross-linked records. A simple fix fully explained by its patch usually needs no additional article unless the user explicitly requests one.
 
-记录保存在 `records/`，文件名采用 `PGK-YYYYMMDD-<8位随机十六进制>-<简短主题>.md`，元数据 `id` 使用前两部分和随机后缀，例如不含主题的 `PGK-YYYYMMDD-<8位随机十六进制>`。日期按用户时区确定。写入前检查 ID 和路径是否存在，碰撞时重新生成，不覆盖旧记录。随机后缀用于降低多人同时创建的冲突风险，ID 一经分配不随标题改变。
+Store records under `records/`. Use filenames of the form `PGK-YYYYMMDD-<8-random-hex-digits>-<short-topic>.md` and an `id` of `PGK-YYYYMMDD-<8-random-hex-digits>`. Use the user's timezone for the date. Check for existing IDs and paths before writing; generate another suffix on collision instead of overwriting a record. The random suffix reduces concurrent creation conflicts. Keep the assigned ID even when the title changes.
 
-## 元数据
+Write maintained prose, titles, and navigation in English. Preserve original evidence, identifiers, quotations, and tool output without silently translating or changing them; explain their significance in English.
 
-从 [模板](../templates/record.md) 开始，替换模板占位内容，并删除不适用的正文提示。模板不是实际记录。
+## Metadata
 
-| 字段 | 含义 |
+Start from the [template](../templates/record.md), replace its placeholders, and remove irrelevant writing prompts. The template is not an actual record.
+
+| Field | Meaning |
 | --- | --- |
-| `id`, `title` | 稳定标识，以及描述实际问题的标题 |
-| `kind` | `bug`、`investigation` 或 `decision`；输入来自邮件还是对话由来源字段记录 |
-| `topics`, `symbols` | 主题，以及可检索的精确函数、结构体、参数或错误标识 |
-| `evidence_state` | 主结论为 `hypothesis`、`supported`、`refuted` 或 `mixed` |
-| `delivery` | `not-applicable`、`unknown`、`local-only`、`submitted`、`merged` 或 `released` |
-| `applicability` | 仓库、测试 commit、分支、补丁身份、配置和平台；不确定时填 `unknown` |
-| `last_checked` | 最近一次实质性证据核验日期；仅改格式不刷新此日期 |
-| `sources` | 来源类型、实际访问过的 URL 或 Message-ID、必要的本地证据路径 |
-| `supersedes`, `superseded_by` | 可选的记录替代关系 |
+| `id`, `title` | Stable identity and a title describing the actual problem |
+| `kind` | `bug`, `investigation`, or `decision`; identify mail or conversation input in the sources |
+| `topics`, `symbols` | Topics and exact searchable functions, structures, parameters, or error identifiers |
+| `evidence_state` | Headline conclusion: `hypothesis`, `supported`, `refuted`, or `mixed` |
+| `delivery` | `not-applicable`, `unknown`, `local-only`, `submitted`, `merged`, or `released` |
+| `applicability` | Repository, tested commit, branch, patch identity, configuration, and platform; use `unknown` where unestablished |
+| `last_checked` | Date of the latest substantive evidence check; do not refresh for formatting edits alone |
+| `sources` | Source types, URLs or Message-IDs actually retrieved, and necessary local evidence paths |
+| `supersedes`, `superseded_by` | Optional relationships to other records |
 
-本地修复验证通过不代表已经合入。`merged` 必须有对应 commit 和分支；回补及发布情况单独说明。不同结论有不同证据强度时，在正文逐项区分，不能用一个总状态掩盖差异。
+A locally verified fix is not necessarily merged. `merged` requires an identifiable commit and branch; describe backports and release availability separately. When individual conclusions have different evidence strengths, distinguish them in the body rather than hiding them behind one overall status.
 
-## 正文应回答的问题
+## Questions the record should answer
 
-1. 当前可以复用的结论是什么，适用于哪些条件？
-2. 症状和触发条件是什么，如何复现？
-3. 根因或决策理由是什么，哪些证据支持它？
-4. 修复或方案为什么有效，实际验证了什么？
-5. 哪些尝试失败，旧假设为何被推翻，还缺什么？
-6. 原始讨论、补丁、测试结果和相关记录在哪里？
+1. What conclusion can be reused, and under which conditions?
+2. What are the symptoms and triggers, and how can they be reproduced?
+3. What is the root cause or decision rationale, and which evidence supports it?
+4. Why does the fix or approach work, and what was actually verified?
+5. Which approaches failed, why were earlier hypotheses rejected, and what remains unknown?
+6. Where are the original discussions, patches, test results, and related records?
 
-## 不同来源的证据要求
+## Evidence by source type
 
-- **对话**：保存相关范围与必要摘录；只有摘要时标记为摘要，不重构缺失的逐字内容或工具输出。
-- **Bug 和实验**：记录实际 revision、相关未提交补丁、复现命令和修复前后结果。并发问题要保留已知的交错、注入点、重复次数和验证限制。
-- **邮件**：记录 Message-ID、作者、时间、实际访问的归档 URL 和收集截止时间。区分个人观点、讨论共识、补丁提交与实际合入；重复引用不算独立证据。
+- **Conversations:** identify the relevant scope and preserve necessary excerpts. Label summaries as summaries; do not reconstruct missing verbatim messages or tool output.
+- **Bugs and experiments:** record the actual revision, relevant uncommitted patch, reproduction commands, and before/after results. For concurrency issues, retain known interleavings, injection points, repetition counts, and verification limits.
+- **Mail:** record Message-ID, author, date, archive URL actually accessed, and collection cutoff. Distinguish personal opinions, discussion consensus, patch submission, and actual merge. Repeated quotations are not independent evidence.
 
-本地证据放入 `evidence/<record-id>/`，只创建有实际材料的目录。小型必要材料可纳入 Git；大文件记录可靠存放位置和校验和，不把未保存的日志描述成已归档。
+Store local evidence in `evidence/<record-id>/`, creating directories only when there are artifacts to preserve. Commit small, necessary artifacts; for large files, record a durable location and checksum. Do not describe unsaved logs as archived.
 
-## 更新与检索
+## Updates and retrieval
 
-保存前先查已有记录。更新时保留 ID，突出当前结论，并简述结论变化的依据；被推翻的内容不能继续作为当前事实展示。
+Search existing records before saving. Preserve IDs on updates, emphasize the current conclusion, and explain the evidence behind changes. Refuted content must not continue to appear as current fact.
 
-在相关主题页添加一条带使用场景的链接。用未来可能提出的问题或精确符号测试检索，并确认结果包含适用条件和来源。文件可被 `rg` 检索，不等于已被 `openwiki_search` 收录。
+Add an annotated link to the relevant topic page describing when the case is useful. Test retrieval with a plausible future question or exact symbol and check that the result includes applicability and sources. Finding a file with `rg` does not prove that `openwiki_search` indexes it.

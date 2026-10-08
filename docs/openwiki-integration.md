@@ -1,40 +1,40 @@
-# OpenWiki 的独立存储与维护
+# OpenWiki Storage and Maintenance
 
-## 存储和工作副本
+## Canonical storage and working copies
 
-本仓库的 `code-wiki/postgres/openwiki/` 是代码 Wiki 的规范副本，保存页面、Claims 和已完成更新的持久化元数据。相邻的 `source.json` 记录 PostgreSQL 源码 URL、源码 commit、OpenWiki 验证工具标识、导出时间和文件校验和。历史版本通过 Git 保存。
+`code-wiki/postgres/openwiki/` is the canonical code Wiki snapshot. It contains pages, Claims, and durable metadata from completed updates. The adjacent `source.json` records the PostgreSQL source URL and commit, OpenWiki verification tool identifiers, export time, and file checksums. Git preserves snapshot history.
 
-PostgreSQL checkout 的 `openwiki/` 是恢复出来的工作副本。OpenWiki 0.7.1 的代码模式和 MCP 检索仍以源码仓库根目录为入口；桥接脚本保留这个约定，不通过软链接或修改 OpenWiki 包绕过路径检查。两份文件只有一个维护流程，不分别编辑。
+The PostgreSQL checkout's `openwiki/` is a restored working copy. OpenWiki 0.7.1 code mode and MCP retrieval still use the source repository root. The bridge preserves this contract without symlinks or modifications to the OpenWiki package. Both copies follow one maintenance workflow; do not edit them independently.
 
-首次迁移保留原始 Wiki 字节及生成时间，不把复制文件描述成重新验证了 PostgreSQL 机制。页面中旧的部署说明反映生成时的状态；当前存储和维护方式以本文为准。
+The initial migration preserved the original Wiki bytes and generation timestamps. Copying files did not reverify PostgreSQL behavior. Older deployment notes in the pages reflect their generation context; this guide describes the current storage and maintenance arrangement. All maintained Wiki and knowledge-base prose is in English.
 
-## 团队成员首次使用
+## Set up a team checkout
 
-1. 克隆本知识仓库及 PostgreSQL 源码。
-2. 查看 [source.json](../code-wiki/postgres/source.json) 中的 `source_commit`，确保源码仓库包含这个 commit。复现文档所描述的实现时使用该 commit；研究其他版本时重新核实重要结论。
-3. 复制 `knowledge.example.json` 为 `knowledge.local.json`，填写本机源码路径。
-4. 从本仓库根目录运行：
+1. Clone this knowledge repository and the PostgreSQL source.
+2. Read `source_commit` in [source.json](../code-wiki/postgres/source.json) and ensure the source repository contains that commit. Use it to reproduce the documented implementation; recheck important conclusions when working on another revision.
+3. Copy `knowledge.example.json` to `knowledge.local.json` and enter your local source path.
+4. Run from this repository root:
 
 ```sh
 python3 scripts/wiki_bridge.py restore
 python3 scripts/wiki_bridge.py status
 ```
 
-也可用 `--source /absolute/path/to/postgres` 覆盖本机配置。脚本不会切换源码分支、拉取源码、调用模型或推送 Git。
+Use `--source /absolute/path/to/postgres` to override local configuration. The script does not switch source branches, fetch source, invoke a model, or push Git changes.
 
-已有工作副本包含未发布修改时，恢复会停止；应先保存并核实这些修改。恢复替换旧副本时会输出备份位置。备份保留在同一父目录的 `.wiki-backup-*`，确认不再需要后再清理；将这个目录模式排除于源码 Git 和 OpenWiki 扫描之外。
+Restore stops when the existing working copy has unpublished changes. Preserve and verify them before proceeding. When replacing an old working copy, restore prints the backup path. Backups remain under `.wiki-backup-*` in the same parent directory; remove them only after confirming they are no longer needed. Exclude that directory pattern from source Git tracking and OpenWiki scans.
 
-## 日常更新
+## Update the Wiki
 
-先同步知识仓库并确认没有其他维护者，再恢复工作副本。需要描述新源码时，由开发者明确选择源码 commit；桥接脚本不自动跟踪上游最新分支。
+Synchronize the knowledge repository and confirm no other maintainer is writing, then restore the working copy. To document newer source, explicitly choose the source commit; the bridge does not automatically track upstream.
 
 ```sh
 python3 scripts/wiki_bridge.py restore
 ```
 
-在源码 checkout 中，让 Codex 或 OpenCode 按 OpenWiki 的 begin、页面任务、submit、finish 生命周期更新 Wiki；也可在已配置模型 provider 的环境中执行原生 `openwiki code --update --print`。一次只让一个宿主维护。发生中断时恢复原运行，不发布半成品。
+In the source checkout, ask Codex or OpenCode to update through OpenWiki's begin, page-job, submit, and finish lifecycle. Alternatively, with a configured model provider, run `openwiki code --update --print`. Keep the Wiki output language set to English. Only one host should maintain the Wiki at a time. Resume interrupted runs instead of publishing unfinished output.
 
-完成后回到知识仓库：
+After completion, return to the knowledge repository:
 
 ```sh
 python3 scripts/wiki_bridge.py publish
@@ -42,36 +42,36 @@ python3 scripts/wiki_bridge.py status
 git diff --stat -- code-wiki/postgres
 ```
 
-检查差异后，按授权提交和推送 `code-wiki/postgres`。`publish` 只复制本地文件，不等于 Git 提交或远程发布。首次迁移使用的 `--bootstrap` 仅适用于规范副本尚不存在时，不能覆盖已有快照。
+Review the changes, then commit and push `code-wiki/postgres` when authorized. `publish` only copies local files; it is not a Git commit or remote publication. The initial migration used `--bootstrap`, which only works when no canonical snapshot exists and cannot overwrite one.
 
-## 发布检查与冲突
+## Publication checks and conflicts
 
-桥接脚本要求无活动运行、上次更新完成、页面字节哈希与 Claims 和页面清单一致、源码 HEAD 与完成记录一致、源码无已跟踪的未提交修改，以及引用的证据文件受源码 Git 管理。未知文件和软链接会使操作停止；`.DS_Store` 和 Apple 资源旁车文件不导出。
+The bridge requires no active run, a completed last update, page hashes matching Claims and the page manifest, source HEAD matching the completed update, no tracked uncommitted source changes, and source Git tracking for cited evidence files. Unexpected files and symlinks stop the operation. `.DS_Store` and Apple resource sidecars are excluded from export.
 
-脚本在忽略的 `.wiki-bridge/` 中记录每个 checkout 恢复时的基线。其他工作副本已经发布新版本时，旧基线不能覆盖新快照。请先保存各自工作，再按新规范版本重做或协调更新；没有强制覆盖开关。桥接锁只覆盖传输操作，整个模型生成过程仍需维护者协调单写。
+The ignored `.wiki-bridge/` directory records each checkout's restored baseline. If another working copy has published a newer snapshot, an older baseline cannot overwrite it. Preserve both sets of work, then coordinate or repeat the update against the new canonical version. There is no force-overwrite option. The bridge lock covers transfers only; maintainers must coordinate a single writer throughout model generation.
 
-脚本检查结构和版本一致性，不证明文字语义正确，也不重新运行 OpenWiki 的证据解析器。维护时仍必须完成 OpenWiki 生命周期，并针对重要行为检查源码和测试。
+The bridge checks structural and version consistency. It does not prove prose correctness or rerun OpenWiki's evidence resolver. Maintenance must still finish the OpenWiki lifecycle and verify important behavior against source and tests.
 
-## 阅读与检索
+## Read and retrieve
 
-直接浏览 [Wiki 入口](../code-wiki/postgres/openwiki/quickstart.md) 即可阅读。`source.json` 中的源码 URL 和 commit 用于把 `repo://src/...` 证据解释为对应版本的源码，不能把这些路径解释为本知识仓库中的文件。
+Read the [Wiki entry point](../code-wiki/postgres/openwiki/quickstart.md) directly. Use the source URL and commit in `source.json` to interpret `repo://src/...` evidence against the corresponding source revision, not against files in this knowledge repository.
 
-使用 OpenWiki MCP 时，把 `root` 指向已恢复 Wiki 的 PostgreSQL checkout，继续使用 `openwiki_search` 和 `openwiki_read`；不要把 root 改成知识仓库。`status` 会同时显示当前源码 HEAD 与文档源码 commit，帮助识别版本差异。
+For OpenWiki MCP, set `root` to the PostgreSQL checkout containing the restored Wiki, then use `openwiki_search` and `openwiki_read`. Do not change the root to the knowledge repository. `status` displays both source HEAD and the documented source commit to expose revision differences.
 
-跨记录检索可直接运行：
+Search across records and Wiki pages directly:
 
 ```sh
-rg -n -i 'ReplicationSlotRelease|ephemeral|复制槽' records topics code-wiki/postgres/openwiki
+rg -n -i 'ReplicationSlotRelease|ephemeral|replication slot' records topics code-wiki/postgres/openwiki
 ```
 
-MCP 检索仍只覆盖它支持的 Wiki 页面，不会自动索引 `records/`。本次迁移没有启用统一索引、CI、定时任务或历史材料导入。
+MCP retrieval covers its supported Wiki pages; it does not automatically index `records/`. This migration does not enable a unified index, CI, scheduled tasks, or historical material ingestion.
 
-## 验证桥接脚本
+## Test the bridge
 
-脚本仅使用 Python 标准库和 Git。运行隔离测试：
+The bridge uses only Python's standard library and Git. Run isolated tests:
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
 
-测试使用临时仓库，覆盖恢复往返、冲突保护、未完成运行、源码漂移、页内容被手工改动、软链接拒绝以及备份保留。
+The tests use temporary repositories and cover round-trip restoration, conflicts, unfinished runs, source drift, manual page changes, symlink rejection, and backup preservation.

@@ -21,26 +21,26 @@ superseded_by: []
 
 # REPLACE_WITH_PROBLEM_TITLE
 
-## 当前结论与适用范围
+## Current conclusion and applicability
 
-写明可复用的结论、适用条件及尚未确认的部分。
+State the reusable conclusion, its applicable conditions, and remaining uncertainties.
 
-## 现象与复现
+## Symptoms and reproduction
 
-记录触发条件、实际环境、最小步骤以及实际和预期行为。
+Record triggers, the actual environment, minimal steps, and observed versus expected behavior.
 
-## 根因或决策理由
+## Root cause or decision rationale
 
-解释机制或被破坏的约束，引用证据，说明有意义的替代方案。
+Explain the mechanism or violated invariant, cite evidence, and discuss meaningful alternatives.
 
-## 处理方案与验证
+## Resolution and verification
 
-记录修复或决策、有效原因、实际命令与结果，以及未测试范围。
+Record the fix or decision, why it works, actual commands and results, and untested scope.
 
-## 结论演变与未决问题
+## Evolution and open questions
 
-保留有复用价值的失败尝试、反证、变化理由和待核实事项。
+Preserve useful failed approaches, counterevidence, reasons for changed conclusions, and unresolved questions.
 
-## 来源与相关知识
+## Sources and related knowledge
 
-填写实际访问的来源及必要的本地证据链接，不保留示例链接或推测的引用。
+Include sources actually accessed and necessary local evidence links. Remove example links and speculative references.

@@ -1,5 +1,5 @@
-# WAL 与恢复经验
+# WAL and Recovery Investigations
 
-收录 checkpoint、WAL 持久化顺序、恢复和时间线选择的调查案例。当前尚无案例。
+Cases involving checkpoints, WAL durability ordering, recovery, and timeline selection. No cases have been recorded yet.
 
-[返回主题导航](README.md)
+[Back to topic navigation](README.md)

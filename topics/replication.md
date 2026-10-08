@@ -1,5 +1,5 @@
-# 复制经验
+# Replication Investigations
 
-收录复制槽、逻辑解码、WAL sender 与 receiver、同步复制和 failover 的调查案例。当前尚无案例。
+Cases involving replication slots, logical decoding, WAL sender and receiver, synchronous replication, and failover. No cases have been recorded yet.
 
-[返回主题导航](README.md)
+[Back to topic navigation](README.md)

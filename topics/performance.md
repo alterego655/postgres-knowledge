@@ -1,5 +1,5 @@
-# 性能经验
+# Performance Investigations
 
-收录锁竞争、LWLock、ProcArray、共享内存、吞吐与延迟的调查案例。当前尚无案例。
+Cases involving lock contention, LWLocks, ProcArray, shared memory, throughput, and latency. No cases have been recorded yet.
 
-[返回主题导航](README.md)
+[Back to topic navigation](README.md)
