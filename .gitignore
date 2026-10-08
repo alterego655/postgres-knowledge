@@ -1,0 +1,10 @@
+.DS_Store
+knowledge.local.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.cache/
+tmp/
+evidence/private/
