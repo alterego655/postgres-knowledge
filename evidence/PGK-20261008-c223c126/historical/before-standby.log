@@ -1,0 +1,316 @@
+2026-09-20 14:00:18.677 CST postmaster[27409] LOG:  starting PostgreSQL 19devel on aarch64-apple-darwin25.6.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.5), 64-bit
+2026-09-20 14:00:18.677 CST postmaster[27409] LOG:  listening on Unix socket "/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m/.s.PGSQL.17751"
+2026-09-20 14:00:18.680 CST startup[27414] LOG:  database system was interrupted; last known up at 2026-09-20 14:00:18 CST
+2026-09-20 14:00:18.680 CST startup[27414] LOG:  starting backup recovery with redo LSN 0/02000028, checkpoint LSN 0/02000088, on timeline ID 1
+2026-09-20 14:00:18.680 CST startup[27414] LOG:  entering standby mode
+2026-09-20 14:00:18.681 CST startup[27414] LOG:  redo starts at 0/02000028
+2026-09-20 14:00:18.681 CST startup[27414] LOG:  completed backup recovery with redo LSN 0/02000028 and end LSN 0/02000130
+2026-09-20 14:00:18.681 CST startup[27414] LOG:  consistent recovery state reached at 0/02000130
+2026-09-20 14:00:18.681 CST postmaster[27409] LOG:  database system is ready to accept read-only connections
+2026-09-20 14:00:18.685 CST walreceiver[27415] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:00:18.802 CST client backend[27422] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002098' WITH (timeout '1d');
+2026-09-20 14:00:19.786 CST client backend[27422] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_replay_lsn(), '0/03002098'::pg_lsn);
+2026-09-20 14:00:19.812 CST client backend[27430] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002340';
+2026-09-20 14:00:20.799 CST client backend[27430] layout-before.pl LOG:  statement: SELECT count(*) FROM wait_test;
+2026-09-20 14:00:20.822 CST client backend[27441] layout-before.pl LOG:  statement: WAIT FOR LSN '0/030025E8' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:20.822 CST client backend[27441] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/030025E8'::pg_lsn);
+2026-09-20 14:00:20.846 CST client backend[27447] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002890' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:20.846 CST client backend[27447] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03002890'::pg_lsn);
+2026-09-20 14:00:20.885 CST client backend[27457] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '10ms');
+2026-09-20 14:00:20.892 CST client backend[27459] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout '1000ms');
+2026-09-20 14:00:21.893 CST client backend[27459] layout-before.pl ERROR:  timed out while waiting for target LSN 2/570C0F38 to be replayed; current standby_replay LSN 0/03002B38
+2026-09-20 14:00:21.893 CST client backend[27459] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570C0F38' WITH (timeout '1000ms');
+2026-09-20 14:00:21.901 CST client backend[27464] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+2026-09-20 14:00:21.908 CST client backend[27466] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout '10ms', no_throw);
+2026-09-20 14:00:21.934 CST client backend[27470] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (MODE 'primary_flush');
+2026-09-20 14:00:21.934 CST client backend[27470] layout-before.pl ERROR:  recovery is in progress
+2026-09-20 14:00:21.934 CST client backend[27470] layout-before.pl HINT:  Waiting for primary_flush can only be done on a primary server. Use standby_flush mode on a standby server.
+2026-09-20 14:00:21.934 CST client backend[27470] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570C0F38' WITH (MODE 'primary_flush');
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl LOG:  statement: BEGIN ISOLATION LEVEL REPEATABLE READ;
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl LOG:  statement: SELECT 1;
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38';
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl ERROR:  WAIT FOR must be called without an active or registered snapshot
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl DETAIL:  WAIT FOR cannot be executed within a transaction with an isolation level higher than READ COMMITTED.
+2026-09-20 14:00:21.941 CST client backend[27472] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570C0F38';
+2026-09-20 14:00:21.971 CST client backend[27480] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300CFC0' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+2026-09-20 14:00:22.968 CST client backend[27482] layout-before.pl LOG:  statement: SELECT pg_wal_replay_wait_wrap('2/570C0F38');
+2026-09-20 14:00:22.969 CST client backend[27482] layout-before.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:00:22.969 CST client backend[27482] layout-before.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:00:22.969 CST client backend[27482] layout-before.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function pg_wal_replay_wait_wrap(pg_lsn) line 3 at EXECUTE
+2026-09-20 14:00:22.969 CST client backend[27482] layout-before.pl STATEMENT:  SELECT pg_wal_replay_wait_wrap('2/570C0F38');
+2026-09-20 14:00:22.997 CST client backend[27490] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+2026-09-20 14:00:23.990 CST client backend[27492] layout-before.pl LOG:  statement: CALL pg_wal_replay_wait_proc('2/570C0F38');
+2026-09-20 14:00:23.990 CST client backend[27492] layout-before.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:00:23.990 CST client backend[27492] layout-before.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:00:23.990 CST client backend[27492] layout-before.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function pg_wal_replay_wait_proc(pg_lsn) line 3 at EXECUTE
+2026-09-20 14:00:23.990 CST client backend[27492] layout-before.pl STATEMENT:  CALL pg_wal_replay_wait_proc('2/570C0F38');
+2026-09-20 14:00:23.997 CST client backend[27494] layout-before.pl LOG:  statement: DO $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', '2/570C0F38'); END $$;
+2026-09-20 14:00:23.998 CST client backend[27494] layout-before.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:00:23.998 CST client backend[27494] layout-before.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:00:23.998 CST client backend[27494] layout-before.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function inline_code_block line 1 at EXECUTE
+2026-09-20 14:00:23.998 CST client backend[27494] layout-before.pl STATEMENT:  DO $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', '2/570C0F38'); END $$;
+2026-09-20 14:00:24.011 CST client backend[27498] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout '-1000ms');
+2026-09-20 14:00:24.011 CST client backend[27498] layout-before.pl ERROR:  timeout cannot be negative
+2026-09-20 14:00:24.011 CST client backend[27498] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout '-1000ms');
+2026-09-20 14:00:24.017 CST client backend[27500] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (unknown_param 'value');
+2026-09-20 14:00:24.017 CST client backend[27500] layout-before.pl ERROR:  option "unknown_param" not recognized at character 33
+2026-09-20 14:00:24.017 CST client backend[27500] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (unknown_param 'value');
+2026-09-20 14:00:24.024 CST client backend[27502] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout '1000', timeout '2000');
+2026-09-20 14:00:24.024 CST client backend[27502] layout-before.pl ERROR:  conflicting or redundant options at character 49
+2026-09-20 14:00:24.024 CST client backend[27502] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout '1000', timeout '2000');
+2026-09-20 14:00:24.030 CST client backend[27504] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (no_throw, no_throw);
+2026-09-20 14:00:24.030 CST client backend[27504] layout-before.pl ERROR:  conflicting or redundant options at character 43
+2026-09-20 14:00:24.030 CST client backend[27504] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (no_throw, no_throw);
+2026-09-20 14:00:24.037 CST client backend[27506] layout-before.pl ERROR:  syntax error at or near "(" at character 27
+2026-09-20 14:00:24.037 CST client backend[27506] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' (timeout '100ms');
+2026-09-20 14:00:24.043 CST client backend[27508] layout-before.pl ERROR:  syntax error at or near "TIMEOUT" at character 10
+2026-09-20 14:00:24.043 CST client backend[27508] layout-before.pl STATEMENT:  WAIT FOR TIMEOUT 1000;
+2026-09-20 14:00:24.049 CST client backend[27510] layout-before.pl LOG:  statement: WAIT FOR LSN 'invalid_lsn';
+2026-09-20 14:00:24.049 CST client backend[27510] layout-before.pl ERROR:  invalid input syntax for type pg_lsn: "invalid_lsn"
+2026-09-20 14:00:24.049 CST client backend[27510] layout-before.pl STATEMENT:  WAIT FOR LSN 'invalid_lsn';
+2026-09-20 14:00:24.056 CST client backend[27512] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout 'invalid');
+2026-09-20 14:00:24.056 CST client backend[27512] layout-before.pl ERROR:  invalid timeout value: "invalid"
+2026-09-20 14:00:24.056 CST client backend[27512] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout 'invalid');
+2026-09-20 14:00:24.062 CST client backend[27514] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+2026-09-20 14:00:24.068 CST client backend[27516] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout 100, no_throw);
+2026-09-20 14:00:24.177 CST client backend[27518] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (invalid_option 'value');
+2026-09-20 14:00:24.177 CST client backend[27518] layout-before.pl ERROR:  option "invalid_option" not recognized at character 33
+2026-09-20 14:00:24.177 CST client backend[27518] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (invalid_option 'value');
+2026-09-20 14:00:24.184 CST client backend[27520] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'invalid');
+2026-09-20 14:00:24.185 CST client backend[27520] layout-before.pl ERROR:  unrecognized value for WAIT option "mode": "invalid" at character 33
+2026-09-20 14:00:24.185 CST client backend[27520] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (MODE 'invalid');
+2026-09-20 14:00:24.190 CST client backend[27522] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', MODE 'standby_write');
+2026-09-20 14:00:24.190 CST client backend[27522] layout-before.pl ERROR:  conflicting or redundant options at character 56
+2026-09-20 14:00:24.190 CST client backend[27522] layout-before.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', MODE 'standby_write');
+2026-09-20 14:00:24.204 CST client backend[27526] layout-before.pl LOG:  statement: SELECT pg_wal_replay_pause();
+2026-09-20 14:00:24.228 CST client backend[27532] layout-before.pl LOG:  statement: WAIT FOR LSN '0/030197A8';
+2026-09-20 14:00:24.248 CST client backend[27538] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019810';
+2026-09-20 14:00:24.267 CST client backend[27544] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019878';
+2026-09-20 14:00:24.286 CST client backend[27550] layout-before.pl LOG:  statement: WAIT FOR LSN '0/030198E0';
+2026-09-20 14:00:24.307 CST client backend[27556] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019948';
+2026-09-20 14:00:24.313 CST client backend[27558] layout-before.pl LOG:  statement: SELECT pg_wal_replay_resume();
+2026-09-20 14:00:25.213 CST client backend[27532] layout-before.pl LOG:  statement: SELECT log_count(0);
+2026-09-20 14:00:25.217 CST client backend[27532] layout-before.pl LOG:  count 0
+2026-09-20 14:00:25.217 CST client backend[27532] layout-before.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:00:25.217 CST client backend[27532] layout-before.pl STATEMENT:  SELECT log_count(0);
+2026-09-20 14:00:25.236 CST client backend[27538] layout-before.pl LOG:  statement: SELECT log_count(1);
+2026-09-20 14:00:25.239 CST client backend[27538] layout-before.pl LOG:  count 1
+2026-09-20 14:00:25.239 CST client backend[27538] layout-before.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:00:25.239 CST client backend[27538] layout-before.pl STATEMENT:  SELECT log_count(1);
+2026-09-20 14:00:25.255 CST client backend[27544] layout-before.pl LOG:  statement: SELECT log_count(2);
+2026-09-20 14:00:25.257 CST client backend[27544] layout-before.pl LOG:  count 2
+2026-09-20 14:00:25.257 CST client backend[27544] layout-before.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:00:25.257 CST client backend[27544] layout-before.pl STATEMENT:  SELECT log_count(2);
+2026-09-20 14:00:25.274 CST client backend[27550] layout-before.pl LOG:  statement: SELECT log_count(3);
+2026-09-20 14:00:25.276 CST client backend[27550] layout-before.pl LOG:  count 3
+2026-09-20 14:00:25.276 CST client backend[27550] layout-before.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:00:25.276 CST client backend[27550] layout-before.pl STATEMENT:  SELECT log_count(3);
+2026-09-20 14:00:25.295 CST client backend[27556] layout-before.pl LOG:  statement: SELECT log_count(4);
+2026-09-20 14:00:25.297 CST client backend[27556] layout-before.pl LOG:  count 4
+2026-09-20 14:00:25.297 CST client backend[27556] layout-before.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:00:25.297 CST client backend[27556] layout-before.pl STATEMENT:  SELECT log_count(4);
+2026-09-20 14:00:25.371 CST client backend[27565] layout-before.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:00:25.379 CST client backend[27567] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:00:25.380 CST client backend[27567] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:25.380 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:25.380 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:00:25.381 CST startup[27414] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:00:25.381 CST walreceiver[27415] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:00:25.381 CST walreceiver[27415] DETAIL:  Signal sent by PID 27414, UID 501.
+2026-09-20 14:00:25.381 CST startup[27414] LOG:  invalid record length at 0/03019948: expected at least 24, got 0
+2026-09-20 14:00:25.381 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:25.381 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:25.388 CST client backend[27569] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:25.464 CST client backend[27591] layout-before.pl LOG:  statement: WAIT FOR LSN '0/030199B0' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:25.470 CST client backend[27594] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019A18' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:25.477 CST client backend[27596] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019A80' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:25.484 CST client backend[27598] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019AE8' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:25.490 CST client backend[27601] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019B50' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:25.496 CST client backend[27603] layout-before.pl LOG:  statement: SELECT count(*) = 5 FROM pg_stat_activity WHERE wait_event = 'WaitForWalWrite'
+2026-09-20 14:00:25.505 CST client backend[27605] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m';
+2026-09-20 14:00:25.505 CST client backend[27605] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:25.506 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:25.506 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to "port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m"
+2026-09-20 14:00:25.510 CST walreceiver[27606] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:00:25.510 CST client backend[27601] layout-before.pl LOG:  statement: SELECT log_wait_done('write_done', 4);
+2026-09-20 14:00:25.510 CST client backend[27596] layout-before.pl LOG:  statement: SELECT log_wait_done('write_done', 2);
+2026-09-20 14:00:25.510 CST client backend[27598] layout-before.pl LOG:  statement: SELECT log_wait_done('write_done', 3);
+2026-09-20 14:00:25.510 CST client backend[27591] layout-before.pl LOG:  statement: SELECT log_wait_done('write_done', 0);
+2026-09-20 14:00:25.510 CST client backend[27594] layout-before.pl LOG:  statement: SELECT log_wait_done('write_done', 1);
+2026-09-20 14:00:25.511 CST client backend[27601] layout-before.pl LOG:  write_done 4
+2026-09-20 14:00:25.511 CST client backend[27601] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:25.511 CST client backend[27601] layout-before.pl STATEMENT:  SELECT log_wait_done('write_done', 4);
+2026-09-20 14:00:25.511 CST client backend[27596] layout-before.pl LOG:  write_done 2
+2026-09-20 14:00:25.511 CST client backend[27596] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:25.511 CST client backend[27596] layout-before.pl STATEMENT:  SELECT log_wait_done('write_done', 2);
+2026-09-20 14:00:25.511 CST client backend[27598] layout-before.pl LOG:  write_done 3
+2026-09-20 14:00:25.511 CST client backend[27598] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:25.511 CST client backend[27598] layout-before.pl STATEMENT:  SELECT log_wait_done('write_done', 3);
+2026-09-20 14:00:25.511 CST client backend[27594] layout-before.pl LOG:  write_done 1
+2026-09-20 14:00:25.511 CST client backend[27594] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:25.511 CST client backend[27594] layout-before.pl STATEMENT:  SELECT log_wait_done('write_done', 1);
+2026-09-20 14:00:25.511 CST client backend[27591] layout-before.pl LOG:  write_done 0
+2026-09-20 14:00:25.511 CST client backend[27591] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:25.511 CST client backend[27591] layout-before.pl STATEMENT:  SELECT log_wait_done('write_done', 0);
+2026-09-20 14:00:25.513 CST client backend[27609] layout-before.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:25.521 CST client backend[27611] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/03019B50'::pg_lsn);
+2026-09-20 14:00:25.529 CST client backend[27613] layout-before.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:00:25.536 CST client backend[27615] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:00:25.537 CST client backend[27615] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:25.537 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:25.537 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:00:25.537 CST startup[27414] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:00:25.544 CST client backend[27617] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:25.657 CST client backend[27619] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:25.773 CST client backend[27621] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:25.886 CST client backend[27623] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.005 CST client backend[27625] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.122 CST client backend[27627] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.237 CST client backend[27629] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.355 CST client backend[27631] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.450 CST walreceiver[27606] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:00:26.450 CST walreceiver[27606] DETAIL:  Signal sent by PID 27414, UID 501.
+2026-09-20 14:00:26.451 CST startup[27414] LOG:  invalid record length at 0/03019B50: expected at least 24, got 0
+2026-09-20 14:00:26.451 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:26.451 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:26.472 CST client backend[27633] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.553 CST client backend[27655] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019BB8' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:26.560 CST client backend[27657] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019C20' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:26.566 CST client backend[27659] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019C88' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:26.573 CST client backend[27661] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019CF0' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:26.580 CST client backend[27663] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03019D58' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:26.586 CST client backend[27665] layout-before.pl LOG:  statement: SELECT count(*) = 5 FROM pg_stat_activity WHERE wait_event = 'WaitForWalFlush'
+2026-09-20 14:00:26.595 CST client backend[27667] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m';
+2026-09-20 14:00:26.595 CST client backend[27667] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:26.595 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:26.596 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to "port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m"
+2026-09-20 14:00:26.599 CST walreceiver[27668] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:00:26.600 CST client backend[27655] layout-before.pl LOG:  statement: SELECT log_wait_done('flush_done', 0);
+2026-09-20 14:00:26.600 CST client backend[27659] layout-before.pl LOG:  statement: SELECT log_wait_done('flush_done', 2);
+2026-09-20 14:00:26.600 CST client backend[27663] layout-before.pl LOG:  statement: SELECT log_wait_done('flush_done', 4);
+2026-09-20 14:00:26.600 CST client backend[27657] layout-before.pl LOG:  statement: SELECT log_wait_done('flush_done', 1);
+2026-09-20 14:00:26.600 CST client backend[27661] layout-before.pl LOG:  statement: SELECT log_wait_done('flush_done', 3);
+2026-09-20 14:00:26.600 CST client backend[27663] layout-before.pl LOG:  flush_done 4
+2026-09-20 14:00:26.600 CST client backend[27663] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:26.600 CST client backend[27663] layout-before.pl STATEMENT:  SELECT log_wait_done('flush_done', 4);
+2026-09-20 14:00:26.600 CST client backend[27659] layout-before.pl LOG:  flush_done 2
+2026-09-20 14:00:26.600 CST client backend[27659] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:26.600 CST client backend[27659] layout-before.pl STATEMENT:  SELECT log_wait_done('flush_done', 2);
+2026-09-20 14:00:26.600 CST client backend[27655] layout-before.pl LOG:  flush_done 0
+2026-09-20 14:00:26.600 CST client backend[27655] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:26.600 CST client backend[27655] layout-before.pl STATEMENT:  SELECT log_wait_done('flush_done', 0);
+2026-09-20 14:00:26.600 CST client backend[27657] layout-before.pl LOG:  flush_done 1
+2026-09-20 14:00:26.600 CST client backend[27657] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:26.600 CST client backend[27657] layout-before.pl STATEMENT:  SELECT log_wait_done('flush_done', 1);
+2026-09-20 14:00:26.601 CST client backend[27661] layout-before.pl LOG:  flush_done 3
+2026-09-20 14:00:26.601 CST client backend[27661] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:26.601 CST client backend[27661] layout-before.pl STATEMENT:  SELECT log_wait_done('flush_done', 3);
+2026-09-20 14:00:26.602 CST client backend[27671] layout-before.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.611 CST client backend[27673] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03019D58'::pg_lsn);
+2026-09-20 14:00:26.619 CST client backend[27675] layout-before.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:00:26.627 CST client backend[27677] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:00:26.628 CST client backend[27677] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:26.628 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:26.628 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:00:26.629 CST startup[27414] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:00:26.634 CST client backend[27679] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.747 CST client backend[27681] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.860 CST client backend[27683] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:26.974 CST client backend[27685] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.094 CST client backend[27687] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.211 CST client backend[27689] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.331 CST client backend[27691] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.448 CST client backend[27693] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.538 CST walreceiver[27668] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:00:27.538 CST walreceiver[27668] DETAIL:  Signal sent by PID 27414, UID 501.
+2026-09-20 14:00:27.538 CST startup[27414] LOG:  invalid record length at 0/03019D58: expected at least 24, got 0
+2026-09-20 14:00:27.538 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:27.538 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:27.565 CST client backend[27695] layout-before.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:27.576 CST client backend[27697] layout-before.pl LOG:  statement: SELECT pg_wal_replay_pause();
+2026-09-20 14:00:27.576 CST startup[27414] LOG:  recovery has paused
+2026-09-20 14:00:27.576 CST startup[27414] HINT:  Execute pg_wal_replay_resume() to continue.
+2026-09-20 14:00:27.616 CST client backend[27704] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_replay', timeout '1d');
+2026-09-20 14:00:27.624 CST client backend[27706] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:27.630 CST client backend[27708] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:27.636 CST client backend[27710] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_replay', timeout '1d');
+2026-09-20 14:00:27.642 CST client backend[27712] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:00:27.648 CST client backend[27714] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:00:27.655 CST client backend[27716] layout-before.pl LOG:  statement: SELECT count(*) = 6 FROM pg_stat_activity WHERE wait_event LIKE 'WaitForWal%'
+2026-09-20 14:00:27.663 CST client backend[27718] layout-before.pl LOG:  statement: SELECT pg_wal_replay_resume();
+2026-09-20 14:00:27.663 CST startup[27414] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:00:27.670 CST client backend[27720] layout-before.pl LOG:  statement: SELECT NOT pg_is_wal_replay_paused();
+2026-09-20 14:00:27.677 CST client backend[27722] layout-before.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m';
+2026-09-20 14:00:27.678 CST client backend[27722] layout-before.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:00:27.678 CST postmaster[27409] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:00:27.678 CST postmaster[27409] LOG:  parameter "primary_conninfo" changed to "port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m"
+2026-09-20 14:00:27.681 CST walreceiver[27724] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:00:27.684 CST client backend[27726] layout-before.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:00:36.202 CST client backend[27706] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 1);
+2026-09-20 14:00:36.202 CST client backend[27714] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 5);
+2026-09-20 14:00:36.202 CST client backend[27708] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 2);
+2026-09-20 14:00:36.203 CST client backend[27712] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 4);
+2026-09-20 14:00:36.204 CST client backend[27710] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 3);
+2026-09-20 14:00:36.204 CST client backend[27704] layout-before.pl LOG:  statement: SELECT log_wait_done('mixed_done', 0);
+2026-09-20 14:00:36.205 CST client backend[27706] layout-before.pl LOG:  mixed_done 1
+2026-09-20 14:00:36.205 CST client backend[27706] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.205 CST client backend[27706] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 1);
+2026-09-20 14:00:36.205 CST client backend[27712] layout-before.pl LOG:  mixed_done 4
+2026-09-20 14:00:36.205 CST client backend[27712] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.205 CST client backend[27712] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 4);
+2026-09-20 14:00:36.205 CST client backend[27710] layout-before.pl LOG:  mixed_done 3
+2026-09-20 14:00:36.205 CST client backend[27710] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.205 CST client backend[27710] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 3);
+2026-09-20 14:00:36.206 CST client backend[27714] layout-before.pl LOG:  mixed_done 5
+2026-09-20 14:00:36.206 CST client backend[27714] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.206 CST client backend[27714] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 5);
+2026-09-20 14:00:36.206 CST client backend[27704] layout-before.pl LOG:  mixed_done 0
+2026-09-20 14:00:36.206 CST client backend[27704] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.206 CST client backend[27704] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 0);
+2026-09-20 14:00:36.206 CST client backend[27708] layout-before.pl LOG:  mixed_done 2
+2026-09-20 14:00:36.206 CST client backend[27708] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.206 CST client backend[27708] layout-before.pl STATEMENT:  SELECT log_wait_done('mixed_done', 2);
+2026-09-20 14:00:36.220 CST client backend[27766] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/0301A018'::pg_lsn) >= 0 AND
+		       pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/0301A018'::pg_lsn) >= 0 AND
+		       pg_lsn_cmp(pg_last_wal_replay_lsn(), '0/0301A018'::pg_lsn) >= 0;
+2026-09-20 14:00:36.336 CST client backend[27804] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_replay');
+2026-09-20 14:00:36.341 CST client backend[27806] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_write');
+2026-09-20 14:00:36.347 CST client backend[27808] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_flush');
+2026-09-20 14:00:36.375 CST client backend[27816] layout-before.pl LOG:  statement: WAIT FOR LSN '0/04000000' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+2026-09-20 14:00:37.289 CST startup[27414] LOG:  received promote request
+2026-09-20 14:00:37.289 CST walreceiver[27724] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:00:37.289 CST walreceiver[27724] DETAIL:  Signal sent by PID 27414, UID 501.
+2026-09-20 14:00:37.289 CST startup[27414] LOG:  redo done at 0/0301A258 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 18.60 s
+2026-09-20 14:00:37.289 CST startup[27414] LOG:  last completed transaction was at log time 2026-09-20 14:00:36.275526+08
+2026-09-20 14:00:37.290 CST startup[27414] LOG:  selected new timeline ID: 2
+2026-09-20 14:00:37.292 CST startup[27414] LOG:  archive recovery complete
+2026-09-20 14:00:37.292 CST client backend[27804] layout-before.pl ERROR:  recovery is not in progress
+2026-09-20 14:00:37.292 CST client backend[27804] layout-before.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was replayed; last standby_replay LSN 0/04000000.
+2026-09-20 14:00:37.292 CST client backend[27804] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_replay');
+2026-09-20 14:00:37.292 CST client backend[27808] layout-before.pl ERROR:  recovery is not in progress
+2026-09-20 14:00:37.292 CST client backend[27808] layout-before.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was flushed; last standby_flush LSN 0/04000000.
+2026-09-20 14:00:37.292 CST client backend[27808] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_flush');
+2026-09-20 14:00:37.292 CST checkpointer[27412] LOG:  checkpoint starting: force
+2026-09-20 14:00:37.292 CST client backend[27806] layout-before.pl ERROR:  recovery is not in progress
+2026-09-20 14:00:37.292 CST client backend[27806] layout-before.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was written; last standby_write LSN 0/04000000.
+2026-09-20 14:00:37.292 CST client backend[27806] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_write');
+2026-09-20 14:00:37.293 CST postmaster[27409] LOG:  database system is ready to accept connections
+2026-09-20 14:00:37.394 CST checkpointer[27412] LOG:  checkpoint complete: force: wrote 1 buffers (0.8%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.102 s, sync=0.001 s, total=0.103 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32768 kB, estimate=32768 kB; lsn=0/040000C0, redo lsn=0/04000060
+2026-09-20 14:00:37.401 CST client backend[27825] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A258';
+2026-09-20 14:00:37.409 CST client backend[27827] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (timeout '10ms', no_throw);
+2026-09-20 14:00:37.413 CST postmaster[27409] LOG:  received fast shutdown request
+2026-09-20 14:00:37.414 CST postmaster[27409] LOG:  aborting any active transactions
+2026-09-20 14:00:37.414 CST postmaster[27409] LOG:  background worker "logical replication launcher" (PID 27820) exited with exit code 1
+2026-09-20 14:00:37.414 CST checkpointer[27412] LOG:  shutting down
+2026-09-20 14:00:37.414 CST checkpointer[27412] LOG:  checkpoint starting: shutdown fast
+2026-09-20 14:00:37.415 CST checkpointer[27412] LOG:  checkpoint complete: shutdown fast: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.000 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=29491 kB; lsn=0/04000140, redo lsn=0/04000140
+2026-09-20 14:00:37.416 CST postmaster[27409] LOG:  database system is shut down

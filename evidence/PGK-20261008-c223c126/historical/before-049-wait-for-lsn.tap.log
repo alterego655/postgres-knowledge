@@ -1,0 +1,429 @@
+# Checking port 17750
+# Found port 17750
+Name: primary
+Version: 19devel
+Data directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata
+Backup directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/backup
+Archive directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/archives
+Connection string: port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m
+Log file: /tmp/pg-wait-investigation/layout-before-log/layout-before_primary.log
+[14:00:17.694](0.013s) # initializing database system by running initdb
+# Running: initdb --no-sync --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata --auth trust
+The files belonging to this database system will be owned by user "qqj".
+This user must also own the server process.
+
+The database cluster will be initialized with this locale configuration:
+  locale provider:   libc
+  LC_COLLATE:  C.UTF-8
+  LC_CTYPE:    C.UTF-8
+  LC_MESSAGES: C
+  LC_MONETARY: C.UTF-8
+  LC_NUMERIC:  C
+  LC_TIME:     C.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are enabled.
+
+creating directory /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default "max_connections" ... 100
+selecting default "shared_buffers" ... 128MB
+selecting default time zone ... Asia/Taipei
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+
+Sync to disk skipped.
+The data directory might become corrupt if the operating system crashes.
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata -l logfile start
+
+# Running: /tmp/pg-wait-investigation/historical/src/test/regress/pg_regress --config-auth /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata
+### Starting node "primary"
+# Running: pg_ctl --wait --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata --log /tmp/pg-wait-investigation/layout-before-log/layout-before_primary.log --options --cluster-name=primary start
+waiting for server to start.... done
+server started
+# Postmaster PID for node "primary" is 27391
+[14:00:18.353](0.659s) # TIMING 0.013 primary CREATE TABLE wait_test AS SELECT generate_series(1,10) AS a
+# Taking pg_basebackup my_backup from node "primary"
+# Running: pg_basebackup --no-sync --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/backup/my_backup --host /var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m --port 17750 --checkpoint fast
+# Backup finished
+# Checking port 17751
+# Found port 17751
+Name: standby
+Version: 19devel
+Data directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/pgdata
+Backup directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/backup
+Archive directory: /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/archives
+Connection string: port=17751 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m
+Log file: /tmp/pg-wait-investigation/layout-before-log/layout-before_standby.log
+# Initializing node "standby" from backup "my_backup" of node "primary"
+### Enabling streaming replication for node "standby"
+### Starting node "standby"
+# Running: pg_ctl --wait --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/pgdata --log /tmp/pg-wait-investigation/layout-before-log/layout-before_standby.log --options --cluster-name=standby start
+waiting for server to start.... done
+server started
+# Postmaster PID for node "standby" is 27409
+[14:00:18.785](0.431s) # TIMING 0.009 primary INSERT INTO wait_test VALUES (generate_series(11, 20))
+[14:00:18.793](0.008s) # TIMING 0.008 primary SELECT pg_current_wal_insert_lsn()
+[14:00:19.789](0.996s) # TIMING 0.996 standby  WAIT FOR LSN '0/03002098' WITH (timeout '1d'); SELECT pg_lsn_cmp(pg_last_wal_replay_lsn(), '0/03002098'::pg_lsn); 
+[14:00:19.789](0.000s) ok 1 - standby reached the same LSN as primary after WAIT FOR
+[14:00:19.799](0.009s) # TIMING 0.009 primary INSERT INTO wait_test VALUES (generate_series(21, 30))
+[14:00:19.806](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:20.801](0.995s) # TIMING 0.995 standby  WAIT FOR LSN '0/03002340'; SELECT count(*) FROM wait_test; 
+[14:00:20.801](0.000s) ok 2 - standby reached the same LSN as primary
+[14:00:20.808](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (generate_series(31, 40))
+[14:00:20.816](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:20.823](0.007s) # TIMING 0.007 standby  WAIT FOR LSN '0/030025E8' WITH (MODE 'standby_write', timeout '1d'); SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/030025E8'::
+[14:00:20.823](0.000s) ok 3 - standby wrote WAL up to target LSN after WAIT FOR with MODE 'standby_write'
+[14:00:20.830](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (generate_series(41, 50))
+[14:00:20.838](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:20.846](0.009s) # TIMING 0.009 standby  WAIT FOR LSN '0/03002890' WITH (MODE 'standby_flush', timeout '1d'); SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03002890'::pg_lsn); 
+[14:00:20.847](0.000s) ok 4 - standby flushed WAL up to target LSN after WAIT FOR with MODE 'standby_flush'
+[14:00:20.855](0.008s) # TIMING 0.008 primary INSERT INTO wait_test VALUES (generate_series(51, 60))
+[14:00:20.862](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:20.870](0.008s) # TIMING 0.008 primary  WAIT FOR LSN '0/03002B38' WITH (MODE 'primary_flush', timeout '1d'); SELECT pg_lsn_cmp(pg_current_wal_flush_lsn(), '0/03002B38'::pg_lsn); 
+[14:00:20.871](0.000s) ok 5 - primary flushed WAL up to target LSN after WAIT FOR with MODE 'primary_flush'
+[14:00:20.879](0.008s) # TIMING 0.008 primary SELECT pg_current_wal_insert_lsn() + 10000000000
+[14:00:20.886](0.007s) # TIMING 0.007 standby WAIT FOR LSN '0/03002340' WITH (timeout '10ms');
+[14:00:21.894](1.008s) ok 6 - get timeout on waiting for unreachable LSN
+[14:00:21.902](0.007s) # TIMING 0.007 standby  WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+[14:00:21.902](0.000s) ok 7 - WAIT FOR returns correct status after successful waiting
+[14:00:21.921](0.019s) # TIMING 0.019 standby  WAIT FOR LSN '2/570C0F38' WITH (timeout '10ms', no_throw);
+[14:00:21.921](0.000s) ok 8 - WAIT FOR returns correct status after timeout
+[14:00:21.928](0.007s) ok 9 - get an error when running standby_flush on the primary
+[14:00:21.934](0.006s) ok 10 - get an error when running primary_flush on the standby
+1
+[14:00:21.942](0.008s) ok 11 - get an error when running in a transaction with an isolation level higher than REPEATABLE READ
+[14:00:21.951](0.009s) # TIMING 0.009 primary  CREATE FUNCTION pg_wal_replay_wait_wrap(target_lsn pg_lsn) RETURNS void AS $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', target_lsn); END $$ LANGUAGE p
+[14:00:21.958](0.007s) # TIMING 0.007 primary SELECT pg_is_in_recovery()
+[14:00:21.965](0.007s) # TIMING 0.006 primary SELECT pg_current_wal_lsn()
+Waiting for replication conn standby's replay_lsn to pass 0/0300CFC0 on primary
+[14:00:22.955](0.990s) # TIMING 0.990 standby WAIT FOR LSN '0/0300CFC0' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+done
+[14:00:22.969](0.014s) ok 12 - get an error when running within a function
+[14:00:22.977](0.007s) # TIMING 0.007 primary  CREATE PROCEDURE pg_wal_replay_wait_proc(target_lsn pg_lsn) AS $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', target_lsn); END $$ LANGUAGE plpgsql; 
+[14:00:22.984](0.007s) # TIMING 0.007 primary SELECT pg_is_in_recovery()
+[14:00:22.990](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_lsn()
+Waiting for replication conn standby's replay_lsn to pass 0/0300F5B8 on primary
+[14:00:23.980](0.990s) # TIMING 0.990 standby WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+done
+[14:00:23.991](0.011s) ok 13 - get an error when running within a procedure
+[14:00:23.999](0.008s) ok 14 - get an error when running within a DO block
+[14:00:24.005](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.012](0.006s) ok 15 - get error for negative timeout
+[14:00:24.019](0.007s) ok 16 - get error for unknown parameter
+[14:00:24.025](0.006s) ok 17 - get error for duplicate TIMEOUT parameter
+[14:00:24.031](0.006s) ok 18 - get error for duplicate NO_THROW parameter
+[14:00:24.037](0.006s) ok 19 - get syntax error when options specified without WITH keyword
+[14:00:24.043](0.006s) ok 20 - get syntax error for missing LSN
+[14:00:24.050](0.007s) ok 21 - get error for invalid LSN format
+[14:00:24.056](0.006s) ok 22 - get error for invalid timeout format
+[14:00:24.062](0.006s) # TIMING 0.006 standby  WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+[14:00:24.063](0.000s) ok 23 - WAIT FOR WITH clause syntax works correctly
+[14:00:24.170](0.108s) # TIMING 0.107 standby  WAIT FOR LSN '2/570C0F38' WITH (timeout 100, no_throw);
+[14:00:24.170](0.000s) ok 24 - WAIT FOR WITH clause returns correct timeout status
+[14:00:24.178](0.007s) ok 25 - get error for invalid WITH clause option
+[14:00:24.185](0.008s) ok 26 - get error for invalid MODE value
+[14:00:24.191](0.006s) ok 27 - get error for duplicate MODE parameter
+[14:00:24.199](0.008s) # TIMING 0.008 primary  CREATE FUNCTION log_count(i int) RETURNS void AS $$ DECLARE count int; BEGIN SELECT count(*) FROM wait_test INTO count; IF count >= 31 + i THEN RAISE
+[14:00:24.205](0.006s) # TIMING 0.006 standby SELECT pg_wal_replay_pause();
+[14:00:24.212](0.007s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (0);
+[14:00:24.218](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.227](0.009s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:24.235](0.008s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (1);
+[14:00:24.241](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.248](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:24.254](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (2);
+[14:00:24.261](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.267](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:24.273](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (3);
+[14:00:24.280](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.286](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:24.294](0.008s) # TIMING 0.008 primary INSERT INTO wait_test VALUES (4);
+[14:00:24.300](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:24.307](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:24.313](0.007s) # TIMING 0.006 standby SELECT pg_wal_replay_resume();
+[14:00:25.361](1.048s) ok 28 - multiple standby_replay waiters reported consistent data
+[14:00:25.373](0.012s) # TIMING 0.012 standby  SELECT pg_catalog.quote_literal(setting) FROM pg_settings WHERE name = 'primary_conninfo'; 
+[14:00:25.381](0.008s) # TIMING 0.008 standby  ALTER SYSTEM SET primary_conninfo = ''; SELECT pg_reload_conf(); 
+[14:00:25.396](0.014s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (100 + 0);
+[14:00:25.402](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:25.409](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (100 + 1);
+[14:00:25.415](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:25.422](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (100 + 2);
+[14:00:25.429](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:25.435](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (100 + 3);
+[14:00:25.443](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:25.450](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (100 + 4);
+[14:00:25.458](0.008s) # TIMING 0.008 primary SELECT pg_current_wal_insert_lsn()
+[14:00:25.464](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:25.470](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:25.477](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:25.484](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:25.490](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:25.506](0.016s) # TIMING 0.008 standby  ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m'; SELECT pg_reload_conf(); 
+[14:00:25.523](0.016s) # TIMING 0.007 standby SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/03019B50'::pg_lsn);
+[14:00:25.523](0.000s) ok 29 - multiple standby_write waiters: standby wrote WAL up to target LSN
+[14:00:25.531](0.008s) # TIMING 0.008 standby  SELECT pg_catalog.quote_literal(setting) FROM pg_settings WHERE name = 'primary_conninfo'; 
+[14:00:25.537](0.007s) # TIMING 0.007 standby  ALTER SYSTEM SET primary_conninfo = ''; SELECT pg_reload_conf(); 
+[14:00:26.480](0.942s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (200 + 0);
+[14:00:26.487](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:26.494](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (200 + 1);
+[14:00:26.501](0.007s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:26.509](0.008s) # TIMING 0.008 primary INSERT INTO wait_test VALUES (200 + 2);
+[14:00:26.516](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:26.523](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (200 + 3);
+[14:00:26.530](0.007s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:26.538](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (200 + 4);
+[14:00:26.545](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn()
+[14:00:26.553](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:26.559](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:26.566](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:26.573](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:26.579](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:26.596](0.017s) # TIMING 0.008 standby  ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m'; SELECT pg_reload_conf(); 
+[14:00:26.612](0.016s) # TIMING 0.007 standby SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03019D58'::pg_lsn);
+[14:00:26.612](0.000s) ok 30 - multiple standby_flush waiters: standby flushed WAL up to target LSN
+[14:00:26.620](0.008s) # TIMING 0.008 standby  SELECT pg_catalog.quote_literal(setting) FROM pg_settings WHERE name = 'primary_conninfo'; 
+[14:00:26.628](0.008s) # TIMING 0.008 standby  ALTER SYSTEM SET primary_conninfo = ''; SELECT pg_reload_conf(); 
+[14:00:27.577](0.948s) # TIMING 0.009 standby SELECT pg_wal_replay_pause();
+[14:00:27.584](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (generate_series(301, 310));
+[14:00:27.593](0.009s) # TIMING 0.008 primary SELECT pg_current_wal_insert_lsn()
+[14:00:27.593](0.000s) # WAL_LAYOUT_TARGET before 0/0301A018
+[14:00:27.616](0.023s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.624](0.008s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.630](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.636](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.642](0.007s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.648](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:27.664](0.015s) # TIMING 0.007 standby SELECT pg_wal_replay_resume();
+[14:00:27.678](0.015s) # TIMING 0.007 standby  ALTER SYSTEM SET primary_conninfo = 'port=17750 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m'; SELECT pg_reload_conf(); 
+[14:00:36.221](8.543s) # TIMING 0.008 standby  SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/0301A018'::pg_lsn) >= 0 AND pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/0301A018'::
+[14:00:36.221](0.000s) ok 31 - mixed mode waiters: all modes completed and reached target LSN
+[14:00:36.228](0.007s) # TIMING 0.007 primary INSERT INTO wait_test VALUES (400 + 0);
+[14:00:36.234](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.240](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (400 + 1);
+[14:00:36.246](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.252](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (400 + 2);
+[14:00:36.258](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.264](0.006s) # TIMING 0.006 primary INSERT INTO wait_test VALUES (400 + 3);
+[14:00:36.270](0.006s) # TIMING 0.005 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.276](0.006s) # TIMING 0.005 primary INSERT INTO wait_test VALUES (400 + 4);
+[14:00:36.282](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.286](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.292](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.297](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.303](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.308](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.316](0.008s) # TIMING 0.006 primary SELECT pg_lsn_cmp(pg_current_wal_flush_lsn(), '0/0301A258'::pg_lsn);
+[14:00:36.316](0.000s) ok 32 - multiple primary_flush waiters: primary flushed WAL up to target LSN
+[14:00:36.324](0.008s) # TIMING 0.007 primary SELECT pg_current_wal_insert_lsn() + 10000000000
+[14:00:36.330](0.007s) # TIMING 0.006 primary SELECT pg_current_wal_insert_lsn()
+[14:00:36.336](0.006s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.341](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.347](0.005s) # connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+[14:00:36.356](0.009s) # TIMING 0.009 primary SELECT pg_switch_wal();
+[14:00:36.363](0.007s) # TIMING 0.007 primary SELECT pg_is_in_recovery()
+[14:00:36.370](0.006s) # TIMING 0.006 primary SELECT pg_current_wal_lsn()
+Waiting for replication conn standby's replay_lsn to pass 0/04000000 on primary
+[14:00:37.281](0.911s) # TIMING 0.910 standby WAIT FOR LSN '0/04000000' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+done
+### Promoting node "standby"
+# Running: pg_ctl --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/pgdata --log /tmp/pg-wait-investigation/layout-before-log/layout-before_standby.log promote
+waiting for server to promote.... done
+server promoted
+[14:00:37.393](0.112s) ok 33 - promotion interrupted all wait modes
+[14:00:37.402](0.009s) # TIMING 0.009 standby WAIT FOR LSN '0/0301A258';
+[14:00:37.402](0.000s) ok 34 - wait for already replayed LSN exits immediately even after promotion
+[14:00:37.410](0.007s) # TIMING 0.007 standby  WAIT FOR LSN '2/570D8658' WITH (timeout '10ms', no_throw);
+[14:00:37.410](0.000s) ok 35 - WAIT FOR returns correct status after standby promotion
+### Stopping node "standby" using mode fast
+# Running: pg_ctl --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_standby_data/pgdata --mode fast stop
+waiting for server to shut down.... done
+server stopped
+# No postmaster PID for node "standby"
+### Stopping node "primary" using mode fast
+# Running: pg_ctl --pgdata /tmp/pg-wait-investigation/layout-before-data/t_layout-before_primary_data/pgdata --mode fast stop
+waiting for server to shut down.... done
+server stopped
+# No postmaster PID for node "primary"
+[14:00:37.631](0.221s) 1..35

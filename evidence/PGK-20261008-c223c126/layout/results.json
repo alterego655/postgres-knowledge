@@ -1,0 +1,29 @@
+[
+  {
+    "variant": "before",
+    "seconds": 20.072,
+    "assertions": 35,
+    "exit_code": 0,
+    "records": 136,
+    "aligned_record_bytes": 106168,
+    "target": "0/0301A018"
+  },
+  {
+    "variant": "after",
+    "seconds": 11.297,
+    "assertions": 35,
+    "exit_code": 0,
+    "records": 135,
+    "aligned_record_bytes": 82648,
+    "target": "0/030143F0"
+  },
+  {
+    "variant": "split",
+    "seconds": 19.012,
+    "assertions": 35,
+    "exit_code": 0,
+    "records": 136,
+    "aligned_record_bytes": 106168,
+    "target": "0/0301A018"
+  }
+]

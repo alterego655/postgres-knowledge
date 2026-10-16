@@ -1,0 +1,26 @@
+[
+  {
+    "label": "clean-head-1",
+    "seconds": 24.67,
+    "exit_code": 0,
+    "wal_captured": true
+  },
+  {
+    "label": "clean-reverted-1",
+    "seconds": 20.632,
+    "exit_code": 0,
+    "wal_captured": true
+  },
+  {
+    "label": "clean-head-2",
+    "seconds": 19.91,
+    "exit_code": 0,
+    "wal_captured": true
+  },
+  {
+    "label": "clean-reverted-2",
+    "seconds": 20.929,
+    "exit_code": 0,
+    "wal_captured": true
+  }
+]

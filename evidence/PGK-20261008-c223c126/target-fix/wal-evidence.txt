@@ -1,0 +1,4 @@
+rmgr: Transaction len (rec/tot):     34/    34, tx:        717, lsn: 0/03019FD8, prev 0/03019F98, desc: COMMIT 2026-09-20 09:50:12.337926 CST
+rmgr: Standby     len (rec/tot):     54/    54, tx:          0, lsn: 0/0301A018, prev 0/03019FD8, desc: RUNNING_XACTS nextXid 718 latestCompletedXid 717 oldestRunningXid 718; dbid: 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        718, lsn: 0/0301A050, prev 0/0301A018, desc: INSERT off: 86, flags: 0x00, blkref #0: rel 1663/5/16384 blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        718, lsn: 0/0301A090, prev 0/0301A050, desc: COMMIT 2026-09-20 09:50:23.090289 CST

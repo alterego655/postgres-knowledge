@@ -1,0 +1,425 @@
+/Users/qqj/dev/postgres/.cache/wait-for-lsn-runtime/head-revert/head.pl .. 
+# initializing database system by running initdb
+ok 1 - standby reached the same LSN as primary after WAIT FOR
+ok 2 - standby reached the same LSN as primary
+ok 3 - standby wrote WAL up to target LSN after WAIT FOR with MODE 'standby_write'
+ok 4 - standby flushed WAL up to target LSN after WAIT FOR with MODE 'standby_flush'
+ok 5 - primary flushed WAL up to target LSN after WAIT FOR with MODE 'primary_flush'
+ok 6 - get timeout on waiting for unreachable LSN
+ok 7 - WAIT FOR returns correct status after successful waiting
+ok 8 - WAIT FOR returns correct status after timeout
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 9 - canceled WAIT FOR LSN in subtransaction
+ok 10 - query cancel interrupted WAIT FOR LSN in subtransaction
+ok 11 - second WAIT FOR LSN timed out after savepoint rollback
+ok 12 - WAIT FOR LSN after savepoint rollback did not disconnect
+ok 13 - get an error when running standby_flush on the primary
+ok 14 - get an error when running primary_flush on the standby
+ok 15 - WAIT FOR is allowed before the transaction snapshot is taken
+ok 16 - get an error when running in a transaction with an isolation level higher than REPEATABLE READ
+ok 17 - the isolation level is given as the reason when it is the reason
+ok 18 - get an error when a cursor holds a snapshot
+ok 19 - the isolation level is not blamed at READ COMMITTED
+ok 20 - get an error when running within a function
+ok 21 - get an error when running within a procedure
+ok 22 - get an error when running within a DO block
+ok 23 - get error for negative timeout
+ok 24 - get error for out of range timeout
+ok 25 - get error for unknown parameter
+ok 26 - get error for duplicate TIMEOUT parameter
+ok 27 - get error for duplicate NO_THROW parameter
+ok 28 - get syntax error when options specified without WITH keyword
+ok 29 - get syntax error for missing LSN
+ok 30 - get error for invalid LSN format
+ok 31 - get error for invalid timeout format
+ok 32 - WAIT FOR WITH clause syntax works correctly
+ok 33 - WAIT FOR WITH clause returns correct timeout status
+ok 34 - maximum timeout value is accepted
+ok 35 - get error for invalid WITH clause option
+ok 36 - get error for invalid MODE value
+ok 37 - get error for duplicate MODE parameter
+ok 38 - reject replay wait while holding a relation lock
+ok 39 - reject replay wait while holding an advisory lock
+ok 40 - allow an already-reached wait while holding a relation lock
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 41 - multiple standby_replay waiters reported consistent data
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 42 - multiple standby_write waiters: standby wrote WAL up to target LSN
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 43 - multiple standby_flush waiters: standby flushed WAL up to target LSN
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 44 - mixed mode waiters: all modes completed and reached target LSN
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 45 - multiple primary_flush waiters: primary flushed WAL up to target LSN
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 46 - promotion interrupted all wait modes
+ok 47 - wait for already replayed LSN exits immediately even after promotion
+ok 48 - WAIT FOR returns correct status after standby promotion
+# initializing database system by running initdb
+ok 49 - arc_standby has no walreceiver
+ok 50 - standby_write succeeds on archive-only standby (getter fallback)
+ok 51 - standby_flush succeeds on archive-only standby (getter fallback)
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 52 - standby_write waiter woken by replay on archive-only standby
+ok 53 - standby_flush waiter woken by replay on archive-only standby
+# initializing database system by running initdb
+ok 54 - replay sits ahead of initial walreceiver flush position
+ok 55 - initial walreceiver flush position is segment-aligned
+ok 56 - standby_write succeeds for already-replayed LSN after standby restart
+ok 57 - standby_flush succeeds for already-replayed LSN after standby restart
+ok 58 - standby_replay: target == current succeeds
+ok 59 - standby_replay: target == current - 1 succeeds
+ok 60 - standby_replay: target == current + 1 times out
+ok 61 - standby_flush boundary is not masked by replay floor
+ok 62 - standby_flush: target == current succeeds
+ok 63 - standby_flush: target == current - 1 succeeds
+ok 64 - standby_flush: target == current + 1 times out
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 65 - standby_replay: waiter at current + 1 wakes when replay advances
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 66 - standby_write waiter re-registers after a stale wakeup
+ok 67 - standby_write waiter completes once the target is reached
+# initializing database system by running initdb
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+ok 68 - WAIT FOR LSN survives upstream promotion and timeline switch on cascade standby
+# initializing database system by running initdb
+ok 69 - dedicated node runs with 1MB WAL segments
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# issuing query 1 via background psql: SELECT pg_switch_wal()
+# results query 1:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 1:
+# ',
+#   'stdout' => '0/00841228
+# background_psql: QUERY_SEPARATOR 1:
+# '
+# }
+# issuing query 2 via background psql: 
+# 	WITH p AS
+# 	(
+# 		SELECT pg_current_wal_insert_lsn() AS lsn,
+# 			   setting::numeric AS segsz
+# 		FROM pg_settings
+# 		WHERE name = 'wal_segment_size'
+# 	)
+# 	SELECT lsn + (segsz - (lsn - '0/0'::pg_lsn) % segsz)
+# 	FROM p
+# results query 2:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 2:
+# ',
+#   'stdout' => '0/00A00000
+# background_psql: QUERY_SEPARATOR 2:
+# '
+# }
+# issuing query 3 via background psql: SELECT pg_current_wal_flush_lsn() < '0/00A00000'::pg_lsn
+# results query 3:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 3:
+# ',
+#   'stdout' => 't
+# background_psql: QUERY_SEPARATOR 3:
+# '
+# }
+ok 70 - wakeup target is not flushed initially
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# issuing query 1 via background psql: SELECT pg_backend_pid()
+# results query 1:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 1:
+# ',
+#   'stdout' => '5828
+# background_psql: QUERY_SEPARATOR 1:
+# '
+# }
+ok 71 - primary_flush waiter is registered before the implicit flush
+# issuing query 4 via background psql: BEGIN
+# results query 4:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 4:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 4:
+# '
+# }
+# issuing query 5 via background psql: 
+# 	SELECT pg_logical_emit_message(
+# 		false, 'wfl', repeat('x', 2 * 1024 * 1024), false)
+# results query 5:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 5:
+# ',
+#   'stdout' => '0/00B01888
+# background_psql: QUERY_SEPARATOR 5:
+# '
+# }
+# issuing query 6 via background psql: SELECT pg_current_wal_flush_lsn() >= '0/00A00000'::pg_lsn
+# results query 6:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 6:
+# ',
+#   'stdout' => 't
+# background_psql: QUERY_SEPARATOR 6:
+# '
+# }
+ok 72 - finishing a segment advanced flush through the target
+ok 73 - implicit segment flush removes the primary_flush waiter
+ok 74 - primary_flush waiter returns success after release
+# issuing query 7 via background psql: ROLLBACK
+# results query 7:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 7:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 7:
+# '
+# }
+1..74
+ok
+All tests successful.
+Files=1, Tests=74, 20 wallclock secs ( 0.02 usr  0.00 sys +  1.81 cusr  3.39 csys =  5.22 CPU)
+Result: PASS

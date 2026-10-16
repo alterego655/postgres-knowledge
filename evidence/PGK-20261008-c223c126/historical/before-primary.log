@@ -1,0 +1,176 @@
+2026-09-20 14:00:18.241 CST postmaster[27391] LOG:  starting PostgreSQL 19devel on aarch64-apple-darwin25.6.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.5), 64-bit
+2026-09-20 14:00:18.241 CST postmaster[27391] LOG:  listening on Unix socket "/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/esCXpROe7m/.s.PGSQL.17750"
+2026-09-20 14:00:18.244 CST startup[27396] LOG:  database system was shut down at 2026-09-20 14:00:18 CST
+2026-09-20 14:00:18.244 CST postmaster[27391] LOG:  database system is ready to accept connections
+2026-09-20 14:00:18.352 CST client backend[27401] layout-before.pl LOG:  statement: CREATE TABLE wait_test AS SELECT generate_series(1,10) AS a
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl LOG:  received replication command: SHOW data_directory_mode
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl STATEMENT:  SHOW data_directory_mode
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl LOG:  received replication command: SHOW wal_segment_size
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl STATEMENT:  SHOW wal_segment_size
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl LOG:  received replication command: BASE_BACKUP ( LABEL 'pg_basebackup base backup',  PROGRESS,  CHECKPOINT 'fast',  WAIT 0,  MANIFEST 'yes',  TARGET 'client')
+2026-09-20 14:00:18.359 CST walsender[27403] layout-before.pl STATEMENT:  BASE_BACKUP ( LABEL 'pg_basebackup base backup',  PROGRESS,  CHECKPOINT 'fast',  WAIT 0,  MANIFEST 'yes',  TARGET 'client')
+2026-09-20 14:00:18.361 CST checkpointer[27394] LOG:  checkpoint starting: fast force wait
+2026-09-20 14:00:18.364 CST checkpointer[27394] LOG:  checkpoint complete: fast force wait: wrote 21 buffers (16.4%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=8948 kB, estimate=8948 kB; lsn=0/02000088, redo lsn=0/02000028
+2026-09-20 14:00:18.373 CST walsender[27404] layout-before.pl LOG:  received replication command: SHOW data_directory_mode
+2026-09-20 14:00:18.373 CST walsender[27404] layout-before.pl STATEMENT:  SHOW data_directory_mode
+2026-09-20 14:00:18.373 CST walsender[27404] layout-before.pl LOG:  received replication command: CREATE_REPLICATION_SLOT "pg_basebackup_27404" TEMPORARY PHYSICAL ( RESERVE_WAL)
+2026-09-20 14:00:18.373 CST walsender[27404] layout-before.pl STATEMENT:  CREATE_REPLICATION_SLOT "pg_basebackup_27404" TEMPORARY PHYSICAL ( RESERVE_WAL)
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl LOG:  released physical replication slot "pg_basebackup_27404"
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl STATEMENT:  CREATE_REPLICATION_SLOT "pg_basebackup_27404" TEMPORARY PHYSICAL ( RESERVE_WAL)
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl LOG:  received replication command: START_REPLICATION SLOT "pg_basebackup_27404" 0/02000000 TIMELINE 1
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl STATEMENT:  START_REPLICATION SLOT "pg_basebackup_27404" 0/02000000 TIMELINE 1
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl LOG:  acquired physical replication slot "pg_basebackup_27404"
+2026-09-20 14:00:18.374 CST walsender[27404] layout-before.pl STATEMENT:  START_REPLICATION SLOT "pg_basebackup_27404" 0/02000000 TIMELINE 1
+2026-09-20 14:00:18.515 CST walsender[27404] layout-before.pl LOG:  released physical replication slot "pg_basebackup_27404"
+2026-09-20 14:00:18.515 CST walsender[27404] layout-before.pl STATEMENT:  START_REPLICATION SLOT "pg_basebackup_27404" 0/02000000 TIMELINE 1
+2026-09-20 14:00:18.685 CST walsender[27416] standby LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:18.685 CST walsender[27416] standby STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:18.685 CST walsender[27416] standby LOG:  received replication command: START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:18.685 CST walsender[27416] standby STATEMENT:  START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:18.783 CST client backend[27418] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(11, 20))
+2026-09-20 14:00:18.792 CST client backend[27420] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:19.797 CST client backend[27426] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(21, 30))
+2026-09-20 14:00:19.805 CST client backend[27428] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:20.807 CST client backend[27437] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(31, 40))
+2026-09-20 14:00:20.815 CST client backend[27439] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:20.829 CST client backend[27443] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(41, 50))
+2026-09-20 14:00:20.837 CST client backend[27445] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:20.854 CST client backend[27449] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(51, 60))
+2026-09-20 14:00:20.862 CST client backend[27451] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:20.869 CST client backend[27453] layout-before.pl LOG:  statement: WAIT FOR LSN '0/03002B38' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:20.870 CST client backend[27453] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp(pg_current_wal_flush_lsn(), '0/03002B38'::pg_lsn);
+2026-09-20 14:00:20.877 CST client backend[27455] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn() + 10000000000
+2026-09-20 14:00:21.927 CST client backend[27468] layout-before.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (MODE 'standby_flush');
+2026-09-20 14:00:21.927 CST client backend[27468] layout-before.pl ERROR:  recovery is not in progress
+2026-09-20 14:00:21.927 CST client backend[27468] layout-before.pl HINT:  Waiting for the standby_flush LSN can only be executed during recovery.
+2026-09-20 14:00:21.927 CST client backend[27468] layout-before.pl STATEMENT:  WAIT FOR LSN '2/570C0F38' WITH (MODE 'standby_flush');
+2026-09-20 14:00:21.948 CST client backend[27474] layout-before.pl LOG:  statement: CREATE FUNCTION pg_wal_replay_wait_wrap(target_lsn pg_lsn) RETURNS void AS $$
+	  BEGIN
+	    EXECUTE format('WAIT FOR LSN %L;', target_lsn);
+	  END
+	$$
+	LANGUAGE plpgsql;
+2026-09-20 14:00:21.958 CST client backend[27476] layout-before.pl LOG:  statement: SELECT pg_is_in_recovery()
+2026-09-20 14:00:21.964 CST client backend[27478] layout-before.pl LOG:  statement: SELECT pg_current_wal_lsn()
+2026-09-20 14:00:22.975 CST client backend[27484] layout-before.pl LOG:  statement: CREATE PROCEDURE pg_wal_replay_wait_proc(target_lsn pg_lsn) AS $$
+	  BEGIN
+	    EXECUTE format('WAIT FOR LSN %L;', target_lsn);
+	  END
+	$$
+	LANGUAGE plpgsql;
+2026-09-20 14:00:22.983 CST client backend[27486] layout-before.pl LOG:  statement: SELECT pg_is_in_recovery()
+2026-09-20 14:00:22.989 CST client backend[27488] layout-before.pl LOG:  statement: SELECT pg_current_wal_lsn()
+2026-09-20 14:00:24.005 CST client backend[27496] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:24.197 CST client backend[27524] layout-before.pl LOG:  statement: CREATE FUNCTION log_count(i int) RETURNS void AS $$
+	  DECLARE
+	    count int;
+	  BEGIN
+	    SELECT count(*) FROM wait_test INTO count;
+	    IF count >= 31 + i THEN
+	      RAISE LOG 'count %', i;
+	    END IF;
+	  END
+	$$
+	LANGUAGE plpgsql;
+2026-09-20 14:00:24.198 CST client backend[27524] layout-before.pl LOG:  statement: CREATE FUNCTION log_wait_done(prefix text, i int) RETURNS void AS $$
+	  BEGIN
+	    RAISE LOG '% %', prefix, i;
+	  END
+	$$
+	LANGUAGE plpgsql;
+2026-09-20 14:00:24.211 CST client backend[27528] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (0);
+2026-09-20 14:00:24.218 CST client backend[27530] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:24.234 CST client backend[27534] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (1);
+2026-09-20 14:00:24.240 CST client backend[27536] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:24.253 CST client backend[27540] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (2);
+2026-09-20 14:00:24.260 CST client backend[27542] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:24.272 CST client backend[27546] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (3);
+2026-09-20 14:00:24.279 CST client backend[27548] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:24.293 CST client backend[27552] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (4);
+2026-09-20 14:00:24.299 CST client backend[27554] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.395 CST client backend[27571] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (100 + 0);
+2026-09-20 14:00:25.401 CST client backend[27573] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.408 CST client backend[27575] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (100 + 1);
+2026-09-20 14:00:25.415 CST client backend[27577] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.421 CST client backend[27579] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (100 + 2);
+2026-09-20 14:00:25.428 CST client backend[27581] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.434 CST client backend[27583] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (100 + 3);
+2026-09-20 14:00:25.442 CST client backend[27585] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.449 CST client backend[27587] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (100 + 4);
+2026-09-20 14:00:25.457 CST client backend[27589] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:25.509 CST walsender[27608] standby LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:25.509 CST walsender[27608] standby STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:25.509 CST walsender[27608] standby LOG:  received replication command: START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:25.509 CST walsender[27608] standby STATEMENT:  START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:26.479 CST client backend[27635] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (200 + 0);
+2026-09-20 14:00:26.486 CST client backend[27637] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:26.493 CST client backend[27639] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (200 + 1);
+2026-09-20 14:00:26.500 CST client backend[27641] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:26.507 CST client backend[27643] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (200 + 2);
+2026-09-20 14:00:26.515 CST client backend[27645] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:26.522 CST client backend[27647] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (200 + 3);
+2026-09-20 14:00:26.530 CST client backend[27649] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:26.537 CST client backend[27651] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (200 + 4);
+2026-09-20 14:00:26.544 CST client backend[27653] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:26.599 CST walsender[27670] standby LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:26.599 CST walsender[27670] standby STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:26.599 CST walsender[27670] standby LOG:  received replication command: START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:26.599 CST walsender[27670] standby STATEMENT:  START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:27.583 CST client backend[27699] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (generate_series(301, 310));
+2026-09-20 14:00:27.592 CST client backend[27701] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:27.681 CST walsender[27725] standby LOG:  received replication command: IDENTIFY_SYSTEM
+2026-09-20 14:00:27.681 CST walsender[27725] standby STATEMENT:  IDENTIFY_SYSTEM
+2026-09-20 14:00:27.681 CST walsender[27725] standby LOG:  received replication command: START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:27.681 CST walsender[27725] standby STATEMENT:  START_REPLICATION 0/03000000 TIMELINE 1
+2026-09-20 14:00:36.227 CST client backend[27768] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (400 + 0);
+2026-09-20 14:00:36.233 CST client backend[27770] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.240 CST client backend[27772] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (400 + 1);
+2026-09-20 14:00:36.245 CST client backend[27774] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.252 CST client backend[27776] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (400 + 2);
+2026-09-20 14:00:36.257 CST client backend[27778] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.264 CST client backend[27780] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (400 + 3);
+2026-09-20 14:00:36.269 CST client backend[27782] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.275 CST client backend[27784] layout-before.pl LOG:  statement: INSERT INTO wait_test VALUES (400 + 4);
+2026-09-20 14:00:36.281 CST client backend[27786] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.287 CST client backend[27788] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A0B8' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:36.287 CST client backend[27788] layout-before.pl LOG:  statement: SELECT log_wait_done('primary_flush_done', 0);
+2026-09-20 14:00:36.287 CST client backend[27788] layout-before.pl LOG:  primary_flush_done 0
+2026-09-20 14:00:36.287 CST client backend[27788] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.287 CST client backend[27788] layout-before.pl STATEMENT:  SELECT log_wait_done('primary_flush_done', 0);
+2026-09-20 14:00:36.292 CST client backend[27790] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A120' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:36.292 CST client backend[27790] layout-before.pl LOG:  statement: SELECT log_wait_done('primary_flush_done', 1);
+2026-09-20 14:00:36.292 CST client backend[27790] layout-before.pl LOG:  primary_flush_done 1
+2026-09-20 14:00:36.292 CST client backend[27790] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.292 CST client backend[27790] layout-before.pl STATEMENT:  SELECT log_wait_done('primary_flush_done', 1);
+2026-09-20 14:00:36.297 CST client backend[27792] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A188' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:36.298 CST client backend[27792] layout-before.pl LOG:  statement: SELECT log_wait_done('primary_flush_done', 2);
+2026-09-20 14:00:36.298 CST client backend[27792] layout-before.pl LOG:  primary_flush_done 2
+2026-09-20 14:00:36.298 CST client backend[27792] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.298 CST client backend[27792] layout-before.pl STATEMENT:  SELECT log_wait_done('primary_flush_done', 2);
+2026-09-20 14:00:36.303 CST client backend[27794] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A1F0' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:36.303 CST client backend[27794] layout-before.pl LOG:  statement: SELECT log_wait_done('primary_flush_done', 3);
+2026-09-20 14:00:36.303 CST client backend[27794] layout-before.pl LOG:  primary_flush_done 3
+2026-09-20 14:00:36.303 CST client backend[27794] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.303 CST client backend[27794] layout-before.pl STATEMENT:  SELECT log_wait_done('primary_flush_done', 3);
+2026-09-20 14:00:36.308 CST client backend[27796] layout-before.pl LOG:  statement: WAIT FOR LSN '0/0301A258' WITH (MODE 'primary_flush', timeout '1d');
+2026-09-20 14:00:36.308 CST client backend[27796] layout-before.pl LOG:  statement: SELECT log_wait_done('primary_flush_done', 4);
+2026-09-20 14:00:36.308 CST client backend[27796] layout-before.pl LOG:  primary_flush_done 4
+2026-09-20 14:00:36.308 CST client backend[27796] layout-before.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:00:36.308 CST client backend[27796] layout-before.pl STATEMENT:  SELECT log_wait_done('primary_flush_done', 4);
+2026-09-20 14:00:36.315 CST client backend[27798] layout-before.pl LOG:  statement: SELECT pg_lsn_cmp(pg_current_wal_flush_lsn(), '0/0301A258'::pg_lsn);
+2026-09-20 14:00:36.321 CST client backend[27800] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn() + 10000000000
+2026-09-20 14:00:36.329 CST client backend[27802] layout-before.pl LOG:  statement: SELECT pg_current_wal_insert_lsn()
+2026-09-20 14:00:36.352 CST client backend[27810] layout-before.pl LOG:  statement: SELECT pg_switch_wal();
+2026-09-20 14:00:36.362 CST client backend[27812] layout-before.pl LOG:  statement: SELECT pg_is_in_recovery()
+2026-09-20 14:00:36.369 CST client backend[27814] layout-before.pl LOG:  statement: SELECT pg_current_wal_lsn()
+2026-09-20 14:00:37.523 CST postmaster[27391] LOG:  received fast shutdown request
+2026-09-20 14:00:37.523 CST postmaster[27391] LOG:  aborting any active transactions
+2026-09-20 14:00:37.524 CST postmaster[27391] LOG:  background worker "logical replication launcher" (PID 27399) exited with exit code 1
+2026-09-20 14:00:37.524 CST checkpointer[27394] LOG:  shutting down
+2026-09-20 14:00:37.524 CST checkpointer[27394] LOG:  checkpoint starting: shutdown fast
+2026-09-20 14:00:37.527 CST checkpointer[27394] LOG:  checkpoint complete: shutdown fast: wrote 16 buffers (12.5%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32768 kB, estimate=32768 kB; lsn=0/04000028, redo lsn=0/04000028
+2026-09-20 14:00:37.528 CST postmaster[27391] LOG:  database system is shut down

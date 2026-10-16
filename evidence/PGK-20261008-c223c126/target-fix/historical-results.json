@@ -1,0 +1,32 @@
+[
+  {
+    "label": "historical-before-1",
+    "seconds": 24.391,
+    "exit_code": 0
+  },
+  {
+    "label": "historical-after-1",
+    "seconds": 11.466,
+    "exit_code": 0
+  },
+  {
+    "label": "historical-before-2",
+    "seconds": 20.083,
+    "exit_code": 0
+  },
+  {
+    "label": "historical-after-2",
+    "seconds": 11.416,
+    "exit_code": 0
+  },
+  {
+    "label": "historical-before-3",
+    "seconds": 20.049,
+    "exit_code": 0
+  },
+  {
+    "label": "historical-after-3",
+    "seconds": 11.554,
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,264 @@
+rmgr: XLOG        len (rec/tot):     49/   885, tx:          0, lsn: 0/03000028, prev 0/02000130, desc: FPI_FOR_HINT 
+	blkref #0: rel 1663/5/1259 fork main blk 0 (FPW); hole: offset: 212, length: 7356
+rmgr: XLOG        len (rec/tot):     49/  6289, tx:          0, lsn: 0/030003A0, prev 0/03000028, desc: FPI_FOR_HINT 
+	blkref #0: rel 1663/5/1249 fork main blk 16 (FPW); hole: offset: 256, length: 1952
+rmgr: Heap        len (rec/tot):     54/   474, tx:        693, lsn: 0/03001C38, prev 0/030003A0, desc: INSERT off: 11, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0 (FPW); hole: offset: 68, length: 7772
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001E18, prev 0/03001C38, desc: INSERT off: 12, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001E58, prev 0/03001E18, desc: INSERT off: 13, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001E98, prev 0/03001E58, desc: INSERT off: 14, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001ED8, prev 0/03001E98, desc: INSERT off: 15, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001F18, prev 0/03001ED8, desc: INSERT off: 16, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001F58, prev 0/03001F18, desc: INSERT off: 17, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001F98, prev 0/03001F58, desc: INSERT off: 18, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03001FD8, prev 0/03001F98, desc: INSERT off: 19, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        693, lsn: 0/03002030, prev 0/03001FD8, desc: INSERT off: 20, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        693, lsn: 0/03002070, prev 0/03002030, desc: COMMIT 2026-09-20 14:00:18.784337 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002098, prev 0/03002070, desc: INSERT off: 21, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/030020D8, prev 0/03002098, desc: INSERT off: 22, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002118, prev 0/030020D8, desc: INSERT off: 23, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002158, prev 0/03002118, desc: INSERT off: 24, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002198, prev 0/03002158, desc: INSERT off: 25, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/030021D8, prev 0/03002198, desc: INSERT off: 26, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002218, prev 0/030021D8, desc: INSERT off: 27, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002258, prev 0/03002218, desc: INSERT off: 28, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/03002298, prev 0/03002258, desc: INSERT off: 29, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        694, lsn: 0/030022D8, prev 0/03002298, desc: INSERT off: 30, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        694, lsn: 0/03002318, prev 0/030022D8, desc: COMMIT 2026-09-20 14:00:19.798087 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002340, prev 0/03002318, desc: INSERT off: 31, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002380, prev 0/03002340, desc: INSERT off: 32, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/030023C0, prev 0/03002380, desc: INSERT off: 33, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002400, prev 0/030023C0, desc: INSERT off: 34, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002440, prev 0/03002400, desc: INSERT off: 35, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002480, prev 0/03002440, desc: INSERT off: 36, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/030024C0, prev 0/03002480, desc: INSERT off: 37, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002500, prev 0/030024C0, desc: INSERT off: 38, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002540, prev 0/03002500, desc: INSERT off: 39, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        695, lsn: 0/03002580, prev 0/03002540, desc: INSERT off: 40, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        695, lsn: 0/030025C0, prev 0/03002580, desc: COMMIT 2026-09-20 14:00:20.807871 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/030025E8, prev 0/030025C0, desc: INSERT off: 41, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/03002628, prev 0/030025E8, desc: INSERT off: 42, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/03002668, prev 0/03002628, desc: INSERT off: 43, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/030026A8, prev 0/03002668, desc: INSERT off: 44, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/030026E8, prev 0/030026A8, desc: INSERT off: 45, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/03002728, prev 0/030026E8, desc: INSERT off: 46, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/03002768, prev 0/03002728, desc: INSERT off: 47, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/030027A8, prev 0/03002768, desc: INSERT off: 48, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/030027E8, prev 0/030027A8, desc: INSERT off: 49, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        696, lsn: 0/03002828, prev 0/030027E8, desc: INSERT off: 50, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        696, lsn: 0/03002868, prev 0/03002828, desc: COMMIT 2026-09-20 14:00:20.829639 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002890, prev 0/03002868, desc: INSERT off: 51, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/030028D0, prev 0/03002890, desc: INSERT off: 52, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002910, prev 0/030028D0, desc: INSERT off: 53, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002950, prev 0/03002910, desc: INSERT off: 54, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002990, prev 0/03002950, desc: INSERT off: 55, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/030029D0, prev 0/03002990, desc: INSERT off: 56, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002A10, prev 0/030029D0, desc: INSERT off: 57, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002A50, prev 0/03002A10, desc: INSERT off: 58, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002A90, prev 0/03002A50, desc: INSERT off: 59, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        697, lsn: 0/03002AD0, prev 0/03002A90, desc: INSERT off: 60, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        697, lsn: 0/03002B10, prev 0/03002AD0, desc: COMMIT 2026-09-20 14:00:20.854592 CST
+rmgr: Heap        len (rec/tot):     54/  7566, tx:        698, lsn: 0/03002B38, prev 0/03002B10, desc: INSERT off: 13, flags: 0x01
+	blkref #0: rel 1663/5/1255 fork main blk 18 (FPW); hole: offset: 184, length: 680
+rmgr: Btree       len (rec/tot):     53/  2973, tx:        698, lsn: 0/030048E0, prev 0/03002B38, desc: INSERT_LEAF off: 144
+	blkref #0: rel 1663/5/2690 fork main blk 11 (FPW); hole: offset: 600, length: 5272
+rmgr: Btree       len (rec/tot):     53/  7697, tx:        698, lsn: 0/03005480, prev 0/030048E0, desc: INSERT_LEAF off: 45
+	blkref #0: rel 1663/5/2691 fork main blk 24 (FPW); hole: offset: 492, length: 548
+rmgr: Heap2       len (rec/tot):     59/  8227, tx:        698, lsn: 0/030072B0, prev 0/03005480, desc: MULTI_INSERT ntuples: 2, flags: 0x02
+	blkref #0: rel 1663/5/2608 fork main blk 3 (FPW); hole: offset: 664, length: 24
+rmgr: Btree       len (rec/tot):     53/  8041, tx:        698, lsn: 0/030092F0, prev 0/030072B0, desc: INSERT_LEAF off: 215
+	blkref #0: rel 1663/5/2673 fork main blk 4 (FPW); hole: offset: 1156, length: 204
+rmgr: Btree       len (rec/tot):     53/  7217, tx:        698, lsn: 0/0300B278, prev 0/030092F0, desc: INSERT_LEAF off: 174
+	blkref #0: rel 1663/5/2674 fork main blk 7 (FPW); hole: offset: 900, length: 1028
+rmgr: Btree       len (rec/tot):     72/    72, tx:        698, lsn: 0/0300CEC8, prev 0/0300B278, desc: INSERT_LEAF off: 216
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        698, lsn: 0/0300CF10, prev 0/0300CEC8, desc: INSERT_LEAF off: 176
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Transaction len (rec/tot):     98/    98, tx:        698, lsn: 0/0300CF58, prev 0/0300CF10, desc: COMMIT 2026-09-20 14:00:21.951118 CST; inval msgs: catcache 47 catcache 46 snapshot 2608
+rmgr: Heap        len (rec/tot):     54/  7838, tx:        699, lsn: 0/0300CFC0, prev 0/0300CF58, desc: INSERT off: 6, flags: 0x01
+	blkref #0: rel 1663/5/1255 fork main blk 20 (FPW); hole: offset: 192, length: 408
+rmgr: Btree       len (rec/tot):     64/    64, tx:        699, lsn: 0/0300EE78, prev 0/0300CFC0, desc: INSERT_LEAF off: 145
+	blkref #0: rel 1663/5/2690 fork main blk 11
+rmgr: Btree       len (rec/tot):    112/   112, tx:        699, lsn: 0/0300EEB8, prev 0/0300EE78, desc: INSERT_LEAF off: 45
+	blkref #0: rel 1663/5/2691 fork main blk 24
+rmgr: Heap2       len (rec/tot):     59/  1283, tx:        699, lsn: 0/0300EF28, prev 0/0300EEB8, desc: MULTI_INSERT ntuples: 2, flags: 0x03
+	blkref #0: rel 1663/5/2608 fork main blk 14 (FPW); hole: offset: 104, length: 6968
+rmgr: Btree       len (rec/tot):     72/    72, tx:        699, lsn: 0/0300F430, prev 0/0300EF28, desc: INSERT_LEAF off: 217
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        699, lsn: 0/0300F478, prev 0/0300F430, desc: INSERT_LEAF off: 175
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Btree       len (rec/tot):     72/    72, tx:        699, lsn: 0/0300F4C0, prev 0/0300F478, desc: INSERT_LEAF off: 218
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        699, lsn: 0/0300F508, prev 0/0300F4C0, desc: INSERT_LEAF off: 178
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Transaction len (rec/tot):     98/    98, tx:        699, lsn: 0/0300F550, prev 0/0300F508, desc: COMMIT 2026-09-20 14:00:22.976140 CST; inval msgs: catcache 47 catcache 46 snapshot 2608
+rmgr: Heap        len (rec/tot):     54/  7998, tx:        700, lsn: 0/0300F5B8, prev 0/0300F550, desc: INSERT off: 7, flags: 0x01
+	blkref #0: rel 1663/5/1255 fork main blk 21 (FPW); hole: offset: 192, length: 248
+rmgr: Btree       len (rec/tot):     64/    64, tx:        700, lsn: 0/03011510, prev 0/0300F5B8, desc: INSERT_LEAF off: 146
+	blkref #0: rel 1663/5/2690 fork main blk 11
+rmgr: Btree       len (rec/tot):     53/  7485, tx:        700, lsn: 0/03011550, prev 0/03011510, desc: INSERT_LEAF off: 39
+	blkref #0: rel 1663/5/2691 fork main blk 16 (FPW); hole: offset: 512, length: 760
+rmgr: XLOG        len (rec/tot):     49/  8241, tx:        700, lsn: 0/030132A8, prev 0/03011550, desc: FPI_FOR_HINT 
+	blkref #0: rel 1663/5/2608 fork fsm blk 2 (FPW); hole: offset: 0, length: 0
+rmgr: Heap2       len (rec/tot):    121/   121, tx:        700, lsn: 0/030152F8, prev 0/030132A8, desc: MULTI_INSERT ntuples: 2, flags: 0x02, offsets: [21, 22]
+	blkref #0: rel 1663/5/2608 fork main blk 14
+rmgr: Btree       len (rec/tot):     72/    72, tx:        700, lsn: 0/03015378, prev 0/030152F8, desc: INSERT_LEAF off: 219
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        700, lsn: 0/030153C0, prev 0/03015378, desc: INSERT_LEAF off: 176
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Btree       len (rec/tot):     72/    72, tx:        700, lsn: 0/03015408, prev 0/030153C0, desc: INSERT_LEAF off: 220
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        700, lsn: 0/03015450, prev 0/03015408, desc: INSERT_LEAF off: 180
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Transaction len (rec/tot):     98/    98, tx:        700, lsn: 0/03015498, prev 0/03015450, desc: COMMIT 2026-09-20 14:00:24.198747 CST; inval msgs: catcache 47 catcache 46 snapshot 2608
+rmgr: XLOG        len (rec/tot):     49/  8241, tx:        701, lsn: 0/03015500, prev 0/03015498, desc: FPI_FOR_HINT 
+	blkref #0: rel 1663/5/1255 fork fsm blk 2 (FPW); hole: offset: 0, length: 0
+rmgr: Heap        len (rec/tot):     54/  7962, tx:        701, lsn: 0/03017550, prev 0/03015500, desc: INSERT off: 5, flags: 0x01
+	blkref #0: rel 1663/5/1255 fork main blk 27 (FPW); hole: offset: 156, length: 284
+rmgr: Btree       len (rec/tot):     64/    64, tx:        701, lsn: 0/03019488, prev 0/03017550, desc: INSERT_LEAF off: 147
+	blkref #0: rel 1663/5/2690 fork main blk 11
+rmgr: Btree       len (rec/tot):    112/   112, tx:        701, lsn: 0/030194C8, prev 0/03019488, desc: INSERT_LEAF off: 40
+	blkref #0: rel 1663/5/2691 fork main blk 16
+rmgr: Heap2       len (rec/tot):    121/   121, tx:        701, lsn: 0/03019538, prev 0/030194C8, desc: MULTI_INSERT ntuples: 2, flags: 0x02, offsets: [23, 24]
+	blkref #0: rel 1663/5/2608 fork main blk 14
+rmgr: Btree       len (rec/tot):     72/    72, tx:        701, lsn: 0/030195B8, prev 0/03019538, desc: INSERT_LEAF off: 221
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        701, lsn: 0/03019600, prev 0/030195B8, desc: INSERT_LEAF off: 177
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Btree       len (rec/tot):     72/    72, tx:        701, lsn: 0/03019648, prev 0/03019600, desc: INSERT_LEAF off: 222
+	blkref #0: rel 1663/5/2673 fork main blk 4
+rmgr: Btree       len (rec/tot):     72/    72, tx:        701, lsn: 0/03019690, prev 0/03019648, desc: INSERT_LEAF off: 182
+	blkref #0: rel 1663/5/2674 fork main blk 7
+rmgr: Transaction len (rec/tot):     98/    98, tx:        701, lsn: 0/030196D8, prev 0/03019690, desc: COMMIT 2026-09-20 14:00:24.198926 CST; inval msgs: catcache 47 catcache 46 snapshot 2608
+rmgr: Heap        len (rec/tot):     59/    59, tx:        702, lsn: 0/03019740, prev 0/030196D8, desc: INSERT off: 61, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        702, lsn: 0/03019780, prev 0/03019740, desc: COMMIT 2026-09-20 14:00:24.211468 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        703, lsn: 0/030197A8, prev 0/03019780, desc: INSERT off: 62, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        703, lsn: 0/030197E8, prev 0/030197A8, desc: COMMIT 2026-09-20 14:00:24.234591 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        704, lsn: 0/03019810, prev 0/030197E8, desc: INSERT off: 63, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        704, lsn: 0/03019850, prev 0/03019810, desc: COMMIT 2026-09-20 14:00:24.253570 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        705, lsn: 0/03019878, prev 0/03019850, desc: INSERT off: 64, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        705, lsn: 0/030198B8, prev 0/03019878, desc: COMMIT 2026-09-20 14:00:24.272495 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        706, lsn: 0/030198E0, prev 0/030198B8, desc: INSERT off: 65, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        706, lsn: 0/03019920, prev 0/030198E0, desc: COMMIT 2026-09-20 14:00:24.293454 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        707, lsn: 0/03019948, prev 0/03019920, desc: INSERT off: 66, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        707, lsn: 0/03019988, prev 0/03019948, desc: COMMIT 2026-09-20 14:00:25.395376 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        708, lsn: 0/030199B0, prev 0/03019988, desc: INSERT off: 67, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        708, lsn: 0/030199F0, prev 0/030199B0, desc: COMMIT 2026-09-20 14:00:25.408401 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        709, lsn: 0/03019A18, prev 0/030199F0, desc: INSERT off: 68, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        709, lsn: 0/03019A58, prev 0/03019A18, desc: COMMIT 2026-09-20 14:00:25.421927 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        710, lsn: 0/03019A80, prev 0/03019A58, desc: INSERT off: 69, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        710, lsn: 0/03019AC0, prev 0/03019A80, desc: COMMIT 2026-09-20 14:00:25.435043 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        711, lsn: 0/03019AE8, prev 0/03019AC0, desc: INSERT off: 70, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        711, lsn: 0/03019B28, prev 0/03019AE8, desc: COMMIT 2026-09-20 14:00:25.449608 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        712, lsn: 0/03019B50, prev 0/03019B28, desc: INSERT off: 71, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        712, lsn: 0/03019B90, prev 0/03019B50, desc: COMMIT 2026-09-20 14:00:26.479445 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        713, lsn: 0/03019BB8, prev 0/03019B90, desc: INSERT off: 72, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        713, lsn: 0/03019BF8, prev 0/03019BB8, desc: COMMIT 2026-09-20 14:00:26.493503 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        714, lsn: 0/03019C20, prev 0/03019BF8, desc: INSERT off: 73, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        714, lsn: 0/03019C60, prev 0/03019C20, desc: COMMIT 2026-09-20 14:00:26.508202 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        715, lsn: 0/03019C88, prev 0/03019C60, desc: INSERT off: 74, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        715, lsn: 0/03019CC8, prev 0/03019C88, desc: COMMIT 2026-09-20 14:00:26.522934 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        716, lsn: 0/03019CF0, prev 0/03019CC8, desc: INSERT off: 75, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        716, lsn: 0/03019D30, prev 0/03019CF0, desc: COMMIT 2026-09-20 14:00:26.537283 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019D58, prev 0/03019D30, desc: INSERT off: 76, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019D98, prev 0/03019D58, desc: INSERT off: 77, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019DD8, prev 0/03019D98, desc: INSERT off: 78, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019E18, prev 0/03019DD8, desc: INSERT off: 79, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019E58, prev 0/03019E18, desc: INSERT off: 80, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019E98, prev 0/03019E58, desc: INSERT off: 81, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019ED8, prev 0/03019E98, desc: INSERT off: 82, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019F18, prev 0/03019ED8, desc: INSERT off: 83, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019F58, prev 0/03019F18, desc: INSERT off: 84, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        717, lsn: 0/03019F98, prev 0/03019F58, desc: INSERT off: 85, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        717, lsn: 0/03019FD8, prev 0/03019F98, desc: COMMIT 2026-09-20 14:00:27.583638 CST
+rmgr: Standby     len (rec/tot):     54/    54, tx:          0, lsn: 0/0301A018, prev 0/03019FD8, desc: RUNNING_XACTS nextXid 718 latestCompletedXid 717 oldestRunningXid 718; dbid: 0
+rmgr: Heap        len (rec/tot):     59/    59, tx:        718, lsn: 0/0301A050, prev 0/0301A018, desc: INSERT off: 86, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        718, lsn: 0/0301A090, prev 0/0301A050, desc: COMMIT 2026-09-20 14:00:36.227616 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        719, lsn: 0/0301A0B8, prev 0/0301A090, desc: INSERT off: 87, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        719, lsn: 0/0301A0F8, prev 0/0301A0B8, desc: COMMIT 2026-09-20 14:00:36.240206 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        720, lsn: 0/0301A120, prev 0/0301A0F8, desc: INSERT off: 88, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        720, lsn: 0/0301A160, prev 0/0301A120, desc: COMMIT 2026-09-20 14:00:36.252213 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        721, lsn: 0/0301A188, prev 0/0301A160, desc: INSERT off: 89, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        721, lsn: 0/0301A1C8, prev 0/0301A188, desc: COMMIT 2026-09-20 14:00:36.264245 CST
+rmgr: Heap        len (rec/tot):     59/    59, tx:        722, lsn: 0/0301A1F0, prev 0/0301A1C8, desc: INSERT off: 90, flags: 0x00
+	blkref #0: rel 1663/5/16384 fork main blk 0
+rmgr: Transaction len (rec/tot):     34/    34, tx:        722, lsn: 0/0301A230, prev 0/0301A1F0, desc: COMMIT 2026-09-20 14:00:36.275526 CST
+rmgr: XLOG        len (rec/tot):     24/    24, tx:          0, lsn: 0/0301A258, prev 0/0301A230, desc: SWITCH 

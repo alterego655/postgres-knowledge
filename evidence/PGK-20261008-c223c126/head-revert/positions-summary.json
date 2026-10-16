@@ -1,0 +1,34 @@
+[
+  {
+    "label": "clean-head-1",
+    "target": "0/03017DA8",
+    "commit_start": "0/03017D80",
+    "commit_end": "0/03017DA8",
+    "page_offset": "0x1da8",
+    "first_wait_to_last_done_seconds": 0.991
+  },
+  {
+    "label": "clean-head-2",
+    "target": "0/03017DA8",
+    "commit_start": "0/03017D80",
+    "commit_end": "0/03017DA8",
+    "page_offset": "0x1da8",
+    "first_wait_to_last_done_seconds": 0.988
+  },
+  {
+    "label": "clean-reverted-1",
+    "target": "0/0301D9F0",
+    "commit_start": "0/0301D9C8",
+    "commit_end": "0/0301D9F0",
+    "page_offset": "0x19f0",
+    "first_wait_to_last_done_seconds": 0.989
+  },
+  {
+    "label": "clean-reverted-2",
+    "target": "0/0301D9F0",
+    "commit_start": "0/0301D9C8",
+    "commit_end": "0/0301D9F0",
+    "page_offset": "0x19f0",
+    "first_wait_to_last_done_seconds": 0.992
+  }
+]

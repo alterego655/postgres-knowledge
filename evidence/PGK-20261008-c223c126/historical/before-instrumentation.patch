@@ -1,0 +1,33 @@
+--- a/src/test/recovery/t/049_wait_for_lsn.pl
++++ b/src/test/recovery/t/049_wait_for_lsn.pl
+@@ -7,6 +7,19 @@
+ use PostgreSQL::Test::Cluster;
+ use PostgreSQL::Test::Utils;
+ use Test::More;
++use Time::HiRes qw(time);
++{
++ no warnings 'redefine';
++ my $orig = \&PostgreSQL::Test::Cluster::safe_psql;
++ *PostgreSQL::Test::Cluster::safe_psql = sub {
++  my $start = time();
++  my $ret = $orig->(@_);
++  my $q = $_[2]; $q =~ s/\s+/ /g;
++  note(sprintf("TIMING %.3f %s %s", time()-$start, $_[0]->name, substr($q,0,150)));
++  return $ret;
++ };
++}
++
+ 
+ # Helper functions to control walreceiver for testing wait conditions.
+ # These allow us to stop WAL streaming so waiters block, then resume it.
+@@ -521,6 +534,10 @@
+ my $mixed_target_lsn =
+   $node_primary->safe_psql('postgres', "SELECT pg_current_wal_insert_lsn()");
+ 
++diag("WAL_LAYOUT_TARGET before $mixed_target_lsn");
++system('cp', '-R', $node_primary->data_dir . '/pg_wal', '/tmp/pg-wait-investigation/layout-before-wal') == 0
++  or die "could not preserve WAL: $!";
++
+ # Start 6 waiters: 2 for each mode
+ my @mixed_sessions;
+ my @mixed_modes = ('standby_replay', 'standby_write', 'standby_flush');

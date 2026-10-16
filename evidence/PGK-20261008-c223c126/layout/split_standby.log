@@ -1,0 +1,315 @@
+2026-09-20 14:01:36.854 CST postmaster[28385] LOG:  starting PostgreSQL 19devel on aarch64-apple-darwin25.6.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.5), 64-bit
+2026-09-20 14:01:36.854 CST postmaster[28385] LOG:  listening on Unix socket "/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s/.s.PGSQL.28465"
+2026-09-20 14:01:36.857 CST startup[28390] LOG:  database system was interrupted; last known up at 2026-09-20 14:01:36 CST
+2026-09-20 14:01:36.857 CST startup[28390] LOG:  starting backup recovery with redo LSN 0/02000028, checkpoint LSN 0/02000088, on timeline ID 1
+2026-09-20 14:01:36.857 CST startup[28390] LOG:  entering standby mode
+2026-09-20 14:01:36.858 CST startup[28390] LOG:  redo starts at 0/02000028
+2026-09-20 14:01:36.858 CST startup[28390] LOG:  completed backup recovery with redo LSN 0/02000028 and end LSN 0/02000130
+2026-09-20 14:01:36.858 CST startup[28390] LOG:  consistent recovery state reached at 0/02000130
+2026-09-20 14:01:36.858 CST postmaster[28385] LOG:  database system is ready to accept read-only connections
+2026-09-20 14:01:36.862 CST walreceiver[28391] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:01:36.980 CST client backend[28398] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002098' WITH (timeout '1d');
+2026-09-20 14:01:37.963 CST client backend[28398] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_replay_lsn(), '0/03002098'::pg_lsn);
+2026-09-20 14:01:37.989 CST client backend[28410] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002340';
+2026-09-20 14:01:38.974 CST client backend[28410] layout-split.pl LOG:  statement: SELECT count(*) FROM wait_test;
+2026-09-20 14:01:39.007 CST client backend[28416] layout-split.pl LOG:  statement: WAIT FOR LSN '0/030025E8' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:39.007 CST client backend[28416] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/030025E8'::pg_lsn);
+2026-09-20 14:01:39.030 CST client backend[28422] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002890' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:39.030 CST client backend[28422] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03002890'::pg_lsn);
+2026-09-20 14:01:39.065 CST client backend[28432] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '10ms');
+2026-09-20 14:01:39.072 CST client backend[28434] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout '1000ms');
+2026-09-20 14:01:40.073 CST client backend[28434] layout-split.pl ERROR:  timed out while waiting for target LSN 2/570C0F38 to be replayed; current standby_replay LSN 0/03002B38
+2026-09-20 14:01:40.073 CST client backend[28434] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570C0F38' WITH (timeout '1000ms');
+2026-09-20 14:01:40.088 CST client backend[28444] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+2026-09-20 14:01:40.095 CST client backend[28446] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout '10ms', no_throw);
+2026-09-20 14:01:40.120 CST client backend[28450] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (MODE 'primary_flush');
+2026-09-20 14:01:40.120 CST client backend[28450] layout-split.pl ERROR:  recovery is in progress
+2026-09-20 14:01:40.120 CST client backend[28450] layout-split.pl HINT:  Waiting for primary_flush can only be done on a primary server. Use standby_flush mode on a standby server.
+2026-09-20 14:01:40.120 CST client backend[28450] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570C0F38' WITH (MODE 'primary_flush');
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl LOG:  statement: BEGIN ISOLATION LEVEL REPEATABLE READ;
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl LOG:  statement: SELECT 1;
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570C0F38';
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl ERROR:  WAIT FOR must be called without an active or registered snapshot
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl DETAIL:  WAIT FOR cannot be executed within a transaction with an isolation level higher than READ COMMITTED.
+2026-09-20 14:01:40.127 CST client backend[28452] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570C0F38';
+2026-09-20 14:01:40.165 CST client backend[28462] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+2026-09-20 14:01:41.155 CST client backend[28464] layout-split.pl LOG:  statement: SELECT pg_wal_replay_wait_wrap('2/570C0F38');
+2026-09-20 14:01:41.156 CST client backend[28464] layout-split.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:01:41.156 CST client backend[28464] layout-split.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:01:41.156 CST client backend[28464] layout-split.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function pg_wal_replay_wait_wrap(pg_lsn) line 3 at EXECUTE
+2026-09-20 14:01:41.156 CST client backend[28464] layout-split.pl STATEMENT:  SELECT pg_wal_replay_wait_wrap('2/570C0F38');
+2026-09-20 14:01:41.163 CST client backend[28466] layout-split.pl LOG:  statement: CALL pg_wal_replay_wait_proc('2/570C0F38');
+2026-09-20 14:01:41.164 CST client backend[28466] layout-split.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:01:41.164 CST client backend[28466] layout-split.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:01:41.164 CST client backend[28466] layout-split.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function pg_wal_replay_wait_proc(pg_lsn) line 3 at EXECUTE
+2026-09-20 14:01:41.164 CST client backend[28466] layout-split.pl STATEMENT:  CALL pg_wal_replay_wait_proc('2/570C0F38');
+2026-09-20 14:01:41.169 CST client backend[28468] layout-split.pl LOG:  statement: DO $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', '2/570C0F38'); END $$;
+2026-09-20 14:01:41.170 CST client backend[28468] layout-split.pl ERROR:  WAIT FOR can only be executed as a top-level statement
+2026-09-20 14:01:41.170 CST client backend[28468] layout-split.pl DETAIL:  WAIT FOR cannot be used within a function, procedure, or DO block.
+2026-09-20 14:01:41.170 CST client backend[28468] layout-split.pl CONTEXT:  SQL statement "WAIT FOR LSN '2/570C0F38';"
+	PL/pgSQL function inline_code_block line 1 at EXECUTE
+2026-09-20 14:01:41.170 CST client backend[28468] layout-split.pl STATEMENT:  DO $$ BEGIN EXECUTE format('WAIT FOR LSN %L;', '2/570C0F38'); END $$;
+2026-09-20 14:01:41.182 CST client backend[28472] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout '-1000ms');
+2026-09-20 14:01:41.182 CST client backend[28472] layout-split.pl ERROR:  timeout cannot be negative
+2026-09-20 14:01:41.182 CST client backend[28472] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout '-1000ms');
+2026-09-20 14:01:41.188 CST client backend[28474] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (unknown_param 'value');
+2026-09-20 14:01:41.188 CST client backend[28474] layout-split.pl ERROR:  option "unknown_param" not recognized at character 33
+2026-09-20 14:01:41.188 CST client backend[28474] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (unknown_param 'value');
+2026-09-20 14:01:41.194 CST client backend[28476] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout '1000', timeout '2000');
+2026-09-20 14:01:41.194 CST client backend[28476] layout-split.pl ERROR:  conflicting or redundant options at character 49
+2026-09-20 14:01:41.194 CST client backend[28476] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout '1000', timeout '2000');
+2026-09-20 14:01:41.200 CST client backend[28478] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (no_throw, no_throw);
+2026-09-20 14:01:41.200 CST client backend[28478] layout-split.pl ERROR:  conflicting or redundant options at character 43
+2026-09-20 14:01:41.200 CST client backend[28478] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (no_throw, no_throw);
+2026-09-20 14:01:41.205 CST client backend[28481] layout-split.pl ERROR:  syntax error at or near "(" at character 27
+2026-09-20 14:01:41.205 CST client backend[28481] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' (timeout '100ms');
+2026-09-20 14:01:41.211 CST client backend[28483] layout-split.pl ERROR:  syntax error at or near "TIMEOUT" at character 10
+2026-09-20 14:01:41.211 CST client backend[28483] layout-split.pl STATEMENT:  WAIT FOR TIMEOUT 1000;
+2026-09-20 14:01:41.216 CST client backend[28485] layout-split.pl LOG:  statement: WAIT FOR LSN 'invalid_lsn';
+2026-09-20 14:01:41.216 CST client backend[28485] layout-split.pl ERROR:  invalid input syntax for type pg_lsn: "invalid_lsn"
+2026-09-20 14:01:41.216 CST client backend[28485] layout-split.pl STATEMENT:  WAIT FOR LSN 'invalid_lsn';
+2026-09-20 14:01:41.222 CST client backend[28487] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (timeout 'invalid');
+2026-09-20 14:01:41.222 CST client backend[28487] layout-split.pl ERROR:  invalid timeout value: "invalid"
+2026-09-20 14:01:41.222 CST client backend[28487] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (timeout 'invalid');
+2026-09-20 14:01:41.227 CST client backend[28489] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03002340' WITH (timeout '0.1s', no_throw);
+2026-09-20 14:01:41.233 CST client backend[28491] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570C0F38' WITH (timeout 100, no_throw);
+2026-09-20 14:01:41.343 CST client backend[28493] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (invalid_option 'value');
+2026-09-20 14:01:41.343 CST client backend[28493] layout-split.pl ERROR:  option "invalid_option" not recognized at character 33
+2026-09-20 14:01:41.343 CST client backend[28493] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (invalid_option 'value');
+2026-09-20 14:01:41.350 CST client backend[28495] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'invalid');
+2026-09-20 14:01:41.350 CST client backend[28495] layout-split.pl ERROR:  unrecognized value for WAIT option "mode": "invalid" at character 33
+2026-09-20 14:01:41.350 CST client backend[28495] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (MODE 'invalid');
+2026-09-20 14:01:41.358 CST client backend[28497] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', MODE 'standby_write');
+2026-09-20 14:01:41.358 CST client backend[28497] layout-split.pl ERROR:  conflicting or redundant options at character 56
+2026-09-20 14:01:41.358 CST client backend[28497] layout-split.pl STATEMENT:  WAIT FOR LSN '0/0300F5B8' WITH (MODE 'standby_replay', MODE 'standby_write');
+2026-09-20 14:01:41.374 CST client backend[28501] layout-split.pl LOG:  statement: SELECT pg_wal_replay_pause();
+2026-09-20 14:01:41.400 CST client backend[28507] layout-split.pl LOG:  statement: WAIT FOR LSN '0/030197A8';
+2026-09-20 14:01:41.422 CST client backend[28513] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019810';
+2026-09-20 14:01:41.443 CST client backend[28519] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019878';
+2026-09-20 14:01:41.464 CST client backend[28525] layout-split.pl LOG:  statement: WAIT FOR LSN '0/030198E0';
+2026-09-20 14:01:41.484 CST client backend[28531] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019948';
+2026-09-20 14:01:41.490 CST client backend[28533] layout-split.pl LOG:  statement: SELECT pg_wal_replay_resume();
+2026-09-20 14:01:42.383 CST client backend[28507] layout-split.pl LOG:  statement: SELECT log_count(0);
+2026-09-20 14:01:42.386 CST client backend[28507] layout-split.pl LOG:  count 0
+2026-09-20 14:01:42.386 CST client backend[28507] layout-split.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:01:42.386 CST client backend[28507] layout-split.pl STATEMENT:  SELECT log_count(0);
+2026-09-20 14:01:42.410 CST client backend[28513] layout-split.pl LOG:  statement: SELECT log_count(1);
+2026-09-20 14:01:42.412 CST client backend[28513] layout-split.pl LOG:  count 1
+2026-09-20 14:01:42.412 CST client backend[28513] layout-split.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:01:42.412 CST client backend[28513] layout-split.pl STATEMENT:  SELECT log_count(1);
+2026-09-20 14:01:42.430 CST client backend[28519] layout-split.pl LOG:  statement: SELECT log_count(2);
+2026-09-20 14:01:42.432 CST client backend[28519] layout-split.pl LOG:  count 2
+2026-09-20 14:01:42.432 CST client backend[28519] layout-split.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:01:42.432 CST client backend[28519] layout-split.pl STATEMENT:  SELECT log_count(2);
+2026-09-20 14:01:42.451 CST client backend[28525] layout-split.pl LOG:  statement: SELECT log_count(3);
+2026-09-20 14:01:42.453 CST client backend[28525] layout-split.pl LOG:  count 3
+2026-09-20 14:01:42.453 CST client backend[28525] layout-split.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:01:42.453 CST client backend[28525] layout-split.pl STATEMENT:  SELECT log_count(3);
+2026-09-20 14:01:42.472 CST client backend[28531] layout-split.pl LOG:  statement: SELECT log_count(4);
+2026-09-20 14:01:42.474 CST client backend[28531] layout-split.pl LOG:  count 4
+2026-09-20 14:01:42.474 CST client backend[28531] layout-split.pl CONTEXT:  PL/pgSQL function log_count(integer) line 7 at RAISE
+2026-09-20 14:01:42.474 CST client backend[28531] layout-split.pl STATEMENT:  SELECT log_count(4);
+2026-09-20 14:01:42.540 CST client backend[28535] layout-split.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:01:42.548 CST client backend[28537] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:01:42.548 CST client backend[28537] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:42.549 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:42.549 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:01:42.550 CST startup[28390] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:01:42.550 CST walreceiver[28391] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:01:42.550 CST walreceiver[28391] DETAIL:  Signal sent by PID 28390, UID 501.
+2026-09-20 14:01:42.550 CST startup[28390] LOG:  invalid record length at 0/03019948: expected at least 24, got 0
+2026-09-20 14:01:42.550 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:42.550 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:42.555 CST client backend[28539] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:42.632 CST client backend[28561] layout-split.pl LOG:  statement: WAIT FOR LSN '0/030199B0' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:42.637 CST client backend[28563] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019A18' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:42.645 CST client backend[28565] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019A80' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:42.651 CST client backend[28567] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019AE8' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:42.657 CST client backend[28569] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019B50' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:42.663 CST client backend[28571] layout-split.pl LOG:  statement: SELECT count(*) = 5 FROM pg_stat_activity WHERE wait_event = 'WaitForWalWrite'
+2026-09-20 14:01:42.670 CST client backend[28573] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s';
+2026-09-20 14:01:42.671 CST client backend[28573] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:42.671 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:42.671 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to "port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s"
+2026-09-20 14:01:42.675 CST walreceiver[28574] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:01:42.676 CST client backend[28567] layout-split.pl LOG:  statement: SELECT log_wait_done('write_done', 3);
+2026-09-20 14:01:42.676 CST client backend[28565] layout-split.pl LOG:  statement: SELECT log_wait_done('write_done', 2);
+2026-09-20 14:01:42.676 CST client backend[28569] layout-split.pl LOG:  statement: SELECT log_wait_done('write_done', 4);
+2026-09-20 14:01:42.676 CST client backend[28561] layout-split.pl LOG:  statement: SELECT log_wait_done('write_done', 0);
+2026-09-20 14:01:42.676 CST client backend[28563] layout-split.pl LOG:  statement: SELECT log_wait_done('write_done', 1);
+2026-09-20 14:01:42.676 CST client backend[28567] layout-split.pl LOG:  write_done 3
+2026-09-20 14:01:42.676 CST client backend[28567] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:42.676 CST client backend[28567] layout-split.pl STATEMENT:  SELECT log_wait_done('write_done', 3);
+2026-09-20 14:01:42.676 CST client backend[28563] layout-split.pl LOG:  write_done 1
+2026-09-20 14:01:42.676 CST client backend[28563] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:42.676 CST client backend[28563] layout-split.pl STATEMENT:  SELECT log_wait_done('write_done', 1);
+2026-09-20 14:01:42.676 CST client backend[28561] layout-split.pl LOG:  write_done 0
+2026-09-20 14:01:42.676 CST client backend[28561] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:42.676 CST client backend[28561] layout-split.pl STATEMENT:  SELECT log_wait_done('write_done', 0);
+2026-09-20 14:01:42.676 CST client backend[28569] layout-split.pl LOG:  write_done 4
+2026-09-20 14:01:42.676 CST client backend[28569] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:42.676 CST client backend[28569] layout-split.pl STATEMENT:  SELECT log_wait_done('write_done', 4);
+2026-09-20 14:01:42.676 CST client backend[28565] layout-split.pl LOG:  write_done 2
+2026-09-20 14:01:42.676 CST client backend[28565] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:42.676 CST client backend[28565] layout-split.pl STATEMENT:  SELECT log_wait_done('write_done', 2);
+2026-09-20 14:01:42.678 CST client backend[28577] layout-split.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:42.687 CST client backend[28579] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/03019B50'::pg_lsn);
+2026-09-20 14:01:42.694 CST client backend[28581] layout-split.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:01:42.701 CST client backend[28583] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:01:42.701 CST client backend[28583] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:42.701 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:42.701 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:01:42.702 CST startup[28390] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:01:42.707 CST client backend[28585] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:42.815 CST client backend[28587] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:42.928 CST client backend[28589] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.041 CST client backend[28596] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.156 CST client backend[28598] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.273 CST client backend[28600] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.394 CST client backend[28602] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.511 CST client backend[28604] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.620 CST walreceiver[28574] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:01:43.620 CST walreceiver[28574] DETAIL:  Signal sent by PID 28390, UID 501.
+2026-09-20 14:01:43.620 CST startup[28390] LOG:  invalid record length at 0/03019B50: expected at least 24, got 0
+2026-09-20 14:01:43.620 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:43.620 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:43.633 CST client backend[28606] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.704 CST client backend[28628] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019BB8' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:43.709 CST client backend[28630] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019C20' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:43.715 CST client backend[28632] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019C88' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:43.720 CST client backend[28634] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019CF0' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:43.725 CST client backend[28636] layout-split.pl LOG:  statement: WAIT FOR LSN '0/03019D58' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:43.730 CST client backend[28638] layout-split.pl LOG:  statement: SELECT count(*) = 5 FROM pg_stat_activity WHERE wait_event = 'WaitForWalFlush'
+2026-09-20 14:01:43.737 CST client backend[28640] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s';
+2026-09-20 14:01:43.738 CST client backend[28640] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:43.738 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:43.738 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to "port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s"
+2026-09-20 14:01:43.742 CST walreceiver[28641] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:01:43.742 CST client backend[28628] layout-split.pl LOG:  statement: SELECT log_wait_done('flush_done', 0);
+2026-09-20 14:01:43.742 CST client backend[28630] layout-split.pl LOG:  statement: SELECT log_wait_done('flush_done', 1);
+2026-09-20 14:01:43.743 CST client backend[28634] layout-split.pl LOG:  statement: SELECT log_wait_done('flush_done', 3);
+2026-09-20 14:01:43.743 CST client backend[28636] layout-split.pl LOG:  statement: SELECT log_wait_done('flush_done', 4);
+2026-09-20 14:01:43.743 CST client backend[28632] layout-split.pl LOG:  statement: SELECT log_wait_done('flush_done', 2);
+2026-09-20 14:01:43.743 CST client backend[28628] layout-split.pl LOG:  flush_done 0
+2026-09-20 14:01:43.743 CST client backend[28628] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:43.743 CST client backend[28628] layout-split.pl STATEMENT:  SELECT log_wait_done('flush_done', 0);
+2026-09-20 14:01:43.743 CST client backend[28630] layout-split.pl LOG:  flush_done 1
+2026-09-20 14:01:43.743 CST client backend[28630] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:43.743 CST client backend[28630] layout-split.pl STATEMENT:  SELECT log_wait_done('flush_done', 1);
+2026-09-20 14:01:43.743 CST client backend[28634] layout-split.pl LOG:  flush_done 3
+2026-09-20 14:01:43.743 CST client backend[28634] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:43.743 CST client backend[28634] layout-split.pl STATEMENT:  SELECT log_wait_done('flush_done', 3);
+2026-09-20 14:01:43.743 CST client backend[28636] layout-split.pl LOG:  flush_done 4
+2026-09-20 14:01:43.743 CST client backend[28636] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:43.743 CST client backend[28636] layout-split.pl STATEMENT:  SELECT log_wait_done('flush_done', 4);
+2026-09-20 14:01:43.743 CST client backend[28632] layout-split.pl LOG:  flush_done 2
+2026-09-20 14:01:43.743 CST client backend[28632] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:43.743 CST client backend[28632] layout-split.pl STATEMENT:  SELECT log_wait_done('flush_done', 2);
+2026-09-20 14:01:43.745 CST client backend[28644] layout-split.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.752 CST client backend[28646] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/03019D58'::pg_lsn);
+2026-09-20 14:01:43.759 CST client backend[28648] layout-split.pl LOG:  statement: SELECT pg_catalog.quote_literal(setting)
+			FROM pg_settings
+			WHERE name = 'primary_conninfo';
+2026-09-20 14:01:43.766 CST client backend[28650] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = '';
+2026-09-20 14:01:43.767 CST client backend[28650] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:43.767 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:43.767 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to ""
+2026-09-20 14:01:43.768 CST startup[28390] LOG:  WAL receiver process shutdown requested
+2026-09-20 14:01:43.773 CST client backend[28652] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.882 CST client backend[28654] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:43.994 CST client backend[28656] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.114 CST client backend[28658] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.235 CST client backend[28660] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.351 CST client backend[28662] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.469 CST client backend[28664] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.586 CST client backend[28666] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.693 CST walreceiver[28641] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:01:44.693 CST walreceiver[28641] DETAIL:  Signal sent by PID 28390, UID 501.
+2026-09-20 14:01:44.694 CST startup[28390] LOG:  invalid record length at 0/03019D58: expected at least 24, got 0
+2026-09-20 14:01:44.694 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:44.694 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:44.703 CST client backend[28668] layout-split.pl LOG:  statement: SELECT NOT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:44.711 CST client backend[28670] layout-split.pl LOG:  statement: SELECT pg_wal_replay_pause();
+2026-09-20 14:01:44.712 CST startup[28390] LOG:  recovery has paused
+2026-09-20 14:01:44.712 CST startup[28390] HINT:  Execute pg_wal_replay_resume() to continue.
+2026-09-20 14:01:44.747 CST client backend[28677] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_replay', timeout '1d');
+2026-09-20 14:01:44.752 CST client backend[28679] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:44.758 CST client backend[28681] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:44.764 CST client backend[28683] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_replay', timeout '1d');
+2026-09-20 14:01:44.769 CST client backend[28685] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_write', timeout '1d');
+2026-09-20 14:01:44.775 CST client backend[28687] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A018' WITH (MODE 'standby_flush', timeout '1d');
+2026-09-20 14:01:44.781 CST client backend[28689] layout-split.pl LOG:  statement: SELECT count(*) = 6 FROM pg_stat_activity WHERE wait_event LIKE 'WaitForWal%'
+2026-09-20 14:01:44.789 CST client backend[28691] layout-split.pl LOG:  statement: SELECT pg_wal_replay_resume();
+2026-09-20 14:01:44.789 CST startup[28390] LOG:  waiting for WAL to become available at 0/03002000
+2026-09-20 14:01:44.796 CST client backend[28693] layout-split.pl LOG:  statement: SELECT NOT pg_is_wal_replay_paused();
+2026-09-20 14:01:44.802 CST client backend[28696] layout-split.pl LOG:  statement: ALTER SYSTEM SET primary_conninfo = 'port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s';
+2026-09-20 14:01:44.803 CST client backend[28696] layout-split.pl LOG:  statement: SELECT pg_reload_conf();
+2026-09-20 14:01:44.803 CST postmaster[28385] LOG:  received SIGHUP, reloading configuration files
+2026-09-20 14:01:44.803 CST postmaster[28385] LOG:  parameter "primary_conninfo" changed to "port=28464 host=/var/folders/kg/15xl8vy92674kgh3rp_fwd8c0000gn/T/H6AFp4546s"
+2026-09-20 14:01:44.807 CST walreceiver[28697] LOG:  started streaming WAL from primary at 0/03000000 on timeline 1
+2026-09-20 14:01:44.810 CST client backend[28700] layout-split.pl LOG:  statement: SELECT EXISTS (SELECT * FROM pg_stat_wal_receiver);
+2026-09-20 14:01:53.372 CST client backend[28687] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 5);
+2026-09-20 14:01:53.372 CST client backend[28685] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 4);
+2026-09-20 14:01:53.372 CST client backend[28677] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 0);
+2026-09-20 14:01:53.372 CST client backend[28679] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 1);
+2026-09-20 14:01:53.372 CST client backend[28681] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 2);
+2026-09-20 14:01:53.372 CST client backend[28683] layout-split.pl LOG:  statement: SELECT log_wait_done('mixed_done', 3);
+2026-09-20 14:01:53.373 CST client backend[28677] layout-split.pl LOG:  mixed_done 0
+2026-09-20 14:01:53.373 CST client backend[28677] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.373 CST client backend[28677] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 0);
+2026-09-20 14:01:53.373 CST client backend[28687] layout-split.pl LOG:  mixed_done 5
+2026-09-20 14:01:53.373 CST client backend[28687] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.373 CST client backend[28687] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 5);
+2026-09-20 14:01:53.373 CST client backend[28681] layout-split.pl LOG:  mixed_done 2
+2026-09-20 14:01:53.373 CST client backend[28681] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.373 CST client backend[28681] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 2);
+2026-09-20 14:01:53.373 CST client backend[28683] layout-split.pl LOG:  mixed_done 3
+2026-09-20 14:01:53.373 CST client backend[28683] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.373 CST client backend[28683] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 3);
+2026-09-20 14:01:53.374 CST client backend[28685] layout-split.pl LOG:  mixed_done 4
+2026-09-20 14:01:53.374 CST client backend[28685] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.374 CST client backend[28685] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 4);
+2026-09-20 14:01:53.374 CST client backend[28679] layout-split.pl LOG:  mixed_done 1
+2026-09-20 14:01:53.374 CST client backend[28679] layout-split.pl CONTEXT:  PL/pgSQL function log_wait_done(text,integer) line 3 at RAISE
+2026-09-20 14:01:53.374 CST client backend[28679] layout-split.pl STATEMENT:  SELECT log_wait_done('mixed_done', 1);
+2026-09-20 14:01:53.451 CST client backend[28724] layout-split.pl LOG:  statement: SELECT pg_lsn_cmp((SELECT written_lsn FROM pg_stat_wal_receiver), '0/0301A018'::pg_lsn) >= 0 AND
+		       pg_lsn_cmp(pg_last_wal_receive_lsn(), '0/0301A018'::pg_lsn) >= 0 AND
+		       pg_lsn_cmp(pg_last_wal_replay_lsn(), '0/0301A018'::pg_lsn) >= 0;
+2026-09-20 14:01:53.576 CST client backend[28762] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_replay');
+2026-09-20 14:01:53.582 CST client backend[28764] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_write');
+2026-09-20 14:01:53.588 CST client backend[28766] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_flush');
+2026-09-20 14:01:53.617 CST client backend[28774] layout-split.pl LOG:  statement: WAIT FOR LSN '0/04000000' WITH (MODE 'standby_replay', timeout '180s', no_throw);
+2026-09-20 14:01:54.521 CST startup[28390] LOG:  received promote request
+2026-09-20 14:01:54.521 CST walreceiver[28697] FATAL:  terminating walreceiver process due to administrator command
+2026-09-20 14:01:54.521 CST walreceiver[28697] DETAIL:  Signal sent by PID 28390, UID 501.
+2026-09-20 14:01:54.521 CST startup[28390] LOG:  redo done at 0/0301A258 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 17.66 s
+2026-09-20 14:01:54.521 CST startup[28390] LOG:  last completed transaction was at log time 2026-09-20 14:01:53.512326+08
+2026-09-20 14:01:54.521 CST startup[28390] LOG:  selected new timeline ID: 2
+2026-09-20 14:01:54.524 CST startup[28390] LOG:  archive recovery complete
+2026-09-20 14:01:54.524 CST client backend[28762] layout-split.pl ERROR:  recovery is not in progress
+2026-09-20 14:01:54.524 CST client backend[28762] layout-split.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was replayed; last standby_replay LSN 0/04000000.
+2026-09-20 14:01:54.524 CST client backend[28762] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_replay');
+2026-09-20 14:01:54.524 CST client backend[28766] layout-split.pl ERROR:  recovery is not in progress
+2026-09-20 14:01:54.524 CST client backend[28766] layout-split.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was flushed; last standby_flush LSN 0/04000000.
+2026-09-20 14:01:54.524 CST client backend[28766] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_flush');
+2026-09-20 14:01:54.524 CST client backend[28764] layout-split.pl ERROR:  recovery is not in progress
+2026-09-20 14:01:54.524 CST client backend[28764] layout-split.pl DETAIL:  Recovery ended before target LSN 2/570D8658 was written; last standby_write LSN 0/04000000.
+2026-09-20 14:01:54.524 CST client backend[28764] layout-split.pl STATEMENT:  WAIT FOR LSN '2/570D8658' WITH (MODE 'standby_write');
+2026-09-20 14:01:54.524 CST checkpointer[28388] LOG:  checkpoint starting: force
+2026-09-20 14:01:54.525 CST postmaster[28385] LOG:  database system is ready to accept connections
+2026-09-20 14:01:54.628 CST checkpointer[28388] LOG:  checkpoint complete: force: wrote 1 buffers (0.8%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.103 s, sync=0.001 s, total=0.105 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32768 kB, estimate=32768 kB; lsn=0/040000C0, redo lsn=0/04000060
+2026-09-20 14:01:54.638 CST client backend[28780] layout-split.pl LOG:  statement: WAIT FOR LSN '0/0301A258';
+2026-09-20 14:01:54.647 CST client backend[28782] layout-split.pl LOG:  statement: WAIT FOR LSN '2/570D8658' WITH (timeout '10ms', no_throw);
+2026-09-20 14:01:54.651 CST postmaster[28385] LOG:  received fast shutdown request
+2026-09-20 14:01:54.651 CST postmaster[28385] LOG:  aborting any active transactions
+2026-09-20 14:01:54.651 CST postmaster[28385] LOG:  background worker "logical replication launcher" (PID 28778) exited with exit code 1
+2026-09-20 14:01:54.652 CST checkpointer[28388] LOG:  shutting down
+2026-09-20 14:01:54.652 CST checkpointer[28388] LOG:  checkpoint starting: shutdown fast
+2026-09-20 14:01:54.652 CST checkpointer[28388] LOG:  checkpoint complete: shutdown fast: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.000 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=29491 kB; lsn=0/04000140, redo lsn=0/04000140
+2026-09-20 14:01:54.653 CST postmaster[28385] LOG:  database system is shut down

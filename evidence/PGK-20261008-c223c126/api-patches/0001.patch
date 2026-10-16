@@ -1,0 +1,115 @@
+From 10076ae9e497cf59407d0f47ce7fee77762b82aa Mon Sep 17 00:00:00 2001
+From: alterego655 <824662526@qq.com>
+Date: Tue, 22 Sep 2026 16:53:25 +0800
+Subject: [PATCH] Expose the WAL insertion end position to SQL
+
+Add pg_current_wal_insert_end_lsn(), backed by GetXLogInsertEndRecPtr().
+It reports the end of reserved WAL space without including the next
+page header when that space ends at a page or segment boundary.
+
+Document that the position is server-wide and may include concurrent
+insertions that have not finished; reading it does not write or flush WAL.
+Keep pg_current_wal_insert_lsn() unchanged.
+---
+ doc/src/sgml/func/func-admin.sgml      | 28 ++++++++++++++++++++++++++
+ src/backend/access/transam/xlogfuncs.c | 22 ++++++++++++++++++++
+ src/include/catalog/pg_proc.dat        |  4 ++++
+ 3 files changed, 54 insertions(+)
+
+diff --git a/doc/src/sgml/func/func-admin.sgml b/doc/src/sgml/func/func-admin.sgml
+index 64b0e7bb972..b325fed4ca7 100644
+--- a/doc/src/sgml/func/func-admin.sgml
++++ b/doc/src/sgml/func/func-admin.sgml
+@@ -376,6 +376,20 @@ LOG:  Grand total: 1651920 bytes in 201 blocks; 622360 free (88 chunks); 1029560
+        </para></entry>
+       </row>
+ 
++      <row>
++       <entry role="func_table_entry"><para role="func_signature">
++        <indexterm>
++         <primary>pg_current_wal_insert_end_lsn</primary>
++        </indexterm>
++        <function>pg_current_wal_insert_end_lsn</function> ()
++        <returnvalue>pg_lsn</returnvalue>
++       </para>
++       <para>
++        Returns the end of the write-ahead log space currently reserved for
++        insertion (see notes below).
++       </para></entry>
++      </row>
++
+       <row>
+        <entry role="func_table_entry"><para role="func_signature">
+         <indexterm>
+@@ -598,6 +612,20 @@ LOG:  Grand total: 1651920 bytes in 201 blocks; 622360 free (88 chunks); 1029560
+     not require superuser permissions.
+    </para>
+ 
++   <para>
++    <function>pg_current_wal_insert_end_lsn</function> reports the same
++    reservation position as <function>pg_current_wal_insert_lsn</function>,
++    but represents it as a record end.  If the reserved space ends exactly
++    at a WAL page boundary, it returns that boundary, whereas
++    <function>pg_current_wal_insert_lsn</function> returns the next insertion
++    address, after the following page's header.  Otherwise, the two positions
++    are the same.  Neither function waits for concurrent WAL insertions to
++    finish or causes WAL to be written or flushed.  Both positions are
++    server-wide, rather than specific to the calling session or transaction,
++    and neither function can be executed during recovery.  Both are read-only
++    operations and do not require superuser permissions.
++   </para>
++
+    <para>
+     You can use <function>pg_walfile_name_offset</function> to extract the
+     corresponding write-ahead log file name and byte offset from
+diff --git a/src/backend/access/transam/xlogfuncs.c b/src/backend/access/transam/xlogfuncs.c
+index 1f52bf7b420..d8ae8cdfee0 100644
+--- a/src/backend/access/transam/xlogfuncs.c
++++ b/src/backend/access/transam/xlogfuncs.c
+@@ -337,6 +337,28 @@ pg_current_wal_insert_lsn(PG_FUNCTION_ARGS)
+ 	PG_RETURN_LSN(current_recptr);
+ }
+ 
++/*
++ * Report the end of the WAL space reserved for insertion.
++ *
++ * Unlike pg_current_wal_insert_lsn(), this does not include the following
++ * page header when the reserved space ends at a WAL page boundary.
++ */
++Datum
++pg_current_wal_insert_end_lsn(PG_FUNCTION_ARGS)
++{
++	XLogRecPtr	current_recptr;
++
++	if (RecoveryInProgress())
++		ereport(ERROR,
++				(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
++				 errmsg("recovery is in progress"),
++				 errhint("WAL control functions cannot be executed during recovery.")));
++
++	current_recptr = GetXLogInsertEndRecPtr();
++
++	PG_RETURN_LSN(current_recptr);
++}
++
+ /*
+  * Report the current WAL flush location (same format as pg_backup_start etc)
+  *
+diff --git a/src/include/catalog/pg_proc.dat b/src/include/catalog/pg_proc.dat
+index f46427258e3..955aa17e3ec 100644
+--- a/src/include/catalog/pg_proc.dat
++++ b/src/include/catalog/pg_proc.dat
+@@ -6882,6 +6882,10 @@
+   proname => 'pg_current_wal_insert_lsn', provolatile => 'v',
+   prorettype => 'pg_lsn', proargtypes => '',
+   prosrc => 'pg_current_wal_insert_lsn' },
++{ oid => '8922', descr => 'current wal insertion end location',
++  proname => 'pg_current_wal_insert_end_lsn', provolatile => 'v',
++  prorettype => 'pg_lsn', proargtypes => '',
++  prosrc => 'pg_current_wal_insert_end_lsn' },
+ { oid => '3330', descr => 'current wal flush location',
+   proname => 'pg_current_wal_flush_lsn', provolatile => 'v',
+   prorettype => 'pg_lsn', proargtypes => '',
+-- 
+2.51.0
+
